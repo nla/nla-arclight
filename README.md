@@ -25,7 +25,7 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
 
 ## Requirements
 
-* Ruby: 3.0.2
+* Ruby: 3.1.2
 * Bundler: 2.3.19
 
 * System dependencies

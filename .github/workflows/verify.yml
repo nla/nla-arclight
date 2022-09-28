@@ -1,0 +1,97 @@
+# This workflow runs the unit and system tests, as well as static code analysis
+# and dependecy vulnerability checks.
+#
+# It uses the default MySQL database included in the runner (usually ubuntu-latest).
+name: "Tests and code quality"
+on:
+  pull_request:
+    branches:
+      - "main"
+      - "release/**"
+jobs:
+  linters:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    name: Linters
+    runs-on: ubuntu-latest
+    env:
+      RUBY_VERSION: '3.0.2'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@3068fa83f9cbd7ae106cac45483635a2f3a195c9 # v1.92
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: RuboCop
+        run: bundle exec rubocop --parallel
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Brakeman code scanning with reviewdog
+        uses: reviewdog/action-brakeman@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bundler Audit Action
+        uses: andrewmcodes/bundler-audit-action@v0.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  tests:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    name: Tests
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      RUBY_VERSION: '3.0.2'
+      DB_DATABASE: arclight_test
+      DB_USER: root
+      DB_PASSWORD: root
+      RAILS_ENV: test
+      DATABASE_URL: "mysql2://root:root@localhost:3306/arclight_test"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@3068fa83f9cbd7ae106cac45483635a2f3a195c9 # v1.92
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: Set up MySQL
+        run: |
+          pwd
+          sudo /etc/init.d/mysql start
+          mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+
+      - name: Spin up SolrCloud + Zookeeper cluster
+        uses: isbang/compose-action@v1.2.0
+        with:
+          compose-file: "./solr/cloud/docker-compose.yml"
+          down-flags: "--volumes"
+
+      - name: Check Zookeeper status
+        run: |
+          echo "ruok" | nc localhost 2181 ; echo 
+
+      - name: RSpec tests
+        run: |
+          bundle exec rspec
+
+      - name: Cucumber tests
+        run: |
+          bundle exec cucumber
+
+      - name: Simplecov Report
+        uses: aki77/simplecov-report-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ github.actor != 'dependabot[bot]' }}
