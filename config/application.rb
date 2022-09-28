@@ -27,7 +27,7 @@ module NlaArclight
     config.time_zone = "Canberra"
 
     config.assets.configure do |env|
-      env.cache = ActiveSupport::Cache.lookup_store(:file_store, File.join(ENV.fetch("BLACKLIGHT_TMP_PATH", "./tmp"), "asset/cache"))
+      env.cache = ActiveSupport::Cache.lookup_store(:file_store, File.join(ENV.fetch("ARCLIGHT_TMP_PATH", "./tmp"), "asset/cache"))
     end
 
     if %w[staging production].include? ENV["RAILS_ENV"]

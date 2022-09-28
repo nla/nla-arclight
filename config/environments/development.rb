@@ -2,8 +2,8 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Configure 'rails notes' to inspect Cucumber files
-  config.annotations.register_directories('features')
-  config.annotations.register_extensions('feature') { |tag| /#\s*(#{tag}):?\s*(.*)$/ }
+  config.annotations.register_directories("features")
+  config.annotations.register_extensions("feature") { |tag| /#\s*(#{tag}):?\s*(.*)$/ }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -34,8 +34,8 @@ Rails.application.configure do
   else
     config.action_controller.perform_caching = false
 
-    config.cache_store = if ENV["BLACKLIGHT_TMP_PATH"].present?
-      [:file_store, ENV["BLACKLIGHT_TMP_PATH"]]
+    config.cache_store = if ENV["ARCLIGHT_TMP_PATH"].present?
+      [:file_store, ENV["ARCLIGHT_TMP_PATH"]]
     else
       :null_store
     end

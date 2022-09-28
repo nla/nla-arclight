@@ -25,7 +25,7 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
 
 ## Requirements
 
-* Ruby: 3.0.2
+* Ruby: 3.1.2
 * Bundler: 2.3.19
 
 * System dependencies
@@ -121,7 +121,7 @@ RAILS_ENV=test bin/ci
 
 * All runtime configuration should be supplied as environment variables.
 * Rails logging uses [lograge](https://github.com/roidrage/lograge). `bin/setup help` can tell you how to see this locally.
-* The temporary file directory configured by the `BLACKLIGHT_TMP_PATH` must be writable by the user that runs the application.
+* The temporary file directory configured by the `ARCLIGHT_TMP_PATH` must be writable by the user that runs the application.
 * Gems declared in the Gemfile are installed in the `vendor/bundle` directory.
 * Rails assets must be precompiled before deployment and `RAILS_SERVE_STATIC_FILES` set to `true` in order for files in the `public` directory to be accessible.
 * `RAILS_LOG_TO_STDOUT` must be set to `true` for logs to be sent to the console.
