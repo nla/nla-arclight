@@ -1,13 +1,13 @@
 load_defaults: 7.29.0
 development:
-  adapter: solr_cloud
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
+  adapter: solr
+  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/arclight" %>
 test: &test
-  adapter: solr_cloud
+  adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
 staging:
-  adapter: solr_cloud
+  adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
 production:
-  adapter: solr_cloud
+  adapter: solr
   url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/blacklight-core" %>
