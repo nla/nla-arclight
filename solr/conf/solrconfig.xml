@@ -40,9 +40,6 @@
 
   <codecFactory class="solr.SchemaCodecFactory"/>
 
-  <schemaFactory class="ClassicIndexSchemaFactory"/>
-
-
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
 
   <requestDispatcher handleSelect="true" >
