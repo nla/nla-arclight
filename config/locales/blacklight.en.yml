@@ -19,7 +19,7 @@ en:
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
   blacklight:
-    application_name: 'Archives | National Library of Australia'
+    application_name: 'Finding Aids'
     skip_links:
       label: 'Skip links'
       main_content: 'Skip to main content'

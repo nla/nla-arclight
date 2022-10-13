@@ -2,7 +2,7 @@ module BlacklightHelper
   include Blacklight::BlacklightHelperBehavior
 
   def application_name
-    "Archives | National Library of Australia"
+    t("blacklight.application_name")
   end
 
   def render_page_title
