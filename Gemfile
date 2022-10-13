@@ -51,7 +51,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
+gem "redis", "~> 5.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -72,10 +72,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "arclight"
-gem "blacklight_range_limit", "~> 7.1"
+gem "blacklight_range_limit", "~> 8.2"
 gem "rsolr", ">= 1.0", "< 3"
 gem "bootstrap", "~> 4.0"
-gem "twitter-typeahead-rails", "0.11.1.pre.corejavascript"
+gem "twitter-typeahead-rails", "0.11.1"
 gem "sassc-rails", "~> 2.1"
 gem "jquery-rails"
 gem "devise"

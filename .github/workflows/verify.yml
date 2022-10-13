@@ -56,9 +56,9 @@ jobs:
       DB_PASSWORD: root
       RAILS_ENV: test
       DATABASE_URL: "mysql2://root:root@localhost:3306/arclight_test"
-      GETALIBRARYCARD_BASE_URL: ${{ secrets.GETALIBRARYCARD_BASE_URL }}
-      GETALIBRARYCARD_AUTH_PATH: ${{ secrets.GETALIBRARYCARD_AUTH_PATH }}
-      GETALIBRARYCARD_PATRON_DETAILS_PATH: ${{ secrets.GETALIBRARYCARD_PATRON_DETAILS_PATH }}
+      GETALIBRARYCARD_BASE_URL: "https://example.nla.gov.au"
+      GETALIBRARYCARD_AUTH_PATH: "/getalibrarycard/authenticate.xml/%s/%s"
+      GETALIBRARYCARD_PATRON_DETAILS_PATH: "/getalibrarycard/patrons/details/%s.xml"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -76,7 +76,7 @@ jobs:
           mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
 
       - name: Spin up SolrCloud + Zookeeper cluster
-        uses: isbang/compose-action@v1.2.0
+        uses: isbang/compose-action@v1.3.2
         with:
           compose-file: "./solr/cloud/docker-compose.yml"
           down-flags: "--volumes"
