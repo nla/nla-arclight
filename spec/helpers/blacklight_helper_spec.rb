@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe BlacklightHelper do
   describe "#application_name" do
     it "defaults to 'Archives | National Library of Australia'" do
-      expect(application_name).to eq "Archives | National Library of Australia"
+      expect(application_name).to eq "Finding Aids"
     end
   end
 
