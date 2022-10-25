@@ -49,8 +49,20 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
+production: &production
   <<: *default
   database: nla_arclight_production
   username: nla_arclight
   password: <%= ENV["NLA_ARCLIGHT_DATABASE_PASSWORD"] %>
+  connect_timeout: 5
+  read_timeout: 5
+  write_timeout: 5
+  variables:
+    max_execution_time: 15000 # ms
+    lock_wait_timeout: 10 # sec
+
+# Staging IS the config for the UAT environment.
+# These inherit production settings by default.
+staging:
+  <<: *production
+  database: nla_blacklight_test
