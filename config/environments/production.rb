@@ -91,5 +91,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # allow requests to
-  config.hosts << "archives.nla.gov.au"
+  config.hosts << "catalogue.nla.gov.au"
 end
