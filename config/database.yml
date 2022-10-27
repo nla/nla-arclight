@@ -49,7 +49,7 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
+production: &production
   <<: *default
   database: nla_arclight_production
   username: nla_arclight
