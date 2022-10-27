@@ -1,5 +1,5 @@
 # Based on production
-require Rails.root.join("config", "environments", "production")
+require_relative "production"
 
 Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
