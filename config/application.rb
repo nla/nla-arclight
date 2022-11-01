@@ -30,6 +30,8 @@ module NlaArclight
       env.cache = ActiveSupport::Cache.lookup_store(:file_store, File.join(ENV.fetch("ARCLIGHT_TMP_PATH", "./tmp"), "asset/cache"))
     end
 
+    config.assets.prefix = "/finding-aids/assets"
+
     if %w[staging production].include? ENV["RAILS_ENV"]
       # Use default logging formatter so that PID and timestamp are not suppressed.
       config.log_formatter = ::Logger::Formatter.new
