@@ -119,9 +119,9 @@ GEM
       blacklight (>= 7.25.2, < 9)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
-    bootstrap (4.6.2)
+    bootstrap (5.2.3)
       autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 1.16.1, < 2)
+      popper_js (>= 2.11.6, < 3)
       sassc-rails (>= 2.0.0)
     brakeman (5.4.0)
     builder (3.2.4)
@@ -317,7 +317,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.3.0)
       ast (~> 2.4.1)
-    popper_js (1.16.1)
+    popper_js (2.11.6)
     public_suffix (5.0.0)
     puma (6.0.0)
       nio4r (~> 2.0)
@@ -544,7 +544,7 @@ DEPENDENCIES
   blacklight-solrcloud-repository!
   blacklight_range_limit (~> 8.2)
   bootsnap
-  bootstrap (~> 4.0)
+  bootstrap (~> 5.2)
   brakeman
   bundler-audit
   capybara
