@@ -42,7 +42,7 @@
 
   <updateHandler class="solr.DirectUpdateHandler2">
     <updateLog>
-      <str name="dir">${solr.core0.data.dir:}</str>
+      <str name="dir">${solr.ulog.dir:}</str>
     </updateLog>
   </updateHandler>
 
