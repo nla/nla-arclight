@@ -1,5 +1,10 @@
 # nla-arclight
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nla/nla-arclight/Tests%20and%20code%20quality?label=Tests%20and%20code%20quality&logo=github)
+![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/nla/nla-arclight?include_prereleases)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
+
 Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211890/ArcLight) for The National Library of Australia.
 
 ## Table of Contents
@@ -16,23 +21,36 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
 * [Running the app](#running-the-app)
 * [Tests](#tests)
 * [Continuous Integration](#continuous-integration)
+    + [Releases](#releases)
 * [Deployment](#deployment)
 * [Linting, Static Analysis & Supply Chain Vulnerability Checking](#linting--static-analysis---supply-chain-vulnerability-checking)
-* [Containers](#containers)
-    + [Single-node Solr](#single-node-solr)
-    + [Zookeeper + SolrCloud cluster](#zookeeper---solrcloud-cluster)
-    + [Populating a local Solr index](#populating-a-local-solr-index)
 
 ## Requirements
 
 * Ruby: 3.1.2
-* Bundler: 2.3.19
+* Bundler: 2.3.26
 
 * System dependencies
     - Solr: 8
     - MySQL: 8
 
+* Gems:
+    - [blacklight-solrcloud-repository](https://github.com/nla/blacklight-solrcloud-repository)
+
 The [GoRails guide](https://gorails.com/setup) has great instructions for setting up Ruby, Rails and MySQL for your operating system.
+
+## Contributing
+
+✏️ This repository uses [conventional commits](https://www.conventionalcommits.org)
+and commit messages are used to generate `CHANGELOG.md` and release body entries.
+
+The most important prefixes you should have in mind are:
+
+* `fix:` which represents bug fixes, and correlates to a SemVer patch.
+* `feat:` which represents a new feature, and correlates to a SemVer minor.
+* `feat!:`, or `fix!:`, `refactor!:`, etc., which represent a breaking change (indicated by the !) and will result in a SemVer major.
+
+Releases are automated via GitHub workflows. See more in the ["Releases"](#releases) section below.
 
 ## Configuration
 
@@ -87,9 +105,6 @@ These variables are mainly used in the `staging` or `production` environment.
 2. Make sure you have MySQL running locally and configured in the `.env.development.local` config file.
 3. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />⚠️  If you are not planning on modifying the index, you can point this at the  devel or test environment Solr cluster.
 4. `bin/setup` installs gems and performs database migrations for the `development` environment.<br /> ⚠️ Gems are installed in `vendor/bundle`.
-5. _(Optional)_ If you'd like to develop locally using containerised services, install
-   [Podman](https://podman.io/), [Podman Desktop](https://podman-desktop.io/) and [podman-compose](https://github.com/containers/podman-compose),
-   then read the [Containers](#containers) section.
 
 ## Running the app
 
@@ -110,12 +125,21 @@ RAILS_ENV=test bin/ci
     * [Cucumber](https://github.com/cucumber/cucumber-rails) - for acceptance testing
     * [Capybara](http://teamcapybara.github.io/capybara/) - simulates web application interaction
     * [Webmock](https://github.com/bblimke/webmock) - HTTP request mocking and stubbing
-* 🚨 Some tests require a Zookeeper + SolrCloud cluster running locally. See [Containers](#containers) section below.
 
 ## Continuous Integration
 
 * CI is performed by [GitHub Actions](https://docs.github.com/en/actions).
 * Workflows are defined in `.github/workflows`.
+
+### Releases
+
+Releases are automated via the `release.yml` GitHub workflow. This uses Google's
+[release-please action](https://github.com/google-github-actions/release-please-action) to create pull
+requests when changes are pushed to main. It will bump the version automatically and create a release
+when the pull request is merged. Read more about how
+[release-please](https://github.com/googleapis/release-please) works.
+
+🚨 `CHANGELOG.md` is automatically created/updated for each release based on the commit messages.
 
 ## Deployment
 
@@ -134,44 +158,3 @@ The following tools provide linting, security and vulnerability checking of the 
 * [brakeman](https://github.com/presidentbeef/brakeman) provides static analysis checking.
     * Reports are written to `tmp/brakeman.html`
 * [bundler-audit](https://github.com/rubysec/bundler-audit) checks application dependencies for security vulnerabilities.
-
-## Containers
-
-### Single-node Solr
-Prior to deploying a standalone Solr server (e.g. for local testing), copy any required Blacklight Solr config files from the [solr-trove](https://github.com/nla/solr-trove/tree/master/solr-config/src/main/resources/arclight) repo.
-
-`./solr/docker-compose.yml` can be used to spin up a local Solr instance. This instance is configured to pre-create a core named `arclight`.
-
-```bash
-podman-compose -f ./solr/docker-compose.yml up -d
-```
-
-You should now be able to load the Solr Dashboard at: http://127.0.0.1:8983/solr/#/
-
-### Zookeeper + SolrCloud cluster
-
-`./solr/cloud/docker-compose.yml` can be used to spin up a local Zookeeper + SolrCloud cluster.
-This cluster is required by the RSpec tests for `Blacklight::SolrCloud::Repository`.
-
-In order to run this cluster successfully, you'll need a Podman machine with at least 4GB of memory and 6GB of disk space.
-
-The Podman machine created below will be initialised with 2 CPUs and 6GB of memory and disk space.
-
-```bash
-podman machine init --cpus 2 --disk-size 6144 --memory 6144      # initialise a Podman machine
-podman machine start                                             # start the Podman machine
-podman-compose -f ./solr/cloud/docker-compose.yml up -d          # spin up a ZK + SolrCloud cluster
-podman-compose -f ./solr/cloud/docker-compose.yml down --volumes # pull down the ZK + SolrCloud cluster
-```
-
-The Solr Cloud Dashboard is located at: http://127.0.0.1:8983/solr/#/
-
-### Populating a local Solr index
-
-There is a sample of Voyager MARC records in `./solr/voy-sample` that can be used for local development.
-
-Ensure you're connected to Solr, then execute the command below in a terminal:
-
-```bash
-bin/rails solr:marc:index MARC_FILE=./solr/voy-sample
-```
