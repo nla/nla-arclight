@@ -4,7 +4,6 @@
 ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/nla/nla-arclight?include_prereleases)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
-
 Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/samvera/pages/405211890/ArcLight) for The National Library of Australia.
 
 ## Table of Contents
