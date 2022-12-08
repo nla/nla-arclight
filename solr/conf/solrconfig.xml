@@ -40,6 +40,12 @@
 
   <codecFactory class="solr.SchemaCodecFactory"/>
 
+  <updateHandler class="solr.DirectUpdateHandler2">
+    <updateLog>
+      <str name="dir">${solr.ulog.dir:}</str>
+    </updateLog>
+  </updateHandler>
+
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
 
   <requestDispatcher handleSelect="true" >
