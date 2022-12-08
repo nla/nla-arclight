@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.4"
+ruby "3.1.3"
 
 # All runtime config comes from the UNIX environment
 # but we use dotenv to store that in files for development and testing
@@ -84,7 +84,7 @@ gem "blacklight-locale_picker"
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
-gem "blacklight-solrcloud-repository", git: "https://github.com/nla/blacklight-solrcloud-repository", tag: "0.1.0"
+gem "blacklight-solrcloud-repository", git: "https://github.com/nla/blacklight-solrcloud-repository", tag: "0.2.1"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
