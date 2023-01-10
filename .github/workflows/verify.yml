@@ -29,19 +29,15 @@ jobs:
           bundle install
 
       - name: RuboCop
-        run: bundle exec rubocop --parallel
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bundle exec rubocop --parallel
 
-      - name: Brakeman code scanning with reviewdog
-        uses: reviewdog/action-brakeman@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Bundler Audit Action
-        uses: andrewmcodes/bundler-audit-action@v0.1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Brakeman code scanning
+        run: |
+          bundle exec brakeman -q -o tmp/brakeman.html
+      - name: Bundler Audit check
+        run: |
+          bundle exec bundle audit check --update
 
   tests:
     concurrency:
