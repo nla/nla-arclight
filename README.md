@@ -1,6 +1,6 @@
 # nla-arclight
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/nla/nla-arclight/Tests%20and%20code%20quality?label=Tests%20and%20code%20quality&logo=github)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nla/nla-arclight/verify.yml?branch=main&logo=github)
 ![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/nla/nla-arclight?include_prereleases)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
