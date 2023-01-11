@@ -44,5 +44,5 @@ When("I click the log out link") do
 end
 
 Then("I should be redirected to the home page") do
-  expect(page).to have_content("Archival Collections")
+  expect(page).to have_content("Finding Aids")
 end
