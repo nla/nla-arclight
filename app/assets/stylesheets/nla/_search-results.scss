@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import "variables";
+
+.al-grouped-results {
+  .al-grouped-title-bar {
+    background: color("white");
+  }
+  
+  .al-document-extent {
+    margin-left: 1em;
+  }
+  .al-document-abstract-or-scope {
+    font-size: 1em;
+  }
+  
+  .breadcrumb-links {
+    a {
+      color: inherit;
+      border-bottom: none;
+    }
+  }
+  
+  .al-grouped-repository {
+    display: none;
+  }
+  
+  .grouped-documents {
+    margin-left: 3rem;
+    
+    .al-grouped-more a {
+      font-size: 0.875rem;
+      margin-left: 1em;
+    }
+  }
+}
+
+.documents-list {
+  .document {
+    margin-top: 0;
+    padding: 1rem;
+    
+    &:focus,
+    &:hover {
+      background: color("white");
+      box-shadow: 3px 3px 6px 0 rgba(112,57,150,0.1);
+    }
+    
+    .document-thumbnail {
+      float: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+  }
+}
