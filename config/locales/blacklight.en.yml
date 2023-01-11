@@ -33,6 +33,27 @@ en:
     welcome: 'Welcome LSP Board!'
     and: 'and'
     or: 'or'
+    footer:
+      acknowledgement_of_country:
+        title: 'Acknowledgement of Country'
+        description: 'The National Library of Australia acknowledges Australia’s First Nations Peoples – the First Australians – as the Traditional Owners and Custodians of this land and gives respect to the Elders – past and present – and through them to all Australian Aboriginal and Torres Strait Islander people.'
+      contact:
+        title: 'Contact us'
+        telephone: '+61 (0)2 6262 1111'
+        address: 'Parkes Place<br>Canberra ACT 2600<br>Australia'
+        opening_hours: 'Opening hours'
+        more_contact_info: 'More contact information'
+      connect: 
+        title: 'Connect'
+        enews: 'Subscribe to our newsletter'
+      quicklinks:
+        title: 'Quicklinks'
+        jobs: 'Jobs at the Library'
+        grants: 'Awards and Grants'
+        copies_direct: 'Copies Direct'
+        getting_started: 'Getting Started'
+        feedback: 'User Feedback'
+        media: 'Media Centre'
 
     modal:
       close: "Close"
