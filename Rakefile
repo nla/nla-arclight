@@ -3,6 +3,6 @@
 
 require_relative "config/application"
 
-Rails.application.load_tasks
+Rails.application.load_tasks if Rake::Task.tasks.empty?
 
 require "solr_wrapper/rake_task" unless Rails.env.production? || Rails.env.staging?

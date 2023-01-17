@@ -1,9 +1,6 @@
+# This migration comes from catalogue_patrons_engine (originally 20230117053539)
 class AddPatronFieldsToUser < ActiveRecord::Migration[7.0]
   def change
-    # A lot of patrons don't have email addresses
-    # remove_index :users, :email
-    # remove_index :users, :reset_password_token
-
     add_column :users, :patron_id, :bigint, :after => :id, null: false
     add_column :users, :voyager_id, :bigint, :after => :patron_id, null: false
     add_column :users, :name_given, :string, :after => :voyager_id

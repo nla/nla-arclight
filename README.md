@@ -35,6 +35,7 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
 
 * Gems:
     - [blacklight-solrcloud-repository](https://github.com/nla/blacklight-solrcloud-repository)
+    - [catalogue-patrons](https://github.com/nla/catalogue-patrons)
 
 The [GoRails guide](https://gorails.com/setup) has great instructions for setting up Ruby, Rails and MySQL for your operating system.
 
@@ -102,16 +103,16 @@ These variables are mainly used in the `staging` or `production` environment.
 
 1. Clone the app from GitHub.
 2. Make sure you have MySQL running locally and configured in the `.env.development.local` config file.
-3. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />⚠️  If you are not planning on modifying the index, you can point this at the  devel or test environment Solr cluster.
+3. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />⚠️  If you are not planning on modifying the index, you can point this at the devel or test environment Solr cluster.
 4. `bin/setup` installs gems and performs database migrations for the `development` environment.<br /> ⚠️ Gems are installed in `vendor/bundle`.
 
 ## Running the app
 
-* `bin/run` runs the Rails server at http://localhost:3000.
+* `bin/run` runs the Rails server at http://localhost:4000. (Port 4000 is used to avoid colliding with nla-blacklight when running locally at the same time.)
     * By default Rails will load the `development` environment.
     * The runtime environment can be changed by defining `RAILS_ENV` before executing a command/script. e.g.
 
-```bash
+```bash 
 RAILS_ENV=test bin/ci
 ```
 
@@ -157,3 +158,6 @@ The following tools provide linting, security and vulnerability checking of the 
 * [brakeman](https://github.com/presidentbeef/brakeman) provides static analysis checking.
     * Reports are written to `tmp/brakeman.html`
 * [bundler-audit](https://github.com/rubysec/bundler-audit) checks application dependencies for security vulnerabilities.
+
+## License
+The application is available as open source under the terms of the [Apache 2 License](https://opensource.org/licenses/Apache-2.0).

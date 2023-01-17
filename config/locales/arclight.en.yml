@@ -8,7 +8,7 @@ en:
       scope_and_contents: Scope and Contents
       scope_note: 'Scope note: '
       view_all: View
-    masthead_heading: Archival Collections
+    masthead_heading: Finding Aids
     repositories: Repositories
     request:
       container: Request
@@ -26,7 +26,7 @@ en:
       view_more: view more ▶
     views:
       home:
-        title: Archival Collections | National Library of Australia
+        title: Finding Aids | National Library of Australia
       index:
         all_group_results: view all %{count}
         all_results: All results
