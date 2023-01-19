@@ -12,10 +12,6 @@ Rails.application.routes.draw do
       concerns :range_searchable
     end
 
-    devise_for :users, controllers: {
-      sessions: "users/sessions"
-    }
-
     concern :exportable, Blacklight::Routes::Exportable.new
 
     resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do

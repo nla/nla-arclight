@@ -78,13 +78,13 @@ gem "bootstrap", "~> 4.0"
 gem "twitter-typeahead-rails", "0.11.1"
 gem "sassc-rails", "~> 2.1"
 gem "jquery-rails"
-gem "devise"
 gem "blacklight-locale_picker"
 
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
 gem "blacklight-solrcloud-repository", git: "https://github.com/nla/blacklight-solrcloud-repository"
+gem "catalogue-patrons", git: "https://github.com/nla/catalogue-patrons"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
