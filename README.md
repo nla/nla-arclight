@@ -32,6 +32,7 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
 * System dependencies
     - Solr: 8
     - MySQL: 8
+    - Redis: 7
 
 * Gems:
     - [blacklight-solrcloud-repository](https://github.com/nla/blacklight-solrcloud-repository)
@@ -81,6 +82,7 @@ These variables are mainly used in the deployment environment.
 
     PIDFILE - relocates the server pid file outside of the application directory
     ARCLIGHT_TMP_PATH - relocates the caching directory outside of the application directory
+    REDIS_URL - Redis cache
 
 #### External services
     GETALIBRARYCARD_BASE_URL - base URL for Get a Library Card

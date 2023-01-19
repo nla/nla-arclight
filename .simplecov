@@ -13,9 +13,9 @@ SimpleCov.start "rails" do
     source_file.lines.count < 10
   end
 
-  # Filter out Blacklight files that are being overridden, but not modified
-  add_filter "app/components/blacklight/response/pagination_component.rb"
-  add_filter "app/models/marc_indexer.rb"
+  add_filter "app/controllers/catalog_controller.rb"
+  add_filter "app/models/search_builder.rb"
+  add_filter "app/models/solr_document.rb"
 
   add_group "Components", "app/components"
   add_group "Presenters", "app/presenters"
