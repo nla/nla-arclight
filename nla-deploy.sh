@@ -33,8 +33,6 @@ if [[ "$RAILS_ENV" == "staging" || "$RAILS_ENV" == "production" ]]; then
 fi
 
 bundle install
-RAILS_ENV=$RAILS_ENV bundle exec rails db:drop
-RAILS_ENV=$RAILS_ENV bundle exec rails db:create
 RAILS_ENV=$RAILS_ENV bundle exec rails db:migrate
 RAILS_ENV=$RAILS_ENV bundle exec rails assets:precompile
 
