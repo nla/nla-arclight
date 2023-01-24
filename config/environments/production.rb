@@ -56,12 +56,14 @@ Rails.application.configure do
   config.log_tags = [:request_id]
 
   # Use a different cache store in production.
-  # Use a different cache store in production.
-  if ENV["ARCLIGHT_TMP_PATH"].present?
-    config.cache_store = :file_store, ENV["ARCLIGHT_TMP_PATH"]
-  else
-    abort("ARCLIGHT_TMP_PATH must be defined")
-  end
+  config.cache_store = :redis_cache_store, {
+    driver: :hiredis,
+    url: ENV["REDIS_URL"],
+    timeout: 30,
+    reconnect_attempts: 3,
+    expires_in: 1.day,
+    namespace: "arclight"
+  }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
