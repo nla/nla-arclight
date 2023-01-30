@@ -52,6 +52,7 @@ jobs:
       DB_PASSWORD: root
       RAILS_ENV: test
       DATABASE_URL: "mysql2://root:root@localhost:3306/arclight_test"
+      PATRONS_DB_URL: "mysql2://root:root@localhost:3306/arclight_test"
       GETALIBRARYCARD_BASE_URL: "https://example.nla.gov.au"
       GETALIBRARYCARD_AUTH_PATH: "/getalibrarycard/authenticate.xml/%s/%s"
       GETALIBRARYCARD_PATRON_DETAILS_PATH: "/getalibrarycard/patrons/details/%s.xml"
