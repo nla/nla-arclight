@@ -69,7 +69,8 @@ values in your terminal before running the application.
 ### Environment Variables
 
 #### ArcLight database
-    DATABASE_URL
+    DATABASE_URL - Application database for Blacklight
+    PATRON_DB_URL - Shared user and sessions database
 
 #### Solr
     SOLR_URL - single node Solr
@@ -89,10 +90,22 @@ These variables are mainly used in the deployment environment.
     GETALIBRARYCARD_AUTH_PATH - path to the authentication endpoint of Get a Library Card
     GETALIBRARYCARD_PATRON_DETAILS_PATH - path to the user details endpoint of Get a Library Card
 
-    KEYCLOAK_CLIENT - name of the client
-    KEYCLOAK_SECRET - secret defined in the client credentials
-    KEYCLOAK_URL - base URL of the Keycloak server e.g. https://login-devel.nla.gov.au
-    KEYCLOAK_REALM - name of the Keycloak realm
+    PATRON_AUTH_URL - base URL for User Registration (a.k.a. "UserReg")
+    PATRON_AUTH_ENDPOINT - path to the authentication endpoint
+
+    KEYCLOAK_URL - URL of the Keycloak server
+
+    KC_SOL_CLIENT - Staff Official Loan realm client name
+    KC_SOL_SECRET - Staff Official Loan realm client secret
+    KC_SOL_REALM - realm name for Staff Official Loan
+
+    KC_SPL_CLIENT - Staff Personal Loan realm client name
+    KC_SPL_SECRET - Staff Personal Loan realm client secret
+    KC_SPL_REALM - realm name for Staff Personal Loan
+
+    KC_SHARED_CLIENT - Staff Shared account realm client name
+    KC_SHARED_SECRET - Staff Shared account realm client secret
+    KC_SHARED_REALM - realm name for Staff Shared account realm
 
 #### Rails settings
 These variables are mainly used in the `staging` or `production` environment.
@@ -105,8 +118,9 @@ These variables are mainly used in the `staging` or `production` environment.
 
 1. Clone the app from GitHub.
 2. Make sure you have MySQL running locally and configured in the `.env.development.local` config file.
-3. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />⚠️  If you are not planning on modifying the index, you can point this at the devel or test environment Solr cluster.
-4. `bin/setup` installs gems and performs database migrations for the `development` environment.<br /> ⚠️ Gems are installed in `vendor/bundle`.
+3. Make sure you have Redis running locally and configured in the `.env.development.local` config file.
+4. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />⚠️  If you are not planning on modifying the Solr index, you can point this at the devel or test environment Solr cluster.
+5. `bin/setup` installs gems and performs database migrations for the `development` environment.<br /> ⚠️ Gems are installed in `vendor/bundle`.
 
 ## Running the app
 
@@ -123,8 +137,7 @@ RAILS_ENV=test bin/ci
 * `bin/ci` contains all the tests and security vulnerability checks for the app.
 * `tmp/test.log` will use the production logging format *NOT* the development one.
 * The following test frameworks are used:
-    * [RSpec](https://rspec.info/) - for BDD testing
-    * [Cucumber](https://github.com/cucumber/cucumber-rails) - for acceptance testing
+    * [RSpec](https://rspec.info/)
     * [Capybara](http://teamcapybara.github.io/capybara/) - simulates web application interaction
     * [Webmock](https://github.com/bblimke/webmock) - HTTP request mocking and stubbing
 
@@ -160,6 +173,7 @@ The following tools provide linting, security and vulnerability checking of the 
 * [brakeman](https://github.com/presidentbeef/brakeman) provides static analysis checking.
     * Reports are written to `tmp/brakeman.html`
 * [bundler-audit](https://github.com/rubysec/bundler-audit) checks application dependencies for security vulnerabilities.
+* [strong-migrations](https://github.com/ankane/strong_migrations) catches unsafe migrations in development.
 
 ## License
 The application is available as open source under the terms of the [Apache 2 License](https://opensource.org/licenses/Apache-2.0).
