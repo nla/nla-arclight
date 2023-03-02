@@ -44,6 +44,10 @@
     <updateLog>
       <str name="dir">${solr.ulog.dir:}</str>
     </updateLog>
+
+    <autoCommit>
+      <maxTime>120000</maxTime>
+    </autoCommit>
   </updateHandler>
 
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
