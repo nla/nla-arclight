@@ -10,15 +10,18 @@ GIT
 
 GIT
   remote: https://github.com/nla/catalogue-patrons
-  revision: cd5874aa92d0ff043b1546070cd7fc587b8cdc44
+  revision: ff017fcf150abf570adc0f1a0d4b1142e94269fa
   branch: main
   specs:
-    catalogue-patrons (2.0.0)
+    catalogue-patrons (3.0.0)
       activerecord-session_store (~> 2.0)
       brakeman
       bundler-audit
       devise
       dotenv-rails
+      flipper
+      flipper-redis
+      flipper-ui
       omniauth-keycloak (~> 1.4)
       omniauth-rails_csrf_protection (~> 1.0)
       rails (~> 7.0.4)
@@ -213,6 +216,17 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    flipper (0.26.0)
+      concurrent-ruby (< 2)
+    flipper-redis (0.26.0)
+      flipper (~> 0.26.0)
+      redis (>= 3.0, < 6)
+    flipper-ui (0.26.0)
+      erubi (>= 1.0.0, < 2.0.0)
+      flipper (~> 0.26.0)
+      rack (>= 1.4, < 3)
+      rack-protection (>= 1.5.3, <= 4.0.0)
+      sanitize (< 7)
     fugit (1.8.1)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
@@ -238,7 +252,7 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.6.2)
+    irb (1.6.3)
       reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
@@ -343,7 +357,7 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.5.5)
     parallel (1.22.1)
-    parser (3.2.1.0)
+    parser (3.2.1.1)
       ast (~> 2.4.1)
     popper_js (1.16.1)
     public_suffix (5.0.1)
@@ -410,7 +424,7 @@ GEM
     rspec-expectations (3.12.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-mocks (3.12.3)
+    rspec-mocks (3.12.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-rails (6.0.1)
@@ -451,6 +465,9 @@ GEM
     rubyzip (2.3.2)
     rufus-scheduler (3.8.2)
       fugit (~> 1.1, >= 1.1.6)
+    sanitize (6.0.1)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.12.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -497,7 +514,7 @@ GEM
       rubocop-performance (= 1.15.2)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    strong_migrations (1.4.3)
+    strong_migrations (1.4.4)
       activerecord (>= 5.2)
     thor (1.2.1)
     tilt (2.1.0)
