@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.0"
+ruby "3.2.1"
 
 # All runtime config comes from the UNIX environment
 # but we use dotenv to store that in files for development and testing
@@ -52,7 +52,7 @@ gem "jbuilder"
 
 # Use hiredis adapter for better performance than the "redis" gem
 gem "hiredis", "~> 0.6.3"
-gem "hiredis-client", "~> 0.12.1"
+gem "hiredis-client", "~> 0.13.0"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 5.0"
