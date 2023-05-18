@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/nla/blacklight-solrcloud-repository
   revision: 333edeaa8a0fa52428ea4fbdcca6b630c0bbf0ee
-  tag: 0.2.3
+  branch: main
   specs:
     blacklight-solrcloud-repository (0.2.3)
       blacklight (~> 7.30)
@@ -10,8 +10,8 @@ GIT
 
 GIT
   remote: https://github.com/nla/catalogue-patrons
-  revision: 8ec032fb07a03b4be26354a3732eba56ed0a43a8
-  tag: 3.1.0
+  revision: aa6959725bb1c2e31adcafda05af4a0ef803c7e7
+  branch: main
   specs:
     catalogue-patrons (3.1.0)
       activerecord-session_store (~> 2.0)
