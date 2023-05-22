@@ -1,6 +1,11 @@
 @charset "UTF-8";
 @import "variables";
 
+
+.blacklight-catalog-index #appliedParams {
+  margin-bottom: 0.5rem !important;
+}
+
 .constraints-container {
   margin-top: 1rem;
   
@@ -51,6 +56,10 @@
 }
 
 .sort-pagination {
+  .justify-content-center {
+    justify-content: start !important;
+  }
+
   .result-type-group, .view-type-group {
     border: 1px solid color("purple");
     background-color: color("white");
