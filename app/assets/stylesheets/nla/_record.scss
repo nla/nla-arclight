@@ -16,3 +16,8 @@
 .tab-content {
   background-color: color("white");
 }
+
+li.al-collection-context .al-online-content-icon svg,
+.al-online-content-icon .blacklight-icons svg {
+  fill: color("purple");
+}
