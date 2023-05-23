@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import "variables";
+
+.nav-tabs {
+  background-color: color("gray-very-light");
+  border-bottom: none;
+  
+  .nav-item {
+    .active {
+      background-color: color("white");
+      border-bottom: none;
+    }
+  }
+}
+
+.tab-content {
+  background-color: color("white");
+}
