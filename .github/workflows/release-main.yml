@@ -5,7 +5,7 @@
 name: Release automation
 on:
   push:
-    branches: [release]
+    branches: [main]
 jobs:
   release-please:
     name: Create a new release
@@ -15,7 +15,6 @@ jobs:
         id: release
         with:
           token: ${{ secrets.GH_TOKEN }}
-          default_branch: release
           release-type: ruby
           package-name: nla-arclight
           bump-minor-pre-major: true
