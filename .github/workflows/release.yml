@@ -15,7 +15,7 @@ jobs:
         id: release
         with:
           token: ${{ secrets.GH_TOKEN }}
-          default_branch: release
+          default-branch: release
           release-type: ruby
           package-name: nla-arclight
           bump-minor-pre-major: true
