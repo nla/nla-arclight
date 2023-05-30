@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.0.2](https://github.com/nla/nla-arclight/compare/1.0.1...1.0.2) (2023-05-30)
+
+
+### Bug Fixes
+
+* change colour of online icon ([098b05e](https://github.com/nla/nla-arclight/commit/098b05e04a1059f7a7e3210748f72df648b6a400))
+* display facets on the right hand side of results ([402a83c](https://github.com/nla/nla-arclight/commit/402a83c6fd8b692b6006f536e5852d437e51ed4f))
+* make selected tab clear ([95ae9c8](https://github.com/nla/nla-arclight/commit/95ae9c8859bb1165bd26d1e54fac12c5b544fa76))
+* search term highlighting in arclight results ([cfdb510](https://github.com/nla/nla-arclight/commit/cfdb510c8322eaca68de845649a3b3ed5a51a4a1))
+* Style pagination at top and bottom of search results ([8ef80f5](https://github.com/nla/nla-arclight/commit/8ef80f53f9a82466ea8544ea1935438b437d016d))
+* Style result tools (eg sortby) ([cd1e575](https://github.com/nla/nla-arclight/commit/cd1e5750f51a1eb1ae6fb5093abe81c77b2f4422))
+* style search result limits as pills ([6516ff5](https://github.com/nla/nla-arclight/commit/6516ff5dc2c053edb9af0d8e789fa4df1a433f38))
+* style view online link to be button (would be better to assign btn CSS class to &lt;a&gt;) ([2510c72](https://github.com/nla/nla-arclight/commit/2510c72d574a6583611a8459a9d31ec67a0ca016))
+* update online icon colour ([fb8b971](https://github.com/nla/nla-arclight/commit/fb8b97106ac2772824523bd650b3ababc73842c0))
+
+
+### Build System
+
+* update version of bundler in Gemfile.lock ([96a5ea9](https://github.com/nla/nla-arclight/commit/96a5ea9c630708eb4cd05e1f4109a6abd168e1ca))
+
+
+### Miscellaneous
+
+* bump version ([c0b1454](https://github.com/nla/nla-arclight/commit/c0b1454beac54098280835c68e4e2837ee7b2fd7))
+* cleanup code coverage ([11735e9](https://github.com/nla/nla-arclight/commit/11735e97046fd96671ae75185eafc3f4f1e672f8))
+* integrate renaming of staff shared login ([a905d16](https://github.com/nla/nla-arclight/commit/a905d1600b3cb472b35f55d4858b79a47fb47ee8))
+* resolve hotfix changes into main ([00f73b7](https://github.com/nla/nla-arclight/commit/00f73b75412a6f9b2ce0bb1ec97c01f81c217708))
+* upgrade dependencies ([1d45eda](https://github.com/nla/nla-arclight/commit/1d45eda54f51b5a0055e30ae79e0b2342982f41f))
+* upgrade gems and yarn packages ([ff3f10e](https://github.com/nla/nla-arclight/commit/ff3f10ee3866d67f451be8306dc5280abb890ec6))
+
 ## 1.0.0 (2023-05-11)
 
 
