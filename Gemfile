@@ -88,7 +88,7 @@ gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
 gem "blacklight-solrcloud-repository", git: "https://github.com/nla/blacklight-solrcloud-repository", tag: "0.2.3"
-gem "catalogue-patrons", git: "https://github.com/nla/catalogue-patrons", tag: "3.1.0"
+gem "catalogue-patrons", git: "https://github.com/nla/catalogue-patrons", tag: "3.2.0"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "blacklight-solrcloud-repository", path: "../blacklight-solrcloud-repository"
 # gem "catalogue-patrons", path: "../catalogue-patrons"
