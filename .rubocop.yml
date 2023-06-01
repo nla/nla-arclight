@@ -2,6 +2,7 @@ require:
   - standard
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-capybara
 
 inherit_gem:
   standard: config/base.yml
@@ -34,3 +35,5 @@ RSpec/MultipleExpectations:
   Enabled: false
 Bundler/DuplicatedGem:
   Enabled: false
+Capybara:
+  Enabled: true
