@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/nla/catalogue-patrons
-  revision: 584ebdc0b3b9ccda2e176861819a0cb3976959d0
+  revision: 5cf75b6164c1dd341cd7e27a32342c024e75ac34
   branch: main
   specs:
     catalogue-patrons (3.2.0)
@@ -245,7 +245,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (2.3.0)
     httpclient (2.8.3)
-    i18n (1.13.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
       actionpack (>= 6.0.0)
