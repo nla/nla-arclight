@@ -65,7 +65,7 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
     config.add_show_tools_partial(:citation)
 
-    #config.add_nav_action(:bookmark, partial: "blacklight/nav/bookmark", if: :render_bookmarks_control?)
+    # config.add_nav_action(:bookmark, partial: "blacklight/nav/bookmark", if: :render_bookmarks_control?)
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
