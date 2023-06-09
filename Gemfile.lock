@@ -1,19 +1,9 @@
 GIT
-  remote: https://github.com/nla/blacklight-solrcloud-repository
-  revision: 631f07f880099d6bf90d1b53479297e12fee75f0
+  remote: https://github.com/nla/nla-blacklight_common
+  revision: 486c6c1d13f811c5ea8139c57bd6cf1136920340
   branch: main
   specs:
-    blacklight-solrcloud-repository (0.2.3)
-      blacklight (~> 7.30)
-      rsolr
-      zk (~> 1.10)
-
-GIT
-  remote: https://github.com/nla/catalogue-patrons
-  revision: 07ebdb173e298c5d981da5903b6f8773a5361083
-  branch: main
-  specs:
-    catalogue-patrons (3.2.0)
+    nla-blacklight_common (0.1.0)
       activerecord-session_store (~> 2.0)
       annotaterb
       brakeman
@@ -26,7 +16,9 @@ GIT
       omniauth-keycloak (~> 1.4)
       omniauth-rails_csrf_protection (~> 1.0)
       rails (~> 7.0.4)
+      rsolr
       rufus-scheduler (~> 3.8)
+      zk (~> 1.10)
 
 GEM
   remote: https://rubygems.org/
@@ -605,14 +597,12 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   blacklight-locale_picker
-  blacklight-solrcloud-repository!
   blacklight_range_limit (~> 8.2)
   bootsnap
   bootstrap (~> 4.0)
   brakeman
   bundler-audit
   capybara
-  catalogue-patrons!
   database_cleaner-active_record
   debug
   dotenv-rails
@@ -625,6 +615,7 @@ DEPENDENCIES
   jquery-rails
   lograge
   mysql2 (~> 0.5)
+  nla-blacklight_common!
   nokogiri (>= 1.13.9)
   puma (~> 6.0)
   rails (~> 7.0.4)
