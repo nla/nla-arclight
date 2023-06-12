@@ -87,11 +87,9 @@ gem "blacklight-locale_picker"
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
-gem "blacklight-solrcloud-repository", git: "https://github.com/nla/blacklight-solrcloud-repository", branch: "main"
-gem "catalogue-patrons", git: "https://github.com/nla/catalogue-patrons", branch: "main"
+gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "main"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
-# gem "blacklight-solrcloud-repository", path: "../blacklight-solrcloud-repository"
-# gem "catalogue-patrons", path: "../catalogue-patrons"
+# gem "nla-blacklight_common", path: "../nla-blacklight_common"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
