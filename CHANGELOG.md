@@ -1,5 +1,48 @@
 # Changelog
 
+## [2.0.0](https://github.com/nla/nla-arclight/compare/1.0.2...2.0.0) (2023-06-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* use nla-blacklight_common
+
+### Features
+
+* use nla-blacklight_common ([4b0639c](https://github.com/nla/nla-arclight/commit/4b0639c26ac5a82f51ed84429c29eead93033242))
+
+
+### Bug Fixes
+
+* add lower bar to header for application name ([3f6d85d](https://github.com/nla/nla-arclight/commit/3f6d85d65883788ae2fd96d8947902f42a9378f6))
+* change highlight colour ([012b13a](https://github.com/nla/nla-arclight/commit/012b13a93b1aba7681f7b2f644b0f10d3c713265))
+* change search term highlight colour ([535eb63](https://github.com/nla/nla-arclight/commit/535eb63531d7d9c8ec3b8b70a87735995b72ecf1))
+* link record stylesheet ([a6eefea](https://github.com/nla/nla-arclight/commit/a6eefeaaaf97516e95e6e35687132e7e05e8043b))
+* remove expand on bottombar ([197ce74](https://github.com/nla/nla-arclight/commit/197ce74ccbc67bdf326dedffc4c64a6ef0f9a1fe))
+* remove sticky header rule for “environment bar” ([0a6f713](https://github.com/nla/nla-arclight/commit/0a6f7137bea18c3deb3210d55b1233ee26191c9d))
+* reposition and style navbar actions ([c088da2](https://github.com/nla/nla-arclight/commit/c088da2e8eadb0016ffc31d1b7419fbdd61924c9))
+* resolve merge collisions ([dd7accc](https://github.com/nla/nla-arclight/commit/dd7accc5f1ad69711637ccab1341e68c2d33dde5))
+* update icon colour to light purple ([dd08a68](https://github.com/nla/nla-arclight/commit/dd08a68052813527745b63aa260207ed473452b5))
+
+
+### Build System
+
+* update version of bundler in Gemfile.lock ([96a5ea9](https://github.com/nla/nla-arclight/commit/96a5ea9c630708eb4cd05e1f4109a6abd168e1ca))
+
+
+### Styles
+
+* fix rubocop error ([fe8ca67](https://github.com/nla/nla-arclight/commit/fe8ca670d2a98e7c412d7fa27ded994c5f01f916))
+
+
+### Miscellaneous
+
+* bump version ([c0b1454](https://github.com/nla/nla-arclight/commit/c0b1454beac54098280835c68e4e2837ee7b2fd7))
+* merge release 1.0.2 back into main ([7593d1c](https://github.com/nla/nla-arclight/commit/7593d1c3b18cbd07717797d91585c9d069c09ad3))
+* prepare release ([b364a28](https://github.com/nla/nla-arclight/commit/b364a283d6abe5e35f8d2261af7570c0b7380a1b))
+* upgrade dependencies ([d1d698e](https://github.com/nla/nla-arclight/commit/d1d698ed736a90fda7dfc57decbe0f237a0bc1b2))
+* upgrade dependencies ([1d45eda](https://github.com/nla/nla-arclight/commit/1d45eda54f51b5a0055e30ae79e0b2342982f41f))
+
 ## [1.0.2](https://github.com/nla/nla-arclight/compare/1.0.1...1.0.2) (2023-05-30)
 
 
