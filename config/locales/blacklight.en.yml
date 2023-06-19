@@ -155,7 +155,7 @@ en:
           blank: 'You must select a carrier'
           invalid: "You must enter a valid carrier"
 
-    back_to_search: 'Back to Search'
+    back_to_search: 'Back to search results'
     back_to_bookmarks: 'Back to Bookmarks'
 
     search:
@@ -230,7 +230,7 @@ en:
         remove:
           value: 'Remove constraint %{value}'
           label_value: 'Remove constraint %{label}: %{value}'
-      start_over: 'Start Over'
+      start_over: 'New finding aids search'
       index:
         label: '%{label}:'
       show:
