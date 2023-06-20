@@ -1,3 +1,8 @@
+import "@hotwired/turbo-rails"
+import "controllers"
+
+Turbo.session.drive = false
+
 Blacklight.onLoad(function() {
 
   /* Searching within a collection should not yield results */
