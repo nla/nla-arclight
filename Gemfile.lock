@@ -627,7 +627,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0)
   rubocop-rails
   rubocop-rspec
-  rufus-scheduler (~> 3.8)
+  rufus-scheduler (~> 3.9)
   sassc-rails (~> 2.1)
   selenium-webdriver
   shoulda-matchers

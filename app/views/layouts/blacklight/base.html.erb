@@ -12,7 +12,7 @@
     <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
     <%= favicon_link_tag %>
     <%= stylesheet_link_tag "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
+    <%= javascript_importmap_tags %>
     <%= javascript_include_tag "arclight" %>
     <script src="https://kit.fontawesome.com/26bddccc03.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
