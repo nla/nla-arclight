@@ -19,7 +19,3 @@
 #    # size_accessor: 'level'
 default:
   disabled: true
-  pdf:
-    template: 'http://example.com/%{unitid}.pdf'
-  ead:
-    template: 'http://example.com/%{unitid}.xml'
