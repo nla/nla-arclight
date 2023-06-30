@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.1.0](https://github.com/nla/nla-arclight/compare/2.0.0...2.1.0) (2023-06-30)
+
+
+### Features
+
+* adds Sign up link to header nav ([d352ab0](https://github.com/nla/nla-arclight/commit/d352ab02393baccaa6b638a69f409f7d328886d2))
+* disable request and download links ([6656998](https://github.com/nla/nla-arclight/commit/6656998311c5b1271d59fcd6e8d6d607533f2015))
+* ensure login redirects back to last visited page ([2a5a6b6](https://github.com/nla/nla-arclight/commit/2a5a6b61c9a28f58d49c093d5adc428216bcd51c))
+
+
+### Bug Fixes
+
+* add NLA favicon ([2387b04](https://github.com/nla/nla-arclight/commit/2387b043cd4ec0405cba02dd2e4dd6e71922ac69))
+* change display of “Start over” and “Back to search” ([2b9af91](https://github.com/nla/nla-arclight/commit/2b9af918ed2d2fb5c96aacc2861c27c47db4d27c))
+* fix header nav ([0117ff0](https://github.com/nla/nla-arclight/commit/0117ff013082ef80e6b978ce66e371c1c24117d2))
+
+
+### Continuous Integration
+
+* add workflow for sprint 3 release ([3410a28](https://github.com/nla/nla-arclight/commit/3410a2821676176a2aa818b77398b504c916f2f7))
+
+
+### Miscellaneous
+
+* finalise sprint 3 release ([4952ddf](https://github.com/nla/nla-arclight/commit/4952ddf5928bac4f46be2a0fd6d19964c825a5a0))
+* point dependencies back to "main" branch ([08f70e7](https://github.com/nla/nla-arclight/commit/08f70e7054a56001055320a492b62d3f3e7056ab))
+* upgrade bundler ([defabca](https://github.com/nla/nla-arclight/commit/defabca97119e743864393b1eab523fef4273333))
+* upgrade dependencies and increase test coverage ([8382090](https://github.com/nla/nla-arclight/commit/838209032e87e52e7daccef78fe8039f426c5c6c))
+* upgrade JS deps and re-organise scripts ([9fe6982](https://github.com/nla/nla-arclight/commit/9fe698228e2ed1a7ad7079702a613334a3a7d36f))
+
 ## [2.0.0](https://github.com/nla/nla-arclight/compare/1.0.2...2.0.0) (2023-06-13)
 
 
