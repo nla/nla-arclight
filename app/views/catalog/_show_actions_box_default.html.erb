@@ -1,5 +1,6 @@
 <div class='al-show-actions-box'>
   <div class="al-actions-box-container">
+    <%= link_to "View Catalogue Record", document.catalogue_link %>
     <% if document.collection_unitid || document.containers.present? %>
       <div class='al-collection-id'>
         <% if document.collection_unitid %>

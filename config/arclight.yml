@@ -1,0 +1,11 @@
+development:
+  catalogue_record_url: "https://nla.gov.au/nla.cat-vn%s"
+
+test:
+  catalogue_record_url: "https://nla.gov.au/nla.cat-vn%s"
+
+staging:
+  catalogue_record_url: "https://nla.gov.au/nla.cat-vn%s"
+
+production:
+  catalogue_record_url: "https://nla.gov.au/nla.cat-vn%s"
