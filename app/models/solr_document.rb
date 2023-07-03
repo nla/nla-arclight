@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SolrDocument
+  # :nocov:
   include Blacklight::Solr::Document
   include Arclight::SolrDocument
 
@@ -18,4 +19,9 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+  # :nocov:
+
+  def catalogue_link
+    Rails.application.config_for(:arclight)[:catalogue_record_url] % [first("bibid_ssi")]
+  end
 end
