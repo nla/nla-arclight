@@ -69,6 +69,8 @@ class CatalogController < ApplicationController
     config.add_nav_action(:catalogue, partial: "shared/nav/catalogue")
     config.add_nav_action(:eresources, partial: "shared/nav/eresources")
     config.add_nav_action(:finding_aids, partial: "shared/nav/finding_aids")
+    config.add_nav_action(:ask_a_librarian, partial: "shared/nav/ask_a_librarian")
+    config.add_nav_action(:help, partial: "shared/nav/help")
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
