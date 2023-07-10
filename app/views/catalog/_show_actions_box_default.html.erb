@@ -1,10 +1,9 @@
 <div class='al-show-actions-box'>
   <div class="al-actions-box-container">
-    <%= link_to "View Catalogue Record", document.catalogue_link %>
     <% if document.collection_unitid || document.containers.present? %>
       <div class='al-collection-id'>
         <% if document.collection_unitid %>
-          <%= t(:'arclight.views.show.collection_id', id: document.collection_unitid) %>
+          <%= document.collection_unitid %>
         <% end %>
 
         <% if document.collection_unitid && document.containers.present? %>
@@ -16,6 +15,7 @@
         <% end %>
       </div>
     <% end %>
+    <%= link_to t("request_this"), document.catalogue_link, class: "btn btn-primary btn-sm" %>
     <div class='al-show-actions-box-options d-flex'>
       <%= render partial: 'arclight/requests', locals: { document: document } %>
       <div class='al-show-actions-box-bookmarks flex-md-fill'>
