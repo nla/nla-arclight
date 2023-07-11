@@ -32,3 +32,7 @@
 en:
   hello: "Hello world"
   request_this: "Request this via the Catalogue"
+  home:
+    p1: "Finding aids are descriptive lists which give an overview of the scope, content and size of a collection."
+    p2: "If you need help then try our <a href=\"https://www.nla.gov.au/research-guides\">research guides</a>. They cover a variety of topics, and are where you'll find research advice, key resources and featured collection items."
+    p3: "Have a question? Take a look at our <a href=\"https://www.nla.gov.au/faq\">frequently asked questions</a> page. You can also <a href=\"https://www.nla.gov.au/using-library/getting-started/ask-librarian\">Ask a Librarian</a>."
