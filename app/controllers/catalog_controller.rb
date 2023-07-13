@@ -10,6 +10,8 @@ class CatalogController < ApplicationController
   include Arclight::Catalog
   include Arclight::FieldConfigHelpers
 
+  include BentoSessionResetConcern
+
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     if ENV["ZK_HOST"].present? && ENV["SOLR_COLLECTION"].present?
