@@ -10,6 +10,8 @@ class CatalogController < ApplicationController
   include Arclight::Catalog
   include Arclight::FieldConfigHelpers
 
+  before_action :reset_search_session, only: [:show]
+
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     if ENV["ZK_HOST"].present? && ENV["SOLR_COLLECTION"].present?
@@ -406,5 +408,13 @@ class CatalogController < ApplicationController
     # Compact index view
     config.view.compact
     config.view.compact.partials = %i[arclight_index_compact]
+  end
+
+  def reset_search_session
+    referrer = request.referrer
+    if referrer.present? && referrer.include?("/search?q=")
+      Rails.logger.info "Referrer is #{referrer}, resetting search session."
+      session[:search] = {}
+    end
   end
 end
