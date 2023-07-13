@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.2.0](https://github.com/nla/nla-arclight/compare/2.1.0...2.2.0) (2023-07-12)
+
+
+### Features
+
+* add active link to navbar ([f9289ec](https://github.com/nla/nla-arclight/commit/f9289ecb9a9c77338c688823773fe7d710b1b849))
+* display link to catalogue record ([a1b640e](https://github.com/nla/nla-arclight/commit/a1b640e537fea4c6b9947af860bb1f7ed4344675))
+
+
+### Bug Fixes
+
+* Add links to header ([6db6009](https://github.com/nla/nla-arclight/commit/6db6009b41df055eba825dd177e376745598e688))
+
+
+### Code Refactoring
+
+* change catalogue link wording and styling ([22e662e](https://github.com/nla/nla-arclight/commit/22e662e2222bb92b7f7913d57f6f4c1d29c96cf6))
+
+
+### Miscellaneous
+
+* prepare for next sprint ([1699aa3](https://github.com/nla/nla-arclight/commit/1699aa3d429166e6b505ce1f9dda4331edcf44bc))
+* prepare Sprint 4 release ([2d8370c](https://github.com/nla/nla-arclight/commit/2d8370c691e6c000013987097b182023cc28415a))
+* remove unnecessary NodeJS files ([b57333a](https://github.com/nla/nla-arclight/commit/b57333adaec0fed59660dd2c82386eebeaeed98b))
+* resolve release merge back into main ([9ee551b](https://github.com/nla/nla-arclight/commit/9ee551b9c0c9a829f401d29f9d71331829c3f221))
+* update blacklight_common dependency ([9f64494](https://github.com/nla/nla-arclight/commit/9f64494730a4182b91c3359874d4370d36d7144c))
+* update Bundler version in Gemfile.lock ([3c4635d](https://github.com/nla/nla-arclight/commit/3c4635d4504810220468d4656f889abf2cd0d085))
+* update dependencies ([0bdee9f](https://github.com/nla/nla-arclight/commit/0bdee9f4f2d7c5d799fc8849f93a276f57eada28))
+* update nla-blacklight_common dependency ([66724f4](https://github.com/nla/nla-arclight/commit/66724f474ec69beb5ccf7193da822197ba5a0d13))
+
 ## [2.1.0](https://github.com/nla/nla-arclight/compare/2.0.0...2.1.0) (2023-06-30)
 
 
