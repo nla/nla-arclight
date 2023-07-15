@@ -18,7 +18,7 @@
     <%= link_to t("request_this"), document.catalogue_link, class: "btn btn-primary btn-sm" %>
     <div class='al-show-actions-box-options d-flex'>
       <%= render partial: 'arclight/requests', locals: { document: document } %>
-      <div class='al-show-actions-box-bookmarks flex-md-fill'>
+      <div class='al-show-actions-box-bookmarks flex-md-fill mt-3'>
         <%= render partial: 'catalog/bookmark_control', locals: { document: document } %>
       </div>
     </div>
