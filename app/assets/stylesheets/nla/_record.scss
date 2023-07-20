@@ -47,3 +47,20 @@ li.al-collection-context .al-online-content-icon svg,
     }
   }
 }
+
+.document {
+  h1.media svg,
+  .breadcrumb .media svg,
+  li.al-collection-context .blacklight-icons svg {
+    fill: color("gray-medium-light");
+  }
+  
+  .dl-invert dt {
+    color: color("gray-medium-light");
+  }
+  
+  .al-document-container.text-muted {
+    color: color("gray-medium-light") !important;
+    font-size: 0.875rem;
+  }
+}
