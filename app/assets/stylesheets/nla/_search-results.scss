@@ -143,6 +143,11 @@
       margin-bottom: 0;
       padding-left: 0;
     }
+    
+    .al-document-container.text-muted {
+      color: color("gray-medium-light") !important;
+      font-size: 0.875rem;
+    }
   }
 }
 
