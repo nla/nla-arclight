@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.2.1](https://github.com/nla/nla-arclight/compare/2.2.0...2.2.1) (2023-07-27)
+
+
+### Bug Fixes
+
+* Clear bookmarks button styling ([fdbd018](https://github.com/nla/nla-arclight/commit/fdbd01888d6d81156022ac55df8711fe6ff3be19))
+* clear search session when coming from a bento search ([972da94](https://github.com/nla/nla-arclight/commit/972da947623719432a8223d356ab034666c69981))
+* colour contrast for box info and icons ([bb0ce88](https://github.com/nla/nla-arclight/commit/bb0ce88c191a7fdf995be2603c7425c0d8fbee18))
+* hide primary nav on tablet & mobile ([c16c3dd](https://github.com/nla/nla-arclight/commit/c16c3dd2a15d97d659de2876973782af529afd27))
+* link colours ([7fd6088](https://github.com/nla/nla-arclight/commit/7fd608801774b8f4cffbef7bf1938f26585702ce))
+* style bookmarks to match Blacklight ([73fcd4e](https://github.com/nla/nla-arclight/commit/73fcd4e163faf26ff0d339c10cf5cc5093891abd))
+* Update URL for help ([dbe913f](https://github.com/nla/nla-arclight/commit/dbe913f7eaa5cee21ffc7694d296e6b9eefa37f3))
+
+
+### Miscellaneous
+
+* prepare for Sprint 5 ([e282fea](https://github.com/nla/nla-arclight/commit/e282fea5a47426402f8f05222449bdbecf27876c))
+* prepare Sprint 5 release ([db77dca](https://github.com/nla/nla-arclight/commit/db77dca01f6a72e02601d2a89a94680024418ba0))
+* resolve merge collisions ([dde5a6a](https://github.com/nla/nla-arclight/commit/dde5a6ac8602ceb004a66b7f7e87c26ae8c6e5a5))
+* update dependencies ([ab0eb2e](https://github.com/nla/nla-arclight/commit/ab0eb2e4e3992eda710059276f45be8b0a04b63e))
+
 ## [2.2.0](https://github.com/nla/nla-arclight/compare/2.1.0...2.2.0) (2023-07-12)
 
 
