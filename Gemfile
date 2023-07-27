@@ -21,7 +21,7 @@ gem "lograge"
 gem "activerecord-session_store", "~> 2.0"
 
 # catch unsafe migrations
-gem "strong_migrations", "~> 1.4"
+gem "strong_migrations", "~> 1.6"
 
 # in Rails scheduler
 gem "rufus-scheduler", "~> 3.9"
