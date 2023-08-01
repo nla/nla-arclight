@@ -26,15 +26,30 @@
         border-bottom-color: color("orange");
       }
     }
-    
+
     .dropdown-menu {
       border-color: color("purple");
-      
-      .badge {
-        margin-left: 0.25rem;
+
+      .dropdown-item {
+        &:hover,
+        &:focus,
+        &.active {
+          color: color("white");
+          background-color: color("purple");
+        }
       }
     }
+  }
 
+  .dropdown-menu {
+    .dropdown-item {
+      &:hover,
+      &:focus,
+      &.active {
+        color: color("white");
+        background-color: color("purple");
+      }
+    }
   }
   
   &.bottombar {
