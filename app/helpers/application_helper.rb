@@ -8,8 +8,4 @@ module ApplicationHelper
     [blacklight, arclight_engine]
   end
   # :nocov:
-
-  def nla_catalogue_url
-    "#{request.protocol}#{request.host}"
-  end
 end

@@ -48,6 +48,30 @@ li.al-collection-context .al-online-content-icon svg,
   }
 }
 
+.al-grouped-title-bar {
+  h3 a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.grouped-documents {
+  .document {
+    .documentHeader {
+      h4 a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
 .document {
   h1.media svg,
   .breadcrumb .media svg,
@@ -62,5 +86,15 @@ li.al-collection-context .al-online-content-icon svg,
   .al-document-container.text-muted {
     color: color("gray-medium-light") !important;
     font-size: 0.875rem;
+  }
+}
+
+.document-title-heading {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
