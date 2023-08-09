@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.2](https://github.com/nla/nla-arclight/compare/2.2.1...2.2.2) (2023-08-08)
+
+
+### Miscellaneous
+
+* prepare hotfix ([cb73af3](https://github.com/nla/nla-arclight/commit/cb73af3abfda62591576f3217ed414ebe2fd6cae))
+
 ## [2.2.1](https://github.com/nla/nla-arclight/compare/2.2.0...2.2.1) (2023-07-27)
 
 

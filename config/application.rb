@@ -18,7 +18,7 @@ if %w[staging production].include? ENV["RAILS_ENV"]
 end
 
 module NlaArclight
-  VERSION = "2.2.1"
+  VERSION = "2.2.2"
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
