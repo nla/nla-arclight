@@ -92,6 +92,11 @@ gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
 
+gem "yabeda-rails"
+gem "yabeda-puma-plugin"
+gem "yabeda-http_requests"
+gem "yabeda-prometheus"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
