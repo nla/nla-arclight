@@ -58,16 +58,12 @@ li.al-collection-context .al-online-content-icon svg,
   }
 }
 
-.grouped-documents {
-  .document {
-    .documentHeader {
-      h4 a {
-        text-decoration: none;
+.documentHeader {
+  a {
+    text-decoration: none;
 
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
@@ -89,7 +85,7 @@ li.al-collection-context .al-online-content-icon svg,
   }
 }
 
-.document-title-heading {
+.document-title-heading h3 {
   a {
     text-decoration: none;
 
