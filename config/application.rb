@@ -52,6 +52,8 @@ module NlaArclight
       config.logger = ActiveSupport::TaggedLogging.new(logger)
     end
 
+    Prometheus::Client.config.data_store = Prometheus::Client::DataStores::DirectFileStore.new(dir: File.join(ENV.fetch("ARCLIGHT_TMP_PATH", "./tmp"), "prometheus_direct_file_store"))
+
     config.version = VERSION
   end
 end
