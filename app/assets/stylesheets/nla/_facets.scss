@@ -59,7 +59,7 @@
     }
     
     .selected {
-      color: #46474A !important;
+      color: color("gray-medium") !important;
     }
     
     .remove {
@@ -96,6 +96,12 @@
 
 // Blacklight Range Limit slider in modal
 .modal-body {
+  .facet-values {
+    .selected {
+      color: color("gray-medium") !important;
+    }
+  }
+
   .slider_js {
     .slider-handle {
       background-image: none;
