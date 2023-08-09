@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.2.3](https://github.com/nla/nla-arclight/compare/2.2.2...2.2.3) (2023-08-09)
+
+
+### Miscellaneous
+
+* upgrade dependencies ([145e317](https://github.com/nla/nla-arclight/commit/145e317e67ff451ba6b287cdd7887bffd4b9d3ae))
+
+
+### Code Refactoring
+
+* refactor the heading style for all results ([2503005](https://github.com/nla/nla-arclight/commit/2503005dbedd76d933745d4d71e4514398236445))
+
+
+### Build System
+
+* **deps:** bump hiredis-client from 0.14.1 to 0.15.0 ([0c9b627](https://github.com/nla/nla-arclight/commit/0c9b62716fd10b14c9880d7d7ea05bd663cb686a))
+
 ## [2.2.2](https://github.com/nla/nla-arclight/compare/2.2.1...2.2.2) (2023-08-08)
 
 
