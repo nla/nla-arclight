@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.3.0](https://github.com/nla/nla-arclight/compare/2.2.2...2.3.0) (2023-08-10)
+
+
+### Features
+
+* export stats for prometheus ([e4b0c22](https://github.com/nla/nla-arclight/commit/e4b0c22b47881a4fcc5aa6bd172f5e6e0a1c342d))
+
+
+### Bug Fixes
+
+* apply the same styles as in blacklight ([21b3f7b](https://github.com/nla/nla-arclight/commit/21b3f7babd82c2258af3134f1754ce13866f6ea4))
+* change green text in modal to grey ([229438a](https://github.com/nla/nla-arclight/commit/229438aa1ffd8fce133b3c4df01a9fb3a51be291))
+* display range limit chart on apply ([1592152](https://github.com/nla/nla-arclight/commit/159215248daac9dda4064b609ffb004dc5faf3e8))
+
+
+### Miscellaneous
+
+* prepare release ([d9a2121](https://github.com/nla/nla-arclight/commit/d9a21210f536b9f78e9c2348979715a1a183dc53))
+* upgrade dependencies ([145e317](https://github.com/nla/nla-arclight/commit/145e317e67ff451ba6b287cdd7887bffd4b9d3ae))
+
+
+### Code Refactoring
+
+* refactor the heading style for all results ([2503005](https://github.com/nla/nla-arclight/commit/2503005dbedd76d933745d4d71e4514398236445))
+
+
+### Build System
+
+* **deps:** bump hiredis-client from 0.14.1 to 0.15.0 ([0c9b627](https://github.com/nla/nla-arclight/commit/0c9b62716fd10b14c9880d7d7ea05bd663cb686a))
+
 ## [2.2.2](https://github.com/nla/nla-arclight/compare/2.2.1...2.2.2) (2023-08-08)
 
 
