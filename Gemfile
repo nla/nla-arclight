@@ -23,9 +23,6 @@ gem "activerecord-session_store", "~> 2.0"
 # catch unsafe migrations
 gem "strong_migrations", "~> 1.6"
 
-# in Rails scheduler
-gem "rufus-scheduler", "~> 3.9"
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
