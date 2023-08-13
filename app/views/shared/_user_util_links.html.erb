@@ -2,24 +2,22 @@
   <%= render_nav_actions do |config, action|%>
     <li class="nav-item"><%= action %></li>
   <% end %>
-  <% if Flipper.enabled? :authentication %>
-    <% if has_user_authentication_provider? %>
-      <% if current_user %>
-        <li class="nav-item dropdown">
-          <%= link_to current_user, "#", class: "nav-link dropdown-toggle #{active_link_class_controller(%w[bookmarks])}", id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= render partial: "blacklight/nav/bookmark" %>
-            <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete, data: { turbo_method: :delete } %>
-          </div>
-        </li>
-      <% else %>
-      <li class="nav-item">
-        <%= link_to t("blacklight.header_links.register"), "https://www.nla.gov.au/getting-started/your-national-library-card", class: "nav-link" %>
+  <% if has_user_authentication_provider? %>
+    <% if current_user %>
+      <li class="nav-item dropdown">
+        <%= link_to current_user, "#", class: "nav-link dropdown-toggle #{active_link_class_controller(%w[bookmarks])}", id: "navbarDropdown", role: "button", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"} %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= render partial: "blacklight/nav/bookmark" %>
+          <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete, data: { turbo_method: :delete } %>
+        </div>
       </li>
-      <li class="nav-item">
-        <%= link_to t('blacklight.header_links.login'), new_user_session_path, class: 'nav-link' %>
-      </li>
-      <% end %>
+    <% else %>
+    <li class="nav-item">
+      <%= link_to t("blacklight.header_links.register"), "https://www.nla.gov.au/getting-started/your-national-library-card", class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('blacklight.header_links.login'), new_user_session_path, class: 'nav-link' %>
+    </li>
     <% end %>
   <% end %>
 </ul>
