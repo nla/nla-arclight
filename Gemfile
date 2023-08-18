@@ -94,7 +94,6 @@ gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common"
 
 gem "yabeda-rails"
 gem "yabeda-puma-plugin"
-gem "yabeda-http_requests"
 gem "yabeda-prometheus"
 
 group :development, :test do
