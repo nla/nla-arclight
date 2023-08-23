@@ -128,10 +128,5 @@ group :test do
 end
 
 gem "arclight", "~> 1.0"
-
-group :development, :test do
-  gem "solr_wrapper", ">= 0.3"
-end
 gem "rsolr", ">= 1.0", "< 3"
-gem "bootstrap", "~> 5.1"
-gem "sassc-rails", "~> 2.1"
+gem "blacklight-locale_picker"

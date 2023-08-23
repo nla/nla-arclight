@@ -126,6 +126,8 @@ GEM
       ostruct (>= 0.3.2)
       rails (>= 6.1, < 8)
       view_component (>= 2.66, < 3.1)
+    blacklight-locale_picker (1.0.0)
+      rails (>= 5.2.3, < 7.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap (5.3.1)
@@ -170,8 +172,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-guests (0.8.1)
-      devise
     diff-lcs (1.5.0)
     docile (1.4.0)
     domain_name (0.5.20190701)
@@ -578,6 +578,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  blacklight-locale_picker
   bootsnap
   bootstrap (~> 5.1)
   brakeman
@@ -586,8 +587,6 @@ DEPENDENCIES
   cssbundling-rails
   database_cleaner-active_record
   debug
-  devise
-  devise-guests (~> 0.8)
   dotenv-rails
   factory_bot_rails
   faker
