@@ -79,6 +79,10 @@ gem "yabeda-rails"
 gem "yabeda-puma-plugin"
 gem "yabeda-prometheus"
 
+gem "nla-blacklight_common", git: "https://github.com/yetti/nla-blacklight_common", branch: "feat/upgrade"
+# For local development, comment out above ⤴️ and uncomment below ⤵️
+# gem "nla-blacklight_common", path: "../nla-blacklight_common"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
@@ -122,3 +126,12 @@ group :test do
   gem "simplecov", "~> 0.22.0"
   gem "simplecov-json", "~> 0.2.3"
 end
+
+gem "arclight", "~> 1.0"
+
+group :development, :test do
+  gem "solr_wrapper", ">= 0.3"
+end
+gem "rsolr", ">= 1.0", "< 3"
+gem "bootstrap", "~> 5.1"
+gem "sassc-rails", "~> 2.1"

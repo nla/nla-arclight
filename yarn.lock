@@ -161,6 +161,11 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.7.tgz#03b5faa8642a80211708e8f1754cf424e9228718"
   integrity sha512-NqHf4XDkeVaNk/r+TBo2aAMkjPyRPEfZkSqCTijfWukW1zTZ2XLDfvFzbpRCuWZ6gxItgoa/FkILZm27HRh2yg==
 
+"@rails/ujs@^7.0.7-2":
+  version "7.0.7-2"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.7-2.tgz#009bbed10e7d2fdc278a26441dc7457615b616d6"
+  integrity sha512-7/qRnEfs1kKAUoRHqUNPfGqcqJ5h3CmC2APP+l4flyK61kaOQmGbNSeiukmDQAAAhCBVqAdYbwFNnkNMTPSsHg==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -208,12 +213,19 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
+blacklight-frontend@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/blacklight-frontend/-/blacklight-frontend-8.0.1.tgz#20c923ea45e0d9c774ad3d23ef0bed2e31a12c71"
+  integrity sha512-KVQ4txligEJb3RZx4LpGEx/YDWRWgSDP7xdJOzudFLFwZ8eJAwbwc7L5ErXvuNwdSz0o6v5vf6IIr66Hpbg5TA==
+  dependencies:
+    bootstrap ">=4.3.1 <6.0.0"
+
 bootstrap-icons@^1.10.5:
   version "1.10.5"
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.10.5.tgz#5a1bbb1bb2212397d416587db1d422cc9501847c"
   integrity sha512-oSX26F37V7QV7NCE53PPEL45d7EGXmBgHG3pDpZvcRaKVzWMqIRL9wcqJUyEha1esFtM3NJzvmxFXDxjJYD0jQ==
 
-bootstrap@^5.3.1:
+"bootstrap@>=4.3.1 <6.0.0", bootstrap@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.3.1.tgz#8ca07040ad15d7f75891d1504cf14c5dedfb1cfe"
   integrity sha512-jzwza3Yagduci2x0rr9MeFSORjcHpt0lRZukZPZQJT1Dth5qzV7XcgGqYzi39KGAVYR8QEDVoO0ubFKOxzMG+g==
