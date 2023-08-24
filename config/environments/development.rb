@@ -31,9 +31,11 @@ Rails.application.configure do
       driver: :hiredis,
       url: ENV["REDIS_URL"],
       timeout: 30,
-      reconnect_attempts: 3,
-      expires_in: 1.day,
-      namespace: "arclight"
+      reconnect_attempts: 1,
+      expires_in: 1.hour,
+      namespace: "arclight",
+      pool_size: 5,
+      pool_timeout: 5
     }
     config.public_file_server.headers = {
       "Cache-Control" => "public, max-age=#{2.days.to_i}"

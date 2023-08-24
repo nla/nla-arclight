@@ -1,23 +1,20 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 4ccd2dc6d1caa9e9b04b5ead75eee68706ddfa4e
-  branch: main
+  revision: b7952f06ad63fcd6e5e382088d519ef1a77d04ba
+  branch: fix/blac-512-mem-leak
   specs:
     nla-blacklight_common (0.1.5)
       activerecord-session_store (~> 2.0)
       annotaterb
       brakeman
       bundler-audit
+      connection_pool
       devise
       dotenv-rails
-      flipper
-      flipper-redis
-      flipper-ui
       omniauth-keycloak (~> 1.4)
       omniauth-rails_csrf_protection (~> 1.0)
       rails (~> 7.0.4)
       rsolr
-      rufus-scheduler (~> 3.8)
       zk (~> 1.10)
 
 GEM
@@ -189,8 +186,6 @@ GEM
       railties (>= 3.2)
     dry-initializer (3.1.1)
     erubi (1.12.0)
-    et-orbi (1.2.7)
-      tzinfo
     execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -209,20 +204,6 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    flipper (0.28.3)
-      concurrent-ruby (< 2)
-    flipper-redis (0.28.3)
-      flipper (~> 0.28.3)
-      redis (>= 3.0, < 6)
-    flipper-ui (0.28.3)
-      erubi (>= 1.0.0, < 2.0.0)
-      flipper (~> 0.28.3)
-      rack (>= 1.4, < 3)
-      rack-protection (>= 1.5.3, <= 4.0.0)
-      sanitize (< 7)
-    fugit (1.8.1)
-      et-orbi (~> 1, >= 1.2.7)
-      raabro (~> 1.4)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -359,7 +340,6 @@ GEM
     public_suffix (5.0.3)
     puma (6.3.1)
       nio4r (~> 2.0)
-    raabro (1.4.0)
     racc (1.7.1)
     rack (2.2.8)
     rack-protection (3.1.0)
@@ -466,11 +446,6 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    rufus-scheduler (3.9.1)
-      fugit (~> 1.1, >= 1.1.6)
-    sanitize (6.0.2)
-      crass (~> 1.0.2)
-      nokogiri (>= 1.12.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -647,7 +622,6 @@ DEPENDENCIES
   rspec-rails (~> 6.0)
   rubocop-rails
   rubocop-rspec
-  rufus-scheduler (~> 3.9)
   sassc-rails (~> 2.1)
   selenium-webdriver (~> 4.11)
   shoulda-matchers

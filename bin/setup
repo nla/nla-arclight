@@ -7,7 +7,10 @@ def setup
   # bundle check indicates we need to
   system! "gem install bundler --conservative"
   system! 'bundle config --local path "vendor/bundle"'
+  system! "bundle config set --local jobs 3"
+  system! "bundle config set --local retry 3"
   system! "bundle check || bundle install"
+  system! "bundle clean --force"
 
   log "Installing migrations from dependencies"
   # Copies migrations that don't already exist into the `db/migrate` directory
