@@ -135,9 +135,9 @@ GEM
       deprecation
     bootsnap (1.16.0)
       msgpack (~> 1.2)
-    bootstrap (4.6.2)
+    bootstrap (5.3.1)
       autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 1.16.1, < 2)
+      popper_js (>= 2.11.8, < 3)
       sassc-rails (>= 2.0.0)
     brakeman (6.0.1)
     builder (3.2.4)
@@ -336,7 +336,7 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
-    popper_js (1.16.1)
+    popper_js (2.11.8)
     prometheus-client (4.2.1)
     public_suffix (5.0.3)
     puma (6.3.1)
@@ -599,7 +599,7 @@ DEPENDENCIES
   blacklight-locale_picker
   blacklight_range_limit (~> 8.2)
   bootsnap
-  bootstrap (~> 4.0)
+  bootstrap (~> 5.3)
   brakeman
   bundler-audit
   capybara
