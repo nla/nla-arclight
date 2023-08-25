@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.4.0](https://github.com/nla/nla-arclight/compare/2.3.0...2.4.0) (2023-08-25)
+
+
+### Features
+
+* display search results as 2 columns on tablet ([553c9b0](https://github.com/nla/nla-arclight/commit/553c9b0dbf87b62eea43b57943c0178a8b699a70))
+* remove http-requests from metrics ([2cbecb5](https://github.com/nla/nla-arclight/commit/2cbecb517d32f315083a632580c6bf3e70fd8dba))
+
+
+### Bug Fixes
+
+* integrate auth changes in nla-blacklight_common ([9c30ebd](https://github.com/nla/nla-arclight/commit/9c30ebd20c0dac08b548a38929510e17d84a68f8))
+* reduce memory allocation and clean up dependencies ([cf78f42](https://github.com/nla/nla-arclight/commit/cf78f42f0016351860bc1643853bdc1addac750a))
+* remove scheduler config and update bin/setup ([83071a7](https://github.com/nla/nla-arclight/commit/83071a7f7ddd9c4c8d7f0492118bbbf484ce49b1))
+* update blacklight config ([cbc180d](https://github.com/nla/nla-arclight/commit/cbc180d6ec6a98573377bdc6fdfd2bc924d29d67))
+
+
+### Miscellaneous
+
+* configure Redis cache connection pool ([1bfb75c](https://github.com/nla/nla-arclight/commit/1bfb75c4517a2556ca96f32dd0a4791abfa6be91))
+* merge changes from main branch ([608be6c](https://github.com/nla/nla-arclight/commit/608be6ca1ee5672789b1686d45601ac630c95719))
+* prepare release ([fde37fd](https://github.com/nla/nla-arclight/commit/fde37fd777ba4091a60519e0e6ffb33eefff3336))
+* upgrade dependencies ([e012884](https://github.com/nla/nla-arclight/commit/e01288413e1a0b9e69bc2657e0011f2721131102))
+
 ## [2.3.0](https://github.com/nla/nla-arclight/compare/2.2.2...2.3.0) (2023-08-10)
 
 
