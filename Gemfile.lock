@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/yetti/nla-blacklight_common
-  revision: f3764aa77172b0eba77059412de8dfa41be92a12
+  revision: 803226e5e560cf94b9df16f4c8a1541c07c8a1c0
   branch: feat/upgrade
   specs:
     nla-blacklight_common (0.1.5)
@@ -96,7 +96,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     aes_key_wrap (1.1.0)
     annotaterb (4.4.0)
-    anyway_config (2.5.1)
+    anyway_config (2.5.2)
       ruby-next-core (>= 0.14.0)
     arclight (1.0.1)
       blacklight (>= 8.0.0, < 9)
@@ -105,8 +105,6 @@ GEM
       traject (~> 3.0)
       traject_plus (~> 2.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.13.0)
-      execjs (~> 2)
     awesome_print (1.9.2)
     base64 (0.1.1)
     bcrypt (3.1.19)
@@ -130,10 +128,6 @@ GEM
       rails (>= 5.2.3, < 7.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
-    bootstrap (5.3.1)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.11.8, < 3)
-      sassc-rails (>= 2.0.0)
     brakeman (6.0.1)
     builder (3.2.4)
     bundler-audit (0.9.1)
@@ -184,7 +178,6 @@ GEM
       railties (>= 3.2)
     dry-initializer (3.1.1)
     erubi (1.12.0)
-    execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -327,10 +320,9 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
-    popper_js (2.11.8)
     prometheus-client (4.2.1)
     public_suffix (5.0.3)
-    puma (5.6.7)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -372,7 +364,8 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    redis (4.8.1)
+    redis (5.0.7)
+      redis-client (>= 0.9.0)
     redis-client (0.15.0)
       connection_pool
     regexp_parser (2.8.1)
@@ -439,14 +432,6 @@ GEM
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     scrub_rb (1.0.1)
     selenium-webdriver (4.11.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -496,7 +481,6 @@ GEM
     strong_migrations (1.6.1)
       activerecord (>= 5.2)
     thor (1.2.2)
-    tilt (2.2.0)
     timeout (0.4.0)
     traject (3.8.1)
       concurrent-ruby (>= 0.8.0)
@@ -580,7 +564,6 @@ DEPENDENCIES
   binding_of_caller
   blacklight-locale_picker
   bootsnap
-  bootstrap (~> 5.1)
   brakeman
   bundler-audit
   capybara
@@ -597,16 +580,15 @@ DEPENDENCIES
   lograge
   mysql2 (~> 0.5)
   nla-blacklight_common!
-  puma (~> 5.0)
+  puma (~> 6.0)
   rails (~> 7.0.7)
   rails-controller-testing (~> 1.0, >= 1.0.5)
-  redis (~> 4.0)
+  redis (~> 5.0)
   rsolr (>= 1.0, < 3)
   rspec-rails (~> 6.0)
   rubocop-performance
   rubocop-rails
   rubocop-rspec
-  sassc-rails (~> 2.1)
   selenium-webdriver (~> 4.11)
   shoulda-matchers
   simplecov (~> 0.22.0)

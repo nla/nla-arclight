@@ -30,4 +30,5 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  request_this: "Request this via the Catalogue"
   hello: "Hello world"

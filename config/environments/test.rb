@@ -25,7 +25,16 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
-  config.cache_store = :null_store
+  config.cache_store = :redis_cache_store, {
+    driver: :hiredis,
+    url: ENV["REDIS_URL"],
+    timeout: 30,
+    reconnect_attempts: 3,
+    expires_in: 1.hour,
+    namespace: "arclight",
+    pool_size: 5,
+    pool_timeout: 5
+  }
 
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
@@ -34,7 +43,7 @@ Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
 
   # Store uploaded files on the local file system in a temporary directory.
-  config.active_storage.service = :test
+  # config.active_storage.service = :test
 
   config.action_mailer.perform_caching = false
 

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<%= content_tag :html, class: 'no-js', **html_tag_attributes do %>
+<%= content_tag :html, class: 'h-100 no-js', **html_tag_attributes do %>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Internet Explorer use the highest version available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title><%= render_page_title %></title>
     <script>
@@ -25,10 +28,37 @@
       </script>
     <% end %>
 
+    <script src="https://kit.fontawesome.com/26bddccc03.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8KL6FF');</script>
+    <!-- End Google Tag Manager -->
   </head>
-  <body class="<%= render_body_class %>">
+  <body class="<%= render_body_class %> d-flex flex-column h-100">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8KL6FF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <% if Rails.env.development? || Rails.env.staging? %>
+    <div class="bg-danger text-white text-center p-2">
+      [ <% if Rails.env.development? %>
+        DEVELOPMENT
+      <% elsif Rails.env.staging? %>
+        TEST
+      <% end %> ]
+    </div>
+    <% end %>
+
     <nav id="skip-link" role="navigation" aria-label="<%= t('blacklight.skip_links.label') %>">
       <%= link_to t('blacklight.skip_links.search_field'), '#search_field', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
       <%= link_to t('blacklight.skip_links.main_content'), '#main-container', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>

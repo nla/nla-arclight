@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     mount Arclight::Engine => "/"
     mount Yabeda::Prometheus::Exporter => "/metrics"
 
-    root to: "arclight/repositories#index"
+    root to: "arclight/repositories#index" #"catalog#index", defaults: {f: {level: ["Collection"], repository: ["National Library of Australia"]}}
     concern :searchable, Blacklight::Routes::Searchable.new
 
     resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
@@ -28,5 +28,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/", controller: :catalog, action: :index
+  get "/", to: redirect("/finding-aids")
 end

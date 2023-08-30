@@ -13,4 +13,8 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  def catalogue_link
+    Rails.application.config_for(:finding_aids)[:catalogue_record_url] % [first("bibid_ssi")]
+  end
 end

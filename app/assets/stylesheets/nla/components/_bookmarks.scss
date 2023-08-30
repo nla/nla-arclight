@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import "../nla-custom-bootstrap";
+
+.show-document .title-container .bookmark-toggle {
+  border: none;
+  background-color: transparent !important;
+}
+
+.toggle-bookmark {
+  label {
+    cursor: pointer;
+    min-width: auto;
+    color: $light-purple;
+  }
+  
+  input[type=checkbox] {
+    display:none;
+  }
+
+  input[type=checkbox] + span:before { 
+    font: var(--fa-font-light);
+    content: "\e100";
+    margin-right: 0.5rem;
+    }
+  
+  input[type=checkbox]:checked + span:before { 
+    font: var(--fa-font-solid);
+    content: "\e100";
+  }
+  
+  .blacklight-icons {
+    display: none;
+  }
+}

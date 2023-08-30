@@ -147,17 +147,14 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation
     #  (note: It is case sensitive when searching values)
 
-    config.add_facet_field "collection_sim", label: "Collection", limit: 10
-    config.add_facet_field "creator_ssim", label: "Creator", limit: 10
-    config.add_facet_field "creators_ssim", label: "Creator", show: false
-    config.add_facet_field "date_range_sim", label: "Date range", range: true
-    config.add_facet_field "level_sim", label: "Level", limit: 10
-    config.add_facet_field "names_ssim", label: "Names", limit: 10
-    config.add_facet_field "repository_sim", label: "Repository", limit: 10
-    config.add_facet_field "geogname_sim", label: "Place", limit: 10
-    config.add_facet_field "places_ssim", label: "Places", show: false
-    config.add_facet_field "access_subjects_ssim", label: "Subject", limit: 10
-    config.add_facet_field "component_level_isim", show: false
+    config.add_facet_field "collection", field: "collection_ssim", limit: 10
+    config.add_facet_field "creator", field: "creator_ssim", limit: 10
+    config.add_facet_field "date_range", field: "date_range_ssim"
+    config.add_facet_field "level", field: "level_ssim", limit: 10
+    config.add_facet_field "names", field: "names_ssim", limit: 10
+    config.add_facet_field "repository", field: "repository_ssim", limit: 10
+    config.add_facet_field "place", field: "geogname_ssim", limit: 10
+    config.add_facet_field "subject", field: "access_subjects_ssim", limit: 10
 
     # Note that parent_ssim is an array of all ancestor nodes, including the parent
     # parent_ssi is just the immediate parent; it's used in queries for context nav
