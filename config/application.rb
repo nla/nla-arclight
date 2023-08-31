@@ -19,6 +19,8 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module NlaArclight
+  VERSION = "2.4.0"
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
@@ -31,10 +33,19 @@ module NlaArclight
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.autoload_paths << "#{Rails.root}/app/components"
     config.time_zone = "Canberra"
+
+    config.assets.configure do |env|
+      env.cache = ActiveSupport::Cache.lookup_store(:file_store, File.join(ENV.fetch("ARCLIGHT_TMP_PATH", "./tmp"), "asset/cache"))
+    end
+
+    config.assets.prefix = "/finding-aids/assets"
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    Prometheus::Client.config.data_store = Prometheus::Client::DataStores::DirectFileStore.new(dir: File.join(ENV.fetch("ARCLIGHT_TMP_PATH", "./tmp"), "prometheus_direct_file_store"))
+
+    config.version = VERSION
   end
 end

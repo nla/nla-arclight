@@ -1,1 +1,3 @@
-<%= link_to t("request_this"), document.catalogue_link, class: "btn btn-primary btn-sm" %>
+<% catalogue_request ||= Requests::Catalogue.new(document) %>
+
+<%= link_to t("request_this"), catalogue_request.url, class: "btn btn-primary btn-sm" %>

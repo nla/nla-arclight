@@ -18,9 +18,9 @@ SimpleCov.start "rails" do
   add_filter "app/components/blacklight/response/pagination_component.rb"
 
   # filter out files that were overridden from Arclight/Blacklight for styling purposes
-  add_filter "app/controllers/concerns/blacklight/bookmarks.rb"
-  adD_filter "app/components/blacklight/start_over_button_component.rb"
+  add_filter "app/components/blacklight/start_over_button_component.rb"
   add_filter "app/components/blacklight/top_navbar_component.rb"
+  add_filter "app/controllers/concerns/blacklight/bookmarks.rb"
 
   add_group "Components", "app/components"
   add_group "Presenters", "app/presenters"

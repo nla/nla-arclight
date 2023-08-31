@@ -5,6 +5,9 @@ class SolrDocument
   include Blacklight::Solr::Document
   include Arclight::SolrDocument
 
+  # alias this field for the request link
+  attribute :bibid, :string, "bibid_ssi"
+
   # self.unique_key = 'id'
 
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
@@ -13,8 +16,4 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
-
-  def catalogue_link
-    Rails.application.config_for(:finding_aids)[:catalogue_record_url] % [first("bibid_ssi")]
-  end
 end
