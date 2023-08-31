@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Requests
   class Catalogue
     attr_reader :document

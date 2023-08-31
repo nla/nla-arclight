@@ -6,10 +6,6 @@ class ApplicationController < ActionController::Base
 
   before_action :store_user_location!, if: :storable_location?
 
-  def nla_collections
-    redirect_to arclight_repositories_path
-  end
-
   private
 
   # Its important that the location is NOT stored if:

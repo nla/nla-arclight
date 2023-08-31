@@ -79,6 +79,9 @@ gem "yabeda-rails"
 gem "yabeda-puma-plugin"
 gem "yabeda-prometheus"
 
+gem "derailed_benchmarks", group: :development
+gem "stackprof", group: :development
+
 gem "nla-blacklight_common", git: "https://github.com/yetti/nla-blacklight_common", branch: "feat/upgrade"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
@@ -109,7 +112,13 @@ group :development do
   gem "binding_of_caller"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  gem "rack-mini-profiler"
+  # append ?pp=flamegraph to URL for flamegraphs
+  gem "flamegraph"
+  # append ?pp=profile-memory to URL
+  # ?pp=profile-gc to report on GC statistics
+  # ?pp=analyze-memory to report on Object statistics
+  gem "memory_profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

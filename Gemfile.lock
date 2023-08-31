@@ -108,6 +108,7 @@ GEM
     awesome_print (1.9.2)
     base64 (0.1.1)
     bcrypt (3.1.19)
+    benchmark-ips (2.12.0)
     better_errors (2.10.1)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -154,12 +155,25 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     date (3.3.3)
+    dead_end (4.0.0)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     debug_inspector (1.1.0)
     deprecation (1.1.0)
       activesupport
+    derailed_benchmarks (2.1.2)
+      benchmark-ips (~> 2)
+      dead_end
+      get_process_mem (~> 0)
+      heapy (~> 0)
+      memory_profiler (>= 0, < 2)
+      mini_histogram (>= 0.3.0)
+      rack (>= 1)
+      rack-test
+      rake (> 10, < 14)
+      ruby-statistics (>= 2.1)
+      thor (>= 0.19, < 2)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -195,6 +209,9 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    flamegraph (0.9.5)
+    get_process_mem (0.2.7)
+      ffi (~> 1.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     gretel (4.5.0)
@@ -202,6 +219,8 @@ GEM
       railties (>= 5.1, < 7.1)
     hashdiff (1.0.1)
     hashie (5.0.0)
+    heapy (0.2.0)
+      thor
     hiredis (0.6.3)
     hiredis-client (0.15.0)
       redis-client (= 0.15.0)
@@ -272,7 +291,9 @@ GEM
       marc (~> 1.0)
     marcel (1.0.2)
     matrix (0.4.2)
+    memory_profiler (1.0.1)
     method_source (1.0.0)
+    mini_histogram (0.3.1)
     mini_mime (1.1.5)
     minitar (0.9)
     minitest (5.19.0)
@@ -326,6 +347,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
+    rack-mini-profiler (3.1.1)
+      rack (>= 1.2.0)
     rack-protection (3.1.0)
       rack (~> 2.2, >= 2.2.4)
     rack-test (2.1.0)
@@ -430,6 +453,7 @@ GEM
       rubocop-factory_bot (~> 2.22)
     ruby-next-core (0.15.3)
     ruby-progressbar (1.13.0)
+    ruby-statistics (3.0.2)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     scrub_rb (1.0.1)
@@ -464,6 +488,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    stackprof (0.2.25)
     standard (1.31.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
@@ -570,17 +595,21 @@ DEPENDENCIES
   cssbundling-rails
   database_cleaner-active_record
   debug
+  derailed_benchmarks
   dotenv-rails
   factory_bot_rails
   faker
+  flamegraph
   hiredis (~> 0.6.3)
   hiredis-client (~> 0.15.0)
   jbuilder
   jsbundling-rails
   lograge
+  memory_profiler
   mysql2 (~> 0.5)
   nla-blacklight_common!
   puma (~> 6.0)
+  rack-mini-profiler
   rails (~> 7.0.7)
   rails-controller-testing (~> 1.0, >= 1.0.5)
   redis (~> 5.0)
@@ -595,6 +624,7 @@ DEPENDENCIES
   simplecov-json (~> 0.2.3)
   solr_wrapper (>= 0.3)
   sprockets-rails
+  stackprof
   standard
   stimulus-rails
   strong_migrations (~> 1.6)

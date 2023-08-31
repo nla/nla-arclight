@@ -36,13 +36,13 @@ module Blacklight::Bookmarks
 
   # Blacklight uses #search_action_url to figure out the right URL for
   # the global search box
-  def search_action_url *args
-    search_catalog_url(*args)
+  def search_action_url(*)
+    search_catalog_url(*)
   end
 
   # @return [Hash] a hash of context information to pass through to the search service
   def search_service_context
-    { bookmarks: @bookmarks }
+    {bookmarks: @bookmarks}
   end
 
   def index
@@ -51,7 +51,7 @@ module Blacklight::Bookmarks
 
     respond_to do |format|
       format.html {}
-      format.rss  { render layout: false }
+      format.rss { render layout: false }
       format.atom { render layout: false }
 
       additional_response_formats(format)
@@ -71,10 +71,10 @@ module Blacklight::Bookmarks
   # is simpler.
   def create
     @bookmarks = if params[:bookmarks]
-                   permit_bookmarks[:bookmarks]
-                 else
-                   [{ document_id: params[:id], document_type: blacklight_config.document_model.to_s }]
-                 end
+      permit_bookmarks[:bookmarks]
+    else
+      [{document_id: params[:id], document_type: blacklight_config.document_model.to_s}]
+    end
 
     current_or_guest_user.save! unless current_or_guest_user.persisted?
 
@@ -86,12 +86,12 @@ module Blacklight::Bookmarks
     end
 
     if request.xhr?
-      success ? render(json: { bookmarks: { count: current_or_guest_user.bookmarks.count } }) : render(json: current_or_guest_user.errors.full_messages, status: "500")
+      success ? render(json: {bookmarks: {count: current_or_guest_user.bookmarks.count}}) : render(json: current_or_guest_user.errors.full_messages, status: "500")
     else
       if @bookmarks.any? && success
-        flash[:notice] = I18n.t('blacklight.bookmarks.add.success', count: @bookmarks.length)
+        flash[:notice] = I18n.t("blacklight.bookmarks.add.success", count: @bookmarks.length)
       elsif @bookmarks.any?
-        flash[:error] = I18n.t('blacklight.bookmarks.add.failure', count: @bookmarks.length)
+        flash[:error] = I18n.t("blacklight.bookmarks.add.failure", count: @bookmarks.length)
       end
 
       redirect_back fallback_location: bookmarks_path
@@ -105,32 +105,32 @@ module Blacklight::Bookmarks
       if params[:bookmarks]
         permit_bookmarks[:bookmarks]
       else
-        [{ document_id: params[:id], document_type: blacklight_config.document_model.to_s }]
+        [{document_id: params[:id], document_type: blacklight_config.document_model.to_s}]
       end
 
     success = @bookmarks.all? do |bookmark|
       bookmark = current_or_guest_user.bookmarks.find_by(bookmark)
-      bookmark && bookmark.delete && bookmark.destroyed?
+      bookmark&.delete && bookmark&.destroyed?
     end
 
     if success
       if request.xhr?
-        render(json: { bookmarks: { count: current_or_guest_user.bookmarks.count } })
+        render(json: {bookmarks: {count: current_or_guest_user.bookmarks.count}})
       else
-        redirect_back fallback_location: bookmarks_path, notice: I18n.t('blacklight.bookmarks.remove.success')
+        redirect_back fallback_location: bookmarks_path, notice: I18n.t("blacklight.bookmarks.remove.success")
       end
     elsif request.xhr?
       head :internal_server_error # ajaxy request needs no redirect and should not have flash set
     else
-      redirect_back fallback_location: bookmarks_path, flash: { error: I18n.t('blacklight.bookmarks.remove.failure') }
+      redirect_back fallback_location: bookmarks_path, flash: {error: I18n.t("blacklight.bookmarks.remove.failure")}
     end
   end
 
   def clear
     if current_or_guest_user.bookmarks.clear
-      flash[:notice] = I18n.t('blacklight.bookmarks.clear.success')
+      flash[:notice] = I18n.t("blacklight.bookmarks.clear.success")
     else
-      flash[:error] = I18n.t('blacklight.bookmarks.clear.failure')
+      flash[:error] = I18n.t("blacklight.bookmarks.clear.failure")
     end
     redirect_to action: "index"
   end
@@ -139,7 +139,7 @@ module Blacklight::Bookmarks
 
   def verify_user
     unless current_or_guest_user || (params[:action] == "index" && token_or_current_or_guest_user)
-      flash[:notice] = I18n.t('blacklight.bookmarks.need_login')
+      flash[:notice] = I18n.t("blacklight.bookmarks.need_login")
       raise Blacklight::Exceptions::AccessDenied
     end
   end
