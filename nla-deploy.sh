@@ -42,6 +42,7 @@ fi
 # try to fix permissions in vendor/bundle
 chmod -R o+r ./vendor/bundle
 
+mkdir -p "$ARCLIGHT_TMP_PATH"
 mkdir -p "$ARCLIGHT_TMP_PATH"/pids
 
 RAILS_ENV=$RAILS_ENV bundle exec rails log:clear tmp:clear
