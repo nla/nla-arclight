@@ -161,11 +161,6 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-7.0.7.tgz#03b5faa8642a80211708e8f1754cf424e9228718"
   integrity sha512-NqHf4XDkeVaNk/r+TBo2aAMkjPyRPEfZkSqCTijfWukW1zTZ2XLDfvFzbpRCuWZ6gxItgoa/FkILZm27HRh2yg==
 
-"@rails/ujs@^7.0.7-2":
-  version "7.0.7-2"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.7-2.tgz#009bbed10e7d2fdc278a26441dc7457615b616d6"
-  integrity sha512-7/qRnEfs1kKAUoRHqUNPfGqcqJ5h3CmC2APP+l4flyK61kaOQmGbNSeiukmDQAAAhCBVqAdYbwFNnkNMTPSsHg==
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
