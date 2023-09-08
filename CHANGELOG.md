@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.4.1](https://github.com/nla/nla-arclight/compare/2.4.0...2.4.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* define further gray colours ([df3c378](https://github.com/nla/nla-arclight/commit/df3c3781863fa4cd2e5a24b385bfbe92198522b4))
+
+
+### Miscellaneous
+
+* change session cookie security ([b12969b](https://github.com/nla/nla-arclight/commit/b12969bb405b6b1bcbfde71c3c7b738e027b8927))
+* prepare next version ([4e77a8b](https://github.com/nla/nla-arclight/commit/4e77a8b2b5cb1cfd804952a3ca5153ba6d78c4e8))
+* prepare release ([7b95bf5](https://github.com/nla/nla-arclight/commit/7b95bf5da7af434f6189b6646715a796446019a3))
+
+
+### Build System
+
+* **deps-dev:** bump webmock from 3.18.1 to 3.19.0 ([a8a0d82](https://github.com/nla/nla-arclight/commit/a8a0d82788d4f102954c905ba2963d39026b9e1e))
+* **deps:** bump hiredis-client from 0.15.0 to 0.16.0 ([23d391a](https://github.com/nla/nla-arclight/commit/23d391a1db10af5cbf517c29fec4cf538c009e0f))
+
 ## [2.4.0](https://github.com/nla/nla-arclight/compare/2.3.0...2.4.0) (2023-08-25)
 
 
