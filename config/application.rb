@@ -19,7 +19,7 @@ require "action_cable/engine"
 Bundler.require(*Rails.groups)
 
 module NlaArclight
-  VERSION = "2.4.0"
+  VERSION = "2.4.1"
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
