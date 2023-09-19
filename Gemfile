@@ -85,7 +85,7 @@ gem "blacklight-locale_picker"
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
-gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", tag: "0.1.7"
+gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "main"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
 
@@ -102,6 +102,7 @@ group :development, :test do
   gem "solr_wrapper", ">= 0.3"
 
   gem "rspec-rails", "~> 6.0"
+  gem "fuubar"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
   gem "faker"
