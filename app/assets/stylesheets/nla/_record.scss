@@ -1,34 +1,35 @@
 @charset "UTF-8";
 @import "variables";
+@import "nla-custom-bootstrap";
 
 .nav-tabs {
-  background-color: color("gray-very-light");
+  background-color: $gray-very-light;
   border-bottom: none;
   
   .nav-item {
     .active {
-      background-color: color("white");
+      background-color: $white;
       border-bottom: none;
     }
   }
 }
 
 .tab-content {
-  background-color: color("white");
+  background-color: $white;
 }
 .al-hierarchy-highlight > .documentHeader {
-  background-color: color("light-yellow");
+  background-color: $light-yellow;
 }
 
 li.al-collection-context .al-online-content-icon svg,
 .al-online-content-icon .blacklight-icons svg {
-  fill: color("light-purple");
+  fill: $light-purple;
 }
 
-.al-digital-object.breadcrumb-item {
+.al-digital-object {
   a {
-    color: color("white");
-    background: color("orange");
+    color: $white;
+    background: $orange;
     font-weight: bold;
     letter-spacing: 0.5px;
     padding-left: 2rem;
@@ -43,7 +44,8 @@ li.al-collection-context .al-online-content-icon svg,
     
     &:hover,
     &:focus {
-      background: color("light-purple");
+      color: $white;
+      background: $light-purple;
     }
   }
 }
@@ -72,15 +74,15 @@ li.al-collection-context .al-online-content-icon svg,
   h1.media svg,
   .breadcrumb .media svg,
   li.al-collection-context .blacklight-icons svg {
-    fill: color("gray-medium-light");
+    fill: $gray-medium-light;
   }
   
   .dl-invert dt {
-    color: color("gray-medium-light");
+    color: $gray-medium-light;
   }
   
   .al-document-container.text-muted {
-    color: color("gray-medium-light") !important;
+    color: $gray-medium-light !important;
     font-size: 0.875rem;
   }
 }

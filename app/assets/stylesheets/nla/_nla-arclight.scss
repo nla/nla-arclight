@@ -2,15 +2,17 @@
 
 @import "variables";
 
-
 @import "buttons";
 @import "facets";
+@import "pagination";
 
+@import "main";
 @import "footer";
 @import "header";
 @import "search-results";
 @import "record";
 @import "typography";
+@import "repository";
 
 @import "./components/show_actions";
 @import "./components/bookmarks";
