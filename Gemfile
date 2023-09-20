@@ -24,7 +24,7 @@ gem "activerecord-session_store", "~> 2.0"
 gem "strong_migrations", "~> 1.6"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", ">= 7.0", "< 7.1"
+gem "rails", "~> 7.0.8"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -52,7 +52,7 @@ gem "jbuilder"
 
 # Use hiredis adapter for better performance than the "redis" gem
 gem "hiredis", "~> 0.6.3"
-gem "hiredis-client", "~> 0.16.0"
+gem "hiredis-client", "~> 0.17.0"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 5.0"
@@ -82,7 +82,11 @@ gem "yabeda-prometheus"
 gem "derailed_benchmarks", group: :development
 gem "stackprof", group: :development
 
-gem "nla-blacklight_common", git: "https://github.com/yetti/nla-blacklight_common", branch: "feat/upgrade"
+gem "arclight", "~> 1.0"
+gem "rsolr", ">= 1.0", "< 3"
+gem "blacklight-locale_picker"
+
+gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "feat/upgrade"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
 
@@ -96,6 +100,7 @@ group :development, :test do
   gem "solr_wrapper", ">= 0.3"
 
   gem "rspec-rails", "~> 6.0"
+  gem "fuubar"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
   gem "faker"
@@ -116,8 +121,8 @@ group :development do
   # append ?pp=flamegraph to URL for flamegraphs
   gem "flamegraph"
   # append ?pp=profile-memory to URL
-  # ?pp=profile-gc to report on GC statistics
-  # ?pp=analyze-memory to report on Object statistics
+  # append ?pp=profile-gc to report on GC statistics
+  # append ?pp=analyze-memory to report on Object statistics
   gem "memory_profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
@@ -135,7 +140,3 @@ group :test do
   gem "simplecov", "~> 0.22.0"
   gem "simplecov-json", "~> 0.2.3"
 end
-
-gem "arclight", "~> 1.0"
-gem "rsolr", ">= 1.0", "< 3"
-gem "blacklight-locale_picker"
