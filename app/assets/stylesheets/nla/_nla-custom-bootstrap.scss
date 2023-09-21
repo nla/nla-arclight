@@ -48,8 +48,6 @@ $theme-colors: (
   "dark":       $purple
 );
 
-$theme-colors: map-merge($theme-colors, $colors);
-
 $logo-image: url('nla_logo.svg');
 
 // Body
@@ -121,3 +119,14 @@ $card-bg: $white;
 // Dropdowns
 $dropdown-bg: $white;
 $dropdown-border-color: $white;
+
+// Focus ring
+$focus-ring-color: rgba($purple, $focus-ring-opacity);
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+$input-focus-box-shadow: $focus-ring-box-shadow;
+$input-btn-focus-box-shadow: $focus-ring-box-shadow;
+$form-select-focus-box-shadow: $focus-ring-box-shadow;
+$form-check-input-focus-box-shadow: $focus-ring-box-shadow;
+$nav-link-focus-box-shadow: $focus-ring-box-shadow;
+$pagination-focus-box-shadow: $focus-ring-box-shadow;
+$btn-close-focus-shadow: $focus-ring-box-shadow;
