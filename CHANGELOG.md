@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.4.2](https://github.com/nla/nla-arclight/compare/2.4.1...2.4.2) (2023-09-22)
+
+
+### Miscellaneous
+
+* prepare release ([28bf158](https://github.com/nla/nla-arclight/commit/28bf158c1def3e5f60c0523225c589dcb197ae0e))
+
+
+### Tests
+
+* change rspec format to Fuubar ([e779341](https://github.com/nla/nla-arclight/commit/e7793415e360bac07df862508e6afb1d9a14920d))
+
+
+### Build System
+
+* **deps-dev:** bump rubocop-rails from 2.20.2 to 2.21.0 ([13352a1](https://github.com/nla/nla-arclight/commit/13352a1c75e7768b9b34c884ba58b6c255d136c6))
+* **deps-dev:** bump rubocop-rails from 2.21.0 to 2.21.1 ([51deb4c](https://github.com/nla/nla-arclight/commit/51deb4c6ec86dd7c402bf5c2dbadede22c8a65e9))
+* **deps-dev:** bump rubocop-rspec from 2.23.2 to 2.24.0 ([9d46963](https://github.com/nla/nla-arclight/commit/9d46963e87c3101c882b5b2ba001a7e2332625cf))
+* **deps-dev:** bump standard from 1.31.0 to 1.31.1 ([1838be5](https://github.com/nla/nla-arclight/commit/1838be53e631ee36ef5193172115fac7b852fabf))
+* **deps:** bump actions/checkout from 3 to 4 ([243edda](https://github.com/nla/nla-arclight/commit/243edda87d2b40594b0e2a82f707e0aac0e9b922))
+* **deps:** bump hiredis-client from 0.16.0 to 0.17.0 ([8b3a4ac](https://github.com/nla/nla-arclight/commit/8b3a4accad3a540f6b2816e41e5ecb612bffdbe9))
+* **deps:** bump rails from 7.0.7.2 to 7.0.8 ([2029b29](https://github.com/nla/nla-arclight/commit/2029b2984324a189f77614d711ff2db5b762981c))
+* **deps:** bump strong_migrations from 1.6.1 to 1.6.2 ([5fa287b](https://github.com/nla/nla-arclight/commit/5fa287bcc1f7c076b91c257de6df849020bce371))
+
 ## [2.4.1](https://github.com/nla/nla-arclight/compare/2.4.0...2.4.1) (2023-09-08)
 
 
