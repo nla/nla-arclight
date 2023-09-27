@@ -35,14 +35,17 @@ gem "mysql2", "~> 0.5"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 6.4"
 
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
+# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
+gem "jsbundling-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
+gem "cssbundling-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -72,26 +75,23 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "arclight", "~> 0.5", "< 1.0"
-gem "blacklight", "~> 7.32", "< 8"
-gem "blacklight_range_limit", "~> 8.2"
+gem "yabeda-rails"
+gem "yabeda-puma-plugin"
+gem "yabeda-prometheus"
+
+gem "derailed_benchmarks", group: :development
+gem "stackprof", group: :development
+
+gem "arclight", "~> 1.0"
 gem "rsolr", ">= 1.0", "< 3"
-gem "bootstrap", "~> 4.0"
-gem "twitter-typeahead-rails", "0.11.1"
-gem "sassc-rails", "~> 2.1"
-gem "jquery-rails"
 gem "blacklight-locale_picker"
 
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
-gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", tag: "0.1.8"
+gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "feat/upgrade"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
-
-gem "yabeda-rails"
-gem "yabeda-puma-plugin"
-gem "yabeda-prometheus"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -99,6 +99,7 @@ group :development, :test do
   gem "standard", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+  gem "rubocop-performance", require: false
   gem "solr_wrapper", ">= 0.3"
 
   gem "rspec-rails", "~> 6.0"
@@ -119,7 +120,13 @@ group :development do
   gem "binding_of_caller"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  gem "rack-mini-profiler"
+  # append ?pp=flamegraph to URL for flamegraphs
+  gem "flamegraph"
+  # append ?pp=profile-memory to URL
+  # append ?pp=profile-gc to report on GC statistics
+  # append ?pp=analyze-memory to report on Object statistics
+  gem "memory_profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"

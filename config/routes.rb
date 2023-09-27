@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
   scope(path: "/finding-aids") do
-    concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
     mount Blacklight::Engine => "/"
     mount Arclight::Engine => "/"
     mount Yabeda::Prometheus::Exporter => "/metrics"
 
-    root to: "catalog#index"
+    root to: "arclight/repositories#index" # "catalog#index", defaults: {f: {level: ["Collection"], repository: ["National Library of Australia"]}}
     concern :searchable, Blacklight::Routes::Searchable.new
 
     resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
       concerns :searchable
-      concerns :range_searchable
     end
 
     concern :exportable, Blacklight::Routes::Exportable.new
+    concern :hierarchy, Arclight::Routes::Hierarchy.new
 
     resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
+      concerns :hierarchy
       concerns :exportable
     end
 
@@ -28,9 +28,5 @@ Rails.application.routes.draw do
     end
   end
 
-  get "/", controller: :catalog, action: :index
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "/", to: redirect("/finding-aids")
 end

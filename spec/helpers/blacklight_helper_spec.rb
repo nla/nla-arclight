@@ -15,17 +15,17 @@ RSpec.describe BlacklightHelper do
     end
 
     context "when in development environment" do
-      before { ENV["RAILS_ENV"] = "development" }
-
       it "prepends '[DEV]' to the title" do
+        allow(Rails).to receive(:env).and_return(OpenStruct.new(development?: true))
+
         expect(helper.render_page_title).to eq "[DEV] #{helper.application_name}"
       end
     end
 
     context "when in staging environment" do
-      before { ENV["RAILS_ENV"] = "staging" }
-
       it "prepends '[TEST]' to the title" do
+        allow(Rails).to receive(:env).and_return(OpenStruct.new(staging?: true))
+
         expect(helper.render_page_title).to eq "[TEST] #{helper.application_name}"
       end
     end

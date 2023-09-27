@@ -5,14 +5,14 @@
               class: "bookmark-toggle ms-2",
               data: {
                 'doc-id' => document.id,
-                present: "<span class=\"sr-only visually-hidden\">#{t('blacklight.search.bookmarks.present')}</span>",
-                absent: "<span class=\"sr-only visually-hidden\">#{t('blacklight.search.bookmarks.absent')}</span>",
+                present: "#{blacklight_icon(:bookmark).html_safe}#{t('blacklight.search.bookmarks.present')}",
+                absent: "#{blacklight_icon(:bookmark).html_safe}#{t('blacklight.search.bookmarks.absent')}",
                 inprogress: t('blacklight.search.bookmarks.inprogress')
               }) do %>
     <div class="checkbox toggle-bookmark">
       <label class="toggle-bookmark" data-checkboxsubmit-target="label">
-        <input type="checkbox" class="toggle-bookmark" data-checkboxsubmit-target="checkbox">
-        <span data-checkboxsubmit-target="span"><%= bookmarked? ? "<span class=\"sr-only visually-hidden\">#{t('blacklight.search.bookmarks.present')}</span>".html_safe : "<span class=\"sr-only visually-hidden\">#{t('blacklight.search.bookmarks.absent')}</span>".html_safe %></span>
+        <input type="checkbox" class="toggle-bookmark" data-checkboxsubmit-target="checkbox" <%= bookmarked? ? "checked" : "" %>>
+        <span data-checkboxsubmit-target="span"><%= bookmarked? ? "#{blacklight_icon(:bookmark).html_safe}#{t('blacklight.search.bookmarks.present')}".html_safe : "#{blacklight_icon(:bookmark).html_safe}#{t('blacklight.search.bookmarks.absent')}".html_safe %></span>
       </label>
     </div>
 
