@@ -652,6 +652,7 @@ DEPENDENCIES
   yabeda-prometheus
   yabeda-puma-plugin
   yabeda-rails
+  zk (~> 1.10)
 
 RUBY VERSION
    ruby 3.2.2p53
