@@ -33,7 +33,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 6.0"
+gem "puma", "~> 6.4"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -85,6 +85,9 @@ gem "stackprof", group: :development
 gem "arclight", "~> 1.0"
 gem "rsolr", ">= 1.0", "< 3"
 gem "blacklight-locale_picker"
+
+gem "zk", "~> 1.10"
+gem "nokogiri", ">= 1.13.9"
 
 gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "feat/upgrade"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
