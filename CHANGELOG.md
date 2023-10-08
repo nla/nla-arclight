@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.4.3](https://github.com/nla/nla-arclight/compare/2.4.2...2.4.3) (2023-09-27)
+
+
+### Build System
+
+* **deps-dev:** bump rubocop-rspec from 2.24.0 to 2.24.1 ([d3d98db](https://github.com/nla/nla-arclight/commit/d3d98db2c777741e916f01f1ee4073d74c7891c1))
+* **deps:** bump puma from 6.3.1 to 6.4.0 ([041a813](https://github.com/nla/nla-arclight/commit/041a813b9e5b2bd6f18208dab71656479560c223))
+* **deps:** bump strong_migrations from 1.6.2 to 1.6.3 ([fc0c821](https://github.com/nla/nla-arclight/commit/fc0c8213e1dd876a6cc7b17d5bedd5bfaa87513e))
+
 ## [2.4.2](https://github.com/nla/nla-arclight/compare/2.4.1...2.4.2) (2023-09-22)
 
 
