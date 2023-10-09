@@ -49,11 +49,11 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <% if Rails.env.development? || Rails.env.staging? %>
-    <div class="bg-danger text-white text-center p-2">
+    <div class="bg-warning text-dark text-center p-2">
       [ <% if Rails.env.development? %>
-        DEVELOPMENT
+        DEVELOPMENT (AL 1)
       <% elsif Rails.env.staging? %>
-        TEST
+        TEST (AL 1)
       <% end %> ]
     </div>
     <% end %>
