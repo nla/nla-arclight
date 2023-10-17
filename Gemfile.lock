@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 6ccd8722e3e4e8d9fd5597a951f3547dfe46e9b0
-  tag: 0.1.8
+  revision: 2f06439c9a3a23d09f671eef02d974ba96a9deed
+  branch: main
   specs:
     nla-blacklight_common (0.1.8)
       activerecord-session_store (~> 2.0)
@@ -96,7 +96,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     aes_key_wrap (1.1.0)
     annotaterb (4.4.1)
-    anyway_config (2.5.2)
+    anyway_config (2.5.3)
       ruby-next-core (>= 0.14.0)
     arclight (0.5.0)
       blacklight (~> 7.2)
@@ -119,7 +119,7 @@ GEM
     bindex (0.8.1)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
-    blacklight (7.33.1)
+    blacklight (7.34.0)
       deprecation
       globalid
       hashdiff
@@ -128,7 +128,7 @@ GEM
       kaminari (>= 0.15)
       ostruct (>= 0.3.2)
       rails (>= 5.1, < 7.1)
-      view_component (~> 2.66)
+      view_component (>= 2.66, < 4)
     blacklight-locale_picker (1.0.0)
       rails (>= 5.2.3, < 7.1)
     blacklight_range_limit (8.3.0)
@@ -171,7 +171,7 @@ GEM
     debug_inspector (1.1.0)
     deprecation (1.1.0)
       activesupport
-    devise (4.9.2)
+    devise (4.9.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -189,7 +189,7 @@ GEM
       railties (>= 3.2)
     dry-initializer (3.1.1)
     erubi (1.12.0)
-    execjs (2.8.1)
+    execjs (2.9.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -204,7 +204,7 @@ GEM
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
     faraday-net_http (3.0.2)
-    ffi (1.15.5)
+    ffi (1.16.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
@@ -233,7 +233,7 @@ GEM
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.6.0)
-    irb (1.8.1)
+    irb (1.8.3)
       rdoc
       reline (>= 0.3.8)
     jbuilder (2.11.5)
@@ -250,7 +250,7 @@ GEM
       bindata
       faraday (~> 2.0)
       faraday-follow_redirects
-    jsonpath (1.1.3)
+    jsonpath (1.1.5)
       multi_json
     jwt (2.7.1)
     kaminari (1.2.2)
@@ -270,12 +270,12 @@ GEM
     llhttp-ffi (0.4.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
-    lograge (0.13.0)
+    lograge (0.14.0)
       actionpack (>= 4)
       activesupport (>= 4)
       railties (>= 4)
       request_store (~> 1.0)
-    loofah (2.21.3)
+    loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mail (2.8.1)
@@ -299,7 +299,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.5)
-    net-imap (0.3.7)
+    net-imap (0.4.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -340,12 +340,12 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.5.5)
     parallel (1.23.0)
-    parser (3.2.2.3)
+    parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
     popper_js (1.16.1)
     prometheus-client (4.2.1)
-    psych (5.1.0)
+    psych (5.1.1)
       stringio
     public_suffix (5.0.3)
     puma (6.4.0)
@@ -396,12 +396,12 @@ GEM
       redis-client (>= 0.9.0)
     redis-client (0.17.0)
       connection_pool
-    regexp_parser (2.8.1)
-    reline (0.3.8)
+    regexp_parser (2.8.2)
+    reline (0.3.9)
       io-console (~> 0.5)
     request_store (1.5.1)
       rack (>= 1.4)
-    responders (3.1.0)
+    responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
     retriable (3.1.2)
@@ -427,7 +427,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.56.3)
+    rubocop (1.56.4)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -445,10 +445,10 @@ GEM
       rubocop (~> 1.41)
     rubocop-factory_bot (2.24.0)
       rubocop (~> 1.33)
-    rubocop-performance (1.19.0)
+    rubocop-performance (1.19.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.21.1)
+    rubocop-rails (2.21.2)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
@@ -469,7 +469,7 @@ GEM
       sprockets-rails
       tilt
     scrub_rb (1.0.1)
-    selenium-webdriver (4.12.0)
+    selenium-webdriver (4.14.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -500,25 +500,25 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    standard (1.31.1)
+    standard (1.31.2)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
-      rubocop (~> 1.56.2)
+      rubocop (~> 1.56.4)
       standard-custom (~> 1.0.0)
       standard-performance (~> 1.2)
     standard-custom (1.0.2)
       lint_roller (~> 1.0)
       rubocop (~> 1.50)
-    standard-performance (1.2.0)
+    standard-performance (1.2.1)
       lint_roller (~> 1.1)
-      rubocop-performance (~> 1.19.0)
-    stimulus-rails (1.2.2)
+      rubocop-performance (~> 1.19.1)
+    stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     stringio (3.0.8)
     strong_migrations (1.6.3)
       activerecord (>= 5.2)
     thor (1.2.2)
-    tilt (2.2.0)
+    tilt (2.3.0)
     timeout (0.4.0)
     traject (3.8.1)
       concurrent-ruby (>= 0.8.0)
@@ -536,7 +536,7 @@ GEM
       deprecation
       jsonpath
       traject (~> 3.0)
-    turbo-rails (1.4.0)
+    turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -549,9 +549,9 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
-    unicode-display_width (2.4.2)
+    unicode-display_width (2.5.0)
     version_gem (1.1.3)
-    view_component (2.82.0)
+    view_component (3.6.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
@@ -566,7 +566,7 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    websocket (1.2.9)
+    websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -590,7 +590,7 @@ GEM
       railties
       yabeda (~> 0.8)
     yell (2.2.2)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
     zk (1.10.0)
       zookeeper (~> 1.5.0)
     zookeeper (1.5.5)
