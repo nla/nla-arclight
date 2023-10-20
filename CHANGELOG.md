@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.5.0](https://github.com/nla/nla-arclight/compare/2.4.3...2.5.0) (2023-10-20)
+
+
+### Features
+
+* pull in changes for login page ([0f09b8d](https://github.com/nla/nla-arclight/commit/0f09b8d801140fa218a1ba794ec2b810150a2cb5))
+
+
+### Miscellaneous
+
+* prepare for release ([dbb99c1](https://github.com/nla/nla-arclight/commit/dbb99c14c6636c4d2e351477c449d5a499248334))
+* pull in patron Keycloak changes ([32e564a](https://github.com/nla/nla-arclight/commit/32e564aad718ab9e9d128b34ad9fbadb7a62b51a))
+* upgrade dependencies ([e8fd718](https://github.com/nla/nla-arclight/commit/e8fd718321846d35367c7b5f5e121807044917b6))
+
 ## [2.4.3](https://github.com/nla/nla-arclight/compare/2.4.2...2.4.3) (2023-09-27)
 
 
