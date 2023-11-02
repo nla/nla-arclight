@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: f8c7dcaaa09614180c8718107ab4d9a84f0bc01a
-  tag: 0.1.9
+  revision: 7698ba1a6d1a2a063c35f89f10282b382b789bdb
+  branch: main
   specs:
     nla-blacklight_common (0.1.9)
       activerecord-session_store (~> 2.0)
@@ -299,7 +299,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.5)
-    net-imap (0.4.1)
+    net-imap (0.4.3)
       date
       net-protocol
     net-pop (0.1.2)
@@ -350,7 +350,7 @@ GEM
     public_suffix (5.0.3)
     puma (6.4.0)
       nio4r (~> 2.0)
-    racc (1.7.1)
+    racc (1.7.2)
     rack (2.2.8)
     rack-protection (3.1.0)
       rack (~> 2.2, >= 2.2.4)
@@ -389,7 +389,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
-    rake (13.0.6)
+    rake (13.1.0)
     rdoc (6.5.0)
       psych (>= 4.0.0)
     redis (5.0.7)
