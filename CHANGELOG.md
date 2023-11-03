@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.6.0](https://github.com/nla/nla-arclight/compare/2.5.0...2.6.0) (2023-11-03)
+
+
+### Features
+
+* update screen reader text for twitter icon ([694305c](https://github.com/nla/nla-arclight/commit/694305c4880eb255b758eac72b4b32cc6ba717fd))
+* Update twitter icon to X ([8317f68](https://github.com/nla/nla-arclight/commit/8317f68a1d0ff39c826b3244af09e0e5b4390852))
+
+
+### Bug Fixes
+
+* pin blacklight version to avoid view component upgrade ([545ed88](https://github.com/nla/nla-arclight/commit/545ed88bf475543f710ae54d4f7f26a66ac4f11f))
+
+
+### Miscellaneous
+
+* prepare for release ([626ec7b](https://github.com/nla/nla-arclight/commit/626ec7b1804110030c32b6bcf19aca581a552e21))
+* pull in changes to login page text ([4672d3b](https://github.com/nla/nla-arclight/commit/4672d3bcd64abbada35a5be6f47950bc9b0e2caf))
+
+
+### Code Refactoring
+
+* pull in changes to staff login button style ([96ad55d](https://github.com/nla/nla-arclight/commit/96ad55d4c0a1012dd8cc6693b875ae47dce6e336))
+
+
+### Build System
+
+* **deps:** bump hiredis-client from 0.17.0 to 0.17.1 ([9466568](https://github.com/nla/nla-arclight/commit/9466568c472c55af8f4cd2d647450166dcb6a106))
+* **deps:** bump strong_migrations from 1.6.3 to 1.6.4 ([fec4e67](https://github.com/nla/nla-arclight/commit/fec4e67655f6c3d89253576beb8b441de335252a))
+
 ## [2.5.0](https://github.com/nla/nla-arclight/compare/2.4.3...2.5.0) (2023-10-20)
 
 
