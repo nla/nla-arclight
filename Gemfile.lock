@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: fe30fc07d81271c3dfbf688d7addcb14576ce618
-  tag: 0.1.10
+  revision: b6eca1dd6a8bd3d252654303aa5e19336d327f34
+  branch: chore/remove-keycloak-patron-flag
   specs:
     nla-blacklight_common (0.1.10)
       activerecord-session_store (~> 2.0)
@@ -299,7 +299,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.5)
-    net-imap (0.4.3)
+    net-imap (0.4.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -350,7 +350,7 @@ GEM
     public_suffix (5.0.3)
     puma (6.4.0)
       nio4r (~> 2.0)
-    racc (1.7.2)
+    racc (1.7.3)
     rack (2.2.8)
     rack-protection (3.1.0)
       rack (~> 2.2, >= 2.2.4)
