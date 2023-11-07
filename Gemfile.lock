@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: b6eca1dd6a8bd3d252654303aa5e19336d327f34
-  branch: chore/remove-keycloak-patron-flag
+  revision: e342f0764a818dbef7aacdc82ccd0b2b98d27fa3
+  branch: main
   specs:
     nla-blacklight_common (0.1.10)
       activerecord-session_store (~> 2.0)
@@ -164,7 +164,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
-    date (3.3.3)
+    date (3.3.4)
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
@@ -304,7 +304,7 @@ GEM
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.1)
+    net-protocol (0.2.2)
       timeout
     net-smtp (0.4.0)
       net-protocol
