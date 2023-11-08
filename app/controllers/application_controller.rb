@@ -1,4 +1,7 @@
 class ApplicationController < ActionController::Base
+  # defines #new_session_path(scope) to allow correct redirection when only using OmniAuth
+  include AuthSessionConcern
+
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   include Blacklight::LocalePicker::Concern

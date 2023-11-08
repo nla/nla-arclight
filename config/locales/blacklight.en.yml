@@ -39,7 +39,7 @@ en:
       bookmarks: 'Bookmarks - Catalogue'
       bookmarks_fa: 'Bookmarks - Finding aids'
       search_history: 'History'
-      register: 'Sign up'
+      register: 'Join us'
     welcome: 'Welcome!'
     and: 'and'
     or: 'or'
@@ -53,7 +53,7 @@ en:
         address: 'Parkes Place<br>Canberra ACT 2600<br>Australia'
         opening_hours: 'Opening hours'
         more_contact_info: 'More contact information'
-      connect:
+      connect: 
         title: 'Connect'
         enews: 'Subscribe to our newsletter'
       quicklinks:
@@ -231,7 +231,7 @@ en:
         remove:
           value: 'Remove constraint %{value}'
           label_value: 'Remove constraint %{label}: %{value}'
-      start_over: 'Start Over'
+      start_over: 'New finding aids search'
       index:
         label: '%{label}:'
       show:
