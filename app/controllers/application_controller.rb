@@ -8,8 +8,15 @@ class ApplicationController < ActionController::Base
   layout :determine_layout if respond_to? :layout
 
   before_action :store_user_location!, if: :storable_location?
+  before_action :set_cache_headers
 
   private
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Mon, 01 Jan 1990 00:00:00 GMT"
+  end
 
   # Its important that the location is NOT stored if:
   # - The request method is not GET (non idempotent)
