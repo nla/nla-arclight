@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.7.0](https://github.com/nla/nla-arclight/compare/2.6.0...2.7.0) (2023-11-17)
+
+
+### Features
+
+* Update Join us link in primary nav ([4562c1b](https://github.com/nla/nla-arclight/commit/4562c1b70ec81536eff7f449a5cffeab3a16a463))
+
+
+### Bug Fixes
+
+* change request login alert wording ([ea93845](https://github.com/nla/nla-arclight/commit/ea938452473e78f60f8b82641a227f0aa5674d2b))
+* set headers to not cache any pages ([e02aa46](https://github.com/nla/nla-arclight/commit/e02aa4680f83c3508570b404931badce4e80f925))
+
+
+### Miscellaneous
+
+* prepare for release ([3f5dc01](https://github.com/nla/nla-arclight/commit/3f5dc01c12a696ec66f8d42084c0097afaf1c96d))
+* pull in backchannel logout changes ([3549416](https://github.com/nla/nla-arclight/commit/3549416daa15013746b452a5f462466ed49f4d73))
+* pull in changes from nla-blacklight_common ([ff31bb2](https://github.com/nla/nla-arclight/commit/ff31bb25f7bd62a88ecd4a0c7f3dd90e2aabd873))
+* pull in changes in common code ([3f0eb77](https://github.com/nla/nla-arclight/commit/3f0eb7723809d88413e00da5690ce4f09be92871))
+* pull in fixes to session_token ([a61989c](https://github.com/nla/nla-arclight/commit/a61989c40b16c494541e06f5c8220620f44f61d2))
+* remove keycloak patron login flag ([ca645bf](https://github.com/nla/nla-arclight/commit/ca645bfe3862590d2a01500fb08288673ece4f94))
+
+
+### Build System
+
+* **deps-dev:** bump rubocop-rails from 2.21.2 to 2.22.1 ([f50b186](https://github.com/nla/nla-arclight/commit/f50b1868f8c29f10be23aa7c3cd5646e406d87a1))
+* **deps-dev:** bump rubocop-rspec from 2.24.1 to 2.25.0 ([c258899](https://github.com/nla/nla-arclight/commit/c25889912621a90710c6a4339983b7b2151fc55c))
+* **deps:** bump hiredis-client from 0.17.1 to 0.18.0 ([e7539dc](https://github.com/nla/nla-arclight/commit/e7539dcb7ebfffba9ff0bcf592494468bdfb4b44))
+* **deps:** bump importmap-rails from 1.2.1 to 1.2.3 ([972d9a4](https://github.com/nla/nla-arclight/commit/972d9a46dc24c43894aad212c3459a08c038bf11))
+* **deps:** bump redis from 5.0.7 to 5.0.8 ([734389c](https://github.com/nla/nla-arclight/commit/734389ca61861441451893508b7b722646c2d721))
+
 ## [2.6.0](https://github.com/nla/nla-arclight/compare/2.5.0...2.6.0) (2023-11-03)
 
 
