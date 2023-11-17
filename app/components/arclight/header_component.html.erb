@@ -1,4 +1,7 @@
 <header>
   <%= top_bar %>
+  <div class="<%= helpers.container_classes %>">
+    <%= render GlobalMessageComponent.new %>
+  </div>
   <%= search_bar %>
 </header>
