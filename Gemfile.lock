@@ -131,9 +131,10 @@ GEM
       view_component (~> 2.66)
     blacklight-locale_picker (1.0.0)
       rails (>= 5.2.3, < 7.1)
-    blacklight_range_limit (8.3.0)
+    blacklight_range_limit (8.4.0)
       blacklight (>= 7.25.2, < 9)
       deprecation
+      view_component (>= 2.54, < 4)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
     bootstrap (4.6.2)
@@ -309,7 +310,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.6.0)
+    nio4r (2.6.1)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
@@ -339,7 +340,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
-    ostruct (0.5.5)
+    ostruct (0.6.0)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -610,7 +611,7 @@ DEPENDENCIES
   binding_of_caller
   blacklight (= 7.33.1)
   blacklight-locale_picker
-  blacklight_range_limit (~> 8.2)
+  blacklight_range_limit (~> 8.4)
   bootsnap
   bootstrap (~> 4.0)
   brakeman
