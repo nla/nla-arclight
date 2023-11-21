@@ -74,7 +74,7 @@ gem "bootsnap", require: false
 
 gem "arclight", "~> 0.5", "< 1.0"
 gem "blacklight", "7.33.1"
-gem "blacklight_range_limit", "~> 8.2"
+gem "blacklight_range_limit", "~> 8.4"
 gem "rsolr", ">= 1.0", "< 3"
 gem "bootstrap", "~> 4.0"
 gem "twitter-typeahead-rails", "0.11.1"
