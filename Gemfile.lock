@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 81114705ead18a1952b5165318a876de62c4729c
+  revision: 94d7a4f2eed7ae6773b235a06a4fc9c8debd1355
   branch: feat/upgrade
   specs:
     nla-blacklight_common (0.1.11)
@@ -200,7 +200,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.2)
       i18n (>= 1.8.11, < 2)
-    faraday (2.7.11)
+    faraday (2.7.12)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -307,7 +307,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.5)
-    net-imap (0.4.5)
+    net-imap (0.4.7)
       date
       net-protocol
     net-pop (0.1.2)
@@ -547,7 +547,7 @@ GEM
     unf_ext (0.0.9.1)
     unicode-display_width (2.5.0)
     version_gem (1.1.3)
-    view_component (3.7.0)
+    view_component (3.8.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
