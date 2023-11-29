@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 983e80e0406df62c9d14ead53f0d1d497fbc2716
-  tag: 0.1.11
+  revision: 6e8110d4eee4d2e86f30e64b1912f6e82bb5578c
+  tag: 0.1.12
   specs:
-    nla-blacklight_common (0.1.11)
+    nla-blacklight_common (0.1.12)
       activerecord-session_store (~> 2.0)
       annotaterb
       brakeman
@@ -110,7 +110,7 @@ GEM
       execjs (~> 2)
     awesome_print (1.9.2)
     base64 (0.2.0)
-    bcrypt (3.1.19)
+    bcrypt (3.1.20)
     better_errors (2.10.1)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -198,7 +198,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.2)
       i18n (>= 1.8.11, < 2)
-    faraday (2.7.11)
+    faraday (2.7.12)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -301,7 +301,7 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mysql2 (0.5.5)
-    net-imap (0.4.5)
+    net-imap (0.4.6)
       date
       net-protocol
     net-pop (0.1.2)
@@ -311,11 +311,11 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.6.1)
-    nokogiri (1.15.4-arm64-darwin)
+    nokogiri (1.15.5-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.4-x86_64-darwin)
+    nokogiri (1.15.5-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.15.4-x86_64-linux)
+    nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
