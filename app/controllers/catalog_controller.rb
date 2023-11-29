@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "blacklight/solr_cloud/repository"
-require "blacklight/solr_cloud/not_enough_nodes"
 
 # Blacklight controller that handles searches and document requests
 class CatalogController < ApplicationController
