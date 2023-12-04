@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     concern :searchable, Blacklight::Routes::Searchable.new
     concern :exportable, Blacklight::Routes::Exportable.new
     concern :hierarchy, Arclight::Routes::Hierarchy.new
+    concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
 
     resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
       concerns :searchable
+      concerns :range_searchable
     end
 
     resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
