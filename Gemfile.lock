@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/nla/blacklight_range_limit
-  revision: 37a1817abfe30d28c8cf0c8ec204c7bd7b8efed1
+  revision: 3de6a19b3ed3439694d6cc57cd28b0fa7f77201d
   branch: main
   specs:
     blacklight_range_limit (8.4.0)

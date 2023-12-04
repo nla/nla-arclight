@@ -22,8 +22,9 @@
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <% else %>
       <%= javascript_include_tag "jquery", "data-turbo-track": "reload" %>
-      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
       <%= javascript_include_tag "blacklight/blacklight", type: 'module', "data-turbo-track": "reload", defer: true %>
+      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+      <%= javascript_include_tag "blacklight_custom", "data-turbo-track": "reload", defer: true %>
       <%= javascript_include_tag "range_limit", "data-turbo-track": "reload", defer: true %>
       <script type="module">
         import githubAutoCompleteElement from 'https://cdn.skypack.dev/@github/auto-complete-element';
