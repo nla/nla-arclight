@@ -470,7 +470,7 @@ GEM
       sprockets-rails
       tilt
     scrub_rb (1.0.1)
-    selenium-webdriver (4.15.0)
+    selenium-webdriver (4.16.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -640,7 +640,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sassc-rails (~> 2.1)
-  selenium-webdriver (~> 4.15)
+  selenium-webdriver (~> 4.16)
   shoulda-matchers
   simplecov (~> 0.22.0)
   simplecov-json (~> 0.2.3)
