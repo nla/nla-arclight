@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.7.1](https://github.com/nla/nla-arclight/compare/2.7.0...2.7.1) (2023-11-29)
+
+
+### Miscellaneous
+
+* prepare release ([e29170a](https://github.com/nla/nla-arclight/commit/e29170ab69b2f7f6dd66a43af555ebf0ccf34929))
+
+
+### Build System
+
+* **deps-dev:** bump faker from 3.2.1 to 3.2.2 ([0419051](https://github.com/nla/nla-arclight/commit/0419051f174c9e19eeed94851e510a60eb4f150a))
+* **deps-dev:** bump selenium-webdriver from 4.14.0 to 4.15.0 ([4722bc0](https://github.com/nla/nla-arclight/commit/4722bc092d2ad0070d568b64149f4755ecda4de9))
+* **deps-dev:** bump standard from 1.31.2 to 1.32.0 ([b8743db](https://github.com/nla/nla-arclight/commit/b8743db2df7f7f9835e56500581067a390d57d60))
+* **deps:** bump blacklight_range_limit from 8.3.0 to 8.4.0 ([1903667](https://github.com/nla/nla-arclight/commit/1903667381197c2901d43405973841c04e6ca6f5))
+* **deps:** bump bootsnap from 1.16.0 to 1.17.0 ([8459dc0](https://github.com/nla/nla-arclight/commit/8459dc08a609b78943be52e626a460ee6cb49640))
+
 ## [2.7.0](https://github.com/nla/nla-arclight/compare/2.6.0...2.7.0) (2023-11-17)
 
 
