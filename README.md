@@ -26,8 +26,8 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
 
 ## Requirements
 
-* Ruby: 3.1.2
-* Bundler: 2.3.26
+* Ruby: 3.2.2
+* Bundler: 2.4.22
 
 * System dependencies
     - Solr: 8
@@ -35,12 +35,11 @@ Custom implementation of [ArcLight](https://samvera.atlassian.net/wiki/spaces/sa
     - Redis: 7
 
 * Gems:
-    - [blacklight-solrcloud-repository](https://github.com/nla/blacklight-solrcloud-repository)
-    - [catalogue-patrons](https://github.com/nla/catalogue-patrons)
-
-The [GoRails guide](https://gorails.com/setup) has great instructions for setting up Ruby, Rails and MySQL for your operating system.
+    - [nla-blacklight_common](https://github.com/nla/nla-blacklight_common)
 
 ## Contributing
+
+The [GoRails guide](https://gorails.com/setup) has great instructions for setting up Ruby, Rails and MySQL for your operating system.
 
 ✏️ This repository uses [conventional commits](https://www.conventionalcommits.org)
 and commit messages are used to generate `CHANGELOG.md` and release body entries.
@@ -66,11 +65,13 @@ and *SHOULD NOT* be committed to source control. Git is configured to ignore the
 ⚠️ If `dotenv` fails to load the configuration values into the environment, you can manually export these
 values in your terminal before running the application.
 
-### Environment Variables
+<details>
+<summary><b>List of Environment Variables</b></summary>
 
 #### ArcLight database
     DATABASE_URL - Application database for Blacklight
     PATRON_DB_URL - Shared user and sessions database
+    REDIS_URL - Redis cache
 
 #### Solr
     SOLR_URL - single node Solr
@@ -78,12 +79,18 @@ values in your terminal before running the application.
     ZK_HOST - Zookeeper connection string for the Solr Cloud cluster
     SOLR_COLLECTION - Solr Cloud collection for the catalogue index
 
+#### Rails settings
+These variables are mainly used in the `staging` or `production` environment.
+
+    SECRET_KEY_BASE - used by Devise for encrypting session values
+    RAILS_LOG_TO_STDOUT - makes Rails logs print to the console
+    RAILS_SERVE_STATIC_FILES - tells Rails to serve static assets from the /public directory
+
 #### Temp and caching directories
 These variables are mainly used in the deployment environment.
 
     PIDFILE - relocates the server pid file outside of the application directory
     ARCLIGHT_TMP_PATH - relocates the caching directory outside of the application directory
-    REDIS_URL - Redis cache
 
 #### External services
     GETALIBRARYCARD_BASE_URL - base URL for Get a Library Card
@@ -103,24 +110,32 @@ These variables are mainly used in the deployment environment.
     KC_SPL_SECRET - Staff Personal Loan realm client secret
     KC_SPL_REALM - realm name for Staff Personal Loan
 
-    KC_SHARED_CLIENT - Staff Shared account realm client name
-    KC_SHARED_SECRET - Staff Shared account realm client secret
-    KC_SHARED_REALM - realm name for Staff Shared account realm
+    KC_SHARED_CLIENT - Team Official Loan account realm client name
+    KC_SHARED_SECRET - Team Official Loan account realm client secret
+    KC_SHARED_REALM - realm name for Team Official Loan account realm
 
-#### Rails settings
-These variables are mainly used in the `staging` or `production` environment.
+    KC_PATRON_CLIENT - patron account realm client name
+    KC_PATRON_SECRET - patron account realm client secret
+    KC_PATRON_REALM - realm name for patron account realm
 
-    SECRET_KEY_BASE - used by Devise for encrypting session values
-    RAILS_LOG_TO_STDOUT - makes Rails logs print to the console
-    RAILS_SERVE_STATIC_FILES - tells Rails to serve static assets from the /public directory
+    CATALOGUE_SERVICES_API_BASE_URL - URL to the Catalogue Services API base URL
+    CATALOGUE_SERVICES_CLIENT - Catalogue Services realm client name
+    CATALOGUE_SERVICES_SECRET - Catalogue Services realm client secret
+    CATALOGUE_SERVICES_REALM - Catalogue Services realm name
+
+    GLOBAL_MESSAGE_URL - URL to the global alert message JSON endpoint
+
+    PATRON_UPGRADE_URL - URL to the patron login upgrade service
+    PATRON_REGISTRATION_URL - URL to the user registration service
+</details>
 
 ## Setup
 
 1. Clone the app from GitHub.
 2. Make sure you have MySQL running locally and configured in the `.env.development.local` config file.
 3. Make sure you have Redis running locally and configured in the `.env.development.local` config file.
-4. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />⚠️  If you are not planning on modifying the Solr index, you can point this at the devel or test environment Solr cluster.
-5. `bin/setup` installs gems and performs database migrations for the `development` environment.<br /> ⚠️ Gems are installed in `vendor/bundle`.
+4. Make sure you have Solr running locally and configured in the `.env.development.local` config file.<br />💡️  If you are not planning on modifying the Solr index, you can point this at the devel or test environment Solr cluster.
+5. `bin/setup` installs gems and performs database migrations for the `development` environment.<br />💡️ Gems are installed in `vendor/bundle`.
 
 ## Running the app
 
@@ -149,12 +164,17 @@ RAILS_ENV=test bin/ci
 ### Releases
 
 Releases are automated via the `release.yml` GitHub workflow. This uses Google's
-[release-please action](https://github.com/google-github-actions/release-please-action) to create pull
-requests when changes are pushed to main. It will bump the version automatically and create a release
-when the pull request is merged. Read more about how
-[release-please](https://github.com/googleapis/release-please) works.
+[release-please action](https://github.com/google-github-actions/release-please-action) to create a
+release pull request when changes are pushed to the `main` branch.
+
+🚨 This release pull request will be updated with every merge to the `main` branch.
+
+🚨 It will bump the version automatically and create a release when it is merged.
 
 🚨 `CHANGELOG.md` is automatically created/updated for each release based on the commit messages.
+
+Read more about how
+[release-please](https://github.com/googleapis/release-please) works.
 
 ## Deployment
 
