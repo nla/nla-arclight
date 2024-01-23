@@ -15,7 +15,7 @@ SimpleCov.start "rails" do
 
   # Generated/installed by Blacklight/Arclight.
   # CatalogueController is mostly config.
-  # If any custom code is added to these classes, they should be removed form this filter and
+  # If any custom code is added to these classes, they should be removed from this filter and
   # tested.
   add_filter "app/controllers/catalog_controller.rb"
   add_filter "app/models/search_builder.rb"
