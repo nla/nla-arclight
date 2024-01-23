@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "blacklight/solr_cloud/repository"
+require "nla/solr_cloud/repository"
 
 # Blacklight controller that handles searches and document requests
 class CatalogController < ApplicationController
@@ -13,7 +13,7 @@ class CatalogController < ApplicationController
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     if ENV["ZK_HOST"].present? && ENV["SOLR_COLLECTION"].present?
-      config.repository_class = Blacklight::SolrCloud::Repository
+      config.repository_class = Nla::SolrCloud::Repository
     end
     #
     ## Class for converting Blacklight's url parameters to into request parameters for the search index
@@ -39,7 +39,15 @@ class CatalogController < ApplicationController
     config.highlight_field = "text"
 
     # solr path which will be added to solr base url before the other solr params.
-    # config.solr_path = 'select'
+    config.solr_path = "select"
+    config.document_solr_path = "select"
+
+    # solr parameters to send on single-document requests to Solr.
+    # The "q" param is formatted in Blacklight::SolrCloud::Repository.find to search the "id" field.
+    config.document_unique_id_param = "q"
+    # These are sent by default to ensure all document fields are returned.
+    # Facets, spellcheck and response header are omitted, since they're not needed.
+    config.default_document_solr_params = {fl: "*", facet: "false", spellcheck: "false", omitHeader: "true"}
 
     # items to show per page, each number in the array represent another option to choose from.
     # config.per_page = [10,20,50,100]

@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 3929310f1db09f0a3160e2ca523d57276866c450
+  revision: ed0d71bcdcccc599be3fc00a6970ca368c93e8d4
   branch: main
   specs:
     nla-blacklight_common (0.1.12)
@@ -156,7 +156,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     cgi (0.4.1)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crack (0.4.5)
       rexml
@@ -313,7 +313,7 @@ GEM
     mini_histogram (0.3.1)
     mini_mime (1.1.5)
     minitar (0.9)
-    minitest (5.21.1)
+    minitest (5.21.2)
     msgpack (1.7.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
