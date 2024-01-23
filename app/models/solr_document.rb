@@ -1,17 +1,14 @@
 # frozen_string_literal: true
 
+# Represents a single document returned from Solr
 class SolrDocument
-  # :nocov:
   include Blacklight::Solr::Document
   include Arclight::SolrDocument
 
+  # alias this field for the request link
+  attribute :bibid, :string, "bibid_ssi"
+
   # self.unique_key = 'id'
-
-  # Email uses the semantic field mappings below to generate the body of an email.
-  SolrDocument.use_extension(Blacklight::Document::Email)
-
-  # SMS uses the semantic field mappings below to generate the body of an SMS email.
-  SolrDocument.use_extension(Blacklight::Document::Sms)
 
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
@@ -19,9 +16,4 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
-  # :nocov:
-
-  def catalogue_link
-    Rails.application.config_for(:arclight)[:catalogue_record_url] % [first("bibid_ssi")]
-  end
 end

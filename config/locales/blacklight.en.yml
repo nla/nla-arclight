@@ -18,6 +18,8 @@ en:
     pagination_compact:
       previous: '&laquo; Previous'
       next: 'Next &raquo;'
+  arclight:
+    masthead_heading_html: 'Archival Collections at The National Library of Australia'
   blacklight:
     application_name: 'Finding Aids'
     skip_links:
@@ -38,7 +40,7 @@ en:
       bookmarks_fa: 'Bookmarks - Finding aids'
       search_history: 'History'
       register: 'Join us'
-    welcome: 'Welcome LSP Board!'
+    welcome: 'Welcome!'
     and: 'and'
     or: 'or'
     footer:
@@ -75,7 +77,7 @@ en:
         success:
           one: 'Successfully added bookmark.'
           other: 'Successfully added bookmarks.'
-        failure: 'Sorry, there was a problem saving the bookmarks.'
+        failure:  'Sorry, there was a problem saving the bookmarks.'
       remove:
         button: 'Remove bookmark'
         success: 'Successfully removed bookmark.'
@@ -123,10 +125,6 @@ en:
         submit: 'Send'
       text:
         default_title: 'N/A'
-        title: 'Title: %{value}'
-        author: 'Author: %{value}'
-        format: 'Format: %{value}'
-        language: 'Language: %{value}'
         subject:
           one: 'Item Record: %{title}'
           other: 'Item records'
@@ -147,8 +145,6 @@ en:
         carrier_prompt: 'Please select your carrier'
         submit: 'Send'
       text:
-        title: '%{value}'
-        author: ' by %{value}'
         url: 'Link: %{url}'
       success: "SMS Sent"
       errors:
@@ -159,7 +155,7 @@ en:
           blank: 'You must select a carrier'
           invalid: "You must enter a valid carrier"
 
-    back_to_search: 'Back to search results'
+    back_to_search: 'Back to Search'
     back_to_bookmarks: 'Back to Bookmarks'
 
     search:
@@ -171,17 +167,16 @@ en:
       search_constraints_header: 'Search Constraints'
       search_results: 'Search Results'
       errors:
-        request_error: "Sorry, I don't understand your search."
         invalid_solr_id: "Sorry, you have requested a record that doesn't exist."
       per_page:
         label: '%{count}<span class="sr-only visually-hidden"> per page</span>'
-        button_label: '%{count} per page'
+        button_label: '%{count} per page' # TODO: Remove during major release
         button_label_html: '%{count}<span class="d-none d-sm-inline"> per page</span>'
         title: 'Number of results to display per page'
         submit: 'Update'
         aria_label: 'Results navigation'
       sort:
-        label: 'Sort by %{field}'
+        label: 'Sort by %{field}' # TODO: Remove during major release
         label_html: 'Sort<span class="d-none d-sm-inline"> by %{field}</span>'
         submit: 'sort results'
       form:
@@ -226,6 +221,8 @@ en:
           hide: Hide
         group:
           toggle: Toggle facets
+          open: Show facets
+          close: Hide facets
       group:
         more: 'more »'
       filters:
@@ -243,7 +240,7 @@ en:
       rss_feed: 'RSS for results'
       atom_feed: 'Atom for results'
       bookmarks:
-        present: "In bookmarks"
+        present: "In Bookmarks"
         absent: "Bookmark"
         inprogress: "Saving..."
       zero_results:

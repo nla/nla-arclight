@@ -1,8 +1,4 @@
-<% # overidden from Blacklight to handle our responsive needs %>
-<div id="sortAndPerPage" class="sort-pagination clearfix">
-  <div>
-    <%= render partial: "paginate_compact", object: @response if show_pagination? %>
-  </div>
-  <%= render partial: 'group_toggle' unless current_page?(controller: 'bookmarks')  %>
-  <%= render_results_collection_tools wrapping_class: "search-widgets float-md-right" %>
+<div id="sortAndPerPage" class="sort-pagination d-md-flex justify-content-start" role="navigation" aria-label="<%= t('blacklight.search.per_page.aria_label')%>">
+  <%= render partial: "paginate_compact", object: @response if show_pagination? %>
+  <%= render_results_collection_tools wrapping_class: "search-widgets" %>
 </div>
