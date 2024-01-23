@@ -10,8 +10,8 @@ GIT
 
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 1d7fe29bdb08fb13b02ab33f69a87340ac79b277
-  branch: feat/upgrade
+  revision: 5d4fb5d0142ac8e1b3a3741a4f2b6569c9cab0ad
+  branch: fix/single-document-search
   specs:
     nla-blacklight_common (0.1.12)
       activerecord-session_store (~> 2.0)
@@ -156,7 +156,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     cgi (0.4.1)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crack (0.4.5)
       rexml
@@ -313,7 +313,7 @@ GEM
     mini_histogram (0.3.1)
     mini_mime (1.1.5)
     minitar (0.9)
-    minitest (5.21.1)
+    minitest (5.21.2)
     msgpack (1.7.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
