@@ -1,6 +1,6 @@
 $(function() {
   BlacklightRangeLimit.turnIntoPlot = function turnIntoPlot(container, wait_for_visible) {
-    // flot can only render in a a div with a defined width.
+    // flot can only render in a div with a defined width.
     // for instance, a hidden div can't generally be rendered in (although if you set
     // an explicit width on it, it might work)
     //
