@@ -482,7 +482,8 @@ GEM
     ruby-statistics (3.0.2)
     rubyzip (2.3.2)
     scrub_rb (1.0.1)
-    selenium-webdriver (4.15.0)
+    selenium-webdriver (4.17.0)
+      base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -650,7 +651,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
-  selenium-webdriver (~> 4.11)
+  selenium-webdriver (~> 4.17)
   shoulda-matchers
   simplecov (~> 0.22.0)
   simplecov-json (~> 0.2.3)
