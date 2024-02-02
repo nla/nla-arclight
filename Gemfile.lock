@@ -193,7 +193,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    diff-lcs (1.5.0)
+    diff-lcs (1.5.1)
     docile (1.4.0)
     domain_name (0.6.20231109)
     dot-properties (0.1.4)
@@ -439,7 +439,7 @@ GEM
     rspec-mocks (3.12.6)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-rails (6.1.0)
+    rspec-rails (6.1.1)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       railties (>= 6.1)
@@ -647,7 +647,7 @@ DEPENDENCIES
   rails-controller-testing (~> 1.0, >= 1.0.5)
   redis (~> 5.0)
   rsolr (>= 1.0, < 3)
-  rspec-rails (~> 6.0)
+  rspec-rails (~> 6.1)
   rubocop-performance
   rubocop-rails
   rubocop-rspec
