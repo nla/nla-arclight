@@ -198,9 +198,6 @@ GEM
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
     dotenv (3.0.3)
-    dotenv-rails (3.0.3)
-      dotenv (= 3.0.3)
-      railties (>= 6.1)
     dry-initializer (3.1.1)
     erubi (1.12.0)
     factory_bot (6.4.6)
@@ -627,7 +624,7 @@ DEPENDENCIES
   database_cleaner-active_record
   debug
   derailed_benchmarks
-  dotenv-rails
+  dotenv
   factory_bot_rails
   faker
   flamegraph

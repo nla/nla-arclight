@@ -5,7 +5,7 @@ ruby "3.2.2"
 
 # All runtime config comes from the UNIX environment
 # but we use dotenv to store that in files for development and testing
-gem "dotenv-rails", groups: [:development, :test]
+gem "dotenv", groups: [:development, :test]
 
 # Brakeman analyzes our code for security vulnerabilities
 gem "brakeman"
