@@ -38,6 +38,9 @@ module NlaArclight
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # customise the error pages
+    config.exceptions_app = routes
+
     config.time_zone = "Canberra"
 
     config.assets.configure do |env|

@@ -1,3 +1,5 @@
+require "nla/routes"
+
 Rails.application.routes.draw do
   scope(path: "/finding-aids") do
     mount Blacklight::Engine => "/"
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
     concern :exportable, Blacklight::Routes::Exportable.new
     concern :hierarchy, Arclight::Routes::Hierarchy.new
     concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
+    concern :iiif, Nla::Routes::Iiif.new
 
     resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
       concerns :searchable
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
     resources :solr_documents, only: [:show], path: "/catalog", controller: "catalog" do
       concerns :hierarchy
       concerns :exportable
+      concerns :iiif
     end
 
     resources :bookmarks do
@@ -26,6 +30,12 @@ Rails.application.routes.draw do
         delete "clear"
       end
     end
+
+    # error handlers
+    get "/404", to: "errors#not_found", as: "not_found_error", via: :all
+    get "/422", to: "errors#unprocessable", as: "unprocessable_error", via: :all
+    get "/500", to: "errors#internal_server", as: "internal_server_error", via: :all
+    get "/503", to: "errors#unavailable", as: "unavailable_error", via: :all
 
     # Show repostories with information about each
     # root to: "arclight/repositories#index"
