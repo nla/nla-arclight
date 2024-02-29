@@ -21,12 +21,14 @@ class IiifService
           # If the streaming of the image from the IIIF server fails, we should log the error and return nil
           # instead of a broken image.
           Rails.logger.error "Failed to retrieve IIIF image for #{obj_id}"
-          return nil
+          streamed = []
         end
       end
     end
 
-    streamed.join
+    unless streamed.empty?
+      streamed.join
+    end
   rescue => e
     Rails.logger.error "Failed to connect catalogue services: #{e.message}"
   end

@@ -410,12 +410,4 @@ class CatalogController < ApplicationController
     # Group header values
     config.add_group_header_field "abstract_or_scope", accessor: true, truncate: true, helper_method: :render_html_tags
   end
-
-  def iiif
-    @document = search_service.fetch(params[:id])
-    data = IiifService.image("nla.obj-224028181")
-    if data.present?
-      send_data data, type: "image/jpeg", disposition: "inline"
-    end
-  end
 end
