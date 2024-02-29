@@ -28,7 +28,11 @@ Rails.application.routes.draw do
     end
 
     # constraint on this route allows the full stop in the object ID to be included
-    get "/iiif/image/:id", to: "iiif#image", as: "iiif_image", constraints: {id: /nla\.obj-.+/}
+    scope format: false, constraints: {id: /nla\.obj-\d+/} do
+      get "/iiif/image/:id", to: "iiif#image", as: "iiif_image"
+      get "/iiif/image_info/:id", to: "iiif#image_info", as: "iiif_image_info"
+      get "/iiif/:id/manifest", to: "iiif#manifest", as: "iiif_manifest"
+    end
 
     # error handlers
     get "/404", to: "errors#not_found", as: "not_found_error", via: :all

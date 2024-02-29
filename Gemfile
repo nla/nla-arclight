@@ -89,6 +89,8 @@ gem "blacklight-locale_picker"
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
+gem "iiif-presentation", "~> 1.0"
+
 gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "main"
 gem "blacklight_range_limit", git: "https://github.com/nla/blacklight_range_limit", branch: "main"
 # For local development, comment out above ⤴️ and uncomment below ⤵️

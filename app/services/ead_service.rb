@@ -1,5 +1,5 @@
 class EadService
-  def self.findingaid(obj_id)
+  def self.finding_aid(obj_id)
     conn = setup_connection
 
     res = conn.get("/catalogue-services/ead/#{obj_id}")
