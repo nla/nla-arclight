@@ -1,17 +1,33 @@
 # frozen_string_literal: true
 
 class DigitalObject
-  attr_reader :pid, :form, :bib_level, :title, :access_conditions, :digital_status, :sensitive_material, :order
+  attr_reader :pid, :form, :bib_level, :title, :access_conditions, :digital_status, :sensitive_material, :order, :href
+
+  BIB_LEVEL_ITEM = "item"
+  DIGITAL_STATUS_CAPTURED = "captured"
+  DIGITAL_STATUS_PARTIALLY_CAPTURED = "partially-captured"
+  ACCESS_UNRESTRICTED = "unrestricted"
+  NOT_SENSITIVE = "no"
+  FORM_MANUSCRIPT = "manuscript"
+
+  HREF_PATTERN = "https://nla.gov.au%s"
 
   def initialize(pid:, form:, bib_level:, title:, access_conditions:, digital_status:, sensitive_material:, order:)
     @pid = pid
-    @form = form
-    @bib_level = bib_level
-    @title = title || pid
-    @access_conditions = access_conditions
-    @digital_status = digital_status
-    @sensitive_material = sensitive_material
+    @form = form.parameterize
+    @bib_level = bib_level.parameterize
+    @title = title.parameterize || pid
+    @access_conditions = access_conditions.parameterize
+    @digital_status = digital_status.parameterize
+    @sensitive_material = sensitive_material.parameterize
     @order = order
+
+    # if displayable, link to the image, otherwise link to Trove Discovery
+    @href = if displayable?
+      HREF_PATTERN % ["/#{pid}/image"]
+    else
+      HREF_PATTERN % ["/#{pid}"]
+    end
   end
 
   def as_json(options = {})
@@ -23,7 +39,8 @@ class DigitalObject
       access_conditions: @access_conditions,
       digital_status: @digital_status,
       sensitive_material: @sensitive_material,
-      order: @order
+      order: @order,
+      href: @href
     }
   end
 
@@ -47,5 +64,12 @@ class DigitalObject
 
   def ==(other)
     pid == other.pid
+  end
+
+  def displayable?
+    bib_level == BIB_LEVEL_ITEM &&
+      form == FORM_MANUSCRIPT &&
+      access_conditions == ACCESS_UNRESTRICTED &&
+      sensitive_material == NOT_SENSITIVE
   end
 end

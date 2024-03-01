@@ -1,0 +1,14 @@
+<div id="embed" class="mb-2">
+  <h2 class="al-show-sub-heading"><%= t('arclight.views.show.embedded_content') %></h2>
+  <% embeddable_resources.each do |resource| %>
+    <div class="al-digital-object">
+      <%= link_to(resource.title, resource.href) %>
+    </div>
+  <% end %>
+
+  <% linked_resources.each do |resource| %>
+    <div class="al-digital-object">
+      <%= link_to(resource.title, resource.href) %>
+    </div>
+  <% end %>
+</div>
