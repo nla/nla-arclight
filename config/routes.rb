@@ -27,6 +27,17 @@ Rails.application.routes.draw do
       end
     end
 
+    # constraint on this route allows the full stop in the object ID to be included
+    scope format: false, constraints: {id: /nla\.obj-\d+/} do
+      get "/image/:id", to: "image#image", as: "representative_image"
+    end
+
+    # error handlers
+    get "/404", to: "errors#not_found", as: "not_found_error", via: :all
+    get "/422", to: "errors#unprocessable", as: "unprocessable_error", via: :all
+    get "/500", to: "errors#internal_server", as: "internal_server_error", via: :all
+    get "/503", to: "errors#unavailable", as: "unavailable_error", via: :all
+
     # Show repostories with information about each
     # root to: "arclight/repositories#index"
 

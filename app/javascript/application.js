@@ -3,3 +3,5 @@ import "@hotwired/turbo-rails"
 Turbo.session.drive = false
 import "./controllers"
 import * as bootstrap from "bootstrap"
+import OpenSeadragon from "openseadragon"
+window.OpenSeadragon = OpenSeadragon

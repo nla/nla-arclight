@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class DigitalObject
+  include Rails.application.routes.url_helpers
+
   attr_reader :pid, :form, :bib_level, :title, :access_conditions, :digital_status, :sensitive_material, :order, :href
 
   BIB_LEVEL_ITEM = "item"
@@ -24,7 +26,8 @@ class DigitalObject
 
     # if displayable, link to the image, otherwise link to Trove Discovery
     @href = if displayable?
-      HREF_PATTERN % ["/#{pid}/image"]
+      representative_image_url(id: pid, only_path: true)
+      # HREF_PATTERN % ["/#{pid}/image"]
     else
       HREF_PATTERN % ["/#{pid}"]
     end
