@@ -1,0 +1,24 @@
+<% images.each do |resource| %>
+  <div class="al-digital-object">
+    <%= link_to(resource.title, resource.href) %>
+  </div>
+<% end %>
+<div id="openseadragon1" style="width: 800px; height: 600px;"></div>
+<script>
+  $(document).ready(function() {
+    OpenSeadragon({
+      id: "openseadragon1",
+      prefixUrl: "/finding-aids/assets/openseadragon/images/",
+      tileSources: [
+        <% images.each do |image| %> {
+          type: "image",
+          url: "<%= image.href %>",
+          buildPyramid: false,
+          crossOriginPolicy: "Access-Control-Allow-Origin: *",
+          ajaxWithCredentials: false
+        }<% unless image == images.last %>,<% end %>
+        <% end %>
+      ]
+    });
+  });
+</script>
