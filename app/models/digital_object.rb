@@ -6,6 +6,7 @@ class DigitalObject
   attr_reader :pid, :form, :bib_level, :title, :access_conditions, :digital_status, :sensitive_material, :order, :href
 
   BIB_LEVEL_ITEM = "item"
+  BIB_LEVEL_PART = "part"
   DIGITAL_STATUS_CAPTURED = "captured"
   DIGITAL_STATUS_PARTIALLY_CAPTURED = "partially-captured"
   ACCESS_UNRESTRICTED = "unrestricted"
@@ -18,7 +19,7 @@ class DigitalObject
     @pid = pid
     @form = form.parameterize
     @bib_level = bib_level.parameterize
-    @title = title.parameterize || pid
+    @title = title&.parameterize || pid
     @access_conditions = access_conditions.parameterize
     @digital_status = digital_status.parameterize
     @sensitive_material = sensitive_material.parameterize
@@ -54,7 +55,7 @@ class DigitalObject
   def self.from_json(json)
     object_data = JSON.parse(json)
     new(
-      pid: object_data["pid"],
+      pid: object_data["representativeWork"],
       form: object_data["form"],
       bib_level: object_data["bib_level"],
       title: object_data["title"],
@@ -70,7 +71,7 @@ class DigitalObject
   end
 
   def displayable?
-    bib_level == BIB_LEVEL_ITEM &&
+    (bib_level == BIB_LEVEL_ITEM || bib_level == BIB_LEVEL_PART) &&
       form == FORM_MANUSCRIPT &&
       access_conditions == ACCESS_UNRESTRICTED &&
       sensitive_material == NOT_SENSITIVE

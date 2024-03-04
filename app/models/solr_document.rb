@@ -11,7 +11,8 @@ class SolrDocument
   attribute :bibid, :string, "bibid_ssi"
 
   # alias this field for object id
-  attribute :object_id, :string, "ref_ssi"
+  attribute :ead_id, :string, "ead_ssi"
+  attribute :ref_id, :string, "ref_ssi"
 
   # self.unique_key = 'id'
 
@@ -22,10 +23,14 @@ class SolrDocument
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
 
+  def object_id
+    "nla.obj-#{ref_id || ead_id}"
+  end
+
   # Override from Arclight::SolrDocument to fetch viewable children from
   # finding aid.
   def digital_objects
-    finding_aid = EadService.finding_aid("nla.obj-#{object_id}")
+    finding_aid = EadService.finding_aid(object_id)
     digital_objects = finding_aid["children"]["manuscript"].reject do |child|
       DISPLAYABLE_DIGITAL_STATUS.exclude?(child["digitalStatus"].parameterize)
     end
@@ -33,10 +38,10 @@ class SolrDocument
 
     digital_objects.map do |child|
       DigitalObject.new(
-        pid: child["pid"],
+        pid: child["representativeWork"],
         form: child["form"],
         bib_level: child["bibLevel"],
-        title: child["title"],
+        title: (child["title"].presence || child["subUnitType"]),
         access_conditions: child["accessConditions"],
         digital_status: child["digitalStatus"],
         sensitive_material: child["sensitiveMaterial"],

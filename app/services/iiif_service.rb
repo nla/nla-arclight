@@ -33,7 +33,7 @@ class IiifService
 
     # e.g. http://localhost:3000/iiif/nla.obj-123/full/full/0/default.jpg
     conn.get(url) do |req|
-      req.options.on_data = Proc.new do |chunk, overall_received_bytes, env|
+      req.options.on_data = proc do |chunk, overall_received_bytes, env|
         if env.status == 200
           Rails.logger.info "Received #{overall_received_bytes} bytes"
           streamed << chunk
