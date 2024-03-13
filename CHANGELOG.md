@@ -1,5 +1,68 @@
 # Changelog
 
+## [3.0.0](https://github.com/nla/nla-arclight/compare/2.7.1...3.0.0) (2024-03-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* upgrade to Arclight 1 (Blacklight 8)
+
+### Features
+
+* upgrade to Arclight 1 (Blacklight 8) ([c7360c8](https://github.com/nla/nla-arclight/commit/c7360c875ea716bb8f3d55e359b140d8b1404f17))
+
+
+### Bug Fixes
+
+* configure correct Solr search adapter in blacklight.yml ([8781c33](https://github.com/nla/nla-arclight/commit/8781c338878fe20280004ce59d7b262c3f4bbc30))
+* downgrade postcss-cli for nodejs version compatiblity ([08a1efe](https://github.com/nla/nla-arclight/commit/08a1efe2f76e51be27ed658812cb81ef8ef45c67))
+* fix styling of blacklight range limit ([f6558d6](https://github.com/nla/nla-arclight/commit/f6558d6a08b4f8a44f3899569e9c367a73d6ebe9))
+* remove repository facet from arclight ([4a1b7db](https://github.com/nla/nla-arclight/commit/4a1b7dbf09bb5abee929c7a49a4f9d602e4fee81))
+* remove repository facet from arclight ([df8f44c](https://github.com/nla/nla-arclight/commit/df8f44caae56dfd07672123789a31fd7a771926a))
+* resolve code review comments ([1eeb5da](https://github.com/nla/nla-arclight/commit/1eeb5da3177a2e674c6a31d37629aaf38547a40e))
+* style blacklight range limit modal graph ([fee61c3](https://github.com/nla/nla-arclight/commit/fee61c3c3a7b2126ef036ec2612af54151d9970c))
+* update vulnerable dependencies ([87912aa](https://github.com/nla/nla-arclight/commit/87912aa1912b4e7efb64bc52cc3e37ad729a4759))
+* upgrade Rails to address CVE-2024-26143 ([d5a13e2](https://github.com/nla/nla-arclight/commit/d5a13e23ce56d443ad053489b5634c46b1254f8d))
+
+
+### Reverts
+
+* "build(deps): bump postcss-cli from 10.1.0 to 11.0.0" ([047d214](https://github.com/nla/nla-arclight/commit/047d2141fefca1d5617308d6257fbb4cb6dc219c))
+
+
+### Miscellaneous
+
+* prepare 3.0.0 release ([1cafd6c](https://github.com/nla/nla-arclight/commit/1cafd6c0f0c22586ae40be39c23829ed3e414504))
+* replace dotenv-rails with dotenv ([9e732da](https://github.com/nla/nla-arclight/commit/9e732dabb0abff085a2614ade37cb2ee2b412347))
+* resolve merge conflicts ([67a212c](https://github.com/nla/nla-arclight/commit/67a212cda7153e3124df77d9487c7298a56ca0fa))
+* resolve merge conflicts ([ba0ee7a](https://github.com/nla/nla-arclight/commit/ba0ee7aadcf1e935f1994d2f06501189586a8de2))
+* update nla-blacklight_common ([963cc9f](https://github.com/nla/nla-arclight/commit/963cc9f708e65e7db9fcba1eb1790e2dd98c87c6))
+* update nla-blacklight_common dependency ([8998cdc](https://github.com/nla/nla-arclight/commit/8998cdc409f24b5a3138e11ac8f5ca0a3b2c4e57))
+* update README ([50a25f3](https://github.com/nla/nla-arclight/commit/50a25f39ef53e646191968fa1492e90a2ba5bb88))
+* upgrade nodejs dependencies ([02eb671](https://github.com/nla/nla-arclight/commit/02eb671866e44486ce6401ee557e1dd618773f2b))
+
+
+### Build System
+
+* **deps-dev:** bump factory_bot_rails from 6.2.0 to 6.4.3 ([d8e3867](https://github.com/nla/nla-arclight/commit/d8e3867d23e29eb8212c76a9e1106c6d91e1927c))
+* **deps-dev:** bump rspec-rails from 6.1.0 to 6.1.1 ([7759990](https://github.com/nla/nla-arclight/commit/77599901acc3bbebcea51aad4a5bab6370754859))
+* **deps-dev:** bump rubocop-rails from 2.22.1 to 2.23.1 ([103e535](https://github.com/nla/nla-arclight/commit/103e535a8d6bcfc980bdc4826072a007c6209174))
+* **deps-dev:** bump selenium-webdriver from 4.15.0 to 4.17.0 ([f35a692](https://github.com/nla/nla-arclight/commit/f35a69271202ec2d5c881225b20794f1a4b1cca2))
+* **deps-dev:** bump shoulda-matchers from 5.3.0 to 6.1.0 ([d0b4bc5](https://github.com/nla/nla-arclight/commit/d0b4bc5459887fd68a2a90afb16e3de9b8d707c1))
+* **deps:** bump blacklight-locale_picker from 1.0.0 to 1.1.0 ([1b9fdbd](https://github.com/nla/nla-arclight/commit/1b9fdbdc998ac6ecd9f81badd82941d262f5cfcf))
+* **deps:** bump bootstrap from 5.3.1 to 5.3.2 ([14331f1](https://github.com/nla/nla-arclight/commit/14331f1570555fb20facede3ede90a1732ad023c))
+* **deps:** bump cssbundling-rails from 1.3.3 to 1.4.0 ([86f958c](https://github.com/nla/nla-arclight/commit/86f958c299b7ba74c5d0e3184610771871a6b5b8))
+* **deps:** bump esbuild from 0.19.2 to 0.20.0 ([49898e3](https://github.com/nla/nla-arclight/commit/49898e39674231630b7277e22be2614acad95290))
+* **deps:** bump jsbundling-rails from 1.2.1 to 1.3.0 ([1b93695](https://github.com/nla/nla-arclight/commit/1b93695ee3c259d5475103dce27ab2fb2dcb1dd0))
+* **deps:** bump nodemon from 3.0.1 to 3.0.3 ([6fc01f0](https://github.com/nla/nla-arclight/commit/6fc01f017f269814766c07b8f1313b34dae93a0f))
+* **deps:** bump postcss from 8.4.28 to 8.4.31 ([bfd12f9](https://github.com/nla/nla-arclight/commit/bfd12f94e1f92a1688f1e8d6874a3ac673d0408a))
+* **deps:** bump postcss from 8.4.28 to 8.4.33 ([92f1e2a](https://github.com/nla/nla-arclight/commit/92f1e2a5ec837db5c82a3c6076995095258fad32))
+* **deps:** bump postcss-cli from 10.1.0 to 11.0.0 ([435d081](https://github.com/nla/nla-arclight/commit/435d081acdfa85638280cc390b5b121bc0578ab9))
+* **deps:** bump stimulus-rails from 1.3.0 to 1.3.3 ([abce2f5](https://github.com/nla/nla-arclight/commit/abce2f5e6d20ea15a6fe8af70fdce5ce511c9ce3))
+* **deps:** bump strong_migrations from 1.6.4 to 1.7.0 ([ccfed20](https://github.com/nla/nla-arclight/commit/ccfed20a590940193903f9326b14ef7a14a5cf4c))
+* ignore CVE-2023-51774 until after release ([d430d70](https://github.com/nla/nla-arclight/commit/d430d70aed46e50b594ab38d0322a9acb12affee))
+* point nla-blacklight_common dependency to main branch ([38a8122](https://github.com/nla/nla-arclight/commit/38a812224d3ee831db21c8b2f1912ee23489ef70))
+
 ## [2.7.1](https://github.com/nla/nla-arclight/compare/2.7.0...2.7.1) (2023-11-29)
 
 
