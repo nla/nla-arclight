@@ -352,6 +352,7 @@ class CatalogController < ApplicationController
     }, if: lambda { |_context, _field_config, document|
       document.containers.present?
     }
+    config.add_component_field "collectionidentifier", field: "collection_identifier", accessor: :collection_identifier, helper_method: :render_html_tags
     config.add_component_field "abstract", field: "abstract_html_tesm", helper_method: :render_html_tags
     config.add_component_field "extent", field: "extent_ssm"
     config.add_component_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
