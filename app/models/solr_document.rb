@@ -8,6 +8,10 @@ class SolrDocument
   # alias this field for the request link
   attribute :bibid, :string, "bibid_ssi"
 
+  def unit_level
+    "#{self['level_ssm'].join(' ')}, #{self['unitid_ssm'].join(' ')}"
+  end
+
   # self.unique_key = 'id'
 
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
