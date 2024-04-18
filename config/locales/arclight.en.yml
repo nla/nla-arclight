@@ -19,6 +19,10 @@ en:
         phystech: Physical / technical requirements
         physloc: Physical location
         descrules: Rules or conventions
+        physfacet: Format
+        physquantity: Quantity
+        physunittype: Physical unit type
+        physdimensions: Physical dimensions
 
         relatedmaterial: Related material
         separatedmaterial: Separated material
