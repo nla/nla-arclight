@@ -15,7 +15,6 @@ class SolrDocument
     level_ssm = level_ssm.join(" ") if level_ssm
     unitid_ssm = unitid_ssm.join(" ") if unitid_ssm
 
-
     [level_ssm, unitid_ssm].compact.join(", ")
   end
 
