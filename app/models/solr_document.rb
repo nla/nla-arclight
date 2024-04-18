@@ -9,7 +9,14 @@ class SolrDocument
   attribute :bibid, :string, "bibid_ssi"
 
   def collection_identifier
-    "#{self["level_ssm"].join(" ")}, #{self["unitid_ssm"].join(" ")}"
+    level_ssm = self["level_ssm"]
+    unitid_ssm = self["unitid_ssm"]
+
+    level_ssm = level_ssm.join(" ") if level_ssm
+    unitid_ssm = unitid_ssm.join(" ") if unitid_ssm
+
+
+    [level_ssm, unitid_ssm].compact.join(", ")
   end
 
   # self.unique_key = 'id'
