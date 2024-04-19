@@ -295,7 +295,7 @@ class CatalogController < ApplicationController
     # ===========================
 
     # Collection Show Page - Summary Section
-    config.add_summary_field "collectionnumber", field: "collection_number_ssi", helper_method: :render_html_tags
+    config.add_summary_field "collectionnumber", field: "collection_number_ssi"
     config.add_summary_field "creators", field: "creators_ssim", link_to_facet: true
     config.add_summary_field "abstract", field: "abstract_html_tesm", helper_method: :render_html_tags
     config.add_summary_field "extent", field: "extent_ssm"
