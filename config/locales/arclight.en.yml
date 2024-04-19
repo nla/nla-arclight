@@ -7,6 +7,7 @@ en:
         extent: Extent
         language: Language
         prefercite: Preferred citation
+        collectionnumber: Collection number
 
         scopecontent: Scope and content
         bioghist: Biographical / historical
