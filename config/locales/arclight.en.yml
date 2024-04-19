@@ -9,6 +9,8 @@ en:
         prefercite: Preferred citation
         collectionnumber: Collection number
 
+
+        collectionidentifier: Collection Identifier
         scopecontent: Scope and content
         bioghist: Biographical / historical
         acqinfo: Acquisition information
