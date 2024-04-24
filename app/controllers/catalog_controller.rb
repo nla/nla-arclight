@@ -102,7 +102,8 @@ class CatalogController < ApplicationController
     config.show.online_status_component = Arclight::OnlineStatusIndicatorComponent
     config.show.display_type_field = "level_ssm"
     # config.show.thumbnail_field = 'thumbnail_path_ss'
-    config.show.document_presenter_class = Arclight::ShowPresenter
+    # config.show.document_presenter_class = Arclight::ShowPresenter
+    config.show.document_presenter_class = ShowPresenter
     config.show.metadata_partials = %i[
       summary_field
       background_field
