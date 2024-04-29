@@ -79,6 +79,7 @@ jobs:
 
       - name: RSpec tests
         run: |
+          bundle exec rails assets:precompile
           bundle exec rspec
 
       - name: Simplecov Report
