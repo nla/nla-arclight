@@ -13,7 +13,7 @@ en:
         collectionidentifier: Collection Identifier
         scopecontent: Scope and content
         bioghist: Biographical / historical
-        acqinfo: Acquisition information
+        acqinfo: Immediate source of acquisition
         appraisal: Appraisal information
         custodhist: Custodial history
         processinfo: Processing information
@@ -30,8 +30,8 @@ en:
         relatedmaterial: Related material
         separatedmaterial: Separated material
         otherfindaid: Other finding aids
-        altformavail: Alternative form available
-        originalsloc: Location of originals
+        altformavail: Existence and location of copies
+        originalsloc: Existence and location of originals
 
         access_subjects: Subjects
         names_coll: Names
@@ -40,8 +40,8 @@ en:
         containers: Containers
         names: Names
 
-        restrictions: Restrictions
-        terms: Terms of access
+        restrictions: Conditions governing access
+        terms: Conditions governing use
         parent_restrictions: Parent restrictions
         parent_terms: Parent terms of access
         repository_location: Location of this collection
