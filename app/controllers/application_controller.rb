@@ -35,7 +35,8 @@ class ApplicationController < ActionController::Base
 
   # Some parts of the application are not suitable for storing the location
   def is_a_storable_controller_action?
-    !is_a?(Users::SessionsController) && # ignore login requests
+    !is_a?(Email2faAlertController) && # ignore email 2fa alert requests
+      !is_a?(Users::SessionsController) && # ignore login requests
       !is_a?(Users::OmniauthCallbacksController) # ignore login requests to Keycloak
   end
 
