@@ -10,7 +10,7 @@ en:
         collectionnumber: Collection number
 
 
-        collectionidentifier: Collection Identifier
+        collectionidentifier: Component identifier
         scopecontent: Scope and content
         bioghist: Biographical / historical
         acqinfo: Immediate source of acquisition
