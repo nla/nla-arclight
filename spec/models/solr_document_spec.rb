@@ -12,7 +12,7 @@ RSpec.describe SolrDocument do
       end
 
       it "joins them with a comma" do
-        expect(collection_identifier_value).to eq "level1 level2, unit1 unit2"
+        expect(collection_identifier_value).to eq "level1 level2 unit1 unit2"
       end
     end
 
