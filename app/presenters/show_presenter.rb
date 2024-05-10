@@ -7,6 +7,5 @@ class ShowPresenter < Arclight::ShowPresenter
     else
       document.normalized_title
     end
-
   end
 end
