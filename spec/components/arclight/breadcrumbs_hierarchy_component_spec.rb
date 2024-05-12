@@ -22,6 +22,7 @@ RSpec.describe BreadcrumbsHierarchyComponent, type: :component do
 
       expect(page).to have_css "li", text: "National Library of Australia"
       expect(page).to have_css "li", text: "Guide to the ABC123"
+      expect(page).not_to have_link "Guide to the ABC123"
     end
   end
 
@@ -49,8 +50,8 @@ RSpec.describe BreadcrumbsHierarchyComponent, type: :component do
       expect(page).not_to have_link "Guide to the DEF", href: "/finding-aids/catalog/abc123abc123_def"
 
       expect(page).to have_css "li", text: "GHI"
-      expect(page).not_to have_link "GHI", href: "/finding-aids/catalog/abc123abc123_ghi"
-      expect(page).not_to have_link "Guide to the GHI", href: "/finding-aids/catalog/abc123abc123_ghi"
+      expect(page).not_to have_link "GHI"
+      expect(page).not_to have_link "Guide to the GHI"
     end
   end
 
@@ -81,7 +82,7 @@ RSpec.describe BreadcrumbsHierarchyComponent, type: :component do
       expect(page).not_to have_link "Guide to the GHI", href: "/finding-aids/catalog/abc123abc123_ghi"
 
       expect(page).to have_css "li", text: "JKL"
-      expect(page).not_to have_css "li", text: "Guide to the JKL"
+      expect(page).not_to have_link "Guide to the JKL"
       expect(page).not_to have_link "JKL"
     end
   end
