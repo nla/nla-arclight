@@ -12,23 +12,23 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_27_060510) do
   create_table "bookmarks", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "user_type"
+    t.datetime "created_at", precision: nil, null: false
     t.string "document_id"
     t.string "document_type"
     t.binary "title"
-    t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+    t.integer "user_id", null: false
+    t.string "user_type"
     t.index ["document_id"], name: "index_bookmarks_on_document_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "searches", id: :integer, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: nil, null: false
     t.binary "query_params"
+    t.datetime "updated_at", precision: nil, null: false
     t.integer "user_id"
     t.string "user_type"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
     t.index ["user_id"], name: "index_searches_on_user_id"
   end
 

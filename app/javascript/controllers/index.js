@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import Email2faAlertController from "./email_2fa_alert_controller"
+application.register("email-2fa-alert", Email2faAlertController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
