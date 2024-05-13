@@ -1,0 +1,80 @@
+{
+  "responseHeader":{
+    "zkConnected":true,
+    "status":0,
+    "QTime":1,
+    "params":{
+      "q":"id:367300335367601811",
+      "fl":"*",
+      "_forwardedCount":"1",
+      "wt":"json"}},
+  "response":{"numFound":1,"start":0,"numFoundExact":true,"docs":[
+    {
+      "id":"367300335367601811",
+      "fav_obj_id_ssi":"nla.obj-367710222",
+      "ref_ssi":"367601811",
+      "ref_ssm":["367601811"],
+      "component_level_isim":[2],
+      "sort_isi":2,
+      "bibid_ssi":"538326",
+      "folio_instance_id_ssi":"2ff67ac1-fd2b-515c-ba93-248652d934c0",
+      "parent_ssi":"367601771",
+      "aspace_id_ssi":"aspace_8cf2270ccfec1a6513579cb137066c2f",
+      "title_ssm":["Diaries, 1929, 1934; loose diary pages, 1916, 1929, 1930, 1935 and undated"],
+      "title_tesim":["Diaries, 1929, 1934; loose diary pages, 1916, 1929, 1930, 1935 and undated"],
+      "normalized_title_ssm":["Diaries, 1929, 1934; loose diary pages, 1916, 1929, 1930, 1935 and undated"],
+      "text":["Diaries, 1929, 1934; loose diary pages, 1916, 1929, 1930, 1935 and undated",
+        "1",
+        "Braga, J.M. (José Maria)",
+        "History"],
+      "parent_ssim":["367300335",
+        "367601771"],
+      "parent_levels_ssm":["collection",
+        "Series"],
+      "parent_unittitles_ssm":["Papers of J.M. Braga, 1862-2000 (bulk 1920-1971)",
+        "Diaries and notebooks, 1916-c.1972"],
+      "parent_unittitles_tesim":["Papers of J.M. Braga, 1862-2000 (bulk 1920-1971)",
+        "Diaries and notebooks, 1916-c.1972"],
+      "collection_ssim":["Papers of J.M. Braga, 1862-2000 (bulk 1920-1971)"],
+      "unitid_ssm":["1"],
+      "ead_unitid_ssm":["367300335"],
+      "repository_ssim":["National Library of Australia"],
+      "collection_creator_ssm":["Braga, J.M. (José Maria)"],
+      "has_online_content_ssim":["false"],
+      "child_component_count_isi":0,
+      "level_ssim":["File"],
+      "level_ssm":["File"],
+      "parent_access_restrict_tesm":["Available for research."],
+      "parent_access_terms_tesm":["Copying and publishing of unpublished manuscript material is subject to copyright restrictions. For such material, written permission to publish must be obtained from the copyright holder(s). Copying of unpublished material for research purposes is permissible 50 years after the death of the creator of the material."],
+      "names_ssim":["Braga, J.M. (José Maria)"],
+      "access_subjects_ssim":["History"],
+      "access_subjects_ssm":["History"],
+      "acqinfo_ssim":["The bulk of the Braga Collection (including manuscripts, pictures, maps, newspapers, serials, periodicals, monographs and ephemera) was purchased from J.M. Braga in 1966. The component held in the Manuscript Collection at MS 4300 appears to have been formally accessioned as the J.M. Braga Papers in 1975. Several small additions have been made since the original instalment of papers was received. Most of these additions were transfers to the Manuscripts Collection from other collection areas, including a file of newspaper cuttings in May 1975, a set of microfilm reels in 1984, a file of manuscript material in 1985, lists of the Braga Collection in 1994, and two files of assorted printed material and other papers in 2009. As well, several small additions have been made by members of the Braga family. In 1992, various Braga family members donated a copy of the eulogy and order of service for Augusta Braga's memorial service, and in 2002 Angela Braga donated photographs of medals and decorations awarded to J.P. Braga, together with photocopies of early writings of J.M. Braga and eulogies for J.M. Braga and his grandson Michael Braga."],
+      "_nest_path_":"/child#0/child#0",
+      "_nest_parent_":"367300335367601771",
+      "_root_":"367300335",
+      "_version_":1796736391573405696,
+      "timestamp":"2024-04-19T04:35:49.969Z"}]
+  },
+  "facet_counts":{
+    "facet_queries":{},
+    "facet_fields":{
+      "level_ssim":[
+        "File",1],
+      "creator_ssim":[],
+      "date_range_ssim":[],
+      "names_ssim":[
+        "Braga, J.M. (José Maria)",1],
+      "geogname_ssim":[],
+      "access_subjects_ssim":[
+        "History",1],
+      "repository_ssim":[
+        "National Library of Australia",1],
+      "collection_ssim":[
+        "Papers of J.M. Braga, 1862-2000 (bulk 1920-1971)",1]},
+    "facet_ranges":{},
+    "facet_intervals":{},
+    "facet_heatmaps":{}},
+  "spellcheck":{
+    "suggestions":[],
+    "correctlySpelled":true}}

@@ -10,10 +10,10 @@ GIT
 
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 1cd0ee9fb716cba9839403e6aba888649fd849a8
+  revision: 90eea4c1e63bd82d324d80643efa4542dfdd2edc
   branch: main
   specs:
-    nla-blacklight_common (0.2.0)
+    nla-blacklight_common (0.2.1)
       activerecord-session_store (~> 2.0)
       annotaterb
       blacklight (>= 8.0.0, < 9)
@@ -105,7 +105,7 @@ GEM
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     aes_key_wrap (1.1.0)
-    annotaterb (4.7.0)
+    annotaterb (4.7.1)
     anyway_config (2.5.4)
       ruby-next-core (>= 0.14.0)
     arclight (1.0.1)
@@ -319,7 +319,7 @@ GEM
     mysql2 (0.5.5)
     net-http (0.4.1)
       uri
-    net-imap (0.4.10)
+    net-imap (0.4.11)
       date
       net-protocol
     net-pop (0.1.2)
@@ -352,7 +352,7 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
-    omniauth-rails_csrf_protection (1.0.1)
+    omniauth-rails_csrf_protection (1.0.2)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
