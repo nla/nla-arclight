@@ -12,12 +12,14 @@
         </div>
       </li>
     <% else %>
-    <li class="nav-item">
-      <%= link_to t("blacklight.header_links.register"), "https://www.nla.gov.au/getting-started/join-us", class: "nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to t('blacklight.header_links.login'), new_user_session_path, class: 'nav-link' %>
-    </li>
+      <li class="nav-item">
+        <%= link_to t("blacklight.header_links.register"), "https://www.nla.gov.au/getting-started/join-us", class: "nav-link" %>
+      </li>
+      <% unless ENV["FOLIO_UPDATE_IN_PROGRESS"] == "true" %>
+      <li class="nav-item">
+        <%= link_to t('blacklight.header_links.login'), new_user_session_path, class: 'nav-link' %>
+      </li>
+      <% end %>
     <% end %>
   <% end %>
 </ul>
