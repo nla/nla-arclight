@@ -1,5 +1,39 @@
 # Changelog
 
+## [3.1.0](https://github.com/nla/nla-arclight/compare/3.0.0...3.1.0) (2024-05-14)
+
+
+### Features
+
+* disable login during FOLIO updates ([756f401](https://github.com/nla/nla-arclight/commit/756f401b1f836d6eccf69e9e380589ca4b208081))
+* implement email 2fa alert ([1ada44d](https://github.com/nla/nla-arclight/commit/1ada44dbc8d9be9d17c4659700f79c11b0c3b8e0))
+
+
+### Bug Fixes
+
+* add finding aid level and unit id ([f3882e0](https://github.com/nla/nla-arclight/commit/f3882e0a068d436efa97a441454dab65c5628380))
+* fix indentation ([4edf79d](https://github.com/nla/nla-arclight/commit/4edf79de6254a006357fe3904a7cdc2ca3afe25e))
+
+
+### Miscellaneous
+
+* prepare release ([dbeacfe](https://github.com/nla/nla-arclight/commit/dbeacfee33753286031e020c0fd7e91a5d7ba123))
+* update nla-blacklight_common dependency ([4875942](https://github.com/nla/nla-arclight/commit/4875942c532e15c313a3f1a81df185c53a6bafac))
+* update nla-blacklight_common dependency ([1ae670c](https://github.com/nla/nla-arclight/commit/1ae670c3cdc380eb728172eb66a9054b253b1646))
+* update nla-blacklight_common dependency ([242d7df](https://github.com/nla/nla-arclight/commit/242d7dffa041d540903892e7a86ae8c8df02211f))
+* update nla-blacklight_common in Gemfile.lock ([b94e4fc](https://github.com/nla/nla-arclight/commit/b94e4fc090f3050b7af2af55594233f31a2a20ff))
+
+
+### Tests
+
+* fix specs for BreadcrumbsHierarchyComponent ([3bb54aa](https://github.com/nla/nla-arclight/commit/3bb54aa1c578460b5228d24c3eb542220d3fd7bc))
+* tighten up expectations ([28e210f](https://github.com/nla/nla-arclight/commit/28e210fad7134263fff54c79aeab2f623b175a4a))
+
+
+### Build System
+
+* update nla-blacklight_common ([d345a5f](https://github.com/nla/nla-arclight/commit/d345a5f11d1a2fb1354224bbf66aa02cb6574fd7))
+
 ## [3.0.0](https://github.com/nla/nla-arclight/compare/2.7.1...3.0.0) (2024-03-13)
 
 
