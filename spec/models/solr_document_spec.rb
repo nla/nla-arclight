@@ -54,4 +54,63 @@ RSpec.describe SolrDocument do
       end
     end
   end
+
+  describe "#extents_information" do
+    context "when quantity, unit type, dimensions, and facet are present" do
+      subject(:extents_information_value) do
+        document = described_class.new(
+          physdesc_quantity_ssi: ["1"],
+          physdesc_unittype_ssi: ["item"],
+          physdesc_dimensions_ssi: ["Unbranded"],
+          physdesc_facet_ssi: ["Data CD (any content on recordable CD-R)"]
+        )
+        document.extents_information
+      end
+
+      it "is formatted as: quantity + unittype, dimension, facet" do
+        expect(extents_information_value).to eq "1 item, Unbranded, Data CD (any content on recordable CD-R)"
+      end
+    end
+
+    context "when quantity is nil" do
+      subject(:extents_information_value) do
+        document = described_class.new(
+          physdesc_unittype_ssi: ["item"],
+          physdesc_dimensions_ssi: ["Unbranded"],
+          physdesc_facet_ssi: ["Data CD (any content on recordable CD-R)"]
+        )
+        document.extents_information
+      end
+
+      it "returns unittype, dimension, facet" do
+        expect(extents_information_value).to eq "item, Unbranded, Data CD (any content on recordable CD-R)"
+      end
+    end
+
+    context "when quantity and unittype are nil" do
+      subject(:extents_information_value) do
+        document = described_class.new(
+          physdesc_dimensions_ssi: ["Unbranded"],
+          physdesc_facet_ssi: ["Data CD (any content on recordable CD-R)"]
+        )
+        document.extents_information
+      end
+
+      it "returns only dimensions and facet" do
+        expect(extents_information_value).to eq "Unbranded, Data CD (any content on recordable CD-R)"
+      end
+    end
+
+    context "when all fields are nil" do
+      subject(:extents_information_value) do
+        document = described_class.new
+
+        document.extents_information
+      end
+
+      it "returns an empty string" do
+        expect(extents_information_value).to eq ""
+      end
+    end
+  end
 end
