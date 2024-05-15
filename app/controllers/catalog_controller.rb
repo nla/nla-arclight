@@ -366,10 +366,7 @@ class CatalogController < ApplicationController
     config.add_component_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
     config.add_component_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
     config.add_component_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "physfacet", field: "physdesc_facet_ssi", helper_method: :render_html_tags
-    config.add_component_field "physquantity", field: "physdesc_quantity_ssi", helper_method: :render_html_tags
-    config.add_component_field "physunittype", field: "physdesc_unittype_ssi", helper_method: :render_html_tags
-    config.add_component_field "physdimensions", field: "physdesc_dimensions_ssi", helper_method: :render_html_tags
+    config.add_component_field "extentsinfo", field: "extents_information", accessor: :extents_information, helper_method: :render_html_tags
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {
