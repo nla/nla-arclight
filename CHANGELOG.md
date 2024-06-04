@@ -1,5 +1,30 @@
 # Changelog
 
+## [3.2.0](https://github.com/nla/nla-arclight/compare/3.1.0...3.2.0) (2024-06-04)
+
+
+### Miscellaneous
+
+* prepare release ([410edb8](https://github.com/nla/nla-arclight/commit/410edb88e33186b3ac2271c015a291a338714c70))
+* release 3.2.0 ([abb18fa](https://github.com/nla/nla-arclight/commit/abb18fac896adc0b9edba3f77a75079ad0a5c77a))
+* update nla-blacklight_common dependency ([bf76ce7](https://github.com/nla/nla-arclight/commit/bf76ce79b206cf042ca4b3ca7f9f3c54bfe5b644))
+
+
+### Build System
+
+* **deps-dev:** bump debug from 1.8.0 to 1.9.2 ([6829718](https://github.com/nla/nla-arclight/commit/68297180b293e213ad6af6eb974a6d6f97bfeaf8))
+* **deps-dev:** bump rdoc from 6.6.0 to 6.7.0 ([f127b32](https://github.com/nla/nla-arclight/commit/f127b3221a8fc46804bbee3afb0b53fd47215eed))
+* **deps-dev:** bump rubocop-performance from 1.19.1 to 1.21.0 ([eaee48d](https://github.com/nla/nla-arclight/commit/eaee48d96b0ca460ec8625d8b0376f29bcebe502))
+* **deps-dev:** bump selenium-webdriver from 4.17.0 to 4.21.1 ([3c98b38](https://github.com/nla/nla-arclight/commit/3c98b386cdfb132e230a14bb844757826335db43))
+* **deps:** bump @hotwired/turbo-rails from 7.3.0 to 8.0.4 ([f0a15bf](https://github.com/nla/nla-arclight/commit/f0a15bf70b7f0ffa9f3f1870b942e8cad744a2bf))
+* **deps:** bump autoprefixer from 10.4.17 to 10.4.19 ([5745133](https://github.com/nla/nla-arclight/commit/574513320027f4d02a053f4972718f30d4158ee8))
+* **deps:** bump esbuild from 0.20.0 to 0.21.4 ([284bf59](https://github.com/nla/nla-arclight/commit/284bf5925b877e4d50369ed1f839890e6fc66972))
+* **deps:** bump mysql2 from 0.5.5 to 0.5.6 ([6337a3f](https://github.com/nla/nla-arclight/commit/6337a3fcb678c86d8a236ab4a11b091b80e4754b))
+* **deps:** bump nodemon from 3.0.3 to 3.1.2 ([b1692b5](https://github.com/nla/nla-arclight/commit/b1692b5923269ed2a6447f357c9c074c4cdf4dfc))
+* **deps:** bump postcss from 8.4.33 to 8.4.38 ([a30870b](https://github.com/nla/nla-arclight/commit/a30870bb7bcee6f881dca178016017d74c35ab35))
+* **deps:** bump redis from 5.0.8 to 5.1.0 ([a4cfbd2](https://github.com/nla/nla-arclight/commit/a4cfbd206598816138c52b07ebf3e6417f1e1ac1))
+* **deps:** bump rexml from 3.2.6 to 3.2.8 ([2fe29fa](https://github.com/nla/nla-arclight/commit/2fe29fa7a52e520cd47af86eb27a1533c1b051c1))
+
 ## [3.1.0](https://github.com/nla/nla-arclight/compare/3.0.0...3.1.0) (2024-05-14)
 
 
