@@ -79,6 +79,18 @@ class CatalogueServicesClient
     item["requestable"] ? item["displayStatus"] : "Not for loan"
   end
 
+  def get_notes(instance_id:, holdings_id:, item_id:)
+    all_holdings = get_holdings(instance_id: instance_id)
+
+    # find holdings record
+    holding = all_holdings.find { |h| h["id"] == holdings_id }
+
+    # find item record
+    item = holding["notes"].find { |i| i["holdingsNoteType"] == "Restriction" }
+
+    item ? item["note"] : "No notes available"
+  end
+
   def get_item_ids(instance_id:)
     all_holdings = get_holdings(instance_id: instance_id)
 

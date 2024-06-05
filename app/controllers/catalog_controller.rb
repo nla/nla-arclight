@@ -303,6 +303,7 @@ class CatalogController < ApplicationController
     config.add_summary_field "language", field: "language_ssim"
     config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
     config.add_summary_field "availability", field: "availability_status", accessor: :availability_status
+    config.add_summary_field "accessconditions", field: "access_conditions", accessor: :access_conditions
 
     # Collection Show Page - Background Section
     config.add_background_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags

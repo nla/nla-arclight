@@ -36,6 +36,12 @@ class SolrDocument
     CatalogueServicesClient.new.get_requestable(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings, item_id: item)
   end
 
+  def access_conditions
+    holdings, item = CatalogueServicesClient.new.get_item_ids(instance_id: self["folio_instance_id_ssi"])
+
+    CatalogueServicesClient.new.get_notes(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings, item_id: item)
+  end
+
   # self.unique_key = 'id'
 
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
