@@ -302,26 +302,114 @@ class CatalogController < ApplicationController
     config.add_summary_field "extent", field: "extent_ssm"
     config.add_summary_field "language", field: "language_ssim"
     config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
+    config.add_summary_field "cult_sens_adv_notice",
+      label: I18n.t("ead_notes.cult_sens_adv_notice"),
+      helper_method: :render_html_tags,
+      values: ->(_field_config, document, _context) { document.extract_notes_by_header("cult_sens_adv_notice") }
+    config.add_summary_field "icip_notice",
+      label: I18n.t("ead_notes.icip_notice"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("icip_notice") }
+    config.add_summary_field "sens_adv_notice",
+      label: I18n.t("ead_notes.sens_adv_notice"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("sens_adv_notice") }
 
     # Collection Show Page - Background Section
-    config.add_background_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "bioghist", field: "bioghist_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "acqinfo", field: "acqinfo_ssim", helper_method: :render_html_tags
-    config.add_background_field "appraisal", field: "appraisal_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "custodhist", field: "custodhist_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "processinfo", field: "processinfo_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "arrangement", field: "arrangement_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "descrules", field: "descrules_ssm", helper_method: :render_html_tags
+    config.add_background_field "scope_content",
+      label: I18n.t("ead_notes.scope_content"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("scope_content") }
+    config.add_background_field "biog_hist",
+      label: I18n.t("ead_notes.biog_hist"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("biog_hist") }
+    config.add_background_field "biog",
+      label: I18n.t("ead_notes.biog"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("biog") }
+    config.add_background_field "org_hist",
+      label: I18n.t("ead_notes.org_hist"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("org_hist") }
+    config.add_background_field "general",
+      label: I18n.t("ead_notes.general"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("general") }
+    config.add_background_field "coll_retrieval_adv",
+      label: I18n.t("ead_notes.coll_retrieval_adv"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("coll_retrieval_adv") }
+    config.add_background_field "reading_room_access",
+      label: I18n.t("ead_notes.reading_room_access"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("reading_room_access") }
+    config.add_background_field "imm_source_acq",
+      label: I18n.t("ead_notes.imm_source_acq"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("imm_source_acq") }
+    config.add_background_field "provenance",
+      label: I18n.t("ead_notes.provenance"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("provenance") }
+    config.add_background_field "access_restrict",
+      label: I18n.t("ead_notes.access_restrict"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("access_restrict") }
+    config.add_background_field "access_strict",
+      label: I18n.t("ead_notes.access_strict"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("access_strict") }
+    config.add_background_field "accruals",
+      label: I18n.t("ead_notes.accruals"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("accruals") }
+    config.add_background_field "arrangement",
+      label: I18n.t("ead_notes.arrangement"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("arrangement") }
+    config.add_background_field "listing_rehousing",
+      label: I18n.t("ead_notes.listing_rehousing"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("listing_rehousing") }
+    config.add_background_field "custod_hist",
+      label: I18n.t("ead_notes.custod_hist"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("custod_hist") }
+    config.add_background_field "dimensions",
+      label: I18n.t("ead_notes.dimensions"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("dimensions") }
+    config.add_background_field "material_spec",
+      label: I18n.t("ead_notes.material_spec"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("material_spec") }
+    config.add_background_field "phys_desc",
+      label: I18n.t("ead_notes.phys_desc"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("phys_desc") }
 
     # Collection Show Page - Related Section
-    config.add_related_field "relatedmaterial", field: "relatedmaterial_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "separatedmaterial", field: "separatedmaterial_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "otherfindaid", field: "otherfindaid_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "altformavail", field: "altformavail_html_tesm", helper_method: :render_html_tags
-    config.add_related_field "originalsloc", field: "originalsloc_html_tesm", helper_method: :render_html_tags
+    config.add_related_field "related_material",
+      label: I18n.t("ead_notes.related_material"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("related_material") }
+    config.add_related_field "separated_material",
+      label: I18n.t("ead_notes.separated_material"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("separated_material") }
+    config.add_related_field "other_find_aid",
+      label: I18n.t("ead_notes.other_find_aid"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("other_find_aid") }
+    config.add_related_field "alt_form_avail",
+      label: I18n.t("ead_notes.alt_form_avail"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("alt_form_avail") }
+    config.add_related_field "origs_loc",
+      label: I18n.t("ead_notes.origs_loc"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("origs_loc") }
 
     # Collection Show Page - Indexed Terms Section
     config.add_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {
@@ -354,7 +442,7 @@ class CatalogController < ApplicationController
     }, if: lambda { |_context, _field_config, document|
       document.containers.present?
     }
-    config.add_component_field "collectionidentifier", field: "collection_identifier", accessor: :collection_identifier, helper_method: :render_html_tags
+    config.add_component_field "collectionidentifier", accessor: :collection_identifier, helper_method: :render_html_tags
     config.add_component_field "abstract", field: "abstract_html_tesm", helper_method: :render_html_tags
     config.add_component_field "extent", field: "extent_ssm"
     config.add_component_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
@@ -366,7 +454,7 @@ class CatalogController < ApplicationController
     config.add_component_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
     config.add_component_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
     config.add_component_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "extentsinfo", field: "extents_information", accessor: :extents_information, helper_method: :render_html_tags
+    config.add_component_field "extentsinfo", accessor: :extents_information, helper_method: :render_html_tags
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {

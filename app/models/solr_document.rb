@@ -7,6 +7,16 @@ class SolrDocument
 
   # alias this field for the request link
   attribute :bibid, :string, "bibid_ssi"
+  # attribute :notes, :array, "notes_tesim"
+
+  # self.unique_key = 'id'
+
+  # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
+  # Semantic mappings of solr stored fields. Fields may be multi or
+  # single valued. See Blacklight::Document::SemanticFields#field_semantics
+  # and Blacklight::Document::SemanticFields#to_semantic_values
+  # Recommendation: Use field names from Dublin Core
+  use_extension(Blacklight::Document::DublinCore)
 
   def collection_identifier
     [self["level_ssm"]&.join(" "), self["unitid_ssm"]&.join(" ")].compact.join(" ")
@@ -30,12 +40,13 @@ class SolrDocument
     end
   end
 
-  # self.unique_key = 'id'
+  def extract_notes_by_header(header)
+    notes.select { |note| JSON.parse(note)["head"] == I18n.t("ead_notes.#{header}") }.map { |note| JSON.parse(note)["p"] }.flatten
+  end
 
-  # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
-  # Semantic mappings of solr stored fields. Fields may be multi or
-  # single valued. See Blacklight::Document::SemanticFields#field_semantics
-  # and Blacklight::Document::SemanticFields#to_semantic_values
-  # Recommendation: Use field names from Dublin Core
-  use_extension(Blacklight::Document::DublinCore)
+  private
+
+  def notes
+    ["{\"head\":\"Cultural Sensitivity Advisory Notice\", \"p\":[\"This is a paragraph\", \"This is another paragraph\"]}", "{\"head\":\"Immediate source of acquisition\", \"p\":[\"This is a paragraph\", \"This is another paragraph\"]}"]
+  end
 end
