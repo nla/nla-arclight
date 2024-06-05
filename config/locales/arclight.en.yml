@@ -8,6 +8,7 @@ en:
         language: Language
         prefercite: Preferred citation
         collectionnumber: Collection number
+        availability: Status
 
 
         collectionidentifier: Component identifier

@@ -302,6 +302,11 @@ class CatalogController < ApplicationController
     config.add_summary_field "extent", field: "extent_ssm"
     config.add_summary_field "language", field: "language_ssim"
     config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
+    config.add_summary_field "availability", field: "availability_status", accessor: :availability_status
+    config.add_summary_field "accessconditions", field: "access_conditions", accessor: :access_conditions
+    # config.add_summary_field "access_conditions_ssim", label: "Access Conditions", helper_method: :emphasized_list, if: ->(_controller, _config, document) do
+    #   !document.has_eresources?
+    # end
 
     # Collection Show Page - Background Section
     config.add_background_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
