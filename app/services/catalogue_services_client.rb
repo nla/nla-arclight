@@ -79,7 +79,6 @@ class CatalogueServicesClient
     item["requestable"] ? item["displayStatus"] : "Not for loan"
   end
 
-
   def get_item_ids(instance_id:)
     all_holdings = get_holdings(instance_id: instance_id)
 
