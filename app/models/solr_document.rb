@@ -7,7 +7,17 @@ class SolrDocument
 
   # alias this field for the request link
   attribute :bibid, :string, "bibid_ssi"
-  # attribute :notes, :array, "notes_tesim"
+  attribute :physdesc_quantity, :string, "physdesc_quantity_ssi"
+  attribute :physdesc_unittype, :string, "physdesc_unittype_ssi"
+  attribute :physdesc_dimensions, :string, "physdesc_dimensions_ssi"
+  attribute :physdesc_facet, :string, "physdesc_facet_ssi"
+  attribute :notes, :array, "note_json_ssm"
+
+  # **** BEWARE! ****
+  # Arclight aliases "level_ssm" and "unitid_ssm" fields to String type attributes in the
+  # Arclight::SolrDocument concern. This means, if there are multiple values for these fields,
+  # calling the attribute alias will only return the first value.
+  # MAKE SURE YOU'RE NOT LOSING DATA BY CALLING THE ALIAS INSTEAD OF DIRECTLY ACCESSING THE FIELD!
 
   # self.unique_key = 'id'
 
@@ -24,13 +34,13 @@ class SolrDocument
 
   def extents_information
     quantity_unittype = [
-      self["physdesc_quantity_ssi"],
-      self["physdesc_unittype_ssi"]
+      physdesc_quantity,
+      physdesc_unittype
     ].compact.join(" ")
 
     dimensions_facet = [
-      self["physdesc_dimensions_ssi"],
-      self["physdesc_facet_ssi"]
+      physdesc_dimensions,
+      physdesc_facet
     ].compact.join(", ")
 
     if quantity_unittype.blank?
@@ -41,12 +51,8 @@ class SolrDocument
   end
 
   def extract_notes_by_header(header)
-    notes.select { |note| JSON.parse(note)["head"] == I18n.t("ead_notes.#{header}") }.map { |note| JSON.parse(note)["p"] }.flatten
-  end
-
-  private
-
-  def notes
-    ["{\"head\":\"Cultural Sensitivity Advisory Notice\", \"p\":[\"This is a paragraph\", \"This is another paragraph\"]}", "{\"head\":\"Immediate source of acquisition\", \"p\":[\"This is a paragraph\", \"This is another paragraph\"]}"]
+    notes.select { |note| JSON.parse(note)["head"] == I18n.t("ead_notes.#{header}") }
+      .map { |note| JSON.parse(note)["p"] }
+      .flatten
   end
 end
