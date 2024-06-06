@@ -34,11 +34,10 @@ en:
   hello: "Hello world"
   collection_prefix: "Guide to the "
   ead_notes:
-    cult_sens_adv_notice: "Cultural Sensitivity Advisory Notice"
+    cultural_sens_adv_notice: "Cultural Sensitivity Advisory Notice"
     icip_notice: "Indigenous Cultural and Intellectual Property (ICIP) Notice"
     sens_adv_notice: "Sensitivity Advisory Notice"
-    content_summary: "Content Summary"
-    scope_contents: "Scope and Contents"
+    scope_contents: "Content Summary"
     biog_hist: "Biographical / Historical"
     biog: "Biographical Note"
     org_hist: "Organisational History Note"

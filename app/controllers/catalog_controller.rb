@@ -303,9 +303,9 @@ class CatalogController < ApplicationController
     config.add_summary_field "language", field: "language_ssim"
     config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
     config.add_summary_field "cult_sens_adv_notice",
-      label: I18n.t("ead_notes.cult_sens_adv_notice"),
+      label: I18n.t("ead_notes.cultural_sens_adv_notice"),
       helper_method: :render_html_tags,
-      values: ->(_field_config, document, _context) { document.extract_notes_by_header("cult_sens_adv_notice") }
+      values: ->(_field_config, document, _context) { document.extract_notes_by_header("cultural_sens_adv_notice") }
     config.add_summary_field "icip_notice",
       label: I18n.t("ead_notes.icip_notice"),
       helper_method: :render_html_tags,
@@ -319,7 +319,7 @@ class CatalogController < ApplicationController
     config.add_background_field "scope_content",
       label: I18n.t("ead_notes.scope_content"),
       helper_method: :render_html_tags,
-      values: ->(__field_config, document, _context) { document.extract_notes_by_header("scope_content") }
+      values: ->(__field_config, document, _context) { document.scope_contents }
     config.add_background_field "biog_hist",
       label: I18n.t("ead_notes.biog_hist"),
       helper_method: :render_html_tags,

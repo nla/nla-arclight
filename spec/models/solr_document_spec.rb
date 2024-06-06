@@ -127,7 +127,7 @@ RSpec.describe SolrDocument do
 
     context "when notes contains a note with a header matching a localised string literal" do
       subject(:notes_value) do
-        document.extract_notes_by_header("scope_contents")
+        document.scope_contents
       end
 
       it "returns the notes with the matching header" do

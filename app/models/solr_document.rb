@@ -50,6 +50,12 @@ class SolrDocument
     end
   end
 
+  def scope_contents
+    notes.select { |note| JSON.parse(note)["head"] == "Scope and Contents" }
+      .map { |note| JSON.parse(note)["p"] }
+      .flatten
+  end
+
   def extract_notes_by_header(header)
     notes.select { |note| JSON.parse(note)["head"] == I18n.t("ead_notes.#{header}") }
       .map { |note| JSON.parse(note)["p"] }
