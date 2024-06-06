@@ -50,16 +50,13 @@ class SolrDocument
     end
   end
 
-  def scope_contents
-    notes.select { |note| JSON.parse(note)["head"] == "Scope and Contents" }
-      .map { |note| JSON.parse(note)["p"] }
-      .flatten
-  end
-
   def extract_notes_by_header(header)
     # compares against the parameterized value of the header to ignore case and punctuation
+    # rubocop:disable Rails/OutputSafety
     notes.select { |note| JSON.parse(note)["head"].parameterize == I18n.t("ead_notes.#{header}").parameterize }
       .map { |note| JSON.parse(note)["p"] }
       .flatten
+      .map { |para| "<p>#{para}</p>".html_safe }
+    # rubocop:enable Rails/OutputSafety
   end
 end

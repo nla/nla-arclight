@@ -125,23 +125,13 @@ RSpec.describe SolrDocument do
       )
     end
 
-    context "when notes contains 'Scope and Contents'" do
-      subject(:notes_value) do
-        document.scope_contents
-      end
-
-      it "returns the notes with the matching header" do
-        expect(notes_value).to eq ["Includes merchants' promissory notes, Fijian treasury notes and money issued in \"New Australia\", Paraguay."]
-      end
-    end
-
     context "when notes contains a note with a header matching a localised string literal" do
       subject(:notes_value) do
-        document.extract_notes_by_header("access_strict")
+        document.extract_notes_by_header("imm_source_acq")
       end
 
       it "returns the notes with the matching header" do
-        expect(notes_value.join).to include "Copying and publishing of unpublished manuscript material is subject to copyright restrictions."
+        expect(notes_value.join).to include "Acquired from Tyrrell's Antiquarian Bookshop, Sydney, in 1953."
       end
     end
 
@@ -165,7 +155,7 @@ RSpec.describe SolrDocument do
       end
 
       it "returns the notes with the matching header" do
-        expect(notes_value).to eq ["Testing"]
+        expect(notes_value).to eq ["<p>Testing</p>"]
       end
     end
   end

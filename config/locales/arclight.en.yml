@@ -11,11 +11,11 @@ en:
 
 
         collectionidentifier: Component identifier
-        scopecontent: Scope and content
-        bioghist: Biographical / historical
+        scopecontent: Content Summary
+        bioghist: Biographical / Historical
         acqinfo: Immediate source of acquisition
         appraisal: Appraisal information
-        custodhist: Custodial history
+        custodhist: Custodial History
         processinfo: Processing information
         arrangement: Arrangement
         accruals: Accruals
@@ -24,11 +24,11 @@ en:
         descrules: Rules or conventions
         extentsinfo: Extent information
 
-        relatedmaterial: Related material
-        separatedmaterial: Separated material
-        otherfindaid: Other finding aids
-        altformavail: Existence and location of copies
-        originalsloc: Existence and location of originals
+        relatedmaterial: Related Material
+        separatedmaterial: Separated Material
+        otherfindaid: Other Finding Aids
+        altformavail: Existence and Location of Copies
+        originalsloc: Existence and Location of Originals
 
         access_subjects: Subjects
         names_coll: Names
@@ -37,10 +37,10 @@ en:
         containers: Containers
         names: Names
 
-        restrictions: Conditions governing access
-        terms: Conditions governing use
-        parent_restrictions: Parent restrictions
-        parent_terms: Parent terms of access
+        restrictions: Conditions Governing Access
+        terms: Conditions Governing Use
+        parent_restrictions: Parent Restrictions
+        parent_terms: Parent Terms of Access
         repository_location: Location of this collection
         before_you_visit: Before you visit
         repository_contact: Contact
