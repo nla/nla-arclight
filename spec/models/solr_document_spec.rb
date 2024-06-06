@@ -125,13 +125,23 @@ RSpec.describe SolrDocument do
       )
     end
 
-    context "when notes contains a note with a header matching a localised string literal" do
+    context "when notes contains 'Scope and Contents'" do
       subject(:notes_value) do
         document.scope_contents
       end
 
       it "returns the notes with the matching header" do
         expect(notes_value).to eq ["Includes merchants' promissory notes, Fijian treasury notes and money issued in \"New Australia\", Paraguay."]
+      end
+    end
+
+    context "when notes contains a note with a header matching a localised string literal" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("access_strict")
+      end
+
+      it "returns the notes with the matching header" do
+        expect(notes_value.join).to include "Copying and publishing of unpublished manuscript material is subject to copyright restrictions."
       end
     end
 
@@ -142,6 +152,20 @@ RSpec.describe SolrDocument do
 
       it "returns an empty array" do
         expect(notes_value).to eq []
+      end
+    end
+
+    context "when header literal contains punctuation" do
+      subject(:notes_value) do
+        document = described_class.new(
+          note_json_ssm: ["{\"head\":\"Biographical / Historical\",\"p\":\"Testing\",\"audience\":\"internal\"}"]
+        )
+
+        document.extract_notes_by_header("biog_hist")
+      end
+
+      it "returns the notes with the matching header" do
+        expect(notes_value).to eq ["Testing"]
       end
     end
   end

@@ -57,7 +57,8 @@ class SolrDocument
   end
 
   def extract_notes_by_header(header)
-    notes.select { |note| JSON.parse(note)["head"] == I18n.t("ead_notes.#{header}") }
+    # compares against the parameterized value of the header to ignore case and punctuation
+    notes.select { |note| JSON.parse(note)["head"].parameterize == I18n.t("ead_notes.#{header}").parameterize }
       .map { |note| JSON.parse(note)["p"] }
       .flatten
   end
