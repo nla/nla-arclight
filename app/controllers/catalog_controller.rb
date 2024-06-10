@@ -302,19 +302,70 @@ class CatalogController < ApplicationController
     config.add_summary_field "extent", field: "extent_ssm"
     config.add_summary_field "language", field: "language_ssim"
     config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
+    config.add_summary_field "cult_sens_adv_notice",
+      label: I18n.t("ead_notes.cultural_sens_adv_notice"),
+      helper_method: :render_html_tags,
+      values: ->(_field_config, document, _context) { document.extract_notes_by_header("cultural_sens_adv_notice") }
+    config.add_summary_field "icip_notice",
+      label: I18n.t("ead_notes.icip_notice"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("icip_notice") }
+    config.add_summary_field "sens_adv_notice",
+      label: I18n.t("ead_notes.sens_adv_notice"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("sens_adv_notice") }
 
     # Collection Show Page - Background Section
     config.add_background_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "bioghist", field: "bioghist_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "acqinfo", field: "acqinfo_ssim", helper_method: :render_html_tags
-    config.add_background_field "appraisal", field: "appraisal_html_tesm", helper_method: :render_html_tags
+    config.add_background_field "biog_hist",
+      label: I18n.t("ead_notes.biog_hist"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("biog_hist") }
+    config.add_background_field "biog",
+      label: I18n.t("ead_notes.biog"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("biog") }
+    config.add_background_field "org_hist",
+      label: I18n.t("ead_notes.org_hist"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("org_hist") }
+    config.add_background_field "general",
+      label: I18n.t("ead_notes.general"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("general") }
+    config.add_background_field "coll_retrieval_adv",
+      label: I18n.t("ead_notes.coll_retrieval_adv"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("coll_retrieval_adv") }
+    config.add_background_field "reading_room_access",
+      label: I18n.t("ead_notes.reading_room_access"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("reading_room_access") }
+    config.add_background_field "imm_source_acq",
+      label: I18n.t("ead_notes.imm_source_acq"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("imm_source_acq") }
+    config.add_background_field "references",
+      label: I18n.t("ead_notes.references"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("references") }
+    config.add_background_field "provenance",
+      label: I18n.t("ead_notes.provenance"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("provenance") }
+    config.add_background_field "accruals", field: "accruals_html_tesm", label: I18n.t("ead_notes.accruals"), helper_method: :render_html_tags
+    config.add_background_field "arrangement",
+      label: I18n.t("ead_notes.arrangement"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("arrangement") }
+    config.add_background_field "listing_rehousing",
+      label: I18n.t("ead_notes.listing_rehousing"),
+      helper_method: :render_html_tags,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("listing_rehousing") }
     config.add_background_field "custodhist", field: "custodhist_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "processinfo", field: "processinfo_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "arrangement", field: "arrangement_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
-    config.add_background_field "descrules", field: "descrules_ssm", helper_method: :render_html_tags
+    config.add_background_field "physdesc_dimensions", field: "physdesc_dimensions_ssi", label: I18n.t("ead_notes.dimensions"), helper: :render_html_tags
+    config.add_background_field "materialspec", field: "meterialspec_tesim", label: I18n.t("ead_notes.material_spec"), helper: :render_html_tags
+    config.add_background_field "physdesc", field: "physdesc_facet_ssi", label: I18n.t("ead_notes.phys_desc"), helper: :render_html_tags
 
     # Collection Show Page - Related Section
     config.add_related_field "relatedmaterial", field: "relatedmaterial_html_tesm", helper_method: :render_html_tags
@@ -360,13 +411,16 @@ class CatalogController < ApplicationController
     config.add_component_field "scopecontent", field: "scopecontent_html_tesm", helper_method: :render_html_tags
     config.add_component_field "acqinfo", field: "acqinfo_ssim", helper_method: :render_html_tags
     config.add_component_field "appraisal", field: "appraisal_html_tesm", helper_method: :render_html_tags
-    config.add_component_field "custodhist", field: "custodhist_html_tesm", helper_method: :render_html_tags
+    config.add_component_field "custodhist", field: "custodhist_html_tesm", label: I18n.t("ead_notes.custod_hist"), helper_method: :render_html_tags
     config.add_component_field "processinfo", field: "processinfo_html_tesm", helper_method: :render_html_tags
     config.add_component_field "arrangement", field: "arrangement_html_tesm", helper_method: :render_html_tags
     config.add_component_field "accruals", field: "accruals_html_tesm", helper_method: :render_html_tags
     config.add_component_field "phystech", field: "phystech_html_tesm", helper_method: :render_html_tags
     config.add_component_field "physloc", field: "physloc_html_tesm", helper_method: :render_html_tags
     config.add_component_field "extentsinfo", field: "extents_information", accessor: :extents_information, helper_method: :render_html_tags
+    config.add_component_field "physdesc_dimensions", field: "physdesc_dimensions_ssi", label: I18n.t("ead_notes.dimensions"), helper: :render_html_tags
+    config.add_component_field "materialspec", field: "meterialspec_tesim", label: I18n.t("ead_notes.material_spec"), helper: :render_html_tags
+    config.add_component_field "physdesc", field: "physdesc_facet_ssi", label: I18n.t("ead_notes.phys_desc"), helper: :render_html_tags
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field "access_subjects", field: "access_subjects_ssim", link_to_facet: true, separator_options: {

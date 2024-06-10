@@ -113,4 +113,50 @@ RSpec.describe SolrDocument do
       end
     end
   end
+
+  describe "#extract_notes_by_header" do
+    let(:document) do
+      described_class.new(
+        note_json_ssm: ["{\"head\":\"Conditions Governing Access\",\"p\":\"Please refer to the collection's catalogue record for the access conditions (<a href=\\\"http://nla.gov.au/nla.cat-vn1132324\\\">http://nla.gov.au/nla.cat-vn1132324</a>).\",\"audience\":\"internal\"}",
+          "{\"head\":\"References\",\"p\":[\"References used in the creation of this finding aid include:\",\"<a href=\\\"http://nla.gov.au/nla.cat-vn5977580\\\">Australian colonial currency and promissory notes</a> by Michael P. Vort-Ronald, second edition, 2012 and <a href=\\\"http://nla.gov.au/nla.cat-vn2073970\\\">Standard catalogue of world paper money</a> by Albert Pick, vol 2, c1990.\"],\"audience\":\"internal\"}",
+          "{\"head\":\"Scope and Contents\",\"p\":\"Includes merchants' promissory notes, Fijian treasury notes and money issued in \\\"New Australia\\\", Paraguay.\",\"audience\":\"internal\"}",
+          "{\"head\":\"Conditions Governing Use\",\"p\":\"Copying and publishing of unpublished manuscript material is subject to copyright restrictions. For such material, written permission to publish must be obtained from the copyright holder(s). Copying of unpublished material for research purposes is permissible 50 years after the death of the creator of the material.\",\"audience\":\"internal\"}",
+          "{\"head\":\"Immediate Source of Acquisition\",\"p\":\"Acquired from Tyrrell's Antiquarian Bookshop, Sydney, in 1953.\",\"audience\":\"internal\"}"]
+      )
+    end
+
+    context "when notes contains a note with a header matching a localised string literal" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("imm_source_acq")
+      end
+
+      it "returns the notes with the matching header" do
+        expect(notes_value.join).to include "Acquired from Tyrrell's Antiquarian Bookshop, Sydney, in 1953."
+      end
+    end
+
+    context "when notes does not contain a note with a header matching a localised string literal" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("coll_retrieval_adv")
+      end
+
+      it "returns an empty array" do
+        expect(notes_value).to eq []
+      end
+    end
+
+    context "when header literal contains punctuation" do
+      subject(:notes_value) do
+        document = described_class.new(
+          note_json_ssm: ["{\"head\":\"Biographical / Historical\",\"p\":\"Testing\",\"audience\":\"internal\"}"]
+        )
+
+        document.extract_notes_by_header("biog_hist")
+      end
+
+      it "returns the notes with the matching header" do
+        expect(notes_value).to eq ["<p>Testing</p>"]
+      end
+    end
+  end
 end

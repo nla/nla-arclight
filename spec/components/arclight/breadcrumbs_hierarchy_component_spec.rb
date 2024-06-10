@@ -6,10 +6,10 @@ RSpec.describe BreadcrumbsHierarchyComponent, type: :component do
   let(:document) do
     SolrDocument.new(
       ead_ssi: "abc123",
-      repository_ssm: "National Library of Australia",
+      repository_ssm: ["National Library of Australia"],
       _root_: "abc123",
-      normalized_title_ssm: "ABC123",
-      level_ssm: "collection"
+      normalized_title_ssm: ["ABC123"],
+      level_ssm: ["collection"]
     )
   end
   let(:view_context) { ActionView::Base.new(nil, {}, nil) }
@@ -33,10 +33,10 @@ RSpec.describe BreadcrumbsHierarchyComponent, type: :component do
         parent_unittitles_ssm: %w[ABC123 DEF],
         parent_levels_ssm: %w[collection Series],
         ead_ssi: "abc123",
-        repository_ssm: "National Library of Australia",
+        repository_ssm: ["National Library of Australia"],
         _root_: "abc123",
-        normalized_title_ssm: "GHI",
-        level_ssm: "Subseries"
+        normalized_title_ssm: ["GHI"],
+        level_ssm: ["Subseries"]
       )
     end
 
@@ -62,10 +62,10 @@ RSpec.describe BreadcrumbsHierarchyComponent, type: :component do
         parent_unittitles_ssm: %w[ABC123 DEF GHI],
         parent_levels_ssm: %w[collection Series Subseries],
         ead_ssi: "abc123",
-        repository_ssm: "National Library of Australia",
+        repository_ssm: ["National Library of Australia"],
         _root_: "abc123",
-        normalized_title_ssm: "JKL",
-        level_ssm: "file"
+        normalized_title_ssm: ["JKL"],
+        level_ssm: ["file"]
       )
     end
 
