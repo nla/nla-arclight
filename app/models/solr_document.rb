@@ -51,12 +51,42 @@ class SolrDocument
   end
 
   def extract_notes_by_header(header)
+    filtered_notes = filter_notes_by_header(header)
+    if filtered_notes.present?
+      wrap_paragraphs_in_html(parse_note_paragraphs(filtered_notes))
+    end
+  end
+
+  private
+
+  def filter_notes_by_header(header)
     # compares against the parameterized value of the header to ignore case and punctuation
-    # rubocop:disable Rails/OutputSafety
     notes.select { |note| JSON.parse(note)["head"].parameterize == I18n.t("ead_notes.#{header}").parameterize }
-      .map { |note| JSON.parse(note)["p"] }
-      .flatten
-      .map { |para| "<p>#{para}</p>".html_safe }
-    # rubocop:enable Rails/OutputSafety
+  end
+
+  def parse_note_paragraphs(notes)
+    # Sometimes note paragraphs are returned as a simple JSON string, and other times, as an array.
+    # Ensure we always have an array by wrapping the paragraphs in an array, then flatten the array,
+    # so we only return a single dimensional array of paragraphs.
+    notes.map! { |note| [JSON.parse(note)["p"]] }
+      .flatten!
+  end
+
+  def wrap_paragraphs_in_html(paragraphs)
+    # Wraps note paragrphs in HTML `<p></p>` tags, then scrubs the HTML to remove any unknown or
+    # unsafe tags.
+    paragraphs.map! do |para|
+      Loofah.xml_fragment(wrap_in_paragraph(para))
+        .scrub!(:strip)
+        .to_html
+    end
+  end
+
+  def wrap_in_paragraph(value)
+    if value.start_with?("<")
+      value
+    else
+      ActionController::Base.helpers.content_tag(:p, value)
+    end
   end
 end
