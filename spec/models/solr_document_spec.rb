@@ -141,20 +141,70 @@ RSpec.describe SolrDocument do
       end
 
       it "returns an empty array" do
-        expect(notes_value).to eq []
+        expect(notes_value).to be_nil
       end
     end
 
     context "when header literal contains punctuation" do
       subject(:notes_value) do
-        document = described_class.new(
-          note_json_ssm: ["{\"head\":\"Biographical / Historical\",\"p\":\"Testing\",\"audience\":\"internal\"}"]
-        )
-
         document.extract_notes_by_header("biog_hist")
       end
 
+      let(:document) {
+        described_class.new(
+          note_json_ssm: ["{\"head\":\"Biographical / Historical\",\"p\":[\"Testing\",\"Testing 2\"],\"audience\":\"internal\"}"]
+        )
+      }
+
       it "returns the notes with the matching header" do
+        expect(notes_value).to eq ["<p>Testing</p>", "<p>Testing 2</p>"]
+      end
+    end
+
+    context "when there is a single note paragraph" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("references")
+      end
+
+      let(:document) {
+        described_class.new(
+          note_json_ssm: ["{\"head\":\"References\",\"p\":\"Testing\",\"audience\":\"internal\"}"]
+        )
+      }
+
+      it "returns the notes with the matching header" do
+        expect(notes_value).to eq ["<p>Testing</p>"]
+      end
+    end
+
+    context "when there are multiple note paragraphs" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("references")
+      end
+
+      let(:document) {
+        described_class.new(
+          note_json_ssm: ["{\"head\":\"References\",\"p\":[\"Testing\", \"Testing 2\"],\"audience\":\"internal\"}"]
+        )
+      }
+
+      it "returns the notes with the matching header" do
+        expect(notes_value).to eq ["<p>Testing</p>", "<p>Testing 2</p>"]
+      end
+    end
+
+    context "when note already contains HTML tags" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("references")
+      end
+
+      let(:document) {
+        described_class.new(
+          note_json_ssm: ["{\"head\":\"References\",\"p\":\"<p>Testing</p>\",\"audience\":\"internal\"}"]
+        )
+      }
+
+      it "doesn't wrap the content again" do
         expect(notes_value).to eq ["<p>Testing</p>"]
       end
     end
