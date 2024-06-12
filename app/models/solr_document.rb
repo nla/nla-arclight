@@ -43,11 +43,13 @@ class SolrDocument
       physdesc_facet
     ].compact.join(", ")
 
-    if quantity_unittype.blank?
+    extent_info = if quantity_unittype.blank?
       dimensions_facet
     else
       [quantity_unittype, dimensions_facet].compact.join(", ")
     end
+
+    extent_info.presence
   end
 
   def extract_notes_by_header(header)

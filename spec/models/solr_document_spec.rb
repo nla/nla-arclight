@@ -108,8 +108,8 @@ RSpec.describe SolrDocument do
         document.extents_information
       end
 
-      it "returns an empty string" do
-        expect(extents_information_value).to eq ""
+      it "returns nil" do
+        expect(extents_information_value).to be_nil
       end
     end
   end
