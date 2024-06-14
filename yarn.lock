@@ -191,10 +191,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-arclight@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/arclight/-/arclight-1.1.0.tgz#8905f986ec411063eaf09df45c7d2ed64c58ce7e"
-  integrity sha512-hV/hpKuaMT7hEl2IS5X+kYB3mOX7M2CVW4TC+oQu7WYsX0a2Ofi5gm4WxEpojlxqi12YuQCgGoVo/xkjLX972g==
+arclight@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/arclight/-/arclight-1.4.0.tgz#1eab61115bc320394247084512e3194fa0a969d1"
+  integrity sha512-a8WGQHWTAg+CbR+1QL4GfDuEwlyEDeeesKe4HjDhaRS5uW3luMW+1FVLtnU79USxjepMkx/stOCQD4KPYVED+g==
 
 autoprefixer@^10.4.19:
   version "10.4.19"
