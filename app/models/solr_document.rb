@@ -85,10 +85,14 @@ class SolrDocument
   end
 
   def wrap_in_paragraph(value)
-    if value.start_with?("<")
-      value
+    if value.is_a?(String)
+      if value.start_with?("<")
+        value
+      else
+        ActionController::Base.helpers.content_tag(:p, value)
+      end
     else
-      ActionController::Base.helpers.content_tag(:p, value)
+      value
     end
   end
 end
