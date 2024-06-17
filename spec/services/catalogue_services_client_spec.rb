@@ -30,7 +30,7 @@ RSpec.describe CatalogueServicesClient do
     before do
       cat_response = IO.read("spec/files/catalogue_services/08aed703-3648-54d0-80ef-fddb3c635731.json")
       WebMock.stub_request(:get, /catservices.test\/catalogue-services\/folio\/instance\/08aed703-3648-54d0-80ef-fddb3c635731/)
-             .to_return(status: 200, body: cat_response, headers: {"Content-Type" => "application/json"})
+        .to_return(status: 200, body: cat_response, headers: {"Content-Type" => "application/json"})
     end
 
     it "returns the record's item id and holding id" do
