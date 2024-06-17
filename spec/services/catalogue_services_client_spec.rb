@@ -6,31 +6,20 @@ RSpec.describe CatalogueServicesClient do
   subject(:service) { described_class.new }
 
   describe "#get_holdings" do
+    before do
+      cat_response = IO.read("spec/files/catalogue_services/08aed703-3648-54d0-80ef-fddb3c635731.json")
+      WebMock.stub_request(:get, /catservices.test\/catalogue-services\/folio\/instance\/08aed703-3648-54d0-80ef-fddb3c635731/)
+        .to_return(status: 200, body: cat_response, headers: {"Content-Type" => "application/json"})
+    end
+
     it "returns holdings records" do
-      pp service.get_holdings(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731")
       expect(service.get_holdings(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731").size).to eq 5
     end
-  end
 
-  # WebMock.stub_request(:get, "http://catservices.test/catalogue-services/folio/instance/6bf69425-293d-5e3f-a050-16124aca9a4e").
-  #   with(
-  #     headers: {
-  #       'Accept'=>'*/*',
-  #       'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-  #     }).
-  #   to_return(status: 200, body: "", headers: {})
-
-  describe "#get_holdings" do
     context "when unable to request holdings" do
       it "raises a ItemRequestError" do
-        WebMock.stub_request(:get, "http://catservices.test/catalogue-services/folio/instance/08aed703-3648-54d0-80ef-fddb3c635731")
-               .with(
-                 headers: {
-                   "Accept" => "*/*",
-                   "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
-                 }
-               )
-               .to_return(status: 401, body: "", headers: {})
+        WebMock.stub_request(:get, /catservices.test\/catalogue-services\/folio\/instance\/08aed703-3648-54d0-80ef-fddb3c635731/)
+          .to_return(status: 401, body: "", headers: {"Content-Type" => "application/json"})
 
         expect { service.get_holdings(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731") }.to raise_error(HoldingsRequestError)
       end
@@ -38,33 +27,10 @@ RSpec.describe CatalogueServicesClient do
 
     context "when requesting holdings records" do
       it "returns holdings records" do
-        # ________________from file
-        cat_response = IO.read("spec/files/catalogue_services/08aed703-3648-54d0-80ef-fddb3c635731.json")
-        WebMock.stub_request(:get, "http://catservices.test/catalogue-services/folio/instance/08aed703-3648-54d0-80ef-fddb3c635731")
-               .with(
-                 headers: {
-                   "Accept" => "*/*",
-                   "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
-                 }
-               )
-               .to_return(status: 200, body: cat_response, headers: {})
-
-        # ________________empty stub
-        # WebMock.stub_request(:get, "http://catservices.test/catalogue-services/folio/instance/08aed703-3648-54d0-80ef-fddb3c635731")
-        #        .with(
-        #          headers: {
-        #            "Accept" => "*/*",
-        #            "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
-        #          }
-        #        )
-        #        .to_return(status: 200, body: "", headers: {})
-
-        pp service.get_holdings(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731")
         expect(service.get_holdings(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731").size).to eq 5
       end
     end
   end
-
 
   # describe "#get_holdings" do
   #   it "returns holdings records" do

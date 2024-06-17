@@ -60,8 +60,8 @@ class CatalogueServicesClient
     item_id = all_holdings.first["itemRecords"].first["holdingsRecordId"] if all_holdings.first["itemRecords"].any?
 
     holding_id = all_holdings.first["itemRecords"].first["id"] if all_holdings.first["itemRecords"].any?
-    p "catservices"
-    pp [item_id, holding_id]
+    Rails.logger.debug "catservices"
+    Rails.logger.debug [item_id, holding_id]
     [item_id, holding_id]
   end
 

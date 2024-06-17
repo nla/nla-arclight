@@ -13,6 +13,11 @@ RSpec.describe "Document components" do
           }
         )
         .to_return(status: 200, body: solr_response, headers: {})
+
+      cat_response = IO.read("spec/files/catalogue_services/08aed703-3648-54d0-80ef-fddb3c635731.json")
+
+      WebMock.stub_request(:get, /catalogue-services\/folio\/instance\/(.*)/)
+        .to_return(status: 200, body: cat_response, headers: {"Content-Type" => "application/json"})
     end
 
     it "has correct tab title, including the collection prefix" do
