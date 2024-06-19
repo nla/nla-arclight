@@ -52,4 +52,7 @@ en:
     dimensions: "Dimensions"
     material_spec: "Materials Specific Details"
     phys_desc: "Physical Description"
+    container_list: "Container List"
+    box_list: "Box List"
+    bibref: "Bibliographic Reference(s)"
 

@@ -1,0 +1,242 @@
+{
+  "chronlist": {
+    "listhead": {
+      "head01": "Date",
+      "head02": "Event"
+    },
+    "chronitem": [
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1849
+        },
+        "event": "Born in Glebe, Sydney, 18 January"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1859-64"
+        },
+        "event": "Attended Sydney Grammar School"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1865-67"
+        },
+        "event": "Attended University of Sydney"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1870
+        },
+        "event": "Graduated as a Master of Arts"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1871
+        },
+        "event": "Called to Bar in Sydney"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1879-82"
+        },
+        "event": "Member of Legislative Assembly (University of Sydney seat)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1882-87"
+        },
+        "event": "Member of Legislative Assembly (seat of East Sydney)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1883-87"
+        },
+        "event": "Speaker of the Legislative Assembly"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1887-91"
+        },
+        "event": "Member of the Legislative Council"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1887
+        },
+        "event": "Attorney-General in the Dibbs Protectionist Ministry"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1891
+        },
+        "event": "New South Wales delegate at the Federal Convention in Sydney"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1891-94"
+        },
+        "event": "Member of the Legislative Assembly (East Sydney)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1891-92"
+        },
+        "event": "Attorney-General in the Dibbs Protectionist Ministry"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1894
+        },
+        "event": "Defeated in the general election (seat of Randwick)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1894-97"
+        },
+        "event": "Led the Federation movement in New South Wales"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1897-98"
+        },
+        "event": "New South Wales delegate at the Australasian Federal Convention and chairman of the drafting and constitutional committees"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1897-98"
+        },
+        "event": "Member of the Legislative Council"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1898
+        },
+        "event": "Defeated by George Reid in the general election (seat of Sydney (King Division))"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1898-1900"
+        },
+        "event": "Member of the Legislative Assembly (seat of Hastings and Macleay)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1899
+        },
+        "event": "Leader of the Australian delegation to London"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1900
+        },
+        "event": "Appointed first Prime Minister of Australia and Minister for External Affairs, 31 December"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1901
+        },
+        "event": "Appointed a Privy Councillor, 24 January"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1901-3"
+        },
+        "event": "Member of the House of Representatives (seat of Hunter)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1902
+        },
+        "event": "Attended Colonial Conference and Coronation of King Edward VII"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1902
+        },
+        "event": "Knighted (GCMG)"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1903
+        },
+        "event": "Resigned as Prime Minister, 23 September"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": "1903-20"
+        },
+        "event": "Senior puisne justice of the High Court of Australia"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1915
+        },
+        "event": "Visited England"
+      },
+      {
+        "date": {
+          "calendar": "gregorian",
+          "era": "ce",
+          "content": 1920
+        },
+        "event": "Died at Medlow Bath, Blue Mountains, 7 January"
+      }
+    ]
+  }
+}

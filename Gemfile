@@ -97,7 +97,7 @@ gem "blacklight_range_limit", git: "https://github.com/nla/blacklight_range_limi
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem "standard", require: false
+  gem "standard", "~> 1.37", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-performance", require: false
@@ -111,6 +111,8 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "factory_bot_rails"
   gem "faker"
+
+  gem "foreman"
 end
 
 group :development do
