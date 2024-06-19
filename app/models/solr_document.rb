@@ -70,8 +70,14 @@ class SolrDocument
     # Sometimes note paragraphs are returned as a simple JSON string, and other times, as an array.
     # Ensure we always have an array by wrapping the paragraphs in an array, then flatten the array,
     # so we only return a single dimensional array of paragraphs.
-    notes.map! { |note| Array.wrap(JSON.parse(note)["p"]) }
-      .flatten!
+    notes.map! { |note|
+      json_note = JSON.parse(note)
+      extracted_notes = Array.wrap(json_note["p"])
+      if json_note["chronlist"].present? && json_note["chronlist"]["head"].present?
+        extracted_notes += Array.wrap({chronlist: json_note["chronlist"]})
+      end
+      extracted_notes
+    }.compact.flatten
   end
 
   def wrap_paragraphs_in_html(paragraphs)
