@@ -209,7 +209,7 @@ RSpec.describe SolrDocument do
       end
     end
 
-    context "when note doesn't contain text" do
+    context "when note doesn't contains a chronlist" do
       subject(:notes_value) do
         document.extract_notes_by_header("biog")
       end
@@ -222,8 +222,11 @@ RSpec.describe SolrDocument do
         )
       }
 
-      it "doesn't try to wrap the content" do
-        expect(notes_value).not_to be_a(String)
+      it "converts the Hash into JSON" do
+        expect(notes_value[0]).to be_a(String)
+        expect(JSON.parse(notes_value[0])["chronlist"]).not_to be_nil
+        expect(JSON.parse(notes_value[0])["chronlist"]["listhead"]).not_to be_nil
+        expect(JSON.parse(notes_value[0])["chronlist"]["chronitem"]).not_to be_nil
       end
     end
   end

@@ -70,29 +70,31 @@ class SolrDocument
     # Sometimes note paragraphs are returned as a simple JSON string, and other times, as an array.
     # Ensure we always have an array by wrapping the paragraphs in an array, then flatten the array,
     # so we only return a single dimensional array of paragraphs.
-    notes.map! { |note| [JSON.parse(note)["p"]] }
+    notes.map! { |note| Array.wrap(JSON.parse(note)["p"]) }
       .flatten!
   end
 
   def wrap_paragraphs_in_html(paragraphs)
-    # Wraps note paragrphs in HTML `<p></p>` tags, then scrubs the HTML to remove any unknown or
-    # unsafe tags.
     paragraphs.map! do |para|
-      Loofah.xml_fragment(wrap_in_paragraph(para))
-        .scrub!(:strip)
-        .to_html
+      if para.is_a?(String)
+        # Wraps note paragraphs in HTML `<p></p>` tags, then scrubs the HTML to remove any unknown or
+        # unsafe tags.
+        Loofah.xml_fragment(wrap_in_paragraph(para))
+          .scrub!(:strip)
+          .to_html
+      elsif para.is_a?(Hash)
+        # Turn the hash into JSON because it's easier to convert back into an object
+        # than a string representation of a Hash.
+        para.to_json
+      end
     end
   end
 
   def wrap_in_paragraph(value)
-    if value.is_a?(String)
-      if value.start_with?("<")
-        value
-      else
-        ActionController::Base.helpers.content_tag(:p, value)
-      end
-    else
+    if value.start_with?("<")
       value
+    else
+      ActionController::Base.helpers.content_tag(:p, value)
     end
   end
 end
