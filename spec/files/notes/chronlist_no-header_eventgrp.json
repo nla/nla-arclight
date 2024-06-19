@@ -1,0 +1,58 @@
+{
+  "chronlist": {
+    "head": "Honours and Awards",
+    "chronitem": [
+      {
+        "date": 1965,
+        "eventgrp": {
+          "event": "The Queen Elizabeth Award - Royal Academy of Dancing, London"
+        }
+      },
+      {
+        "date": 1966,
+        "eventgrp": {
+          "event": "Order of the British Empire (OBE) for services to ballet"
+        }
+      },
+      {
+        "date": 1970,
+        "eventgrp": {
+          "event": "Dame Commander of the Order of the British Empire (DBE) for services to ballet"
+        }
+      },
+      {
+        "date": 1970,
+        "eventgrp": {
+          "event": "Encyclopaedia Britannica (Australia) Award for the Arts"
+        }
+      },
+      {
+        "date": 1974,
+        "eventgrp": {
+          "event": "Doctor of Letters (Honoris Causa) University of New England"
+        }
+      },
+      {
+        "date": 1975,
+        "eventgrp": {
+          "event": "Distinguished Artist Award from the Australia Council"
+        }
+      },
+      {
+        "date": 1981,
+        "eventgrp": {
+          "event": "Doctor of Laws (Honoris Causa) Melbourne University"
+        }
+      },
+      {
+        "date": 1981,
+        "eventgrp": {
+          "event": [
+            "Dummy 1",
+            "Dummy 2"
+          ]
+        }
+      }
+    ]
+  }
+}

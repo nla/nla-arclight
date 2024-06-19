@@ -50,5 +50,27 @@ RSpec.describe Rendering::Chronlist do
         expect(rendered).to have_css("td", text: "Attorney-General in the Dibbs Protectionist Ministry")
       end
     end
+
+    context "when event has eventgrp structure" do
+      let(:note) { JSON.parse(IO.read("spec/files/notes/chronlist_no-header_eventgrp.json")) }
+
+      it "renders the chronlist with just the date" do
+        expect(rendered).to have_css("h3", text: "Honours and Awards")
+        expect(rendered).to have_table(class: %w[table-light table-responsive table-striped table-hover])
+        expect(rendered).to have_css("thead.table-purple")
+        expect(rendered).to have_css("tbody.table-group-divider")
+        expect(rendered).to have_css("td.text-nowrap")
+
+        expect(rendered).to have_css("th", text: "Date")
+        expect(rendered).to have_css("th", text: "Event")
+
+        expect(rendered).to have_css("td", text: "1965")
+        expect(rendered).to have_css("td", text: "The Queen Elizabeth Award - Royal Academy of Dancing, London")
+
+        expect(rendered).to have_css("td", text: "1981")
+        expect(rendered).to have_css("li", text: "Dummy 1")
+        expect(rendered).to have_css("li", text: "Dummy 2")
+      end
+    end
   end
 end

@@ -26,7 +26,7 @@ module Rendering
           doc.tbody(class: "table-group-divider") {
             values["tgroup"]["tbody"]["row"].map! do |row|
               doc.tr {
-                row["entry"]&.map! do |entry|
+                row["entry"].map! do |entry|
                   doc.td {
                     doc.text entry
                   }
