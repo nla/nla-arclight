@@ -20,7 +20,11 @@ module Rendering
           # Sometimes the value is a single string instead of an array of strings
           Array.wrap(values).each do |value|
             doc.li do |list_item|
-              list_item << value
+              list_item << if value.is_a?(Hash)
+                value["content"]
+              else
+                value
+              end
             end
           end
         }
