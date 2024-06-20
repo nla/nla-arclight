@@ -193,7 +193,7 @@ RSpec.describe SolrDocument do
       end
     end
 
-    context "when note already contains HTML tags" do
+    context "when note starts with an HTML tag" do
       subject(:notes_value) do
         document.extract_notes_by_header("references")
       end
@@ -206,6 +206,22 @@ RSpec.describe SolrDocument do
 
       it "doesn't wrap the content again" do
         expect(notes_value).to eq ["<p>Testing</p>"]
+      end
+    end
+
+    context "when note doesn't start with an HTML tag and contains HTML" do
+      subject(:notes_value) do
+        document.extract_notes_by_header("references")
+      end
+
+      let(:document) {
+        described_class.new(
+          note_json_ssm: ["{\"head\":\"References\",\"p\":\"Testing <em>HTML</em> inside a paragraph.\",\"audience\":\"internal\"}"]
+        )
+      }
+
+      it "wraps the note in a paragraph and doesn't escape the existing markup" do
+        expect(notes_value).to eq ["<p>Testing <em>HTML</em> inside a paragraph.</p>"]
       end
     end
 

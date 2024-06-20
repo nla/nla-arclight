@@ -16,7 +16,6 @@ class SubnotesPresenter < Blacklight::FieldPresenter
       if valid_json?(value)
         render_subnote(value)
       else
-        # Otherwise, render it normally
         value
       end
     end
@@ -36,16 +35,22 @@ class SubnotesPresenter < Blacklight::FieldPresenter
     # rendered in order, since the generated HTML from each subnote is concatenated together to
     # form the whole note.
 
-    if subnote_value.key? TABLE_ELEMENT
-      rendered_subnote << Blacklight::Rendering::Pipeline.new(subnote_value[TABLE_ELEMENT], field_config, document, view_context, [Rendering::Table], options).render
-    end
+    begin
+      if subnote_value.key? TABLE_ELEMENT
+        rendered_subnote << Blacklight::Rendering::Pipeline.new(subnote_value[TABLE_ELEMENT], field_config, document, view_context, [Rendering::Table], options).render
+      end
 
-    if subnote_value.key? CHRONLIST_ELEMENT
-      rendered_subnote << Blacklight::Rendering::Pipeline.new(subnote_value[CHRONLIST_ELEMENT], field_config, document, view_context, [Rendering::Chronlist], options).render
-    end
+      if subnote_value.key? CHRONLIST_ELEMENT
+        rendered_subnote << Blacklight::Rendering::Pipeline.new(subnote_value[CHRONLIST_ELEMENT], field_config, document, view_context, [Rendering::Chronlist], options).render
+      end
 
-    if subnote_value.key? BIBREF_ELEMENT
-      rendered_subnote << Blacklight::Rendering::Pipeline.new(subnote_value[BIBREF_ELEMENT], field_config, document, view_context, [Rendering::Bibref], options).render
+      if subnote_value.key? BIBREF_ELEMENT
+        rendered_subnote << Blacklight::Rendering::Pipeline.new(subnote_value[BIBREF_ELEMENT], field_config, document, view_context, [Rendering::Bibref], options).render
+      end
+    rescue
+      # If there's an error rendering a subnote, render the original value instead to avoid
+      # breaking the whole page.
+      subnote_value << value
     end
 
     # everything else that's not a known subnote element will not be rendered
