@@ -55,7 +55,7 @@ RSpec.describe Rendering::Chronlist do
       let(:note) { JSON.parse(IO.read("spec/files/notes/chronlist_no-header_eventgrp.json")) }
 
       it "renders the chronlist with just the date" do
-        expect(rendered).to have_css("h3", text: "Honours and Awards")
+        expect(rendered).to have_css("h4", text: "Honours and Awards")
         expect(rendered).to have_table(class: %w[table-light table-responsive table-striped table-hover])
         expect(rendered).to have_css("thead.table-purple")
         expect(rendered).to have_css("tbody.table-group-divider")

@@ -22,7 +22,7 @@ module Rendering
 
       Nokogiri::HTML::Builder.with(fragment) do |doc|
         if values["head"].present?
-          doc.h3 {
+          doc.h4 {
             doc.text values["head"]
           }
         end
