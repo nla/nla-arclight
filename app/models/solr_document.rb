@@ -100,7 +100,9 @@ class SolrDocument
     if value.start_with?("<")
       value
     else
-      ActionController::Base.helpers.content_tag(:p, value)
+      # rubocop:disable Rails/OutputSafety
+      ActionController::Base.helpers.content_tag(:p, value.html_safe)
+      # rubocop:enable Rails/OutputSafety
     end
   end
 end
