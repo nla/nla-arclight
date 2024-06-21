@@ -19,19 +19,23 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp", "caching-dev.txt").exist?
+  if Rails.root.join("tmp/caching-dev.txt").exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :redis_cache_store, {
       driver: :hiredis,
       url: ENV["REDIS_URL"],
-      timeout: 30,
+      connect_timeout: 30,
+      read_timeout: 0.2,
+      write_timeout: 0.2,
       reconnect_attempts: 1,
       expires_in: 1.hour,
       namespace: "arclight",
-      pool_size: 5,
-      pool_timeout: 5
+      pool: {
+        size: 5,
+        timeout: 5
+      }
     }
     config.public_file_server.headers = {
       "Cache-Control" => "public, max-age=#{2.days.to_i}"
@@ -41,9 +45,6 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-
-  # Store uploaded files on the local file system (see config/storage.yml for options).
-  # config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

@@ -37,9 +37,6 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for Apache
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
-  # Store uploaded files on the local file system (see config/storage.yml for options).
-  # config.active_storage.service = :local
-
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
   # config.action_cable.url = "wss://example.com/cable"
@@ -59,12 +56,16 @@ Rails.application.configure do
   config.cache_store = :redis_cache_store, {
     driver: :hiredis,
     url: ENV["REDIS_URL"],
-    timeout: 30,
+    connect_timeout: 30,
+    read_timeout: 0.2,
+    write_timeout: 0.2,
     reconnect_attempts: 3,
     expires_in: 1.hour,
     namespace: "arclight",
-    pool_size: 5,
-    pool_timeout: 5
+    pool: {
+      size: 5,
+      timeout: 5
+    }
   }
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
