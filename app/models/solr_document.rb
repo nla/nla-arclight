@@ -73,8 +73,14 @@ class SolrDocument
     notes.map! { |note|
       json_note = JSON.parse(note)
       extracted_notes = Array.wrap(json_note["p"])
-      if json_note["chronlist"].present? && json_note["chronlist"]["head"].present?
-        extracted_notes += Array.wrap({chronlist: json_note["chronlist"]})
+      if json_note["chronlist"].present?
+        begin
+          if json_note["chronlist"]["head"].present?
+            extracted_notes += Array.wrap({chronlist: json_note["chronlist"]})
+          end
+        rescue
+          Rails.logger.error { "Error parsing chronlist note for #{id}" }
+        end
       end
       extracted_notes
     }.compact.flatten
