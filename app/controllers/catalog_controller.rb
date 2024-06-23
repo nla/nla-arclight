@@ -325,6 +325,7 @@ class CatalogController < ApplicationController
     config.add_background_field "biog",
       label: I18n.t("ead_notes.biog"),
       helper_method: :render_html_tags,
+      presenter: SubnotesPresenter,
       values: ->(__field_config, document, _context) { document.extract_notes_by_header("biog") }
     config.add_background_field "org_hist",
       label: I18n.t("ead_notes.org_hist"),
@@ -367,6 +368,16 @@ class CatalogController < ApplicationController
     config.add_background_field "physdesc_dimensions", field: "physdesc_dimensions_ssi", label: I18n.t("ead_notes.dimensions"), helper: :render_html_tags
     config.add_background_field "materialspec", field: "meterialspec_tesim", label: I18n.t("ead_notes.material_spec"), helper: :render_html_tags
     config.add_background_field "physdesc", field: "physdesc_facet_ssi", label: I18n.t("ead_notes.phys_desc"), helper: :render_html_tags
+    config.add_background_field "container_list",
+      label: I18n.t("ead_notes.container_list"),
+      helper_method: :render_html_tags,
+      presenter: SubnotesPresenter,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("container_list") }
+    config.add_background_field "box_list",
+      label: I18n.t("ead_notes.box_list"),
+      helper_method: :render_html_tags,
+      presenter: SubnotesPresenter,
+      values: ->(__field_config, document, _context) { document.extract_notes_by_header("box_list") }
 
     # Collection Show Page - Related Section
     config.add_related_field "relatedmaterial", field: "relatedmaterial_html_tesm", helper_method: :render_html_tags
