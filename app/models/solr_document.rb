@@ -111,4 +111,12 @@ class SolrDocument
       # rubocop:enable Rails/OutputSafety
     end
   end
+
+  def availability_status
+    holdings, item = CatalogueServicesClient.new.get_item_ids(instance_id: self["folio_instance_id_ssi"])
+    Rails.logger.debug "solrdoc"
+    Rails.logger.debug [holdings, item]
+
+    CatalogueServicesClient.new.get_requestable(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings, item_id: item)
+  end
 end
