@@ -8,6 +8,7 @@ en:
         language: Language
         prefercite: Preferred citation
         collectionnumber: Collection number
+        accessconditions: Access conditions
 
 
         collectionidentifier: Component identifier

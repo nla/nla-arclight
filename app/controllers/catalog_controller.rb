@@ -303,6 +303,7 @@ class CatalogController < ApplicationController
     config.add_summary_field "language", field: "language_ssim"
     config.add_summary_field "prefercite", field: "prefercite_html_tesm", helper_method: :render_html_tags
     config.add_summary_field "availability", field: "availability_status", accessor: :availability_status
+    config.add_summary_field "accessconditions", field: "access_conditions", accessor: :access_conditions
     config.add_summary_field "cult_sens_adv_notice",
       label: I18n.t("ead_notes.cultural_sens_adv_notice"),
       helper_method: :render_html_tags,
