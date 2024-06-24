@@ -65,7 +65,7 @@ class CatalogueServicesClient
     [item_id, holding_id]
   end
 
-  def get_notes(instance_id:, holdings_id:, item_id:)
+  def get_access_conditions(instance_id:, holdings_id:, item_id:)
     all_holdings = get_holdings(instance_id: instance_id)
 
     # find holdings record

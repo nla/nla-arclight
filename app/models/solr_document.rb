@@ -124,6 +124,6 @@ class SolrDocument
     holdings, item = CatalogueServicesClient.new.get_item_ids(instance_id: self["folio_instance_id_ssi"])
     Rails.logger.debug "solrdoc access conditions"
     Rails.logger.debug [holdings, item]
-    CatalogueServicesClient.new.get_notes(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings, item_id: item)
+    CatalogueServicesClient.new.get_access_conditions(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings, item_id: item)
   end
 end
