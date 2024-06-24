@@ -54,7 +54,7 @@ RSpec.describe CatalogueServicesClient do
     end
 
     it "returns the record's access condition notes or nil" do
-      expect(service.get_access_conditions(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731", holdings_id: "d6c97d9e-dfe6-5faa-9f0b-020b2bddbf8c", item_id: "7460acfb-72b9-5dba-9089-603921fb47c7")).to be_nil
+      expect(service.get_access_conditions(instance_id: "08aed703-3648-54d0-80ef-fddb3c635731", holdings_id: "d6c97d9e-dfe6-5faa-9f0b-020b2bddbf8c")).to be_nil
     end
   end
 end
