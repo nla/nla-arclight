@@ -119,7 +119,7 @@ class SolrDocument
   end
 
   def access_conditions
-    holdings, item = CatalogueServicesClient.new.get_item_ids(instance_id: self["folio_instance_id_ssi"])
+    holdings, _item = CatalogueServicesClient.new.get_item_ids(instance_id: self["folio_instance_id_ssi"])
 
     CatalogueServicesClient.new.get_access_conditions(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings)
   end
