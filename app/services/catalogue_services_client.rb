@@ -76,6 +76,21 @@ class CatalogueServicesClient
     item ? item["note"] : nil
   end
 
+  def related_docs(objid:)
+    conn = setup_connection
+
+    res = conn.get("/catalogue-services/ead/relateddocs/#{objid}")
+    if res.status == 200
+      if res.body.present?
+        res.body["docs"].presence
+      end
+    else
+      Rails.logger.error "Failed to retrieve related documents for #{objid}"
+    end
+  rescue => e
+    Rails.logger.error "related_docs - Failed to connect catalogue-service: #{e.message}"
+  end
+
   private
 
   def setup_connection
