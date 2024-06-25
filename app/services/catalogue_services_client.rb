@@ -60,9 +60,20 @@ class CatalogueServicesClient
     item_id = all_holdings.first["itemRecords"].first["holdingsRecordId"] if all_holdings.first["itemRecords"].any?
 
     holding_id = all_holdings.first["itemRecords"].first["id"] if all_holdings.first["itemRecords"].any?
-    Rails.logger.debug "catservices"
-    Rails.logger.debug [item_id, holding_id]
+
     [item_id, holding_id]
+  end
+
+  def get_access_conditions(instance_id:, holdings_id:)
+    all_holdings = get_holdings(instance_id: instance_id)
+
+    # find holdings record
+    holding = all_holdings.find { |h| h["id"] == holdings_id }
+
+    # find item record
+    item = holding["notes"].find { |i| i["holdingsNoteType"] == "Restriction" }
+
+    item ? item["note"] : nil
   end
 
   private
