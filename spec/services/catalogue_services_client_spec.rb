@@ -91,14 +91,25 @@ RSpec.describe CatalogueServicesClient do
       end
     end
 
-    context "when failed to connect to catalogue-service" do
+    context "when the service returns an error" do
       before do
         WebMock.stub_request(:get, /catservices.test\/catalogue-services\/ead\/relateddocs\/nla.obj-123/)
-          .to_return(status: 400, body: "", headers: {"Content-Type" => "application/json"})
+          .to_return(status: 500, body: "", headers: {"Content-Type" => "application/json"})
       end
 
       it "returns an empty response" do
-        expect(service.related_docs(pid: "nla.obj-123")).not_to be_nil
+        expect(service.related_docs(pid: "nla.obj-123")).to be_nil
+      end
+    end
+
+    context "when failed to connect to catalogue-service" do
+      before do
+        WebMock.stub_request(:get, /catservices.test\/catalogue-services\/ead\/relateddocs\/nla.obj-123/)
+          .to_raise(StandardError)
+      end
+
+      it "returns an empty response" do
+        expect(service.related_docs(pid: "nla.obj-123")).to be_nil
       end
     end
   end

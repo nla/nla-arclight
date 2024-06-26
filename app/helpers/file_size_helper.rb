@@ -10,6 +10,8 @@ module FileSizeHelper
       else
         "#{(size.to_f / 1073741824).round(2)} GB"
       end
+    else
+      "0 B"
     end
   end
 end

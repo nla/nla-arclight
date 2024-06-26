@@ -89,9 +89,11 @@ class CatalogueServicesClient
       end
     else
       Rails.logger.error "Failed to retrieve related documents for #{pid}"
+      nil
     end
   rescue => e
     Rails.logger.error "related_docs - Failed to connect catalogue-service: #{e.message}"
+    nil
   end
 
   private
