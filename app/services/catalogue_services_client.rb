@@ -79,7 +79,7 @@ class CatalogueServicesClient
   def related_docs(pid:)
     conn = setup_connection
 
-    res = conn.get("/catalogue-services/ead/relateddocs/#{pid}")
+    res = Rails.cache.fetch([pid, :related_docs], expires_in: 10.minutes) { conn.get("/catalogue-services/ead/relateddocs/#{pid}") }
     if res.status == 200
       if res.body.present? && res.body["docs"].present?
         res.body["docs"].map do |attrs|
