@@ -18,7 +18,7 @@ class RelatedDocument < OpenStruct
 
   def link_text
     if copyRole == "fas"
-      "#{I18n.t("related_docs.link_text_fas")} ( Type: #{fileType}, Size: #{ApplicationController.helpers.format_filesize(fileSize)})"
+      "#{I18n.t("related_docs.link_text_fas")} (Type: #{fileType}, Size: #{ApplicationController.helpers.format_filesize(fileSize)})"
     else
       "#{I18n.t("related_docs.link_text")} ( Type: #{fileType}, Size: #{ApplicationController.helpers.format_filesize.call(fileSize)})"
     end
