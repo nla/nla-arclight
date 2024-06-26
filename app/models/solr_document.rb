@@ -12,6 +12,7 @@ class SolrDocument
   attribute :physdesc_dimensions, :string, "physdesc_dimensions_ssi"
   attribute :physdesc_facet, :string, "physdesc_facet_ssi"
   attribute :notes, :array, "note_json_ssm"
+  attribute :pid, :string, "ead_ssi"
 
   # **** BEWARE! ****
   # Arclight aliases "level_ssm" and "unitid_ssm" fields to String type attributes in the

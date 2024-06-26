@@ -381,7 +381,11 @@ class CatalogController < ApplicationController
       values: ->(__field_config, document, _context) { document.extract_notes_by_header("box_list") }
 
     # Collection Show Page - Related Section
-    config.add_related_field "relatedmaterial", field: "relatedmaterial_html_tesm", helper_method: :render_html_tags
+    config.add_related_field "relatedmaterial",
+      label: I18n.t("blacklight.search.fields.relatedmaterial"),
+      helper_method: :render_related_docs,
+      values: ->(__field_config, document, _context) { CatalogueServicesClient.new.related_docs(pid: "nla.obj-#{document.pid}") },
+      if: ->(_controller, _config, document) { document.pid.present? }
     config.add_related_field "separatedmaterial", field: "separatedmaterial_html_tesm", helper_method: :render_html_tags
     config.add_related_field "otherfindaid", field: "otherfindaid_html_tesm", helper_method: :render_html_tags
     config.add_related_field "altformavail", field: "altformavail_html_tesm", helper_method: :render_html_tags
@@ -480,5 +484,11 @@ class CatalogController < ApplicationController
 
     # Group header values
     config.add_group_header_field "abstract_or_scope", accessor: true, truncate: true, helper_method: :render_html_tags
+  end
+
+  private
+
+  def has_pid?
+    document.pid.present?
   end
 end

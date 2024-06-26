@@ -1,0 +1,36 @@
+{
+  "docs": [
+    {
+      "id": "nla.obj-367760674",
+      "copyRole": "fas",
+      "fileName": "Finding aid supplementary",
+      "externalComments": "Appendix C - Items in Series 12.1",
+      "fileType": "pdf",
+      "fileSize": 124305
+    },
+    {
+      "id": "nla.obj-367758458",
+      "copyRole": "fas",
+      "fileName": "Finding aid supplementary",
+      "externalComments": "Appendix B - Selected items in Subseries 5.2",
+      "fileType": "pdf",
+      "fileSize": 113986
+    },
+    {
+      "id": "nla.obj-367758206",
+      "copyRole": "fas",
+      "fileName": "Finding aid supplementary",
+      "externalComments": "Appendix A - Concordance (Box List)",
+      "fileType": "pdf",
+      "fileSize": 401572
+    },
+    {
+      "id": "nla.obj-367766877",
+      "copyRole": "fas",
+      "fileName": "Finding aid supplementary",
+      "externalComments": "Appendix D - Items in Series 17",
+      "fileType": "pdf",
+      "fileSize": 200793
+    }
+  ]
+}
