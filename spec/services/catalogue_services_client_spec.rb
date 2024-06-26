@@ -66,7 +66,7 @@ RSpec.describe CatalogueServicesClient do
           .to_return(status: 200, body: cat_response, headers: {"Content-Type" => "application/json"})
       end
 
-      let(:related_docs) { service.related_docs(objid: "nla.obj-123") }
+      let(:related_docs) { service.related_docs(pid: "nla.obj-123") }
 
       it "returns the related records" do
         expect(related_docs).not_to be_nil
@@ -87,7 +87,7 @@ RSpec.describe CatalogueServicesClient do
       end
 
       it "returns an empty response" do
-        expect(service.related_docs(objid: "nla.obj-123")).to be_nil
+        expect(service.related_docs(pid: "nla.obj-123")).to be_nil
       end
     end
 
@@ -98,7 +98,7 @@ RSpec.describe CatalogueServicesClient do
       end
 
       it "returns an empty response" do
-        expect(service.related_docs(objid: "nla.obj-123")).not_to be_nil
+        expect(service.related_docs(pid: "nla.obj-123")).not_to be_nil
       end
     end
   end

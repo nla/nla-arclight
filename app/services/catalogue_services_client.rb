@@ -76,16 +76,19 @@ class CatalogueServicesClient
     item ? item["note"] : nil
   end
 
-  def related_docs(objid:)
+  def related_docs(pid:)
     conn = setup_connection
 
-    res = conn.get("/catalogue-services/ead/relateddocs/#{objid}")
+    res = conn.get("/catalogue-services/ead/relateddocs/#{pid}")
     if res.status == 200
-      if res.body.present?
-        res.body["docs"].presence
+      if res.body.present? && res.body["docs"].present?
+        res.body["docs"].map do |attrs|
+          attrs[:pid] = pid # insert the pid since we need it to construct the download URL
+          RelatedDocument.new(attrs)
+        end
       end
     else
-      Rails.logger.error "Failed to retrieve related documents for #{objid}"
+      Rails.logger.error "Failed to retrieve related documents for #{pid}"
     end
   rescue => e
     Rails.logger.error "related_docs - Failed to connect catalogue-service: #{e.message}"

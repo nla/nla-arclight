@@ -55,4 +55,6 @@ en:
     container_list: "Container List"
     box_list: "Box List"
     bibref: "Bibliographic Reference(s)"
-
+  related_docs:
+    link_text_fas: "Supplementary finding aid"
+    link_text: "Transcript"
