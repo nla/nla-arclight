@@ -1,5 +1,80 @@
 # Changelog
 
+## [3.3.0](https://github.com/nla/nla-arclight/compare/nla-arclight-3.2.0...nla-arclight/3.3.0) (2024-06-28)
+
+
+### Features
+
+* cache related docs request response ([79fde27](https://github.com/nla/nla-arclight/commit/79fde270a89922ff5a617ed9885d5d8d96686577))
+* compare note headings using parameterized values ([e3df011](https://github.com/nla/nla-arclight/commit/e3df0117f40e2f381920d43a08f19d5db8970834))
+* extract EAD notes by header ([5fffcc5](https://github.com/nla/nla-arclight/commit/5fffcc5fe3876fc3aa24781c4ef2aa8cbf08241e))
+* extract notes by header ([81e0a52](https://github.com/nla/nla-arclight/commit/81e0a52278e0e43361d9e57198d7aea315a97680))
+* implement rendering of related document list ([32e7a24](https://github.com/nla/nla-arclight/commit/32e7a24d18f8e0c79ea1dbe5f73421ad91ef9188))
+* implement service call ([3a90f00](https://github.com/nla/nla-arclight/commit/3a90f00bf123269510566b6dc917e99dab2938f5))
+* modify related docs download URL ([76830e3](https://github.com/nla/nla-arclight/commit/76830e3a945ef6db040fa03fce294f3e0b81c4e0))
+* refine display and formatting of notes ([07cac10](https://github.com/nla/nla-arclight/commit/07cac10cb2a033afe35ad0d8cd29c0d16735495f))
+* render chronlist, bibref and tables in notes ([3ed183a](https://github.com/nla/nla-arclight/commit/3ed183a756dbb0abc9dccac666971d541f79ba2f))
+
+
+### Bug Fixes
+
+* accommodate chronlists that are not duplicates ([2665df2](https://github.com/nla/nla-arclight/commit/2665df2adba16516d02a48aa6f7c5eb89994a1c0))
+* change chronlist table header level to h4 ([effca62](https://github.com/nla/nla-arclight/commit/effca62ea133cd7b6654084d5db8c3436b859182))
+* don't attempt to wrap non-Strings in an HTML paragraph ([981c59c](https://github.com/nla/nla-arclight/commit/981c59ce44913520e0a2a6f47e84f0f43cf8cec6))
+* handle case where bibref is a Hash ([1633c47](https://github.com/nla/nla-arclight/commit/1633c475dd0e60e6fa3d1abc708c16055f1095db))
+* ignore chronlists that are in an array ([503aac1](https://github.com/nla/nla-arclight/commit/503aac1bce2527eefe42d72e478f51c1b8286715))
+* normalize note paragraphs and HTML wrapping ([1c5bdd1](https://github.com/nla/nla-arclight/commit/1c5bdd1d4ae8a288e7a2e68a5d110996ef6cf325))
+* prevent subnotes from crashing application ([3e8b7b9](https://github.com/nla/nla-arclight/commit/3e8b7b93b690438830c17b325335db2b1e113595))
+* render HTML markup in note paragraphs ([d0fe402](https://github.com/nla/nla-arclight/commit/d0fe402171ab1c1a570937cc659bc33c7e0a42ec))
+* return nil extent information to avoid displaying an empty heading ([8abbbaf](https://github.com/nla/nla-arclight/commit/8abbbafd9244e7ae8a2b306c0866ab6e30e4516f))
+* translate Scope and Contents heading ([04cf925](https://github.com/nla/nla-arclight/commit/04cf925b87c82d8257ce134372e3625d2fdcd448))
+
+
+### Code Refactoring
+
+* restyle related documents link ([d954e41](https://github.com/nla/nla-arclight/commit/d954e41eec0282f35b52fcc2cd19caf0fbe6d8fd))
+
+
+### Tests
+
+* add tests for related documents ([929e1b8](https://github.com/nla/nla-arclight/commit/929e1b80c17a82de147616649fb569f83622467d))
+* fix specs ([7241f9c](https://github.com/nla/nla-arclight/commit/7241f9cae7fb166084bbf75151dde836a91d61ae))
+
+
+### Build System
+
+* add rubocop-factory_bot ([cdcc002](https://github.com/nla/nla-arclight/commit/cdcc00244f05c80151263677fc1bcc9f66fd3123))
+* **deps-dev:** bump binding_of_caller from 1.0.0 to 1.0.1 ([5e31a81](https://github.com/nla/nla-arclight/commit/5e31a81a638533d5e054d68ed4a3d9d3b8f837b8))
+* **deps-dev:** bump rack-mini-profiler from 3.1.1 to 3.3.1 ([3734cb5](https://github.com/nla/nla-arclight/commit/3734cb546ee224751b788179e1fe6e1e747fe434))
+* **deps-dev:** bump rspec-rails from 6.1.1 to 6.1.2 ([b36fa17](https://github.com/nla/nla-arclight/commit/b36fa17779c3b342ccde0aa4a33f766970e010b2))
+* **deps-dev:** bump rspec-rails from 6.1.2 to 6.1.3 ([5a9d743](https://github.com/nla/nla-arclight/commit/5a9d7431e178338bee9cf442d17cd562e724f898))
+* **deps-dev:** bump rubocop-performance from 1.21.0 to 1.21.1 ([5dfc787](https://github.com/nla/nla-arclight/commit/5dfc78706582aec4851236fd49444208a3df0844))
+* **deps-dev:** bump rubocop-rspec from 2.25.0 to 3.0.1 ([716dcdb](https://github.com/nla/nla-arclight/commit/716dcdb6c443eaa5f88eab19214f92da9ff66380))
+* **deps-dev:** bump selenium-webdriver from 4.21.1 to 4.22.0 ([ce5830f](https://github.com/nla/nla-arclight/commit/ce5830f7056997f109a29ee2609040c3d45665a7))
+* **deps-dev:** bump stackprof from 0.2.25 to 0.2.26 ([a827f87](https://github.com/nla/nla-arclight/commit/a827f87cda9fee4fdc0ee6ae389e9fe901434a06))
+* **deps-dev:** bump standard from 1.32.0 to 1.37.0 ([8425d07](https://github.com/nla/nla-arclight/commit/8425d077b8af88c5fd9632be61816076a843462e))
+* **deps-dev:** bump standard from 1.37.0 to 1.39.0 ([e4e24c6](https://github.com/nla/nla-arclight/commit/e4e24c6f369f826e0cf32416e03a49529700dded))
+* **deps:** bump actionpack from 7.0.8.3 to 7.0.8.4 ([f8635bd](https://github.com/nla/nla-arclight/commit/f8635bdd914b3f0e0660843d5f39f81684ae6553))
+* **deps:** bump arclight from 1.1.0 to 1.4.0 ([6477805](https://github.com/nla/nla-arclight/commit/647780514bb206beb89f2d61a6b961df359cfc79))
+* **deps:** bump blacklight-frontend from 8.0.1 to 8.3.0 ([966683f](https://github.com/nla/nla-arclight/commit/966683f55d336ad3b74847a3cf90d4db5f6a70b0))
+* **deps:** bump braces from 3.0.2 to 3.0.3 ([7321b67](https://github.com/nla/nla-arclight/commit/7321b67b4e04bd5c675df6f5584831ddcd1379e2))
+* **deps:** bump esbuild from 0.21.4 to 0.21.5 ([17c49e8](https://github.com/nla/nla-arclight/commit/17c49e8d8a949e683744e6038c0749eca96d9bc8))
+* **deps:** bump hiredis-client from 0.18.0 to 0.22.2 ([7dcaf25](https://github.com/nla/nla-arclight/commit/7dcaf25a6797494c91251ff9bd79d4e6fe81cdd2))
+* **deps:** bump nodemon from 3.1.2 to 3.1.3 ([6c62761](https://github.com/nla/nla-arclight/commit/6c627619d12ee1c1c19381c1fff4ed596fee9f09))
+* **deps:** bump nodemon from 3.1.3 to 3.1.4 ([6cd02d3](https://github.com/nla/nla-arclight/commit/6cd02d32aa250620650bace8a67ac40cb8134556))
+* **deps:** bump nokogiri from 1.16.5 to 1.16.6 ([721b156](https://github.com/nla/nla-arclight/commit/721b1567a3c99299f98001dbaaed1e45d42d5e9c))
+* **deps:** bump sass from 1.71.1 to 1.77.5 ([cb19eb2](https://github.com/nla/nla-arclight/commit/cb19eb237538e72e9c6de0f293d498f19a6ec4ae))
+* **deps:** bump sass from 1.77.5 to 1.77.6 ([6606535](https://github.com/nla/nla-arclight/commit/6606535c092a78e562ddfcfb003dee3ebcee11ad))
+* **deps:** bump sprockets-rails from 3.4.2 to 3.5.1 ([bcad2af](https://github.com/nla/nla-arclight/commit/bcad2af77e996cc672f80dadd3f060b5df181168))
+* **deps:** bump yabeda-prometheus from 0.9.0 to 0.9.1 ([bd96f9e](https://github.com/nla/nla-arclight/commit/bd96f9e8be852cb7e05ffaafa1a4b5f1b6d7ea42))
+* fix rubocop dependencies ([fe11410](https://github.com/nla/nla-arclight/commit/fe114106985b37514952c2de0c9e86f3322ccd59))
+
+
+### Continuous Integration
+
+* cleanup release workflows and config ([356482d](https://github.com/nla/nla-arclight/commit/356482dfa9908c7defc2c1965257d9c91cb9f822))
+* upgrade release-please action ([5a9e9a9](https://github.com/nla/nla-arclight/commit/5a9e9a96f44333675097653f346be6aa380faa59))
+
 ## [3.2.0](https://github.com/nla/nla-arclight/compare/3.1.0...3.2.0) (2024-06-04)
 
 
