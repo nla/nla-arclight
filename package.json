@@ -10,7 +10,7 @@
     "blacklight-frontend": "^8.3.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "esbuild": "^0.21.5",
+    "esbuild": "^0.23.0",
     "jquery": "^3.7.1",
     "nodemon": "^3.1.4",
     "postcss": "^8.4.38",
