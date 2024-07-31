@@ -3,7 +3,7 @@
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo-rails": "^8.0.4",
+    "@hotwired/turbo-rails": "^8.0.5",
     "@popperjs/core": "^2.11.8",
     "arclight": "^1.4.0",
     "autoprefixer": "^10.4.19",
@@ -15,7 +15,7 @@
     "nodemon": "^3.1.4",
     "postcss": "^8.4.38",
     "postcss-cli": "^10.1.0",
-    "sass": "^1.77.6"
+    "sass": "^1.77.8"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
