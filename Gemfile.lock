@@ -417,8 +417,8 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
-    redis (5.1.0)
-      redis-client (>= 0.17.0)
+    redis (5.2.0)
+      redis-client (>= 0.22.0)
     redis-client (0.22.2)
       connection_pool
     regexp_parser (2.9.2)
@@ -651,7 +651,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 7.0.8)
   rails-controller-testing (~> 1.0, >= 1.0.5)
-  redis (~> 5.1)
+  redis (~> 5.2)
   rsolr (>= 1.0, < 3)
   rspec-rails (~> 6.1)
   rubocop-capybara
