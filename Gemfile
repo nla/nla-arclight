@@ -21,7 +21,7 @@ gem "lograge"
 gem "activerecord-session_store", "~> 2.0"
 
 # catch unsafe migrations
-gem "strong_migrations", "~> 1.7"
+gem "strong_migrations", "~> 2.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
@@ -55,7 +55,7 @@ gem "hiredis", "~> 0.6.3"
 gem "hiredis-client", "~> 0.22.2"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 5.1"
+gem "redis", "~> 5.2"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -89,7 +89,7 @@ gem "blacklight-locale_picker"
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
-gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", tag: "0.2.4"
+gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "main"
 gem "blacklight_range_limit", git: "https://github.com/nla/blacklight_range_limit", branch: "main"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
