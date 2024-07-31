@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.3.1](https://github.com/nla/nla-arclight/compare/nla-arclight/3.3.0...nla-arclight/3.3.1) (2024-07-31)
+
+
+### Build System
+
+* **deps-dev:** bump rubocop-rails from 2.25.0 to 2.25.1 ([aff642f](https://github.com/nla/nla-arclight/commit/aff642fdbc5339d4a7b5ddacbc6d71bcbe29cc0b))
+* **deps-dev:** bump rubocop-rspec from 3.0.1 to 3.0.3 ([2085c78](https://github.com/nla/nla-arclight/commit/2085c786f293acddfc74d1246080edc05630e350))
+* **deps-dev:** bump selenium-webdriver from 4.22.0 to 4.23.0 ([d9694b9](https://github.com/nla/nla-arclight/commit/d9694b9528a2e3c51778e7bbe82b097f2503b563))
+* **deps:** bump @hotwired/turbo-rails from 8.0.4 to 8.0.5 ([bae2c10](https://github.com/nla/nla-arclight/commit/bae2c1063d7f72d7b062efb84265ee3aa81cdc2b))
+* **deps:** bump postcss from 8.4.38 to 8.4.40 ([8eb764b](https://github.com/nla/nla-arclight/commit/8eb764b87e89d76e81b9b00fd9d27bd8d26d4c48))
+* **deps:** bump redis from 5.1.0 to 5.2.0 ([94fec00](https://github.com/nla/nla-arclight/commit/94fec00d747bc7cd92728ba44e093b73a902b2d2))
+* **deps:** bump sass from 1.77.6 to 1.77.8 ([916ee0d](https://github.com/nla/nla-arclight/commit/916ee0d3e0ebc85369eb546ff2ac9aba932531ae))
+* **deps:** bump strong_migrations from 1.8.0 to 2.0.0 ([f53c328](https://github.com/nla/nla-arclight/commit/f53c3289be9667dbbcac5cb12657ac3187300db4))
+
 ## [3.3.0](https://github.com/nla/nla-arclight/compare/nla-arclight-3.2.0...nla-arclight/3.3.0) (2024-06-28)
 
 
