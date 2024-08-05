@@ -555,7 +555,7 @@ GEM
       deprecation
       jsonpath
       traject (~> 3.0)
-    turbo-rails (2.0.5)
+    turbo-rails (2.0.6)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -606,7 +606,7 @@ GEM
       railties
       yabeda (~> 0.8)
     yell (2.2.2)
-    zeitwerk (2.6.16)
+    zeitwerk (2.6.17)
     zk (1.10.0)
       zookeeper (~> 1.5.0)
     zookeeper (1.5.5)
