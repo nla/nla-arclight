@@ -162,7 +162,7 @@ GEM
       bigdecimal
       rexml
     crass (1.0.6)
-    cssbundling-rails (1.4.0)
+    cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
     database_cleaner-active_record (2.1.0)
       activerecord (>= 5.a)
@@ -606,7 +606,7 @@ GEM
       railties
       yabeda (~> 0.8)
     yell (2.2.2)
-    zeitwerk (2.6.16)
+    zeitwerk (2.6.17)
     zk (1.10.0)
       zookeeper (~> 1.5.0)
     zookeeper (1.5.5)
