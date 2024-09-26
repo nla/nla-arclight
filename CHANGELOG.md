@@ -1,5 +1,45 @@
 # Changelog
 
+## [3.3.1](https://github.com/nla/nla-arclight/compare/nla-arclight/3.3.0...nla-arclight/3.3.1) (2024-09-26)
+
+
+### Build System
+
+* **deps-dev:** bump faker from 3.4.1 to 3.4.2 ([5a793a7](https://github.com/nla/nla-arclight/commit/5a793a7281bf42a10636874b82b39b3bf1452515))
+* **deps-dev:** bump rspec-rails from 6.1.3 to 6.1.4 ([d7db50b](https://github.com/nla/nla-arclight/commit/d7db50b6eca5bc43a26350baa99c98b6266a44f3))
+* **deps-dev:** bump rubocop-rails from 2.25.0 to 2.25.1 ([aff642f](https://github.com/nla/nla-arclight/commit/aff642fdbc5339d4a7b5ddacbc6d71bcbe29cc0b))
+* **deps-dev:** bump rubocop-rspec from 3.0.1 to 3.0.3 ([2085c78](https://github.com/nla/nla-arclight/commit/2085c786f293acddfc74d1246080edc05630e350))
+* **deps-dev:** bump rubocop-rspec from 3.0.3 to 3.0.4 ([5396e33](https://github.com/nla/nla-arclight/commit/5396e331dca08ca8110d4534827da595e00c6652))
+* **deps-dev:** bump selenium-webdriver from 4.22.0 to 4.23.0 ([d9694b9](https://github.com/nla/nla-arclight/commit/d9694b9528a2e3c51778e7bbe82b097f2503b563))
+* **deps-dev:** bump selenium-webdriver from 4.23.0 to 4.25.0 ([41cbd83](https://github.com/nla/nla-arclight/commit/41cbd8354e2e7b4e0a49f5d30b02a2559ca1adb1))
+* **deps-dev:** bump shoulda-matchers from 6.2.0 to 6.4.0 ([e5f78b2](https://github.com/nla/nla-arclight/commit/e5f78b2918fbf5bf3539d22f8f77f40b796dba61))
+* **deps-dev:** bump standard from 1.39.2 to 1.40.0 ([27b0938](https://github.com/nla/nla-arclight/commit/27b0938e0e5b24c03ef0f92a39bb658a2d1ad280))
+* **deps:** bump @hotwired/turbo-rails from 8.0.4 to 8.0.5 ([bae2c10](https://github.com/nla/nla-arclight/commit/bae2c1063d7f72d7b062efb84265ee3aa81cdc2b))
+* **deps:** bump @hotwired/turbo-rails from 8.0.5 to 8.0.10 ([89c9dd8](https://github.com/nla/nla-arclight/commit/89c9dd845627dc54f10a304c40b6eb6541f8d015))
+* **deps:** bump autoprefixer from 10.4.19 to 10.4.20 ([436d0c5](https://github.com/nla/nla-arclight/commit/436d0c578c005bdd04a460535d729c36b2a2831b))
+* **deps:** bump blacklight-locale_picker from 1.1.0 to 1.2.0 ([7aec9c6](https://github.com/nla/nla-arclight/commit/7aec9c6a094b1543e2bcc2a1b98270895b969e62))
+* **deps:** bump bootsnap from 1.18.3 to 1.18.4 ([706d714](https://github.com/nla/nla-arclight/commit/706d7144192a05461760a79670506b39192e86a0))
+* **deps:** bump bundler-audit from 0.9.1 to 0.9.2 ([dedfa02](https://github.com/nla/nla-arclight/commit/dedfa02ce8b05ca8ebcb30e79eef8838c05d2abd))
+* **deps:** bump cssbundling-rails from 1.4.0 to 1.4.1 ([48966fd](https://github.com/nla/nla-arclight/commit/48966fdf978518459304d9064b86eb33fa609608))
+* **deps:** bump esbuild from 0.23.0 to 0.23.1 ([23e5508](https://github.com/nla/nla-arclight/commit/23e550839bc8f455e0109c4ef4d440a1670d1d0b))
+* **deps:** bump esbuild from 0.23.1 to 0.24.0 ([3864421](https://github.com/nla/nla-arclight/commit/3864421825ee513792e8440bd5151f6412821b58))
+* **deps:** bump jsbundling-rails from 1.3.0 to 1.3.1 ([65addfb](https://github.com/nla/nla-arclight/commit/65addfbbe69e50049f8cd381d894a0046b0d67e6))
+* **deps:** bump micromatch from 4.0.5 to 4.0.8 ([0a616b3](https://github.com/nla/nla-arclight/commit/0a616b3d87451cbe9321fd2cf2af253e0747aebb))
+* **deps:** bump nodemon from 3.1.4 to 3.1.7 ([64f2979](https://github.com/nla/nla-arclight/commit/64f2979603de7b02b8dd8703e7a891f7c841e32f))
+* **deps:** bump nokogiri from 1.16.6 to 1.16.7 ([0067711](https://github.com/nla/nla-arclight/commit/0067711df20c172bf69edccbccbf64ff56de8ccf))
+* **deps:** bump postcss from 8.4.38 to 8.4.40 ([8eb764b](https://github.com/nla/nla-arclight/commit/8eb764b87e89d76e81b9b00fd9d27bd8d26d4c48))
+* **deps:** bump postcss from 8.4.40 to 8.4.41 ([f7ac36a](https://github.com/nla/nla-arclight/commit/f7ac36a7457eb50387f6993da5ac2db7f4594b1f))
+* **deps:** bump postcss from 8.4.41 to 8.4.47 ([e86e563](https://github.com/nla/nla-arclight/commit/e86e5637ad3b8c6a15c96da2bfed58a57c4723a8))
+* **deps:** bump puma from 6.4.2 to 6.4.3 ([75058c7](https://github.com/nla/nla-arclight/commit/75058c7ff5c57747a14e106b05381e8f359eb077))
+* **deps:** bump redis from 5.1.0 to 5.2.0 ([94fec00](https://github.com/nla/nla-arclight/commit/94fec00d747bc7cd92728ba44e093b73a902b2d2))
+* **deps:** bump rexml from 3.3.2 to 3.3.3 ([db65612](https://github.com/nla/nla-arclight/commit/db6561270b7250a2ef3df74fc29c68ed30f15d95))
+* **deps:** bump rexml from 3.3.3 to 3.3.6 ([61373ca](https://github.com/nla/nla-arclight/commit/61373ca37711a9c172c509d5b7e06d0f6372bd87))
+* **deps:** bump sass from 1.77.6 to 1.77.8 ([916ee0d](https://github.com/nla/nla-arclight/commit/916ee0d3e0ebc85369eb546ff2ac9aba932531ae))
+* **deps:** bump sass from 1.77.8 to 1.79.3 ([ddb659f](https://github.com/nla/nla-arclight/commit/ddb659fc60c21a9b432574a9b649cc2422428fa9))
+* **deps:** bump sprockets-rails from 3.5.1 to 3.5.2 ([ca00c28](https://github.com/nla/nla-arclight/commit/ca00c280549f25d9f2a51503e069b7fe63a50730))
+* **deps:** bump strong_migrations from 1.8.0 to 2.0.0 ([f53c328](https://github.com/nla/nla-arclight/commit/f53c3289be9667dbbcac5cb12657ac3187300db4))
+* **deps:** bump turbo-rails from 2.0.5 to 2.0.6 ([71b6ac3](https://github.com/nla/nla-arclight/commit/71b6ac3855e5e4b796406506f3fb30d19dadcaf5))
+
 ## [3.3.0](https://github.com/nla/nla-arclight/compare/nla-arclight-3.2.0...nla-arclight/3.3.0) (2024-06-28)
 
 
