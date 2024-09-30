@@ -199,7 +199,7 @@ GEM
     domain_name (0.6.20240107)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
-    dotenv (3.1.2)
+    dotenv (3.1.4)
     dry-initializer (3.1.1)
     erubi (1.13.0)
     factory_bot (6.4.6)
