@@ -232,7 +232,7 @@ GEM
     gretel (5.0.0)
       actionview (>= 5.1, < 7.2)
       railties (>= 5.1, < 7.2)
-    hashdiff (1.1.0)
+    hashdiff (1.1.1)
     hashie (5.0.0)
     heapy (0.2.0)
       thor
@@ -577,7 +577,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webmock (3.23.1)
+    webmock (3.24.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
