@@ -1,0 +1,466 @@
+@charset "UTF-8";
+@import "variables";
+@import "nla-custom-bootstrap";
+
+
+@media screen and (prefers-color-scheme: dark) {
+
+  body {
+    background-color: $body-bg-dark;
+    color: $body-color-dark;
+  }
+
+  a:not(.btn, .page-link) {
+    color: $link-color-dark;
+    
+    &:focus,
+    &:hover,
+    &:active {
+      color: $link-hover-color-dark;
+      background-color: $link-hover-bg-color-dark;
+      box-shadow: 0 0 0 4px $link-hover-bg-color-dark;
+    }
+  }
+  
+  .al-show-breadcrumb,
+  .title-container,
+  .sidebar-section {
+    border-bottom-color: $grey-300;
+  }
+  
+  .collection-sidebar {
+    border-right-color: $grey-300;
+  }
+    
+  .breadcrumb {
+    color: $body-color-dark;
+
+    .breadcrumb-item {
+      &::before,
+      &.active {
+        color: $body-color-dark;
+      }
+    }
+  }
+
+  // Form inputs
+  .navbar-search {
+    .input-group {
+      .input-group-text {
+        color: $body-color-dark; 
+      }
+      .form-select,
+      .form-control,
+      .navbar-search .input-group > .search-autocomplete-wrapper .search-q {
+        background-color: $black !important;
+        border-color: $white !important;
+        color: $body-color-dark;
+        
+        &::placeholder {
+          color: $grey-100;
+        }
+    
+        &:focus {
+          color: $body-color-dark;
+          background-color: $grey-200 !important;
+          border-color: $grey-200 !important;
+          box-shadow: 0 0 0 1px $grey-200;
+        
+          &::placeholder {
+            color: $grey-700;
+          }
+        }
+        
+        #autocomplete-popup {
+          background: $white;
+          color: $black;
+          box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.08);
+        }
+      }
+    }
+  }
+
+  // Buttons
+  .btn-primary {
+    color: $black;
+    background-color: $white;
+    border-color: $white;
+  }
+  
+  .btn-secondary,
+  .btn-tertiary {
+    color: $white;
+    background-color: $black;
+    border-color: $white;
+  }
+  
+  .btn-tertiary {
+    &:focus,
+    &:hover,
+    &:active {
+      color: $black;
+      background-color: $white;
+    }
+  }
+  
+  .btn-link {
+    color: $body-color-dark;
+    
+    &:focus,
+    &:hover,
+    &:active {
+      color: $body-color-dark;
+    }
+  }
+  
+  
+  // Header
+  .header {
+    border-bottom-color: $grey-300;
+    
+    .top-bar {
+      background-color: $light-teal;
+    
+      .navbar-nav {
+        .nav-link {
+          color: $black;
+          
+          &:focus,
+          &:hover,
+          &:active {
+            color: $white;
+            background-color: $link-hover-bg-color;
+            box-shadow: 0 0 0 4px $link-hover-bg-color;
+        
+          }
+        }
+      }
+    }
+    
+    .bottom-bar {
+      background: $body-bg-dark !important;
+      
+      .navbar-brand.navbar-logo {
+        filter: invert(100%);
+      }
+      .navbar-collapse {
+        .navbar-nav {
+          .nav-link {
+            color: $body-color-dark;
+            
+            &:focus,
+            &:hover,
+            &:active,
+            &.active {
+              color: $body-color-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
+  
+  
+  // Search results
+  .sort-pagination {
+    border-top-color: $grey-300;
+    
+    .result-type-group, .view-type-group {
+      .btn {
+        color: $body-color-dark;
+                
+        &:not(.active) {
+          & path:not([fill="none"]) {
+            fill: $body-color-dark;
+          }
+        }
+      }
+      
+      &:has(.btn:not(.active):focus),
+      &:has(.btn:not(.active):hover) {
+        background: $grey-600;
+      }
+    }
+    
+    .sort-dropdown,
+    .per_page-dropdown {
+      .btn {
+        color: $body-color-dark;
+        
+        .d-sm-inline {
+          color: $body-color-dark;
+        }
+      }
+    }
+
+  }
+  
+  .al-grouped-results,
+  .documents-list {
+    .document-title-heading,
+    .al-grouped-title-bar {
+      a {
+        &:focus,
+        &:hover {
+          color: $body-color-dark;
+        }
+      }
+    }
+    
+    
+  }
+  
+  .al-grouped-results {
+    .al-grouped-title-bar {
+      background: $grey-600;
+    }
+  }
+  
+  .al-document-listings,
+  .documents-list {
+    article {
+      &.document {
+        border-bottom: 1px dotted $grey-600;
+        
+        &:focus,
+        &:hover,
+        &:has(.document-title-heading a:focus) {
+          background: $grey-600;
+        }
+        
+        .document-title-heading {
+          a {
+            color: $body-color-dark;
+            
+            &:focus,
+            &:hover,
+            &:active {
+              color: $body-color-dark;
+              box-shadow: none;
+            }
+          }
+        }
+        
+        .dl-invert {
+          dt {
+            color: $grey-50;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  // Facets 
+  .page-sidebar .facets.sidenav,
+  .page-sidebar .advanced-facet-limits {
+    .facets-header {
+      border-bottom: 1px solid $white;
+      
+      .facets-heading {
+        color: $body-color-dark;
+      }
+    }
+    
+    .facets-collapse {
+      .facet-limit {
+        border-bottom-color: $body-bg-dark;
+        color: $body-color-dark;
+        
+        &.card {
+          background-color: $grey-300;
+        }  
+             
+        .facet-field-heading {
+          background-color: $grey-300 !important;
+          
+          &:has([aria-expanded="true"]) {
+            .btn {
+              color: $black;
+            }
+          }
+          
+          .btn {
+            color: $body-color-dark;
+          }
+        }
+        
+        .facet-content {
+          .facet-values {
+            .facet-select,
+            .selected {
+              color: $body-color-dark !important;
+            }
+            
+            .facet-count {
+              color: $white;
+              
+              &.selected {
+                color: $white !important;
+              }
+            }
+            
+            .remove {
+              color: $grey-500;
+            }
+          }
+        }
+      } 
+    }
+  }
+  
+  
+  // Pagination
+  .page-link {
+    color: $pagination-color-dark;
+  }
+
+
+  // Record page
+  .title-container {
+    h1,
+    h2 {
+      color: $body-color-dark;
+    }
+  }
+  
+  .al-show-sub-heading,
+  .collection-sidebar h2 {
+    color: $body-color-dark;
+  }
+  
+  .online-contents {
+    color: $body-color-dark;
+    background-color: $grey-600;
+  }
+  
+  .al-digital-object {    
+    a {
+      color: $black !important;
+      background: $white;
+      border: 1px solid $white;
+      
+      &:hover,
+      &:focus {
+        border-color: $light-teal;
+      }
+    }
+  }
+  
+  
+  .al-show-actions-box {
+    background-color: $grey-600;
+    
+    h2,
+    h3 {
+      color: $body-color-dark;
+    }
+    
+    .al-show-actions-box-info {
+      .btn {
+        svg {
+          fill: $white;
+        }
+        
+        &:focus,
+        &:hover,
+        &:active,
+        .show {
+          svg {
+            fill: $black;
+          }
+        }
+      }
+    }
+  }
+  
+  .al-collection-context {
+    
+    &:hover,
+    &:has(a:focus) {
+      background-color: $grey-600;
+    }
+  
+    
+    &.al-hierarchy-highlight {
+      background-color: $grey-600;      
+    }
+      
+    a {      
+      &:focus,
+      &:hover {
+        color: $body-color-dark !important;
+      }
+    }
+  }  
+  
+  .dl-invert {
+    dt {
+      color: $grey-50;
+    }
+  }
+  
+  #access-and-use {
+    img {
+      filter: invert(1);
+    }
+  }
+  
+  
+
+
+  // Alerts
+  .alert-info {
+    background: $info-dark;
+    border-color: $info-light;
+    color: $body-color-dark;
+    
+    &:before {
+      color: $body-color-dark;
+    }
+    
+    a {
+      color: $link-color-dark;
+      
+      &:focus,
+      &:hover,
+      &:active {
+        color: $body-color;
+        text-decoration: none;
+        background-color: $link-hover-bg-color-dark;
+        outline: none;
+        box-shadow: 0 0 0 4px $link-hover-bg-color-dark;
+      }
+    }
+  }
+    
+  
+  // Footer
+  .footer {
+    .footer-ask-a-librarian {
+      background-color: $grey-700;
+    }
+        
+    .connect .list-inline-item a {
+      &:focus,
+      &:hover,
+      &:active {
+        color: $body-color-dark;
+      }
+    }
+    
+    h2 {
+      &.h4 {
+        color: $body-color-dark;
+      }
+    }
+    
+    .footer-bottom {
+      background-color: $light-teal;
+    }
+  }
+    
+    
+}

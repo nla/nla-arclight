@@ -2,22 +2,16 @@
 @import "variables";
 @import "nla-custom-bootstrap";
 
+
 .page-link {
-  border: 1px solid transparent;
+  border: none;
+  font-weight: 700;
+  //text-decoration: none;
 
-  &:hover {
-    background-color: $purple;
-    border: 1px solid transparent;
-    color: $white;
+  &:focus,
+  &:hover,
+  &:active {
+    //background-color: $warm-grey;
+    //box-shadow: none;
   }
-
-  &:focus {
-    text-decoration: none;
-  }
-}
-
-.page-link.active,
-.active > .page-link {
-  background-color: $purple;
-  border: 1px solid transparent;
 }

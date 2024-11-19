@@ -23,7 +23,7 @@ class CatalogController < ApplicationController
     # config.response_model = Blacklight::Solr::Response
 
     ## The destination for the link around the logo in the header
-    config.logo_link = "https://www.nla.gov.au"
+    config.logo_link = "https://library.gov.au"
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
@@ -78,7 +78,6 @@ class CatalogController < ApplicationController
     config.add_nav_action(:catalogue, partial: "shared/nav/catalogue")
     config.add_nav_action(:eresources, partial: "shared/nav/eresources")
     config.add_nav_action(:finding_aids, partial: "shared/nav/finding_aids")
-    config.add_nav_action(:ask_a_librarian, partial: "shared/nav/ask_a_librarian")
     config.add_nav_action(:help, partial: "shared/nav/help")
 
     # solr field configuration for search results/index views
