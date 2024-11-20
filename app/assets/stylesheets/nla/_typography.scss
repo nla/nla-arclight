@@ -30,3 +30,15 @@ a.page-link {
     box-shadow: none;
   }
 }
+
+h1 {
+  font-family: $font-family-serif;
+  color: $body-color;
+  font-weight: 400;
+}
+
+.blacklight-bookmarks {
+  h1 {
+    margin-top: 3rem;
+  }
+}
