@@ -70,9 +70,11 @@ module Blacklight
     # Get the page's HTML title
     #
     # @return [String]
+    # rubocop:disable Rails/HelperInstanceVariable
     def render_page_title
       (content_for(:page_title) if content_for?(:page_title)) || @page_title || application_name
     end
+    # rubocop:enable Rails/HelperInstanceVariable
 
     ##
     # Create <link rel="alternate"> links from a documents dynamically
@@ -86,11 +88,13 @@ module Blacklight
     #     content type, e.g. as required by atom
     # @option options [Array<String>] :exclude array of format shortnames to not include in the output
     # @return [String]
+    # rubocop:disable Rails/HelperInstanceVariable
     def render_link_rel_alternates(document = @document, options = {})
       return if document.nil?
 
       document_presenter(document).link_rel_alternates(options)
     end
+    # rubocop:enable Rails/HelperInstanceVariable
 
     ##
     # Render classes for the <body> element
