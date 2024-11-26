@@ -13,9 +13,12 @@
 @import "record";
 @import "typography";
 @import "repository";
+@import "alert";
 
-@import "./components/show_actions";
+//@import "./components/show_actions";
 @import "./components/bookmarks";
 
 // Vendor + plugins
 @import "./plugins/blacklight_range_limit";
+
+@import "dark-mode";

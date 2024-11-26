@@ -3,16 +3,14 @@
 @import "nla-custom-bootstrap";
 
 .btn {
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-    
+  border-radius: 5rem;
+  
   &.arrow-before {
     position: relative;
     padding-left: 3rem;
     padding-right: 2rem;
     
     &::after {
-      color: var(--#{$prefix}orange);
       content: "\F177";
       font: var(--fa-font-regular);
       position: absolute;
@@ -25,7 +23,6 @@
     &:hover::after,
     &:focus::after {
       left: 1.25rem;
-      color: $white;
     }
   }
   
@@ -35,7 +32,6 @@
     padding-right: 3rem;
     
     &::after {
-      color: $orange;
       content: "\F178";
       font: var(--fa-font-regular);
       position: absolute;
@@ -48,7 +44,6 @@
     &:hover::after,
     &:focus::after {
       right: 1.25rem;
-      color: $white;
     }
   }
   
@@ -58,7 +53,6 @@
     padding-right: 3rem;
     
     &::after {
-      color: $orange;
       content: "\f1f8";
       font: var(--fa-font-regular);
       position: absolute;
@@ -71,29 +65,66 @@
     &:hover::after,
     &:focus::after {
       font: var(--fa-font-solid);
-      color: $white;
     }
   }
 }
 
-.btn-primary:focus,
-.btn-primary:hover,
-.btn-primary:active {
-  background: $light-purple;
-  border-color: $light-purple;
-  background: $black;
-}
 
 .btn-outline-primary,
 .btn-outline-secondary {
   background: $white;
-}
-
-.dropdown-item {
-  &:hover,
+  
   &:focus,
-  &.active {
+  &:hover,
+  &:active {
+    background-color: $lightest-teal;
     color: $black;
-    background-color: #e9ecef;
+    text-decoration: none;
   }
 }
+.btn-primary {
+  background: $black;
+  color: $white;
+  border: 1px solid $black;
+  
+  &:focus,
+  &:hover,
+  &:active {
+    background: $light-teal;
+    color: $black;
+    border-color: $light-teal;
+    box-shadow: none;
+  }
+}
+
+
+.btn-secondary {
+  background-color: $white;
+  border: 1px solid $black;
+  color: $black;
+  
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: $light-teal;
+    color: $black;
+    border-color: $light-teal;
+    text-decoration: none;
+    box-shadow: none;
+  }
+}
+
+.btn-tertiary {
+  background-color: $white;
+  border-color: $black;
+  color: $black;
+  
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: $black;
+    color: $white;
+    text-decoration: none;
+  }
+}
+

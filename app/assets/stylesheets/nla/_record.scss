@@ -17,37 +17,91 @@
 .tab-content {
   background-color: $white;
 }
-.al-hierarchy-highlight > .documentHeader {
-  background-color: $light-yellow;
+
+.al-show-breadcrumb,
+.title-container,
+.sidebar-section {
+  border-bottom-color: #e6e6e6;
+}
+
+.collection-sidebar {
+  border-right-color: #e6e6e6;
+}
+
+ .al-collection-context {
+  padding: 0.5rem;
+  border-radius: 4px;
+  
+  &:hover,
+  &:has(a:focus) {
+    background-color: $light-grey;
+  }
+  
+  &.al-hierarchy-highlight {
+    border-left: 2px solid $dark-teal;
+    background-color: $light-grey;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    > .documentHeader {
+      background-color: transparent;
+    }
+  }
+    
+  a {
+    text-decoration: none !important;
+    
+    &:focus,
+    &:hover {
+      color: $body-color !important;
+      background-color: transparent !important;
+      text-decoration: underline !important;
+      box-shadow: none !important;
+    }
+  }
 }
 
 li.al-collection-context .al-online-content-icon svg,
 .al-online-content-icon .blacklight-icons svg {
-  fill: $light-purple;
+  fill: $dark-teal;
+}
+
+.title-container {
+  h1 {
+    font-family: $font-family-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
 }
 
 .al-digital-object {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
   a {
-    color: $white;
-    background: $orange;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    color: $white !important;
+    background: $black;
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-top: 0.375rem;
-    padding-bottom: 0.375rem;
-    text-decoration: none;
-    text-transform: uppercase;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-decoration: none !important;
     text-align: center;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;display: inline-block;
     width: auto;
+    border-radius: 3rem;
+    transition: all 0.25s;
     
     &:hover,
     &:focus {
-      color: $white;
-      background: $light-purple;
+      color: $black !important;
+      background: $light-teal !important;
+      box-shadow: none !important;
     }
   }
+}
+
+.online-contents {
+  background-color: $light-grey;
 }
 
 .al-grouped-title-bar {
@@ -58,6 +112,11 @@ li.al-collection-context .al-online-content-icon svg,
       text-decoration: underline;
     }
   }
+}
+
+.al-show-sub-heading {
+  text-transform: none;
+  font-size: 1.125rem;
 }
 
 .documentHeader {
@@ -94,5 +153,41 @@ li.al-collection-context .al-online-content-icon svg,
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+#collection-context {
+  ul {
+    margin: 0;
+    padding: 0;
+    
+    .al-collection-context {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.al-show-actions-box {
+  border: none;
+  background-color: $light-grey;
+  border-radius: 4px;
+  
+  .al-show-actions-box-info {
+    svg {
+      fill: $black;
+    }
+    
+    .al-online-content-icon {
+      svg {
+        fill: $dark-teal;
+      }
+    }
+
+  }
+}
+
+#access-and-use {
+  img {
+    margin-bottom: 1rem;
   }
 }
