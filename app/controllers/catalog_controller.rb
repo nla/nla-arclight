@@ -23,7 +23,7 @@ class CatalogController < ApplicationController
     # config.response_model = Blacklight::Solr::Response
 
     ## The destination for the link around the logo in the header
-    config.logo_link = "https://library.gov.au"
+    config.logo_link = "https://www.library.gov.au"
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
