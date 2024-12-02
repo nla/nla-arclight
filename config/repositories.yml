@@ -2,7 +2,7 @@ nla:
   name: 'National Library of Australia'
   description: 'The National Library preserves Australian heritage for the past, present and the future, so that we can discover and understand our Australian story.'
   contact_html: |
-    <div class="al-repository-contact-info"><a href="https://www.nla.gov.au/contact-us">Contact us</a></div>
+    <div class="al-repository-contact-info"><a href="https://www.library.gov.au/about-us/contact-us">Contact us</a></div>
   location_html: |
     <div class="al-repository-street-address-address1">Parkes Place</div>
     <div class="al-repository-street-address-city_state_zip_country">Canberra ACT 2600, Australia</div>
