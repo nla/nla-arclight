@@ -161,6 +161,13 @@
           }
         }
       }
+      .navbar-toggler {
+        border-color: $body-color-dark;
+        
+        .navbar-toggler-icon {
+          filter: invert(1);
+        }
+      }
     }
   }
 
