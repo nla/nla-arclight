@@ -413,7 +413,10 @@
   }
   
   
-
+  // Tables
+  .table > :not(caption) > * > * {
+    background-color: transparent;
+  }
 
   // Alerts
   .alert-info {
