@@ -161,6 +161,13 @@
           }
         }
       }
+      .navbar-toggler {
+        border-color: $body-color-dark;
+        
+        .navbar-toggler-icon {
+          filter: invert(1);
+        }
+      }
     }
   }
 
@@ -413,7 +420,10 @@
   }
   
   
-
+  // Tables
+  .table > :not(caption) > * > * {
+    background-color: transparent;
+  }
 
   // Alerts
   .alert-info {
