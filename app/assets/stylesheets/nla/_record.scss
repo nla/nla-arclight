@@ -28,7 +28,7 @@
   border-right-color: #e6e6e6;
 }
 
- .al-collection-context {
+.al-collection-context {
   padding: 0.5rem;
   border-radius: 4px;
   
@@ -47,7 +47,19 @@
       background-color: transparent;
     }
   }
+  
+  .al-toggle-view-children {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    background-color: $body-color;
     
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: $body-color !important;
+    }
+  }
+
   a {
     text-decoration: none !important;
     
@@ -58,6 +70,10 @@
       text-decoration: underline !important;
       box-shadow: none !important;
     }
+  }
+  
+  .al-collection-context {
+    margin-bottom: 0 !important;
   }
 }
 
