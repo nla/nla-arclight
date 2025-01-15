@@ -405,6 +405,17 @@
         color: $body-color-dark !important;
       }
     }
+    
+    .al-toggle-view-children {
+      background-color: $body-color-dark;
+      
+      &:focus,
+      &:hover,
+      &:active {
+        background-color: $body-color-dark !important;
+      }
+    }
+  
   }  
   
   .dl-invert {
