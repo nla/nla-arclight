@@ -5,6 +5,7 @@ module BlacklightHelper
     t("blacklight.application_name")
   end
 
+  # A change
   def render_page_title
     prefix = if Rails.env.development?
       "[DEV] "
