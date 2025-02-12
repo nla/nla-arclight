@@ -161,6 +161,13 @@
           }
         }
       }
+      .navbar-toggler {
+        border-color: $body-color-dark;
+        
+        .navbar-toggler-icon {
+          filter: invert(1);
+        }
+      }
     }
   }
 
@@ -398,6 +405,17 @@
         color: $body-color-dark !important;
       }
     }
+    
+    .al-toggle-view-children {
+      background-color: $body-color-dark;
+      
+      &:focus,
+      &:hover,
+      &:active {
+        background-color: $body-color-dark !important;
+      }
+    }
+  
   }  
   
   .dl-invert {
@@ -413,7 +431,10 @@
   }
   
   
-
+  // Tables
+  .table > :not(caption) > * > * {
+    background-color: transparent;
+  }
 
   // Alerts
   .alert-info {
