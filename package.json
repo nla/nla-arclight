@@ -15,7 +15,7 @@
     "nodemon": "^3.1.9",
     "postcss": "^8.5.2",
     "postcss-cli": "^10.1.0",
-    "sass": "^1.80.5"
+    "sass": "^1.84.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
