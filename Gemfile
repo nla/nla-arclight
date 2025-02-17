@@ -33,7 +33,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 6.4"
+gem "puma", "~> 6.6"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -97,7 +97,7 @@ gem "blacklight_range_limit", git: "https://github.com/nla/blacklight_range_limi
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem "standard", "~> 1.41", require: false
+  gem "standard", "~> 1.45", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-performance", require: false
@@ -141,7 +141,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver", "~> 4.26"
+  gem "selenium-webdriver", "~> 4.28"
   gem "database_cleaner-active_record"
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
   gem "webmock"
