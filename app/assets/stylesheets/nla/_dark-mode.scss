@@ -229,6 +229,26 @@
     }
   }
   
+  // Online content icon
+  .documents-list {
+    .al-online-content-icon .blacklight-icons svg {
+      fill: $light-teal !important;
+    }
+  }
+  
+  li.al-collection-context .al-online-content-icon svg,
+  .al-online-content-icon .blacklight-icons svg {
+    fill: $light-teal;
+  }
+  
+  .al-show-actions-box {
+    .al-online-content-icon {
+      svg {
+        fill: light-teal;
+      }
+    }
+  }
+  
   .al-document-listings,
   .documents-list {
     article {
@@ -487,5 +507,15 @@
     }
   }
     
+  // Bookmark
+  .toggle-bookmark {
+    label {
+      color: $light-teal;
+    }
     
+    &:has(input[type=checkbox]:focus-visible) {
+      color: $black !important;
+      background-color: $light-teal;
+    }
+  }
 }
