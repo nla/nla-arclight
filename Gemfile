@@ -21,7 +21,7 @@ gem "lograge"
 gem "activerecord-session_store", "~> 2.0"
 
 # catch unsafe migrations
-gem "strong_migrations", "~> 2.0"
+gem "strong_migrations", "~> 2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
@@ -106,7 +106,7 @@ group :development, :test do
 
   gem "solr_wrapper", ">= 0.3"
 
-  gem "rspec-rails", "~> 7.0"
+  gem "rspec-rails", "~> 7.1"
   gem "fuubar"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
