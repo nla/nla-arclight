@@ -7,10 +7,6 @@
   <%= json_api_link_tag %>
 <% end %>
 
-<% content_for(:skip_links) do -%>
-    <%= link_to t('blacklight.skip_links.first_result'), '#documents', class: 'd-inline-flex p-2 m-1', data: { turbolinks: 'false' } %>
-<% end %>
-
 <% content_for(:container_header) do -%>
   <%= render 'search_results_header' %>
   <%= render 'constraints' %>
