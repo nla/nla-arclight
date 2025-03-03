@@ -55,6 +55,7 @@
       }
       .form-select,
       .form-control,
+      .navbar-search .input-group auto-complete,
       .navbar-search .input-group > .search-autocomplete-wrapper .search-q {
         background-color: $black !important;
         border-color: $white !important;
@@ -76,9 +77,21 @@
         }
         
         #autocomplete-popup {
-          background: $white;
-          color: $black;
-          box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.08);
+          background: $grey-300;
+           box-shadow: none;
+           border-color: $grey-300;
+           
+           [role="option"] {
+              color: $white;
+              
+              &:focus,
+              &:hover,
+              &:active,
+              &.active,
+              &[aria-selected="true"] {
+                background-color: $grey-600;
+              }
+            }
         }
       }
     }
