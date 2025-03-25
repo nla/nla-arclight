@@ -129,6 +129,21 @@
       .facet-content {
         .card-body {
           padding: 0;
+          
+          .range_limit {
+            .profile,
+            .range_date_range {
+              padding: 0 1rem;
+            }
+            
+            .btn {
+              border-width: 1px;
+            }
+            
+            .more_facets {
+              padding: 0 1rem 0.5rem;
+            }
+          }
         }
         
         .facet-values {
