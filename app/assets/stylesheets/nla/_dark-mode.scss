@@ -223,6 +223,20 @@
 
   }
   
+  .constraints-container {
+    .applied-filter {
+      .constraint-value,
+      .remove {
+        color: $white;
+        background-color: $grey-200;
+      }
+      
+      .filter-name:after {
+        color: $white;
+      }
+    }
+  }
+  
   .al-grouped-results,
   .documents-list {
     .document-title-heading,
