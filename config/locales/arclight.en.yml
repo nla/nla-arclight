@@ -49,7 +49,7 @@ en:
         facet:
           collection: Collection
           creator: Creator
-          date_range: Date range
+          date_range: Year range
           level: Level
           names: Names
           repository: Repository
