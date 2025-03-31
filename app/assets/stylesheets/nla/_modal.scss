@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import "variables";
+@import "nla-custom-bootstrap";
+
+.modal {
+  .modal-header {
+    border-bottom: none;
+  
+    .modal-title {
+      font-family: $font-family-sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $black;
+    }
+    
+    .btn-close {
+      box-shadow: none;
+    }
+    
+    .btn-close:hover,
+    .btn-close:focus {
+      color: $muted-orange;
+      opacity: 1;
+    }
+  }
+  
+  .remove {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      box-shadow: none;
+    }   
+  }
+  
+  .range_limit {
+    .btn {
+      border-width: 1px;
+    }
+  }
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+dialog::backdrop {
+  background-color: rgb(247,248,248);
+  opacity: 0.95;
+}
+
+@media print {
+  body:has(dialog[open]) {
+    overflow: visible;
+    
+    header,
+    #global-messages,
+    .navbar-search,
+    #main-container,
+    footer {
+      display: none;
+    }
+    
+    .modal {
+      --bs-modal-width: 100%;
+      --bs-modal-margin: 0;
+      position: relative;
+      visibility: visible;
+      overflow: visible !important;
+      height: auto;
+    }
+    
+    .modal-dialog {
+      visibility: visible;
+      overflow: visible !important;
+      height: auto;
+    }
+    
+    .modal-dialog-scrollable {      
+      .modal-content {
+        overflow: visible !important;
+        
+        .blacklight-modal-close {
+          display: none;
+        }
+      }
+    }
+    
+  }
+}
