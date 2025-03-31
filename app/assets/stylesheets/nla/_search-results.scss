@@ -204,9 +204,8 @@
       &:active,
       &.active,
       &.show {
-        //background: transparent;
         box-shadow: none;
-        //color: $body-color;
+        text-decoration: underline;
       }
       
     }

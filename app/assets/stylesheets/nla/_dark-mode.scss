@@ -219,6 +219,25 @@
           color: $body-color-dark;
         }
       }
+      
+      .dropdown-menu.show {
+        background-color: $grey-300;
+        box-shadow: none;
+        border-color: $grey-300;
+        
+        .dropdown-item {
+          color: $white;
+          
+          &:focus,
+          &:hover,
+          &:active,
+          &.active,
+          &[aria-selected="true"] {
+            background-color: $grey-600;
+            color: $white;
+          }
+        }
+      }
     }
 
   }
