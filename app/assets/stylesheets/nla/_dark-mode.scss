@@ -572,4 +572,66 @@
       background-color: $light-teal;
     }
   }
+  
+  
+  // Modal
+  .modal {
+    .modal-content {
+      color: $body-color-dark;
+      background-color: $body-bg-dark;
+    }
+    .modal-header {
+      .modal-title {
+        color: $white;
+      }
+      
+      .btn-close {
+        filter: invert(100%);
+      }
+      .btn-close:hover,
+      .btn-close:focus {
+        color: $muted-orange;
+        opacity: 1;
+      }
+    }
+      
+    .document-title-heading {
+      color: $body-color-dark;
+    }
+    
+    .facet-values {
+      .selected {
+        color: $body-color-dark !important;
+      }
+    }
+  }
+    
+  dialog::backdrop {
+    background-color: $grey-100;
+    opacity: 0.95;
+  }
+  
+  
+  // Date range chart
+  .xAxis {
+    .tickLabel {
+      fill: $body-color-dark;
+    }
+  }
+  
+  .range_begin,
+  .range_end {
+    background-color: $black !important;
+    border-color: $white !important;
+    color: $body-color-dark;
+    
+    &:focus {
+      color: $body-color-dark;
+      background-color: $grey-200 !important;
+      border-color: $grey-200 !important;
+      box-shadow: 0 0 0 1px $grey-200;
+    }
+  }
+
+  
 }
