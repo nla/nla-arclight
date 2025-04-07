@@ -24,6 +24,7 @@ class CatalogController < ApplicationController
 
     ## The destination for the link around the logo in the header
     config.logo_link = "https://www.library.gov.au"
+    config.logo_text = "National Library of Australia"
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
