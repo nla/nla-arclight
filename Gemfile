@@ -24,7 +24,7 @@ gem "activerecord-session_store", "~> 2.0"
 gem "strong_migrations", "~> 1.7"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.3"
+gem "rails", "~> 7.2.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -89,7 +89,7 @@ gem "blacklight-locale_picker"
 gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
-gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "feat/upgrade"
+gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "feat/upgradebak"
 gem "blacklight_range_limit", "~> 8.0", "< 9"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"

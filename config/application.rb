@@ -5,7 +5,7 @@ require "rails"
 require "active_model/railtie"
 # require "active_job/railtie"
 require "active_record/railtie"
-# require "active_storage/engine"
+require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 # require "action_mailbox/engine"
@@ -28,7 +28,7 @@ module NlaArclight
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.2
 
     config.add_autoload_paths_to_load_path = false
 
