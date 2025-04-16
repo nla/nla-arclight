@@ -23,7 +23,7 @@ RSpec.describe "Document components" do
     it "has correct tab title, including the collection prefix" do
       visit solr_document_path(id: "280011976")
 
-      expect(page).to have_title(I18n.t("collection_prefix") + "19th century currency items, c1868-1895 - Finding Aids")
+      expect(page).to have_title(I18n.t("collection_prefix") + "19th century currency items, c1868-1895 | Finding Aids")
     end
 
     it "has correct title, including the collection prefix" do
