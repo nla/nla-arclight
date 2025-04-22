@@ -389,7 +389,9 @@
 }
 
 .al-document-highlight em {
-  background-color: $light-yellow;
+  background-color: $warm-grey;
+  color: $white;
+  padding: 0 0.25rem;
 }
 
 @media (min-width: 992px) {
