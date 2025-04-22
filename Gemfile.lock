@@ -1,6 +1,16 @@
 GIT
+  remote: https://github.com/nla/blacklight_range_limit
+  revision: 7b537214168c3383b489cd118913075b92fb759d
+  branch: upstream_update
+  specs:
+    blacklight_range_limit (8.5.0)
+      blacklight (>= 7.25.2, < 9)
+      deprecation
+      view_component (>= 2.54, < 4)
+
+GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 0a55bb4d6c59e033a33c1cbc41f618304136dd10
+  revision: f5ff182f315b844bdb51134e2e46821924066db9
   branch: feat/upgradebak
   specs:
     nla-blacklight_common (0.2.8)
@@ -13,7 +23,7 @@ GIT
       devise
       omniauth-keycloak (~> 1.4)
       omniauth-rails_csrf_protection (~> 1.0)
-      rails (>= 7.2, < 8.0)
+      rails (>= 7.2, < 8.1)
       rsolr (>= 1.0, < 3)
       zk (~> 1.10)
 
@@ -73,13 +83,12 @@ GEM
       activemodel (= 7.2.2.1)
       activesupport (= 7.2.2.1)
       timeout (>= 0.4.0)
-    activerecord-session_store (2.1.0)
-      actionpack (>= 6.1)
-      activerecord (>= 6.1)
+    activerecord-session_store (2.2.0)
+      actionpack (>= 7.0)
+      activerecord (>= 7.0)
       cgi (>= 0.3.6)
-      multi_json (~> 1.11, >= 1.11.2)
       rack (>= 2.0.8, < 4)
-      railties (>= 6.1)
+      railties (>= 7.0)
     activestorage (7.2.2.1)
       actionpack (= 7.2.2.1)
       activejob (= 7.2.2.1)
@@ -102,7 +111,7 @@ GEM
       public_suffix (>= 2.0.2, < 7.0)
     aes_key_wrap (1.1.0)
     annotaterb (4.14.0)
-    anyway_config (2.7.1)
+    anyway_config (2.7.2)
       ruby-next-core (~> 1.0)
     arclight (1.4.0)
       blacklight (>= 8.0.0, < 9)
@@ -110,7 +119,7 @@ GEM
       rails (~> 7.0)
       traject (~> 3.0)
       traject_plus (~> 2.0)
-    ast (2.4.2)
+    ast (2.4.3)
     awesome_print (1.9.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -121,11 +130,11 @@ GEM
       rack (>= 0.9.0)
       rouge (>= 1.0.0)
     bigdecimal (3.1.9)
-    bindata (2.5.0)
+    bindata (2.5.1)
     bindex (0.8.1)
     binding_of_caller (1.0.1)
       debug_inspector (>= 1.2.0)
-    blacklight (8.8.4)
+    blacklight (8.9.0)
       globalid
       i18n (>= 1.7.0)
       jbuilder (~> 2.7)
@@ -136,13 +145,9 @@ GEM
       zeitwerk
     blacklight-locale_picker (1.3.0)
       rails (>= 5.2.3, < 9)
-    blacklight_range_limit (8.5.0)
-      blacklight (>= 7.25.2, < 9)
-      deprecation
-      view_component (>= 2.54, < 4)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
-    brakeman (7.0.0)
+    brakeman (7.0.2)
       racc
     builder (3.3.0)
     bundler-audit (0.9.2)
@@ -159,14 +164,14 @@ GEM
       xpath (~> 3.2)
     cgi (0.4.2)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.0)
+    connection_pool (2.5.1)
     crack (1.0.0)
       bigdecimal
       rexml
     crass (1.0.6)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
-    csv (3.3.2)
+    csv (3.3.4)
     database_cleaner-active_record (2.2.0)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
@@ -202,12 +207,12 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    diff-lcs (1.6.0)
+    diff-lcs (1.6.1)
     docile (1.4.1)
     domain_name (0.6.20240107)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
-    dotenv (3.1.7)
+    dotenv (3.1.8)
     drb (2.2.1)
     dry-initializer (3.2.0)
     erubi (1.13.1)
@@ -218,7 +223,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.5.1)
       i18n (>= 1.8.11, < 2)
-    faraday (2.12.2)
+    faraday (2.13.0)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
@@ -226,8 +231,8 @@ GEM
       faraday (>= 1, < 3)
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
-    ffi (1.17.1-arm64-darwin)
-    ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
       rake
@@ -265,7 +270,7 @@ GEM
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.0)
-    irb (1.15.1)
+    irb (1.15.2)
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
@@ -303,7 +308,7 @@ GEM
     llhttp-ffi (0.5.1)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
-    logger (1.6.6)
+    logger (1.7.0)
     lograge (0.14.0)
       actionpack (>= 4)
       activesupport (>= 4)
@@ -338,7 +343,7 @@ GEM
     mysql2 (0.5.6)
     net-http (0.6.0)
       uri
-    net-imap (0.5.6)
+    net-imap (0.5.7)
       date
       net-protocol
     net-pop (0.1.2)
@@ -348,9 +353,9 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.7-arm64-darwin)
+    nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.7-x86_64-linux-gnu)
+    nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
@@ -363,7 +368,7 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-keycloak (1.5.2)
+    omniauth-keycloak (1.5.3)
       faraday
       json-jwt (> 1.13.0)
       omniauth (>= 2.0)
@@ -376,13 +381,14 @@ GEM
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
     ostruct (0.6.1)
-    parallel (1.26.3)
-    parser (3.3.7.1)
+    parallel (1.27.0)
+    parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
+    prism (1.4.0)
     prometheus-client (4.2.4)
       base64
     psych (5.2.3)
@@ -392,7 +398,7 @@ GEM
     puma (6.6.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.1.12)
+    rack (3.1.13)
     rack-mini-profiler (3.3.1)
       rack (>= 1.2.0)
     rack-protection (4.1.1)
@@ -441,14 +447,14 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.12.0)
+    rdoc (6.13.1)
       psych (>= 4.0.0)
     redis (5.4.0)
       redis-client (>= 0.22.0)
     redis-client (0.22.2)
       connection_pool
     regexp_parser (2.10.0)
-    reline (0.6.0)
+    reline (0.6.1)
       io-console (~> 0.5)
     request_store (1.7.0)
       rack (>= 1.4)
@@ -478,7 +484,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.2)
-    rubocop (1.73.2)
+    rubocop (1.75.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -486,28 +492,29 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.38.0, < 2.0)
+      rubocop-ast (>= 1.44.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.38.1)
-      parser (>= 3.3.1.0)
+    rubocop-ast (1.44.1)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
     rubocop-capybara (2.22.1)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
     rubocop-factory_bot (2.27.1)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
-    rubocop-performance (1.24.0)
+    rubocop-performance (1.25.0)
       lint_roller (~> 1.1)
-      rubocop (>= 1.72.1, < 2.0)
+      rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.30.3)
+    rubocop-rails (2.31.0)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
-      rubocop (>= 1.72.1, < 2.0)
+      rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rspec (3.5.0)
+    rubocop-rspec (3.6.0)
       lint_roller (~> 1.1)
       rubocop (~> 1.72, >= 1.72.1)
     ruby-next-core (1.1.1)
@@ -516,7 +523,7 @@ GEM
     ruby2_keywords (0.0.5)
     rubyzip (2.4.1)
     securerandom (0.4.1)
-    selenium-webdriver (4.29.1)
+    selenium-webdriver (4.31.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -537,36 +544,37 @@ GEM
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
-    solr_wrapper (4.1.0)
-      faraday
+    solr_wrapper (4.1.3)
+      faraday (>= 1.0, < 3)
       faraday-follow_redirects
       minitar
       ostruct
       retriable
       ruby-progressbar
-    sprockets (4.2.1)
+    sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
+      logger
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.5.2)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     stackprof (0.2.27)
-    standard (1.47.0)
+    standard (1.49.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
-      rubocop (~> 1.73.0)
+      rubocop (~> 1.75.2)
       standard-custom (~> 1.0.0)
-      standard-performance (~> 1.7)
+      standard-performance (~> 1.8)
     standard-custom (1.0.2)
       lint_roller (~> 1.0)
       rubocop (~> 1.50)
-    standard-performance (1.7.0)
+    standard-performance (1.8.0)
       lint_roller (~> 1.1)
-      rubocop-performance (~> 1.24.0)
+      rubocop-performance (~> 1.25.0)
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
-    stringio (3.1.5)
+    stringio (3.1.7)
     strong_migrations (1.8.0)
       activerecord (>= 5.2)
     thor (1.3.2)
@@ -600,7 +608,7 @@ GEM
     unicode-emoji (4.0.4)
     uri (1.0.3)
     useragent (0.16.11)
-    version_gem (1.1.6)
+    version_gem (1.1.7)
     view_component (3.21.0)
       activesupport (>= 5.2.0, < 8.1)
       concurrent-ruby (~> 1.0)
@@ -659,7 +667,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   blacklight-locale_picker
-  blacklight_range_limit (~> 8.0, < 9)
+  blacklight_range_limit!
   bootsnap
   brakeman
   bundler-audit
