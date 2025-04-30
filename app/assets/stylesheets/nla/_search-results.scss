@@ -163,8 +163,13 @@
         background: $warm-grey;
         color: $white;
         
+        &:hover,
         &:focus {
-          box-shadow: none;
+          background: #81746c;
+        }
+        
+        &:focus {
+          box-shadow: 0 0 0 2px $body-color;
         }
       }
       &:not(.active) {
