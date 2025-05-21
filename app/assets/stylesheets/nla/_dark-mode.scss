@@ -427,7 +427,8 @@
   
   
   // Pagination
-  .page-link {
+  .page-link,
+  .page-item.disabled .page-link:not(a) {
     color: $pagination-color-dark;
   }
 
