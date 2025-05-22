@@ -24,7 +24,7 @@ gem "activerecord-session_store", "~> 2.0"
 gem "strong_migrations", "~> 1.7"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -82,7 +82,7 @@ gem "yabeda-prometheus"
 gem "derailed_benchmarks", group: :development
 gem "stackprof", group: :development
 
-gem "arclight", "~> 1.0"
+gem "arclight", "~> 1"
 gem "rsolr", ">= 1.0", "< 3"
 gem "blacklight-locale_picker"
 
