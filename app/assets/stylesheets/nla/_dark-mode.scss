@@ -179,6 +179,10 @@
       .navbar-toggler {
         border-color: $body-color-dark;
         
+        &:focus {
+          box-shadow: 0 0 0 0.25rem $body-color-dark;
+        }
+        
         .navbar-toggler-icon {
           filter: invert(1);
         }
@@ -196,6 +200,12 @@
     .result-type-group, .view-type-group {
       .btn {
         color: $body-color-dark;
+        
+        &.active {
+          &:focus {
+            box-shadow: 0 0 0 2px $body-color-dark;
+          }
+        }  
                 
         &:not(.active) {
           & path:not([fill="none"]) {
@@ -417,7 +427,8 @@
   
   
   // Pagination
-  .page-link {
+  .page-link,
+  .page-item.disabled .page-link:not(a) {
     color: $pagination-color-dark;
   }
 
