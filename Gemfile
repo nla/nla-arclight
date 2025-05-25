@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "3.3.2"
 
 # All runtime config comes from the UNIX environment
 # but we use dotenv to store that in files for development and testing
@@ -21,10 +21,10 @@ gem "lograge"
 gem "activerecord-session_store", "~> 2.0"
 
 # catch unsafe migrations
-gem "strong_migrations", "~> 2.2"
+gem "strong_migrations", "~> 2.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.8"
+gem "rails", "~> 8"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -82,7 +82,7 @@ gem "yabeda-prometheus"
 gem "derailed_benchmarks", group: :development
 gem "stackprof", group: :development
 
-gem "arclight", "~> 1.0"
+gem "arclight", "~> 1"
 gem "rsolr", ">= 1.0", "< 3"
 gem "blacklight-locale_picker"
 
@@ -91,13 +91,14 @@ gem "nokogiri", ">= 1.13.9"
 
 gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "main"
 gem "blacklight_range_limit", git: "https://github.com/nla/blacklight_range_limit", branch: "main"
+# gem "blacklight_range_limit", "~> 8.0", "< 9"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem "standard", "~> 1.45", require: false
+  gem "standard", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "rubocop-performance", require: false
