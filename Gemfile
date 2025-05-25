@@ -21,7 +21,7 @@ gem "lograge"
 gem "activerecord-session_store", "~> 2.0"
 
 # catch unsafe migrations
-gem "strong_migrations", "~> 1.7"
+gem "strong_migrations", "~> 2.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8"
@@ -33,7 +33,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 6.4"
+gem "puma", "~> 6.6"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -52,10 +52,10 @@ gem "jbuilder"
 
 # Use hiredis adapter for better performance than the "redis" gem
 gem "hiredis", "~> 0.6.3"
-gem "hiredis-client", "~> 0.22.2"
+gem "hiredis-client", "~> 0.23.2"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 5.1"
+gem "redis", "~> 5.4"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -107,7 +107,7 @@ group :development, :test do
 
   gem "solr_wrapper", ">= 0.3"
 
-  gem "rspec-rails", "~> 6.1"
+  gem "rspec-rails", "~> 7.1"
   gem "fuubar"
   gem "shoulda-matchers"
   gem "factory_bot_rails"
@@ -142,7 +142,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver", "~> 4.22"
+  gem "selenium-webdriver", "~> 4.29"
   gem "database_cleaner-active_record"
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
   gem "webmock"
