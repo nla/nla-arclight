@@ -283,7 +283,16 @@
   
   .al-grouped-results {
     .al-grouped-title-bar {
-      background: $grey-600;
+      background: $grey-700;
+      
+      &+ .grouped-documents {
+        background: $grey-700;
+      }
+      
+      &:hover,
+      &:has(h3 a:focus) {
+        background: $grey-600;
+      }
     }
   }
   
