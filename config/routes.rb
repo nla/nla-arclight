@@ -81,7 +81,7 @@ Rails.application.routes.draw do
     concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
     concern :email2fa, Nla::BlacklightCommon::Routes::Email2fa.new
 
-    resource :catalog, as: "catalog", path: "/catalog", controller: "catalog" do
+    resource :catalog, only: [:index], as: "catalog", path: "/catalog", controller: "catalog" do
       concerns :searchable
       concerns :range_searchable
     end

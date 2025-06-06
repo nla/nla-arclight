@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
   # defines #new_session_path(scope) to allow correct redirection when only using OmniAuth
   include AuthSessionConcern
 
@@ -29,7 +28,7 @@ class ApplicationController < ActionController::Base
   def storable_location?
     request.get? &&
       is_navigational_format? &&
-      is_a_storable_controller_action? && !devise_controller? &&
+      (is_a_storable_controller_action? && !devise_controller?) &&
       !request.xhr? &&
       !turbo_frame_request?
   end

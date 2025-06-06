@@ -46,11 +46,10 @@ RSpec.describe "Related Documents" do
 
       it "does not render the related documents" do
         visit solr_document_path(id: "280011976")
-        # rubocop:disable Capybara/NegationMatcherAfterVisit
+
         expect(page).to have_no_css("h3", text: "Related")
         expect(page).to have_no_css("ol#related-documents")
         expect(page).to have_no_css("ol#related-documents li")
-        # rubocop:enable Capybara/NegationMatcherAfterVisit
       end
     end
   end
