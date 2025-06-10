@@ -302,34 +302,7 @@
 .al-grouped-results {
   .al-grouped-title-bar {
     background: $light-grey;
-    background: $gray-very-light;
-    background: #F8F8F8;
     padding: 1rem;
-    
-    &+.grouped-documents {
-      background: $light-grey;
-      background: $gray-very-light;
-      background: #F8F8F8;
-      margin: 0 0 2rem 0;
-    }
-  }
-  
-  .al-grouped-title-bar {
-    &:hover,
-    &:has(h3 a:focus),
-    &:has(+.grouped-documents:hover),
-    &:has(+.grouped-documents h4 a:focus) {
-      box-shadow: -2px 0 $dark-teal;
-      
-      &+.grouped-documents {
-        box-shadow: -2px 0 $dark-teal;
-      }
-    }
-    
-    &:hover,
-    &:has(h3 a:focus) {
-      background: $light-grey;
-    }
   }
   
   .al-document-extent {
@@ -351,7 +324,7 @@
   }
   
   .grouped-documents {
-    padding-left: 3rem;
+    margin-left: 3rem;
     
     .al-grouped-more a {
       font-size: 0.875rem;
