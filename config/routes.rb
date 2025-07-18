@@ -111,5 +111,15 @@ Rails.application.routes.draw do
     root to: "catalog#index", defaults: {f: {level: ["Collection"], repository: ["National Library of Australia"]}}
   end
 
+  scope path: "/account", as: "account" do
+    get "/requests", to: "account#requests"
+    get "/requests/:request_id", to: "account#request_details", as: "request_details"
+    scope path: "/profile", as: "profile" do
+      get "/", to: "account#profile"
+      get "/edit", to: "account#profile_edit"
+      post "/edit", to: "account#profile_update"
+    end
+  end
+
   get "/", to: redirect("/finding-aids")
 end

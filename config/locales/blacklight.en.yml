@@ -46,6 +46,12 @@ en:
     welcome: 'Welcome!'
     and: 'and'
     or: 'or'
+
+    account:
+      settings:
+        menu: "Profile"
+      requests:
+        menu: "Requests"
     
     library_card:
       title: 'Join your National Library'
