@@ -32,6 +32,7 @@
     auto-complete,
     > .search-autocomplete-wrapper {
       border: none !important;
+      width: 100%;
       
       #autocomplete-popup {
         background: $light-grey;
@@ -46,6 +47,13 @@
             background-color: $tags-surface;
           }
         }
+      }
+    }
+    
+    @media (min-width: 768px) {
+      auto-complete,
+      > .search-autocomplete-wrapper {
+        width: auto;
       }
     }
     
