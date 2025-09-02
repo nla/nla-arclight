@@ -8,14 +8,14 @@
     "arclight": "^1.6.0",
     "autoprefixer": "^10.4.21",
     "blacklight-frontend": "^8.12.2",
-    "bootstrap": "^5.3.7",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "esbuild": "^0.25.9",
     "jquery": "^3.7.1",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
-    "sass": "^1.90.0"
+    "sass": "^1.91.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
