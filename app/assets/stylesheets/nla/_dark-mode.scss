@@ -679,4 +679,31 @@
   }
 
   
+  // Repository
+  .blacklight-repositories-show {
+    .al-repository {
+      background-color: $grey-600;
+      border-color: $grey-600;
+      
+      .al-repository-thumbnail {
+        filter: invert(100%);
+      }
+      
+      .repo-name {
+        color: $body-color-dark;
+      }
+    }
+    
+    .al-repository-show-header {
+      .h4 {
+        color: $body-color-dark;
+      }
+    }
+    
+    .al-document-title-bar {
+      border-top-color: $grey-300;
+    }
+  }
+  
+  
 }
