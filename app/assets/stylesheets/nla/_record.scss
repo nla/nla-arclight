@@ -2,6 +2,16 @@
 @import "variables";
 @import "nla-custom-bootstrap";
 
+.blacklight-catalog-show #main-container {
+  scroll-behaviour: smooth;
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .blacklight-catalog-show #main-container {
+    scroll-behaviour: auto;
+  }
+}
+
 .nav-tabs {
   background-color: $gray-very-light;
   border-bottom: none;
