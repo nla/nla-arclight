@@ -6,7 +6,7 @@ nla:
   location_html: |
     <div class="al-repository-street-address-address1">Parkes Place</div>
     <div class="al-repository-street-address-city_state_zip_country">Canberra ACT 2600, Australia</div>
-  thumbnail_url: '/finding-aids/assets/nla-stacked-logo-black.svg'
+  thumbnail_url: 'nla-stacked-logo-black.svg'
   request_types:
     catalogue:
       request_url: 'https://nla.gov.au/nla.cat-vn%s'
