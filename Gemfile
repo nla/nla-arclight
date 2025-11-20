@@ -33,7 +33,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 7.0"
+gem "puma", "~> 7.1"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -142,7 +142,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver", "~> 4.35"
+  gem "selenium-webdriver", "~> 4.38"
   gem "database_cleaner-active_record"
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
   gem "webmock"
