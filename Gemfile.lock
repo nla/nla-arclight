@@ -13,7 +13,7 @@ GIT
       devise
       omniauth-keycloak (~> 1.4)
       omniauth-rails_csrf_protection (~> 1.0)
-      rails (>= 7.2, < 8.1)
+      rails (>= 7.2, < 8.2)
       rsolr (>= 1.0, < 3)
       zk (~> 1.10)
 
@@ -158,7 +158,7 @@ GEM
       xpath (~> 3.2)
     cgi (0.4.2)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.4)
+    connection_pool (2.5.5)
     crack (1.0.0)
       bigdecimal
       rexml
@@ -331,7 +331,7 @@ GEM
     mini_histogram (0.3.1)
     mini_mime (1.1.5)
     minitar (1.0.2)
-    minitest (5.26.0)
+    minitest (5.26.2)
     msgpack (1.8.0)
     multi_json (1.15.0)
     multi_xml (0.7.2)
@@ -576,10 +576,10 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
-    strong_migrations (2.5.0)
+    strong_migrations (2.5.1)
       activerecord (>= 7.1)
     thor (1.4.0)
-    timeout (0.4.3)
+    timeout (0.4.4)
     traject (3.8.3)
       concurrent-ruby (>= 0.8.0)
       csv
@@ -608,7 +608,7 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
-    uri (1.1.0)
+    uri (1.1.1)
     useragent (0.16.11)
     version_gem (1.1.8)
     view_component (3.23.2)
