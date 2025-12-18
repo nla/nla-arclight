@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: 2d46f37e004317aa717ae176699c82c13c9ef746
+  revision: 0e34786186c76b952c4008be3d6ad55ad5ef8da7
   branch: main
   specs:
     nla-blacklight_common (0.3.4)
@@ -13,7 +13,7 @@ GIT
       devise
       omniauth-keycloak (~> 1.4)
       omniauth-rails_csrf_protection (~> 1.0)
-      rails (>= 7.2, < 8.1)
+      rails (>= 7.2, < 8.2)
       rsolr (>= 1.0, < 3)
       zk (~> 1.10)
 
@@ -139,7 +139,7 @@ GEM
       blacklight (>= 7.25.2, < 9)
       deprecation
       view_component (>= 2.54, < 4)
-    bootsnap (1.18.6)
+    bootsnap (1.19.0)
       msgpack (~> 1.2)
     brakeman (7.1.0)
       racc
@@ -158,7 +158,7 @@ GEM
       xpath (~> 3.2)
     cgi (0.4.2)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.4)
+    connection_pool (2.5.5)
     crack (1.0.0)
       bigdecimal
       rexml
@@ -275,7 +275,7 @@ GEM
       activesupport (>= 7.0.0)
     jsbundling-rails (1.3.1)
       railties (>= 6.0.0)
-    json (2.15.2)
+    json (2.17.0)
     json-jwt (1.16.7)
       activesupport (>= 4.2)
       aes_key_wrap
@@ -331,13 +331,14 @@ GEM
     mini_histogram (0.3.1)
     mini_mime (1.1.5)
     minitar (1.0.2)
-    minitest (5.26.0)
+    minitest (5.26.2)
     msgpack (1.8.0)
     multi_json (1.15.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     mutex_m (0.3.0)
-    mysql2 (0.5.6)
+    mysql2 (0.5.7)
+      bigdecimal
     net-http (0.6.0)
       uri
     net-imap (0.5.12)
@@ -380,7 +381,7 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.3)
     parallel (1.27.0)
-    parser (3.3.9.0)
+    parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
     pp (0.6.3)
@@ -496,7 +497,7 @@ GEM
       rubocop-ast (>= 1.46.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.47.1)
+    rubocop-ast (1.48.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     rubocop-capybara (2.22.1)
@@ -509,7 +510,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.75.0, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.33.4)
+    rubocop-rails (2.34.2)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
@@ -576,10 +577,10 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.7)
-    strong_migrations (2.5.0)
+    strong_migrations (2.5.1)
       activerecord (>= 7.1)
     thor (1.4.0)
-    timeout (0.4.3)
+    timeout (0.4.4)
     traject (3.8.3)
       concurrent-ruby (>= 0.8.0)
       csv
@@ -608,7 +609,7 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
-    uri (1.1.0)
+    uri (1.1.1)
     useragent (0.16.11)
     version_gem (1.1.8)
     view_component (3.23.2)
