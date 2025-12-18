@@ -148,7 +148,10 @@ $theme-colors: (
 );
 */
 
-$logo-image: url('nla_logo.svg');
+// Override Blacklight CSS custom properties
+:root {
+  --bl-logo-image: url('nla_logo.svg');
+}
 
 // Body
 $body-bg: $white;
