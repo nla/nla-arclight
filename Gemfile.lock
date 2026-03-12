@@ -401,7 +401,7 @@ GEM
     puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.4)
+    rack (3.2.5)
     rack-mini-profiler (4.0.1)
       rack (>= 1.2.0)
     rack-protection (4.1.1)
@@ -605,7 +605,7 @@ GEM
       jsonpath
       traject (~> 3.0)
     tsort (0.2.0)
-    turbo-rails (2.0.20)
+    turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
     tzinfo (2.0.6)
@@ -656,7 +656,7 @@ GEM
       railties
       yabeda (~> 0.8)
     yell (2.2.2)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
     zk (1.10.0)
       zookeeper (~> 1.5.0)
     zookeeper (1.5.5)
