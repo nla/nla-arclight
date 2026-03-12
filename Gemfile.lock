@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/nla/nla-blacklight_common
-  revision: e261efa2ada11f39ecc394238f88b3e558b724ce
+  revision: f97106afd4717c9f7ee9f2cd56320db8a50b027e
   branch: main
   specs:
     nla-blacklight_common (0.3.5)
@@ -208,7 +208,7 @@ GEM
     domain_name (0.6.20240107)
     dot-properties (0.1.4)
       bundler (>= 2.2.33)
-    dotenv (3.1.8)
+    dotenv (3.2.0)
     drb (2.2.3)
     dry-initializer (3.2.0)
     erb (6.0.1)
@@ -252,8 +252,8 @@ GEM
     heapy (0.2.0)
       thor
     hiredis (0.6.3)
-    hiredis-client (0.26.1)
-      redis-client (= 0.26.1)
+    hiredis-client (0.26.4)
+      redis-client (= 0.26.4)
     http (5.2.0)
       addressable (~> 2.8)
       base64 (~> 0.1)
@@ -355,9 +355,9 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.18.10-arm64-darwin)
+    nokogiri (1.19.1-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.10-x86_64-linux-gnu)
+    nokogiri (1.19.1-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth2 (2.0.12)
       faraday (>= 0.17.3, < 4.0)
@@ -385,7 +385,7 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.3)
     parallel (1.27.0)
-    parser (3.3.10.1)
+    parser (3.3.10.2)
       ast (~> 2.4.1)
       racc
     pp (0.6.3)
@@ -401,7 +401,7 @@ GEM
     puma (7.1.0)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.4)
+    rack (3.2.5)
     rack-mini-profiler (4.0.1)
       rack (>= 1.2.0)
     rack-protection (4.1.1)
@@ -457,7 +457,7 @@ GEM
       tsort
     redis (5.4.1)
       redis-client (>= 0.22.0)
-    redis-client (0.26.1)
+    redis-client (0.26.4)
       connection_pool
     regexp_parser (2.11.3)
     reline (0.6.3)
@@ -490,7 +490,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.5)
-    rubocop (1.80.2)
+    rubocop (1.84.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -498,7 +498,7 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.46.0, < 2.0)
+      rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.49.0)
@@ -566,10 +566,10 @@ GEM
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
     stackprof (0.2.27)
-    standard (1.51.1)
+    standard (1.54.0)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.0)
-      rubocop (~> 1.80.2)
+      rubocop (~> 1.84.0)
       standard-custom (~> 1.0.0)
       standard-performance (~> 1.8)
     standard-custom (1.0.2)
@@ -605,7 +605,7 @@ GEM
       jsonpath
       traject (~> 3.0)
     tsort (0.2.0)
-    turbo-rails (2.0.20)
+    turbo-rails (2.0.23)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
     tzinfo (2.0.6)
@@ -656,7 +656,7 @@ GEM
       railties
       yabeda (~> 0.8)
     yell (2.2.2)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
     zk (1.10.0)
       zookeeper (~> 1.5.0)
     zookeeper (1.5.5)
@@ -691,7 +691,7 @@ DEPENDENCIES
   foreman
   fuubar
   hiredis (~> 0.6.3)
-  hiredis-client (~> 0.26.1)
+  hiredis-client (~> 0.26.4)
   jbuilder
   jsbundling-rails
   lograge
