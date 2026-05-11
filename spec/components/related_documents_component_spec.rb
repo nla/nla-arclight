@@ -34,7 +34,7 @@ RSpec.describe RelatedDocumentsComponent, type: :component do
     it "renders the external comments" do
       render_inline(described_class.new(related_docs: related_docs(pid)))
 
-      expect(page).to have_content("Appendix C - Items in Series 12.1")
+      expect(page).to have_text("Appendix C - Items in Series 12.1")
     end
   end
 
