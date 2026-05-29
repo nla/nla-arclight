@@ -83,6 +83,8 @@ export default class extends Controller {
 
   // Update chart selection based on current slider/input values
   updateChartSelectionFromCurrentValues() {
+    if (!this.hasMinSliderTarget || !this.hasMaxSliderTarget) return
+
     const minVal = parseInt(this.minSliderTarget.value)
     const maxVal = parseInt(this.maxSliderTarget.value)
     this.updateChartSelection(minVal, maxVal)
@@ -145,6 +147,8 @@ export default class extends Controller {
   }
 
   updateRange() {
+    if (!this.hasMinSliderTarget || !this.hasMaxSliderTarget || !this.hasRangeTarget) return
+
     const min = this.minValue
     const max = this.maxValue
     const minVal = parseInt(this.minSliderTarget.value)

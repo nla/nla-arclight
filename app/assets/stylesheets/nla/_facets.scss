@@ -204,3 +204,9 @@
     }
   }
 }
+
+@media screen and (prefers-color-scheme: dark) {
+  .range_limit .text-muted {
+    --bs-secondary-color: $light-grey;
+  }
+}

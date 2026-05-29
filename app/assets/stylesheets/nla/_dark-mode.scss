@@ -704,38 +704,4 @@
       border-top-color: $grey-300;
     }
   }
-
-
-  // Range slider dark mode overrides
-  .range-slider-track {
-    background-color: $dark-teal;
-  }
-
-  .range-slider-range {
-    background-color: $light-teal;
-  }
-
-  .range-slider-input {
-    &::-webkit-slider-thumb {
-      background-color: $body-bg-dark;
-      border-color: $light-teal;
-    }
-
-    &::-moz-range-thumb {
-      background-color: $body-bg-dark;
-      border-color: $light-teal;
-    }
-
-    &:focus {
-      &::-webkit-slider-thumb {
-        box-shadow: 0 0 0 3px rgba($light-teal, 0.4);
-      }
-
-      &::-moz-range-thumb {
-        box-shadow: 0 0 0 3px rgba($light-teal, 0.4);
-      }
-    }
-  }
-
-
 }

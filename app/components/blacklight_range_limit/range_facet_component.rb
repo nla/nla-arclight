@@ -33,10 +33,6 @@ module BlacklightRangeLimit
         action: "range_limit").merge(options))
     end
 
-    def uses_distribution?
-      range_config[:chart_js] || range_config[:textual_facets]
-    end
-
     # URL that will return the distribution list of range segments
     def load_distribution_link
       # For open-ended ranges, the selected range should take priority for the boundary

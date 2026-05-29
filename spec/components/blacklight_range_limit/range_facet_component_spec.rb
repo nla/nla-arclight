@@ -38,24 +38,4 @@ RSpec.describe BlacklightRangeLimit::RangeFacetComponent, type: :component do
       expect(component.render?).to be false
     end
   end
-
-  describe "#uses_distribution?" do
-    it "returns true when chart_js is enabled" do
-      allow(facet_field).to receive(:range_config).and_return({chart_js: true})
-      component = described_class.new(facet_field: facet_field)
-      expect(component.uses_distribution?).to be true
-    end
-
-    it "returns true when textual_facets is enabled" do
-      allow(facet_field).to receive(:range_config).and_return({textual_facets: true})
-      component = described_class.new(facet_field: facet_field)
-      expect(component.uses_distribution?).to be true
-    end
-
-    it "returns false when neither chart_js nor textual_facets is enabled" do
-      allow(facet_field).to receive(:range_config).and_return({chart_js: false, textual_facets: false})
-      component = described_class.new(facet_field: facet_field)
-      expect(component.uses_distribution?).to be false
-    end
-  end
 end
