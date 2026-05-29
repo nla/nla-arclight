@@ -131,6 +131,11 @@
           padding: 0;
           
           .range_limit {
+            .blacklight-range-limit-chart {
+              padding-left: 1rem;
+              padding-right: 1rem;
+            }
+            
             .profile,
             .range_date_range {
               padding: 0 1rem;

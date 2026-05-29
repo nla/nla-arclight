@@ -150,6 +150,11 @@
   resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-8.0.23.tgz#a6eebc9ab4a5faadae265a4cbec8cfcb5731e77c"
   integrity sha512-GZ7cijxEZ6Ig71u7rD6LHaRv/wcE/hNsc+nEfiWOkLNqUgLOwo5MNGWOy5ZV9ZUDSiQx1no7YxjTNnT4O6//cQ==
 
+"@kurkle/color@^0.3.0":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.4.tgz#4d4ff677e1609214fc71c580125ddddd86abcabf"
+  integrity sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w==
+
 "@parcel/watcher-android-arm64@2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.4.1.tgz#c2c19a3c442313ff007d2d7a9c2c1dd3e1c9ca84"
@@ -306,6 +311,13 @@ blacklight-frontend@^8.12.2:
   dependencies:
     bootstrap ">=4.3.1 <6.0.0"
 
+blacklight-range-limit@^9.2.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/blacklight-range-limit/-/blacklight-range-limit-9.2.0.tgz#9314f36c185d7e8b79564dea480420e31e3d3bd0"
+  integrity sha512-DLhS9JUnmpSZy+8nX5u5jfFBobPeoYwBDjcSQnuzD9/0DkO8FrIj8YDmOn9emeitvgbHfoqEYElPWamuzdirrg==
+  dependencies:
+    chart.js "^ 4.4.1"
+
 bootstrap-icons@^1.13.1:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/bootstrap-icons/-/bootstrap-icons-1.13.1.tgz#0aad3f5b55b67402990e729ce3883416f9cef6c5"
@@ -345,6 +357,18 @@ caniuse-lite@^1.0.30001782, caniuse-lite@^1.0.30001787:
   version "1.0.30001793"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001793.tgz#238887ddf5fcfc8c36d872394d0a78a517312a72"
   integrity sha512-iwSsYWaCOoh26cV8NwNRViHlrfUvYsHDfRVcbtmw0Kg6PJIZZXwMkj1442FYLBGkeUf1juAsU3DTfxW579mrPA==
+
+"chart.js@^ 4.4.1", chart.js@^4.5.0:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.5.1.tgz#19dd1a9a386a3f6397691672231cb5fc9c052c35"
+  integrity sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
+
+chartjs-plugin-annotation@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/chartjs-plugin-annotation/-/chartjs-plugin-annotation-3.1.0.tgz#0b3910862bde232344bbb6cf998633f71db7b093"
+  integrity sha512-EkAed6/ycXD/7n0ShrlT1T2Hm3acnbFhgkIEJLa0X+M6S16x0zwj1Fv4suv/2bwayCT3jGPdAtI9uLcAMToaQQ==
 
 chokidar@^3.3.0, chokidar@^3.5.2:
   version "3.5.3"
@@ -644,15 +668,10 @@ picocolors@^1.0.0, picocolors@^1.1.1:
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
   integrity sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==
 
-picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
-  integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
-
-picomatch@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.2.tgz#77c742931e8f3b8820946c76cd0c1f13730d1dab"
-  integrity sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==
+picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1, picomatch@^4.0.2, picomatch@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.4.tgz#fd6f5e00a143086e074dffe4c924b8fb293b0589"
+  integrity sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==
 
 pify@^2.3.0:
   version "2.3.0"

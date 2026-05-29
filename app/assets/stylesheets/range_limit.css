@@ -11,7 +11,5 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- * Used by blacklight_range_limit
- *= require  'blacklight_range_limit'
- *
-*/
+ * Used by blacklight_range_limit (BL9 uses ES modules + Chart.js, styles are in SCSS)
+ */
