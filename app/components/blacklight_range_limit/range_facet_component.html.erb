@@ -18,7 +18,7 @@
 
       <% unless @facet_field.missing_selected? %>
         <%# Chart wrapper for Chart.js histogram %>
-        <div class="chart-wrapper mb-3" data-chart-wrapper="true" style="display: none; position: relative; width: 100%; aspect-ratio: <%= range_config[:chart_aspect_ratio] %>;">
+        <div class="chart-wrapper mb-3" data-chart-wrapper="true" style="display: none; position: relative; width: 100%;<%= " aspect-ratio: #{range_config[:chart_aspect_ratio]}" if range_config[:chart_aspect_ratio].present? %>;">
         </div>
 
         <% if (min = @facet_field.min) && (max = @facet_field.max) %>

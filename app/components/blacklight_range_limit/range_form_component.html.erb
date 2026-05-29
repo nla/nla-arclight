@@ -14,6 +14,7 @@
           <div class="range-slider-range" data-range-slider-target="range"></div>
         </div>
         <input type="range"
+               id="range-slider-min-<%= @facet_field.key %>"
                class="range-slider-input range-slider-min"
                min="<%= slider_min %>"
                max="<%= slider_max %>"
@@ -22,6 +23,7 @@
                data-action="input->range-slider#updateMin"
                aria-label="<%= t('blacklight.range_limit.range_begin_short') %>">
         <input type="range"
+               id="range-slider-max-<%= @facet_field.key %>"
                class="range-slider-input range-slider-max"
                min="<%= slider_min %>"
                max="<%= slider_max %>"

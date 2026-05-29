@@ -150,6 +150,14 @@ export default class extends Controller {
     const minVal = parseInt(this.minSliderTarget.value)
     const maxVal = parseInt(this.maxSliderTarget.value)
 
+    // Guard against division by zero when min === max
+    if (max - min === 0) {
+      this.rangeTarget.style.left = '0%'
+      this.rangeTarget.style.width = '100%'
+      this.updateChartSelection(minVal, maxVal)
+      return
+    }
+
     // Calculate percentages for the highlighted range
     const minPercent = ((minVal - min) / (max - min)) * 100
     const maxPercent = ((maxVal - min) / (max - min)) * 100
