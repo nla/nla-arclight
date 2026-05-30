@@ -91,8 +91,8 @@ export default class extends Controller {
   }
 
   initializeSliders() {
-    const minVal = parseInt(this.minInput.value) || this.minValue
-    const maxVal = parseInt(this.maxInput.value) || this.maxValue
+    const minVal = parseInt(this.minInput.value) ?? this.minValue
+    const maxVal = parseInt(this.maxInput.value) ?? this.maxValue
 
     this.minSliderTarget.value = minVal
     this.maxSliderTarget.value = maxVal
@@ -101,8 +101,8 @@ export default class extends Controller {
   }
 
   syncFromInputs() {
-    let minVal = parseInt(this.minInput.value) || this.minValue
-    let maxVal = parseInt(this.maxInput.value) || this.maxValue
+    let minVal = parseInt(this.minInput.value) ?? this.minValue
+    let maxVal = parseInt(this.maxInput.value) ?? this.maxValue
 
     // Ensure values are within bounds
     minVal = Math.max(this.minValue, Math.min(minVal, this.maxValue))

@@ -25,7 +25,7 @@
           <div class="distribution chart_js">
             <% if @facet_field.range_queries.any? %>
               <%= render BlacklightRangeLimit::RangeSegmentsComponent.new(facet_field: @facet_field) %>
-            <% else %>
+            <% elsif load_distribution_link %>
               <%= link_to(t('blacklight.range_limit.view_distribution'), load_distribution_link, class: "load_distribution", "data-loading-message-html": t('blacklight.range_limit.loading_html')) %>
             <% end %>
           </div>

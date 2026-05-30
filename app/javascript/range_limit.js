@@ -32,13 +32,13 @@ const updateChartsColorScheme = () => {
   
   // Update global defaults for any new charts
   setChartDefaults();
-  
+
   // Update all existing chart instances
   document.querySelectorAll('.blacklight-range-limit-chart').forEach(canvas => {
     const chart = Chart.getChart(canvas);
-    if (chart) {
+    if (chart?.options?.scales?.x?.ticks) {
       chart.options.scales.x.ticks.color = tickColor;
-      chart.update('none'); // 'none' prevents animation during update
+      chart.update('none');
     }
   });
 };
