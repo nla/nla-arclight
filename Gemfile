@@ -33,7 +33,8 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 8.0"
+gem "puma", ">= 8.0.2"
+gem "oauth2", ">= 2.0.22"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -52,7 +53,7 @@ gem "jbuilder"
 
 # Use hiredis adapter for better performance than the "redis" gem
 gem "hiredis", "~> 0.6.3"
-gem "hiredis-client", "~> 0.26.1"
+gem "hiredis-client", "~> 0.29.0"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 5.4"
@@ -94,8 +95,7 @@ gem "zk", "~> 1.10"
 gem "nokogiri", ">= 1.13.9"
 
 gem "nla-blacklight_common", git: "https://github.com/nla/nla-blacklight_common", branch: "main"
-gem "blacklight_range_limit", "~> 8.0", "< 9"
-# gem "blacklight_range_limit", "~> 8.0", "< 9"
+gem "blacklight_range_limit", "~> 9.0"
 # For local development, comment out above ⤴️ and uncomment below ⤵️
 # gem "nla-blacklight_common", path: "../nla-blacklight_common"
 

@@ -9,3 +9,6 @@ application.register("email-2fa-alert", Email2faAlertController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import RangeSliderController from "./range_slider_controller"
+application.register("range-slider", RangeSliderController)
