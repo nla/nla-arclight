@@ -6,7 +6,7 @@
     "@hotwired/turbo-rails": "^8.0.23",
     "@popperjs/core": "^2.11.8",
     "arclight": "^1.6.0",
-    "autoprefixer": "^10.5.0",
+    "autoprefixer": "^10.5.2",
     "blacklight-range-limit": "^9.2.0",
     "blacklight-frontend": "^8.12.2",
     "bootstrap": "^5.3.8",
