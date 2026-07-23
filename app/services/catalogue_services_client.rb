@@ -57,9 +57,16 @@ class CatalogueServicesClient
   def get_item_ids(instance_id:)
     all_holdings = get_holdings(instance_id: instance_id)
 
-    item_id = all_holdings.first["itemRecords"].first["holdingsRecordId"] if all_holdings.first["itemRecords"].any?
+    return [nil, nil] if all_holdings.blank?
 
-    holding_id = all_holdings.first["itemRecords"].first["id"] if all_holdings.first["itemRecords"].any?
+    first_holding = all_holdings.first
+    item_records = first_holding["itemRecords"] if first_holding.is_a?(Hash)
+
+    return [nil, nil] if item_records.blank?
+
+    first_item = item_records.first
+    item_id = first_item["holdingsRecordId"]
+    holding_id = first_item["id"]
 
     [item_id, holding_id]
   end
