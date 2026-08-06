@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# :nocov:
+# simplecov:disable
 module Blacklight
   class StartOverButtonComponent < Blacklight::Component
     def call
@@ -21,4 +21,4 @@ module Blacklight
     end
   end
 end
-# :nocov:
+# simplecov:enable

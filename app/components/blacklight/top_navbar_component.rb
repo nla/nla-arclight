@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# :nocov:
+# simplecov:disable
 module Blacklight
   class TopNavbarComponent < Blacklight::Component
     def initialize(blacklight_config:)
@@ -16,4 +16,4 @@ module Blacklight
     end
   end
 end
-# :nocov:
+# simplecov:enable
