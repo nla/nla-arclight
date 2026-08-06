@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   #    infinite redirect loop.
   # - The request is an Ajax request as this can lead to very unexpected behaviour.
   # - The request is a turbo frame request as this can lead to incomplete pages being displayed.
-  # :nocov:
+  # simplecov:disable
   def storable_location?
     request.get? &&
       is_navigational_format? &&
@@ -48,5 +48,5 @@ class ApplicationController < ActionController::Base
   rescue
     Rails.logger.debug { "Failed to store location: #{request.fullpath}" }
   end
-  # :nocov:
+  # simplecov:enable
 end
