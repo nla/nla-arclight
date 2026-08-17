@@ -2,6 +2,17 @@
 @import "variables";
 @import "nla-custom-bootstrap";
 
+.al-grouped-results {
+  --nla-grouped-result-bg: #F8F8F8;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .al-grouped-results {
+    --nla-grouped-result-bg: var(--nla-grey-700);
+  }
+}
+
+
 .blacklight-catalog-index #appliedParams {
   margin-bottom: 0.5rem !important;
 }
@@ -9,147 +20,7 @@
 .navbar-search {
   border-top: none;
   border-bottom: none;
-  
-  .input-group {
-    gap: 1rem;
-    
-    .input-group-text {
-      background: transparent;
-      border: none;
-    }
-    
-    .form-select,
-    .form-control {
-      border: 1px solid $warm-grey !important;
-      border-radius: 4px !important;
-      
-      &:focus {
-        border-color: $black;
-        box-shadow: 0 0 0 1px $black;
-      } 
-    }
-    
-    auto-complete,
-    > .search-autocomplete-wrapper {
-      border: none !important;
-      width: 100%;
-      
-      #autocomplete-popup {
-        background: $light-grey;
-        box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.08);
-        
-        [role="option"] {
-          &:focus,
-          &:hover,
-          &:active,
-          &.active,
-          &[aria-selected="true"] {
-            background-color: $tags-surface;
-          }
-        }
-      }
-    }
-    
-    @media (min-width: 768px) {
-      auto-complete,
-      > .search-autocomplete-wrapper {
-        width: auto;
-      }
-    }
-    
-    .btn-primary {
-      border-top-left-radius: 5rem !important;
-      border-bottom-left-radius: 5rem !important;
-    }
-  }
 }
-
-.constraints-container {
-  margin-top: 1rem;
-  
-  .applied-filter {
-    font-weight: normal;
-    text-transform: none;
-    letter-spacing: 0;
-    border-radius: 0.5rem;
-    border: 2px solid $body-bg;
-    
-    .filter-name:after {
-      transition: all 0.25s;
-    }
-    
-    &:focus,
-    &:hover {
-      .constraint-value,
-      .remove {
-        color: $white;
-        background: $grey-350;
-      }
-            
-      .filter-name:after {
-        color: $white;
-      }
-    }
-    
-    &:has(.remove:focus) {
-      border-color: $grey-700;
-      
-      .constraint-value,
-      .remove { 
-        color: $white;
-        background-color: $grey-350;
-      }
-      
-      .filter-name:after { 
-        color: $white;
-      }
-    }
-    
-    .constraint-value,
-    .remove {
-      color: $warm-grey;
-      background-color: $tags-surface;
-      border: none;
-      font-size: 0.875rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      line-height: 1;
-      z-index: 0;
-      
-      &.btn {
-        padding-top: 0.5rem !important;
-        padding-bottom: 0.5rem !important;
-      }
-    }
-    
-    .constraint-value {
-      border-top-left-radius: calc(0.5rem - 2px);
-      border-bottom-left-radius: calc(0.5rem - 2px);
-    }
-    
-    .remove {
-      border-top-right-radius: calc(0.5rem - 2px);
-      border-bottom-right-radius: calc(0.5rem - 2px);
-      padding-left: 0;
-      
-      &:not(:disabled):not(.disabled):hover,
-      &:not(:disabled):not(.disabled):focus,
-      &:not(:disabled):not(.disabled):active {
-        color: $lightest-orange;
-        cursor: pointer;
-        text-decoration: none;
-        box-shadow: none;
-      }
-    }
-    
-    .filter-name {
-      &:after {
-        color: $warm-grey;
-      }
-    }
-  }  
-}
-  
 
 .sort-pagination {
   border-top: 1px solid rgb(230,230,230);
@@ -159,7 +30,7 @@
   }
 
   .result-type-group, .view-type-group {
-    border: 1px solid $warm-grey;
+    border: 1px solid var(--nla-warm-grey);
     background-color: transparent;
     border-radius: 3rem;
     flex-grow: 0;
@@ -168,7 +39,7 @@
       border-radius: 3rem;
       background: transparent;
       border-color: transparent;
-      color: $body-color;
+      color: var(--nla-body-color);
       
       &.active {
         border-radius: 3rem;
@@ -181,7 +52,7 @@
         }
         
         &:focus {
-          box-shadow: 0 0 0 2px $body-color;
+          box-shadow: 0 0 0 2px var(--nla-body-color);
         }
       }
       &:not(.active) {
@@ -189,14 +60,21 @@
         border-radius: 3rem;
         
         & path:not([fill="none"]) {
-          fill: $body-color;
+          fill: var(--nla-body-color);
         }
       }
     }
     
     &:has(.btn:not(.active):focus),
     &:has(.btn:not(.active):hover) {
-      background: $light-grey;
+      background: var(--nla-light-grey);
+      
+      @media screen and (prefers-color-scheme: dark) {
+        &:has(.btn:not(.active):focus),
+        &:has(.btn:not(.active):hover) {
+          background: var(--nla-grey-600);
+        }
+      }
     }
   }
   
@@ -214,7 +92,7 @@
     .btn {
       border: none;
       background: transparent;
-      color: $body-color;
+      color: var(--nla-body-color);
       
       &:focus,
       &:hover,
@@ -232,7 +110,7 @@
     .btn {
       .d-sm-inline {
         font-weight: 600;
-        color: $black;
+        color: var(--nla-body-color);
       }
     }
   }
@@ -240,29 +118,29 @@
   .per_page-dropdown {
     .btn {
       font-weight: 600;
-      color: $black;
+      color: var(--nla-body-color);
 
       .d-sm-inline {
         font-weight: 400;
-        color: $grey-700;
+        color: var(--nla-body-color);
       }
     }
   } 
   
   .dropdown-menu.show {
-    background-color: $white;
+    background-color: var(--nla-white);
     box-shadow: 1px 1px 12px 0px rgba(0,0,0,0.08);
     
     .dropdown-item {
-      color: $grey-700;
+      color: var(--nla-grey-700);
       text-decoration: none;
       
       &:focus,
       &:hover,
       &:active,
       &.active {
-        background-color: $light-grey;
-        color: $grey-700;
+        background-color: var(--nla-light-grey);
+        color: var(--nla-grey-700);
         box-shadow: none;
       }
     }
@@ -278,10 +156,11 @@
     a {
       padding-right: 1.5rem;
       text-decoration: none;
+      color: var(--nla-body-color);
       
       &:focus,
       &:hover {
-        color: $body-color;
+        color: var(--nla-body-color);
         text-decoration: underline;
         background-color: transparent;
         box-shadow: none;
@@ -293,19 +172,10 @@
         }
       }
     }
-    
-    .badge {
-      color: $warm-grey;
-      background-color: $tags-surface;
-      border-radius: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 400;
-      border: none;
-    }
   }
   
   .al-online-content-icon .blacklight-icons svg {
-    fill: $warm-grey !important;
+    fill: var(--nla-mid-teal) !important;
   }
 
 
@@ -313,16 +183,13 @@
 
 .al-grouped-results {
   .al-grouped-title-bar {
-    background: $light-grey;
-    background: $gray-very-light;
-    background: #F8F8F8;
+    background: rgb(44,44,46);
+    background: var(--nla-grouped-result-bg);
     padding: 1rem;
     
     &+.grouped-documents {
-      background: $light-grey;
-      background: $gray-very-light;
-      background: #F8F8F8;
       margin: 0 0 2rem 0;
+      background: var(--nla-grouped-result-bg);
     }
   }
   
@@ -331,21 +198,22 @@
     &:has(h3 a:focus),
     &:has(+.grouped-documents:hover),
     &:has(+.grouped-documents h4 a:focus) {
-      box-shadow: -2px 0 $dark-teal;
+      box-shadow: -2px 0 var(--nla-dark-teal);
       
       &+.grouped-documents {
-        box-shadow: -2px 0 $dark-teal;
+        box-shadow: -2px 0 var(--nla-dark-teal);
       }
     }
     
     &:hover,
     &:has(h3 a:focus) {
-      background: $light-grey;
+      background: var(--nla-result-item-hover-bg);
     }
   }
-  
+    
   .al-document-extent {
     margin-left: 1em;
+    display: inline-block;
   }
   .al-document-abstract-or-scope {
     font-size: 1em;
@@ -374,10 +242,12 @@
 
 .documents-list,
 .documents-compact {
+  
   article {
     &.document {
       margin-top: 0;
       padding: 1rem;
+      border-bottom: 1px dotted var(--nla-result-item-border-color);
   
       &:first-child {
         padding-top: 1rem;
@@ -386,17 +256,18 @@
       &:focus,
       &:hover,
       &:has(.document-title-heading a:focus) { 
-        background: $light-grey;
+        background: var(--nla-result-item-hover-bg);
       }
       
       .document-title-heading {
         a {
           padding-right: 1.5rem;
           text-decoration: none;
+          color: var(--nla-body-color);
           
           &:focus,
           &:hover {
-            color: $body-color;
+            color: var(--nla-body-color);
             text-decoration: underline;
             background-color: transparent;
             box-shadow: none;
@@ -407,14 +278,6 @@
               box-shadow: none;
             }
           }
-        }
-        
-        .badge {
-          color: $warm-grey;
-          background-color: $tags-surface;
-          border-radius: 0.5rem;
-          font-size: 0.875rem;
-          font-weight: 400;
         }
       }
       

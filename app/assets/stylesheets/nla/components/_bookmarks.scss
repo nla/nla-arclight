@@ -1,5 +1,8 @@
 @charset "UTF-8";
-@import "../nla-custom-bootstrap";
+
+.toggle-bookmark {
+  --nla-bookmark-icon-color: var(--nla-mid-teal);
+}
 
 .show-document .title-container .bookmark-toggle {
   border: none;
@@ -10,15 +13,19 @@
   label {
     cursor: pointer;
     min-width: auto;
-    color: $warm-grey;
+    color: var(--nla-bookmark-icon-color);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     border-radius: 0.5rem;
-  }
     
-  &:has(input[type=checkbox]:focus-visible) {
-    color: $white !important;
-    background-color: $warm-grey;
+    &:hover,
+    &:focus,
+    &:focus-visible,
+    &:has(input[type=checkbox]:focus-visible) {
+      color: var(--nla-black);
+      background-color: var(--nla-bookmark-icon-color);
+      outline: none;
+    }
   }
   
   input[type=checkbox] {

@@ -1,0 +1,25 @@
+.breadcrumb {
+  --bs-breadcrumb-item-active-color: var(--nla-grey-300);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .breadcrumb {
+    --bs-breadcrumb-item-active-color: var(--nla-body-color);
+  }
+}
+  
+  
+.breadcrumb{
+  color: var(--nla-body-color);
+
+  .breadcrumb-item {
+    &::before,
+    &.active {
+      color: var(--bs-breadcrumb-item-active-color);
+    }
+  }
+  
+  svg {
+    fill: var(--nla-body-color);
+  }
+}

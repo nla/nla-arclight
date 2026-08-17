@@ -31,11 +31,11 @@
 .al-show-breadcrumb,
 .title-container,
 .sidebar-section {
-  border-bottom-color: #e6e6e6;
+  border-bottom-color: var(--nla-divider-color);
 }
 
 .collection-sidebar {
-  border-right-color: #e6e6e6;
+  border-right-color: var(--nla-divider-color);
 }
 
 .al-collection-context {
@@ -43,13 +43,13 @@
   border-radius: 4px;
   
   &:hover,
-  &:has(a:focus) {
-    background-color: $light-grey;
+  &:focus-within {
+    background-color: var(--nla-result-item-hover-bg);
   }
   
   &.al-hierarchy-highlight {
-    border-left: 2px solid $dark-teal;
-    background-color: $light-grey;
+    border-left: 2px solid var(--nla-dark-teal);
+    background-color: var(--nla-result-item-hover-bg);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
@@ -61,12 +61,12 @@
   .al-toggle-view-children {
     margin-left: 0;
     margin-right: 0.5rem;
-    background-color: $body-color;
+    background-color: var(--nla-body-color);
     
     &:focus,
     &:hover,
     &:active {
-      background-color: $body-color !important;
+      background-color: var(--nla-body-color) !important;
     }
   }
 
@@ -75,7 +75,7 @@
     
     &:focus,
     &:hover {
-      color: $body-color !important;
+      color: var(--nla-body-color) !important;
       background-color: transparent !important;
       text-decoration: underline !important;
       box-shadow: none !important;
@@ -87,16 +87,12 @@
   }
 }
 
-li.al-collection-context .al-online-content-icon svg,
-.al-online-content-icon .blacklight-icons svg {
-  fill: $warm-grey;
-}
-
 .title-container {
   h1 {
-    font-family: $font-family-serif;
+    font-family: var(--nla-font-family-serif);
     font-size: 2.5rem;
     font-weight: 400;
+    color: var(--nla-body-color);
   }
 }
 
@@ -105,8 +101,8 @@ li.al-collection-context .al-online-content-icon svg,
   margin-bottom: 2rem;
   
   a {
-    color: $white !important;
-    background: $black;
+    color: var(--nla-body-bg) !important;
+    background: var(--nla-body-color);
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 0.75rem;
@@ -119,15 +115,20 @@ li.al-collection-context .al-online-content-icon svg,
     
     &:hover,
     &:focus {
-      color: $black !important;
-      background: $light-teal !important;
+      color: var(--nla-black) !important;
+      background: var(--nla-light-teal) !important;
       box-shadow: none !important;
     }
   }
 }
 
 .online-contents {
-  background-color: $light-grey;
+  color: var(--nla-body-color);
+  background-color: var(--nla-result-item-hover-bg);
+  
+  .blacklight-icons-online svg {
+    fill: var(--nla-mid-teal) !important;
+  }
 }
 
 .al-grouped-title-bar {
@@ -159,7 +160,7 @@ li.al-collection-context .al-online-content-icon svg,
   h1.media svg,
   .breadcrumb .media svg,
   li.al-collection-context .blacklight-icons svg {
-    fill: $gray-medium-light;
+    fill: var(--nla-mid-teal) !important;
   }
   
   .dl-invert dt {
@@ -195,25 +196,41 @@ li.al-collection-context .al-online-content-icon svg,
 
 .al-show-actions-box {
   border: none;
-  background-color: $light-grey;
+  background-color: var(--nla-result-item-hover-bg);
   border-radius: 4px;
   
-  .al-show-actions-box-info {
+  .btn-secondary {
     svg {
-      fill: $black;
+      fill: var(--nla-body-color);
     }
     
-    .al-online-content-icon {
-      svg {
-        fill: warm-grey;
+    &:focus,
+    &:hover {
+      svg  {
+        fill: var(--nla-black);
       }
     }
-
   }
 }
 
 #access-and-use {
   img {
     margin-bottom: 1rem;
+    
+    @media screen and (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
   }
 }
+
+
+
+.al-online-content-icon {
+  .blacklight-icons {
+    svg {
+      fill: var(--nla-mid-teal) !important;
+    }
+  }
+}
+
+

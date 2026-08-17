@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.badge,
+.documents-list article.document .document-title-heading .al-document-extent,
+.al-grouped-results .al-document-extent {
+  color: var( --nla-warm-grey);
+  background-color: var( --nla-tags-surface);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  margin-left: 0.25rem;
+}
