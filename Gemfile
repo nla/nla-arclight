@@ -33,7 +33,7 @@ gem "sprockets-rails"
 gem "mysql2", "~> 0.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 7.1"
+gem "puma", "~> 8.0"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -52,7 +52,7 @@ gem "jbuilder"
 
 # Use hiredis adapter for better performance than the "redis" gem
 gem "hiredis", "~> 0.6.3"
-gem "hiredis-client", "~> 0.26.1"
+gem "hiredis-client", "~> 0.30.1"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 5.4"
@@ -147,6 +147,6 @@ group :test do
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
   gem "webmock"
 
-  gem "simplecov", "~> 0.22.0"
+  gem "simplecov", "~> 1.1.1"
   gem "simplecov-json", "~> 0.2.3"
 end
