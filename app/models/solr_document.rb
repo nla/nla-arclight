@@ -114,13 +114,8 @@ class SolrDocument
   end
 
   def availability_status
-    instance_id = self["folio_instance_id_ssi"]
-    return nil if instance_id.blank?
+    holdings, item = CatalogueServicesClient.new.get_item_ids(instance_id: self["folio_instance_id_ssi"])
 
-    client = CatalogueServicesClient.new
-    holdings, item = client.get_item_ids(instance_id: instance_id)
-    return nil if holdings.blank? || item.blank?
-
-    client.get_requestable(instance_id: instance_id, holdings_id: holdings, item_id: item)
+    CatalogueServicesClient.new.get_requestable(instance_id: self["folio_instance_id_ssi"], holdings_id: holdings, item_id: item)
   end
 end
