@@ -55,7 +55,7 @@ gem "hiredis", "~> 0.6.3"
 gem "hiredis-client", "~> 0.30.1"
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 5.4"
+gem "redis", "~> 6.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
