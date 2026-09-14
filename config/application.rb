@@ -24,7 +24,7 @@ if %w[development test].include? ENV["RAILS_ENV"]
 end
 
 module NlaArclight
-  VERSION = "4.6.0"
+  VERSION = "4.7.0"
 
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
