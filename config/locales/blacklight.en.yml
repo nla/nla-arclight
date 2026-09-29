@@ -98,9 +98,10 @@ en:
       close: "Close"
 
     bookmarks:
-      title: 'Bookmarks'
-      page_title: 'Bookmarks | %{application_name}'
+      title: 'Bookmarks - Finding aids'
+      page_title: 'Bookmarks - Finding aids | %{application_name}'
       no_bookmarks: 'You have no bookmarks'
+      export_all: 'Export all'
       add:
         button: 'Bookmark'
         success:

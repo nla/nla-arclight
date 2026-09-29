@@ -1,0 +1,36 @@
+<%= render Blacklight::System::ModalComponent.new do |component| %>
+  <% component.with_title { t("cite_all.title") } %>
+
+  <% if @documents.present? %>
+    <div class="mb-3" data-controller="clipboard" data-clipboard-success-content-value="<%= t("cite_all.copied") %>">
+      <textarea class="d-none" data-clipboard-target="source"><%= cite_all_text(@documents) %></textarea>
+      <a href="#" data-action="clipboard#copy" data-clipboard-target="button" class="btn btn-primary">
+        <i class="fa-regular fa-copy" aria-hidden="true"></i> <%= t("cite_all.copy_to_clipboard") %>
+      </a>
+    </div>
+
+    <% @documents.each do |document| %>
+      <div class="citation-record mb-4">
+        <h3 class="h5"><%= document.normalized_title %></h3>
+        <dl class="row">
+          <% cite_all_fields.each do |field| %>
+            <% values = Array(document.fetch(field.field, nil)) %>
+            <% next if values.blank? %>
+            <dt class="col-sm-4"><%= field.label %></dt>
+            <dd class="col-sm-8">
+              <% if field.helper_method %>
+                <%= send(field.helper_method, value: values) %>
+              <% else %>
+                <%= values.join("; ") %>
+              <% end %>
+            </dd>
+          <% end %>
+          <dt class="col-sm-4">data-doc-id</dt>
+          <dd class="col-sm-8"><%= document.id %></dd>
+          <dt class="col-sm-4"><%= t("cite_all.record_url") %></dt>
+          <dd class="col-sm-8"><%= solr_document_url(document) %></dd>
+        </dl>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

@@ -33,6 +33,11 @@ en:
   request_this: "Request this via the Catalogue"
   hello: "Hello world"
   collection_prefix: "Guide to the "
+  cite_all:
+    title: "Cite all"
+    copy_to_clipboard: "Copy to clipboard"
+    copied: "Copied"
+    record_url: "Record URL"
   ead_notes:
     cultural_sens_adv_notice: "Cultural Sensitivity Advisory Notice"
     icip_notice: "Indigenous Cultural and Intellectual Property (ICIP) Notice"
