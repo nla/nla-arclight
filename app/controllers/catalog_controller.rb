@@ -41,7 +41,7 @@ class CatalogController < ApplicationController
 
     # solr path which will be added to solr base url before the other solr params.
     config.solr_path = "select"
-    config.document_solr_path = "select"
+    config.document_solr_path = "document"
 
     # solr parameters to send on single-document requests to Solr.
     # The "q" param is formatted in Blacklight::SolrCloud::Repository.find to search the "id" field.
@@ -58,7 +58,6 @@ class CatalogController < ApplicationController
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-      qt: "document",
       fl: "*,collection:[subquery]",
       "collection.q": "{!terms f=id v=$row._root_}",
       "collection.defType": "lucene",
