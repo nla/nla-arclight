@@ -459,8 +459,8 @@ GEM
       prism (>= 1.6.0)
       rbs (>= 4.0.0)
       tsort
-    redis (5.4.1)
-      redis-client (>= 0.22.0)
+    redis (6.0.0)
+      redis-client (= 0.30.1)
     redis-client (0.30.1)
       connection_pool
     regexp_parser (2.12.0)
@@ -705,7 +705,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 8)
   rails-controller-testing (~> 1.0, >= 1.0.5)
-  redis (~> 5.4)
+  redis (~> 6.0)
   rsolr (>= 1.0, < 3)
   rspec-rails (~> 8.0)
   rubocop-capybara
