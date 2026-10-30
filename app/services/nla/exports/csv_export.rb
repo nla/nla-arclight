@@ -20,12 +20,16 @@ module Nla
         CSV.generate do |csv|
           csv << header
           @documents.each do |document|
-            csv << row(document)
+            csv << row(document).map { |value| spreadsheet_safe(value) }
           end
         end
       end
 
       private
+
+      def spreadsheet_safe(value)
+        value.match?(/\A(?:\s*[=+@-]|[\t\r\n])/) ? "'#{value}" : value
+      end
 
       def header
         ["Title"] + @fields.map { |field| field.label } + ["data-doc-id", "Record URL"]

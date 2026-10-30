@@ -3,6 +3,12 @@
 class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 
+  def action_documents
+    return [] if token_or_current_or_guest_user.bookmarks.empty?
+
+    super
+  end
+
   # Modal listing every bookmarked finding aid (all bookmarks in the
   # account, regardless of pagination) with the fields displayed in the
   # bookmarks view, plus data-doc-id and the record URL, which can be

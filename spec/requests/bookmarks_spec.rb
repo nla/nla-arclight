@@ -17,6 +17,17 @@ RSpec.describe "Bookmarks", type: :request do
   end
 
   describe "GET /finding-aids/bookmarks/cite_all" do
+    it "shows an empty-state message when there are no bookmarks" do
+      user.bookmarks.delete_all
+      get cite_all_bookmarks_path
+
+      expect(response).to have_http_status(:success)
+      expect(response.body).to include(I18n.t("blacklight.bookmarks.no_bookmarks"))
+      expect(response.body).not_to include('data-clipboard-target="source"')
+      expect(WebMock).not_to have_requested(:get, /solr:8983/)
+      expect(WebMock).not_to have_requested(:post, /solr:8983/)
+    end
+
     it "lists every bookmark with its fields, data-doc-id and record URL" do
       get cite_all_bookmarks_path
 

@@ -35,6 +35,15 @@ RSpec.describe Nla::Exports::CsvExport do
     expect(parsed.length).to eq(2)
   end
 
+  it "neutralizes spreadsheet formulas in titles and field values" do
+    ["=1+1", "+1+1", "-1+1", "@SUM(1)", "  =1+1", "\t=1+1"].each do |value|
+      formula_document = SolrDocument.new(id: "1", normalized_title_ssm: value, unitid_ssm: [value])
+      rows = CSV.parse(described_class.new([formula_document], fields, url_proc).render)
+      expect(rows.last.first).to eq("'#{value}")
+      expect(rows.last[rows.first.index("Unit ID")]).to eq("'#{value}")
+    end
+  end
+
   it "joins multi-valued fields with '; '" do
     document = SolrDocument.new(id: "1", normalized_title_ssm: "Title", unitid_ssm: ["MS 1", "MS 2"])
     csv = described_class.new([document], fields, url_proc).render

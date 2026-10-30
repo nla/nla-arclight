@@ -1,4 +1,4 @@
-<% if @response.documents.present? %>
+<% if @bookmarks.present? %>
   <div class="bookmarksTools d-flex flex-wrap gap-2">
     <a class="btn btn-primary" data-blacklight-modal="trigger" data-turbo="false" href="<%= cite_all_bookmarks_path %>">
       <%= t("cite_all.title") %>
