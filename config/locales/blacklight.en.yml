@@ -102,6 +102,8 @@ en:
       page_title: 'Bookmarks - Finding aids | %{application_name}'
       no_bookmarks: 'You have no bookmarks'
       export_all: 'Export all'
+      export_csv: 'CSV (.csv)'
+      export_ris: 'RIS (.ris)'
       add:
         button: 'Bookmark'
         success:

@@ -4,21 +4,24 @@ class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 
   def action_documents
-    return [] if token_or_current_or_guest_user.bookmarks.empty?
+    bookmark_ids = token_or_current_or_guest_user.bookmarks.pluck(:document_id).map(&:to_s)
+    return [] if bookmark_ids.empty?
 
-    super
+    search_service.fetch(bookmark_ids, rows: bookmark_ids.length)
   end
 
-  # Modal listing every bookmarked finding aid (all bookmarks in the
-  # account, regardless of pagination) with the fields displayed in the
-  # bookmarks view, plus data-doc-id and the record URL, which can be
-  # copied to the clipboard in one action.
+  # Copy every bookmarked finding aid in the selected citation style,
+  # regardless of pagination.
   def cite_all
+    @citation_style = params[:style].to_s
+    return head :bad_request unless CitationHelper::CITATION_FORMATS.key?(@citation_style)
+
     @documents = action_documents
+    render layout: !request.xhr?
   end
 
   # Export all bookmarked finding aids (regardless of pagination) as a
-  # downloadable CSV file.
+  # downloadable CSV or RIS file.
   def export
     @documents = action_documents
 
@@ -26,6 +29,10 @@ class BookmarksController < CatalogController
       format.csv do
         send_data Nla::Exports::CsvExport.new(@documents, export_fields, proc { |document| solr_document_url(document) }).render,
           filename: "bookmarks.csv", type: "text/csv", disposition: "attachment"
+      end
+      format.ris do
+        send_data Nla::Exports::RisExport.new(@documents, proc { |document| solr_document_url(document) }).render,
+          filename: "bookmarks.ris", type: "application/x-research-info-systems", disposition: "attachment"
       end
     end
   end

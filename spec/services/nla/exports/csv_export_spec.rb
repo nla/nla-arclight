@@ -62,6 +62,40 @@ RSpec.describe Nla::Exports::CsvExport do
     expect(parsed.last[header.index("Record URL")]).to eq("https://test.host/finding-aids/catalog/280011976")
   end
 
+  it "adds supplied rights statements and preferred citation without changing the existing metadata columns" do
+    enriched = SolrDocument.new(document.to_h.merge(
+      "prefercite_html_tesm" => ["<p>Use this &amp; that citation.</p>"],
+      "accessrestrict_html_tesm" => ["<p>Reading room access.</p>"],
+      "userestrict_html_tesm" => ["Permission required."],
+      "parent_access_restrict_tesm" => ["Parent access restriction."],
+      "parent_access_terms_tesm" => ["Parent use restriction."]
+    ))
+    header, row = CSV.parse(described_class.new([enriched], fields, url_proc).render)
+    expect(header.first(fields.length + 1)).to eq(["Title"] + fields.map(&:label))
+    expect(row[header.index("Preferred Citation")]).to eq("Use this & that citation.")
+    expect(row[header.index("Conditions Governing Access (Full Statement)")]).to eq("Reading room access.")
+    expect(row[header.index("Conditions Governing Use")]).to eq("Permission required.")
+    expect(row[header.index("Parent Conditions Governing Access")]).to eq("Parent access restriction.")
+    expect(row[header.index("Parent Conditions Governing Use")]).to eq("Parent use restriction.")
+    expect(header).not_to include("Copyright Status")
+  end
+
+  it "exports distinct digital-resource URLs separated by semicolons" do
+    enriched = SolrDocument.new(id: "1", digital_objects_ssm: [
+      {href: "https://example.org/first"}.to_json,
+      {href: "https://example.org/second"}.to_json,
+      {href: "https://example.org/first"}.to_json
+    ])
+    header, row = CSV.parse(described_class.new([enriched], fields, url_proc).render)
+    expect(row[header.index("Online Resources")]).to eq("https://example.org/first; https://example.org/second")
+  end
+
+  it "escapes spreadsheet formulas in additional fields" do
+    enriched = SolrDocument.new(id: "1", userestrict_html_tesm: ["=1+1"])
+    header, row = CSV.parse(described_class.new([enriched], fields, url_proc).render)
+    expect(row[header.index("Conditions Governing Use")]).to eq("'=1+1")
+  end
+
   it "renders an empty row for a document without data" do
     csv = described_class.new([SolrDocument.new(id: "1")], fields, url_proc).render
     header = CSV.parse(csv).first

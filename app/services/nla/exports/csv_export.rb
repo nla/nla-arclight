@@ -7,9 +7,17 @@ module Nla
     ##
     # Renders bookmarked finding aid documents as a CSV string.
     #
-    # Columns: the title, the fields displayed in the bookmarks view
-    # (in display order), then the data-doc-id (Solr id) and the record URL.
+    # Columns: title and bookmark-view fields, supplied citation/rights statements
+    # and digital-resource URLs, then data-doc-id (Solr id) and the record URL.
     class CsvExport
+      ADDITIONAL_FIELDS = {
+        "Preferred Citation" => "prefercite_html_tesm",
+        "Conditions Governing Access (Full Statement)" => "accessrestrict_html_tesm",
+        "Conditions Governing Use" => "userestrict_html_tesm",
+        "Parent Conditions Governing Access" => "parent_access_restrict_tesm",
+        "Parent Conditions Governing Use" => "parent_access_terms_tesm"
+      }.freeze
+
       def initialize(documents, fields, url_proc)
         @documents = documents
         @fields = fields
@@ -32,15 +40,18 @@ module Nla
       end
 
       def header
-        ["Title"] + @fields.map { |field| field.label } + ["data-doc-id", "Record URL"]
+        ["Title"] + @fields.map { |field| field.label } + ADDITIONAL_FIELDS.keys + ["Online Resources", "data-doc-id", "Record URL"]
       end
 
       def row(document)
-        [title(document)] + @fields.map { |field| cell(document, field) } + [document.id.to_s, @url_proc.call(document)]
+        metadata = FindingAidMetadata.new(document)
+        [title(document)] + @fields.map { |field| cell(document, field) } +
+          ADDITIONAL_FIELDS.values.map { |field| metadata.values(field).join("; ") } +
+          [metadata.resource_urls.join("; "), document.id.to_s, @url_proc.call(document)]
       end
 
       def title(document)
-        Array(document.normalized_title).join("; ")
+        Array(document["normalized_title_ssm"]).join("; ")
       end
 
       def cell(document, field)
@@ -49,7 +60,7 @@ module Nla
       end
 
       def strip_tags(value)
-        value.to_s.gsub(/<[^>]*>/, "")
+        CGI.unescapeHTML(ActionView::Base.full_sanitizer.sanitize(value.to_s))
       end
     end
   end
