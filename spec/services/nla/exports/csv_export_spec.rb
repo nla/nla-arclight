@@ -11,6 +11,7 @@ RSpec.describe Nla::Exports::CsvExport do
   let(:document) do
     SolrDocument.new(
       id: "280011976",
+      bibid_ssi: "1132324",
       normalized_title_ssm: "19th century currency items",
       unitid_ssm: ["MS 1139"],
       repository_ssm: ["National Library of Australia"],
@@ -23,12 +24,13 @@ RSpec.describe Nla::Exports::CsvExport do
     CSV.parse(csv)
   end
 
-  it "renders a header of title, the bookmarks-view fields, data-doc-id and record URL" do
+  it "groups identifiers, titles and online links like the catalogue CSV" do
     header = parsed.first
-    expect(header.first).to eq("Title")
+    expect(header.first(7)).to eq(["Bib ID", "Finding Aid ID", "Unit ID", "Creator", "Title", "Collection Title", "Online Version"])
     expect(header).to include("Unit ID", "Repository", "Date")
-    expect(header[-2]).to eq("data-doc-id")
     expect(header.last).to eq("Record URL")
+    expect(header).not_to include("data-doc-id", "Online Resources", "Conditions Governing Access (Full Statement)")
+    expect(header.uniq).to eq(header)
   end
 
   it "renders one row per document" do
@@ -39,7 +41,7 @@ RSpec.describe Nla::Exports::CsvExport do
     ["=1+1", "+1+1", "-1+1", "@SUM(1)", "  =1+1", "\t=1+1"].each do |value|
       formula_document = SolrDocument.new(id: "1", normalized_title_ssm: value, unitid_ssm: [value])
       rows = CSV.parse(described_class.new([formula_document], fields, url_proc).render)
-      expect(rows.last.first).to eq("'#{value}")
+      expect(rows.last[rows.first.index("Title")]).to eq("'#{value}")
       expect(rows.last[rows.first.index("Unit ID")]).to eq("'#{value}")
     end
   end
@@ -56,13 +58,14 @@ RSpec.describe Nla::Exports::CsvExport do
     expect(parsed.last[header.index("Scope Content")]).to eq("Banknotes and related material")
   end
 
-  it "renders the data-doc-id and record URL" do
+  it "keeps the catalogue Bib ID distinct from the finding-aid ID and its record URL" do
     header = parsed.first
-    expect(parsed.last[header.index("data-doc-id")]).to eq("280011976")
+    expect(parsed.last[header.index("Bib ID")]).to eq("1132324")
+    expect(parsed.last[header.index("Finding Aid ID")]).to eq("280011976")
     expect(parsed.last[header.index("Record URL")]).to eq("https://test.host/finding-aids/catalog/280011976")
   end
 
-  it "adds supplied rights statements and preferred citation without changing the existing metadata columns" do
+  it "retains supplied rights statements without a duplicate access-conditions column" do
     enriched = SolrDocument.new(document.to_h.merge(
       "prefercite_html_tesm" => ["<p>Use this &amp; that citation.</p>"],
       "accessrestrict_html_tesm" => ["<p>Reading room access.</p>"],
@@ -71,9 +74,9 @@ RSpec.describe Nla::Exports::CsvExport do
       "parent_access_terms_tesm" => ["Parent use restriction."]
     ))
     header, row = CSV.parse(described_class.new([enriched], fields, url_proc).render)
-    expect(header.first(fields.length + 1)).to eq(["Title"] + fields.map(&:label))
+    expect(header).to include(*fields.map(&:display_label))
     expect(row[header.index("Preferred Citation")]).to eq("Use this & that citation.")
-    expect(row[header.index("Conditions Governing Access (Full Statement)")]).to eq("Reading room access.")
+    expect(row[header.index("Conditions Governing Access")]).to eq("Reading room access.")
     expect(row[header.index("Conditions Governing Use")]).to eq("Permission required.")
     expect(row[header.index("Parent Conditions Governing Access")]).to eq("Parent access restriction.")
     expect(row[header.index("Parent Conditions Governing Use")]).to eq("Parent use restriction.")
@@ -87,7 +90,7 @@ RSpec.describe Nla::Exports::CsvExport do
       {href: "https://example.org/first"}.to_json
     ])
     header, row = CSV.parse(described_class.new([enriched], fields, url_proc).render)
-    expect(row[header.index("Online Resources")]).to eq("https://example.org/first; https://example.org/second")
+    expect(row[header.index("Online Version")]).to eq("https://example.org/first; https://example.org/second")
   end
 
   it "escapes spreadsheet formulas in additional fields" do
@@ -100,6 +103,55 @@ RSpec.describe Nla::Exports::CsvExport do
     csv = described_class.new([SolrDocument.new(id: "1")], fields, url_proc).render
     header = CSV.parse(csv).first
     expect(CSV.parse(csv).last[header.index("Unit ID")]).to eq("")
+    expect(CSV.parse(csv).last[header.index("Bib ID")]).to eq("")
+    expect(CSV.parse(csv).last[header.index("Finding Aid ID")]).to eq("1")
     expect(CSV.parse(csv).last[header.index("Record URL")]).to eq("https://test.host/finding-aids/catalog/1")
+  end
+
+  it "uses indexed fallback values for component creators, repositories and collection titles" do
+    component = SolrDocument.new(id: "1", repository_ssim: ["National Library of Australia"],
+      collection_creator_ssm: ["Smith, Mary", "Smith, John"], collection_ssim: ["Smith papers"],
+      accessrestrict_ssm: ["Available for research."])
+    header, row = CSV.parse(described_class.new([component], fields, url_proc).render)
+    expect(row[header.index("Repository")]).to eq("National Library of Australia")
+    expect(row[header.index("Creator")]).to eq("Smith, Mary; Smith, John")
+    expect(row[header.index("Collection Title")]).to eq("Smith papers")
+    expect(row[header.index("Conditions Governing Access")]).to eq("Available for research.")
+  end
+
+  it "preserves nested values and link text/URLs instead of exporting Ruby data structures" do
+    field = Blacklight::Configuration::Field.new(key: "links", field: "links", label: "Links")
+    component = SolrDocument.new(id: "1", links: [["First"], {text: "Second", href: "https://example.org/second"}])
+    header, row = CSV.parse(described_class.new([component], [field], url_proc).render)
+    expect(row[header.index("Links")]).to eq("First; Second; https://example.org/second")
+  end
+
+  it "uses the configured field separator like the catalogue CSV" do
+    field = Blacklight::Configuration::Field.new(key: "dates", field: "dates", label: "Dates", separator_options: {words_connector: " "})
+    component = SolrDocument.new(id: "1", dates: ["1900", "1910"])
+    header, row = CSV.parse(described_class.new([component], [field], url_proc).render)
+    expect(row[header.index("Dates")]).to eq("1900 1910")
+  end
+
+  it "uses semicolons instead of HTML display separators" do
+    field = Blacklight::Configuration::Field.new(key: "dates", field: "dates", label: "Dates", separator_options: {words_connector: "<br/>"})
+    component = SolrDocument.new(id: "1", dates: ["1900", "1910"])
+    header, row = CSV.parse(described_class.new([component], [field], url_proc).render)
+    expect(row[header.index("Dates")]).to eq("1900; 1910")
+  end
+
+  it "honours field conditions without hiding unexpected errors" do
+    hidden = Blacklight::Configuration::Field.new(key: "hidden", label: "Hidden", if: ->(*) { false })
+    broken = Blacklight::Configuration::Field.new(key: "broken", if: ->(*) { raise ArgumentError, "broken condition" })
+    component = SolrDocument.new(id: "1", hidden: "Not public")
+    header, row = CSV.parse(described_class.new([component], [hidden], url_proc).render)
+    expect(row[header.index("Hidden")]).to eq("")
+    expect { described_class.new([component], [broken], url_proc).render }.to raise_error(ArgumentError, "broken condition")
+  end
+
+  it "retrieves configured accessor values like the catalogue CSV" do
+    field = Blacklight::Configuration::Field.new(key: "identifiers", label: "Identifiers", accessor: :collection_identifier)
+    header, row = CSV.parse(described_class.new([document], [field], url_proc).render)
+    expect(row[header.index("Identifiers")]).to eq("MS 1139")
   end
 end

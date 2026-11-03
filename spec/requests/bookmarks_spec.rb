@@ -87,17 +87,19 @@ RSpec.describe "Bookmarks", type: :request do
 
       rows = CSV.parse(response.body)
       expect(rows.length).to eq(3)
-      expect(rows.first.first).to eq("Title")
+      expect(rows.first.first(7)).to eq(["Bib ID", "Finding Aid ID", "Unit ID", "Creator", "Title", "Collection Title", "Online Version"])
       expect(rows.first).to include("Unit ID", "Repository", "Date")
       expect(rows.first.last).to eq("Record URL")
-      expect(rows.first[-2]).to eq("data-doc-id")
+      expect(rows.first).not_to include("data-doc-id", "Online Resources")
 
       header = rows.first
       unit_ids = rows[1..].pluck(header.index("Unit ID")).sort
       expect(unit_ids).to eq(["1", "MS 1139"])
 
-      doc_ids = rows[1..].pluck(header.index("data-doc-id")).sort
+      doc_ids = rows[1..].pluck(header.index("Finding Aid ID")).sort
       expect(doc_ids).to eq(["280011976", "367300335367601811"])
+      expect(rows[1..].pluck(header.index("Bib ID"))).to contain_exactly("1132324", "538326")
+      expect(rows[1..].pluck(header.index("Repository"))).to all(eq("National Library of Australia"))
 
       record_urls = rows[1..].pluck(header.index("Record URL")).map { |url| URI.parse(url).path }.sort
       expect(record_urls).to eq(["/finding-aids/catalog/280011976", "/finding-aids/catalog/367300335367601811"])
