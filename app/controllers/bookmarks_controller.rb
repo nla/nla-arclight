@@ -7,7 +7,7 @@ class BookmarksController < CatalogController
     bookmark_ids = token_or_current_or_guest_user.bookmarks.pluck(:document_id).map(&:to_s)
     return [] if bookmark_ids.empty?
 
-    search_service.fetch(bookmark_ids, rows: bookmark_ids.length)
+    search_service.fetch(bookmark_ids, rows: bookmark_ids.length, start: 0)
   end
 
   # Copy every bookmarked finding aid in the selected citation style,

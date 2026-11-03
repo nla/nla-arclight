@@ -27,6 +27,7 @@ RSpec.describe Nla::Exports::RisExport do
     expect(ris.lines.grep(/^AU  - /)).to eq(["AU  - Smith, Mary\n", "AU  - Smith, John\n"])
     expect(ris).to include("TI  - Letters\n", "DA  - circa 1900-1910\n", "DB  - National Library of Australia\n", "CN  - MS 1; File 2\n")
     expect(ris).to include("AB  - Letters & notes.\n", "AN  - https://example.org/finding-aids/catalog/file-1\n")
+    expect(ris).to include("N1  - Record URL: https://example.org/finding-aids/catalog/file-1\n")
     expect(ris).not_to include("nla.cat-vn")
     expect(ris).to end_with("ER  - \n\n")
   end
@@ -61,7 +62,7 @@ RSpec.describe Nla::Exports::RisExport do
     let(:document) { SolrDocument.new(id: "1") }
 
     it "retains the record URL without inventing other fields" do
-      expect(ris).to eq("TY  - MANSCPT\nAN  - https://example.org/finding-aids/catalog/1\nER  - \n\n")
+      expect(ris).to eq("TY  - MANSCPT\nAN  - https://example.org/finding-aids/catalog/1\nUR  - https://example.org/finding-aids/catalog/1\nER  - \n\n")
     end
   end
 
@@ -80,7 +81,7 @@ RSpec.describe Nla::Exports::RisExport do
     it "separates records without leaking resource URLs or notes between them" do
       records = ris.split("\n\n")
       expect(records.length).to eq(2)
-      expect(records.last).to eq("TY  - MANSCPT\nAN  - https://example.org/finding-aids/catalog/2\nER  - ")
+      expect(records.last).to eq("TY  - MANSCPT\nAN  - https://example.org/finding-aids/catalog/2\nUR  - https://example.org/finding-aids/catalog/2\nER  - ")
     end
   end
 

@@ -115,6 +115,8 @@ RSpec.describe "Bookmarks", type: :request do
       expect(response.body).to include("AN  - http://www.example.com/finding-aids/catalog/280011976")
       expect(response.body).to include("AN  - http://www.example.com/finding-aids/catalog/367300335367601811")
       expect(response.body).to include("UR  - https://nla.gov.au/nla.obj-280011976\n")
+      expect(response.body).to include("N1  - Record URL: http://www.example.com/finding-aids/catalog/280011976\n")
+      expect(response.body).to include("UR  - http://www.example.com/finding-aids/catalog/367300335367601811\n")
       expect(response.body).to include("N1  - Parent Conditions Governing Access: Available for research.")
     end
 
@@ -165,21 +167,29 @@ RSpec.describe "Bookmarks", type: :request do
 
     %w[csv ris].each do |format|
       it "exports every bookmark as #{format}, not just the current page" do
-        get export_bookmarks_path(format: format, per_page: 10)
+        get export_bookmarks_path(format: format, per_page: 10, page: 2)
 
         expect(response).to have_http_status(:success)
         count = (format == "csv") ? CSV.parse(response.body).length - 1 : response.body.scan(/^TY  - /).length
         expect(count).to eq(22)
         expect(response.body).to include("extra-20")
+        expect(WebMock).to have_requested(:any, /solr:8983/).with { |request|
+          params = Rack::Utils.parse_nested_query([request.uri.query, request.body].compact.join("&"))
+          params["rows"] == "22" && params["start"].to_i.zero?
+        }
       end
     end
 
     it "cites every bookmark, not just the current page" do
-      get cite_all_bookmarks_path(style: "apa", per_page: 10)
+      get cite_all_bookmarks_path(style: "apa", per_page: 10, page: 2)
 
       source = response.parsed_body.at_css('[data-clipboard-target="source"]')
       expect(source.text).to include("/finding-aids/catalog/extra-20")
       expect(source.text.scan("/finding-aids/catalog/").length).to eq(22)
+      expect(WebMock).to have_requested(:any, /solr:8983/).with { |request|
+        params = Rack::Utils.parse_nested_query([request.uri.query, request.body].compact.join("&"))
+        params["rows"] == "22" && params["start"].to_i.zero?
+      }
     end
   end
 

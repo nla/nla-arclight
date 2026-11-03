@@ -24,9 +24,15 @@ module Nla
         add(lines, "DB", metadata.repository)
         add(lines, "CN", metadata.identifiers.join("; "))
         add(lines, "AB", metadata.values("scopecontent_ssm", "scopecontent_html_tesm", "abstract_html_tesm").join("; "))
-        add(lines, "AN", @url_proc.call(document))
+        record_url = @url_proc.call(document)
+        add(lines, "AN", record_url)
         resource_urls = metadata.resource_urls
-        resource_urls.each { |url| add(lines, "UR", url) }
+        if resource_urls.empty?
+          add(lines, "UR", record_url)
+        else
+          resource_urls.each { |url| add(lines, "UR", url) }
+          add(lines, "N1", "Record URL: #{record_url}")
+        end
         resource_urls.drop(1).each { |url| add(lines, "N1", "Online resource: #{url}") }
         add(lines, "N1", "Archival context: #{metadata.context}") if metadata.context.present?
         add(lines, "N1", "Preferred citation: #{metadata.preferred_citation}") if metadata.preferred_citation.present?
