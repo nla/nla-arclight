@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ClipboardController from "./clipboard_controller"
+application.register("clipboard", ClipboardController)
+
 import Email2faAlertController from "./email_2fa_alert_controller"
 application.register("email-2fa-alert", Email2faAlertController)
 

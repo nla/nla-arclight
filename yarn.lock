@@ -794,6 +794,11 @@ slash@^5.0.0:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.2.tgz#79fb88d97535a21cb27162cb05d211b67acea4ab"
   integrity sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==
 
+stimulus-clipboard@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/stimulus-clipboard/-/stimulus-clipboard-4.0.1.tgz#acc9212b479fedc633ecdec8f191a28c1d826a6b"
+  integrity sha512-dem+ihC3Q8+gbyGINdd+dK+9d5vUTnOwoH+n3KcDJvbxrFcq9lV8mWjyhEaDquGxYy3MmqSdz9FHQbG88TBqGg==
+
 string-width@^4.1.0, string-width@^4.2.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
