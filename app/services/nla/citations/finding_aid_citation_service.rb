@@ -17,6 +17,20 @@ module Nla
         public_send(style)
       end
 
+      def render_html(style)
+        citation = render(style)
+        emphasized = if style == "mla"
+          @metadata.values("parent_unittitles_ssm", "collection_ssim", "collection_ssm", "collection_title_tesim").first
+        else
+          @metadata.title
+        end
+        helpers = ActionController::Base.helpers
+        return helpers.safe_join([citation]) if emphasized.blank? || citation.exclude?(emphasized)
+
+        before, after = citation.split(emphasized, 2)
+        helpers.safe_join([before, helpers.tag.em(emphasized), after])
+      end
+
       def apa
         author = @metadata.creators.join("; ")
         description = [@metadata.title, "[#{@metadata.level.presence || "Archival material"}]"].compact_blank.join(" ")

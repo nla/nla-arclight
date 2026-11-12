@@ -34,6 +34,30 @@ RSpec.describe Nla::Citations::FindingAidCitationService do
     expect { service.render("object_id") }.to raise_error(ArgumentError, "Unknown citation style")
   end
 
+  %w[apa harvard].each do |style|
+    it "italicizes the archival title for #{style} without changing the citation text" do
+      fragment = Nokogiri::HTML.fragment(service.render_html(style))
+      expect(fragment.at_css("em").text).to eq("Letters")
+      expect(fragment.text).to eq(service.render(style))
+    end
+  end
+
+  it "italicizes the collection title, not the component title, for MLA" do
+    fragment = Nokogiri::HTML.fragment(service.render_html("mla"))
+    expect(fragment.at_css("em").text).to eq("Smith papers")
+    expect(fragment.text).to eq(service.render("mla"))
+  end
+
+  context "with HTML-like text in the source metadata" do
+    let(:document) { SolrDocument.new(id: "1", title_ssm: ["Fish &lt;script&gt;alert(1)&lt;/script&gt; &amp; chips"]) }
+
+    it "escapes metadata instead of treating it as citation markup" do
+      fragment = Nokogiri::HTML.fragment(service.render_html("apa"))
+      expect(fragment.css("script")).to be_empty
+      expect(fragment.at_css("em").text).to include("<script>alert(1)</script>", "& chips")
+    end
+  end
+
   context "without a creator or date" do
     let(:document) { SolrDocument.new(id: "1", title_ssm: ["Anonymous papers"]) }
 
