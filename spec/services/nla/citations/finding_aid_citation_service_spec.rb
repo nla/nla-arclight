@@ -48,6 +48,50 @@ RSpec.describe Nla::Citations::FindingAidCitationService do
     expect(fragment.text).to eq(service.render("mla"))
   end
 
+  context "when the title also appears in the creator's name" do
+    let(:document) { SolrDocument.new(id: "1", title_ssm: ["Smith"], creator_ssm: ["Smith, Mary"], level_ssm: ["File"]) }
+
+    %w[apa harvard].each do |style|
+      it "emphasizes only the title in #{style}" do
+        fragment = Nokogiri::HTML.fragment(service.render_html(style))
+        expect(fragment.css("em").map(&:text)).to eq(["Smith"])
+        expect(service.render_html(style)).to include("Smith, Mary")
+        expect(service.render_html(style)).not_to start_with("<em>")
+        expect(fragment.text).to eq(service.render(style))
+      end
+    end
+  end
+
+  context "with a top-level collection and a different normalized collection label" do
+    let(:document) do
+      SolrDocument.new(id: "1", title_ssm: ["Smith papers"], collection_ssim: ["Smith papers, 1900-1910"],
+        normalized_date_ssm: ["1900-1910"], level_ssm: ["Collection"], unitid_ssm: ["MS 1"])
+    end
+
+    it "emphasizes the supplied title for MLA without changing the text" do
+      fragment = Nokogiri::HTML.fragment(service.render_html("mla"))
+      expect(fragment.css("em").map(&:text)).to eq(["Smith papers"])
+      expect(fragment.text).to eq(service.render("mla"))
+    end
+  end
+
+  context "when the collection title also appears in the component title" do
+    let(:document) do
+      SolrDocument.new(id: "1", title_ssm: ["Smith papers correspondence"], parent_unittitles_ssm: ["Smith papers"], level_ssm: ["File"])
+    end
+
+    it "emphasizes the collection context rather than part of the component title" do
+      html = service.render_html("mla")
+      expect(html).to include("“Smith papers correspondence.”")
+      expect(html).to include("<em>Smith papers</em>.")
+      expect(Nokogiri::HTML.fragment(html).text).to eq(service.render("mla"))
+    end
+  end
+
+  it "rejects unsupported HTML citation styles" do
+    expect { service.render_html("object_id") }.to raise_error(ArgumentError, "Unknown citation style")
+  end
+
   context "with HTML-like text in the source metadata" do
     let(:document) { SolrDocument.new(id: "1", title_ssm: ["Fish &lt;script&gt;alert(1)&lt;/script&gt; &amp; chips"]) }
 
@@ -65,6 +109,12 @@ RSpec.describe Nla::Citations::FindingAidCitationService do
       expect(service.render("apa")).to eq("Anonymous papers [Archival material]. (n.d.). #{record_url}")
       expect(service.render("mla")).to eq("“Anonymous papers.” #{record_url}")
       expect(service.render("harvard")).to eq("n.d., Anonymous papers, #{record_url}")
+    end
+
+    %w[apa mla harvard].each do |style|
+      it "keeps #{style} HTML text identical to the plain-text citation" do
+        expect(Nokogiri::HTML.fragment(service.render_html(style)).text).to eq(service.render(style))
+      end
     end
   end
 end

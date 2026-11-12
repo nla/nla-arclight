@@ -18,36 +18,30 @@ module Nla
       end
 
       def render_html(style)
-        citation = render(style)
-        emphasized = if style == "mla"
-          @metadata.values("parent_unittitles_ssm", "collection_ssim", "collection_ssm", "collection_title_tesim").first
-        else
-          @metadata.title
-        end
-        helpers = ActionController::Base.helpers
-        return helpers.safe_join([citation]) if emphasized.blank? || citation.exclude?(emphasized)
+        raise ArgumentError, "Unknown citation style" unless STYLES.include?(style)
 
-        before, after = citation.split(emphasized, 2)
-        helpers.safe_join([before, helpers.tag.em(emphasized), after])
+        public_send(style, html: true)
       end
 
-      def apa
+      def apa(html: false)
         author = @metadata.creators.join("; ")
-        description = [@metadata.title, "[#{@metadata.level.presence || "Archival material"}]"].compact_blank.join(" ")
+        description = join_parts([title(html: html), "[#{@metadata.level.presence || "Archival material"}]"].compact_blank, " ", html: html)
         heading = author.present? ? ["#{author} (#{date})", description] : [description, "(#{date})"]
-        sentences(*heading, @metadata.context, @metadata.repository, @record_url)
+        sentences(*heading, @metadata.context, @metadata.repository, @record_url, html: html)
       end
 
-      def mla
-        title = @metadata.title
-        quoted_title = title.present? ? "“#{title}#{"." unless title.match?(/[.!?]\z/)}”" : nil
+      def mla(html: false)
+        collection = @metadata.level.casecmp?("collection")
+        quoted_title = if @metadata.title.present?
+          join_parts(["“", title(html: html && collection), ("." unless @metadata.title.match?(/[.!?]\z/)), "”"], "", html: html)
+        end
         sentences(@metadata.creators.join("; "), quoted_title, @metadata.dates.join("; "),
-          @metadata.context, @metadata.repository, @record_url)
+          context(html: html, emphasize_collection: !collection), @metadata.repository, @record_url, html: html)
       end
 
-      def harvard
+      def harvard(html: false)
         heading = [@metadata.creators.join("; "), date].compact_blank.join(" ")
-        [heading, @metadata.title, @metadata.context, @metadata.repository, @record_url].compact_blank.join(", ")
+        join_parts([heading, title(html: html), @metadata.context, @metadata.repository, @record_url].compact_blank, ", ", html: html)
       end
 
       private
@@ -56,10 +50,34 @@ module Nla
         @metadata.dates.join("; ").presence || "n.d."
       end
 
-      def sentences(*parts)
-        parts.compact_blank.map do |part|
-          (part == @record_url || part.match?(/[.!?]”?\z/)) ? part : "#{part}."
-        end.join(" ")
+      def title(html:)
+        (html && @metadata.title.present?) ? helpers.tag.em(@metadata.title) : @metadata.title
+      end
+
+      def context(html:, emphasize_collection:)
+        return @metadata.context unless html && emphasize_collection
+
+        collection_title = @metadata.collection_titles.first
+        parts = @metadata.context_parts.map do |part|
+          (part == collection_title) ? helpers.tag.em(part) : part
+        end
+        join_parts(parts, "; ", html: true)
+      end
+
+      def helpers
+        ActionController::Base.helpers
+      end
+
+      def join_parts(parts, separator, html:)
+        html ? helpers.safe_join(parts.compact, separator) : parts.compact.join(separator)
+      end
+
+      def sentences(*parts, html: false)
+        punctuated = parts.compact_blank.map do |part|
+          text = html ? helpers.strip_tags(part) : part
+          (part == @record_url || text.match?(/[.!?]”?\z/)) ? part : join_parts([part, "."], "", html: html)
+        end
+        join_parts(punctuated, " ", html: html)
       end
     end
   end
