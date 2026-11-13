@@ -41,17 +41,39 @@
     display: none;
   }
 }
+.bookmarksTools .btn-primary {
+  --bs-btn-hover-color: #{$black};
+  --bs-btn-hover-bg: #{$light-teal};
+  --bs-btn-hover-border-color: #{$light-teal};
+  --bs-btn-active-color: #{$black};
+  --bs-btn-active-bg: #{$light-teal};
+  --bs-btn-active-border-color: #{$light-teal};
+
+  &:not(:hover):not(:focus-visible):not(.show) {
+    background: $black;
+    color: $white;
+    border-color: $black;
+    box-shadow: none;
+  }
+}
+
 .bookmarksTools .dropdown-menu {
+  --bs-dropdown-border-width: 0;
   --bs-dropdown-bg: #{$white};
-  --bs-dropdown-link-color: #{$black};
-  --bs-dropdown-link-hover-color: #{$black};
+  --bs-dropdown-link-color: #{$body-color};
+  --bs-dropdown-link-hover-color: #{$grey-700};
   --bs-dropdown-link-hover-bg: #{$light-grey};
-  --bs-dropdown-link-active-color: #{$black};
+  --bs-dropdown-link-active-color: #{$grey-700};
   --bs-dropdown-link-active-bg: #{$light-grey};
+  --bs-dropdown-box-shadow: 1px 1px 12px 0px rgba(0, 0, 0, 0.08);
+
+  box-shadow: var(--bs-dropdown-box-shadow);
 
   // Override the general link rules, which otherwise ignore the menu background.
   .dropdown-item {
     color: var(--bs-dropdown-link-color);
+    text-decoration: none;
+    transition: none;
 
     &:hover,
     &:focus {
@@ -70,6 +92,12 @@
 }
 
 @media screen and (prefers-color-scheme: dark) {
+  .bookmarksTools .btn-primary:not(:hover):not(:focus-visible):not(.show) {
+    background: $white;
+    color: $black;
+    border-color: $white;
+  }
+
   .bookmarksTools .dropdown-menu {
     --bs-dropdown-bg: #{$grey-300};
     --bs-dropdown-link-color: #{$body-color-dark};
