@@ -41,3 +41,41 @@
     display: none;
   }
 }
+.bookmarksTools .dropdown-menu {
+  --bs-dropdown-bg: #{$white};
+  --bs-dropdown-link-color: #{$black};
+  --bs-dropdown-link-hover-color: #{$black};
+  --bs-dropdown-link-hover-bg: #{$light-grey};
+  --bs-dropdown-link-active-color: #{$black};
+  --bs-dropdown-link-active-bg: #{$light-grey};
+
+  // Override the general link rules, which otherwise ignore the menu background.
+  .dropdown-item {
+    color: var(--bs-dropdown-link-color);
+
+    &:hover,
+    &:focus {
+      color: var(--bs-dropdown-link-hover-color);
+      background-color: var(--bs-dropdown-link-hover-bg);
+      box-shadow: none;
+    }
+
+    &:active,
+    &.active {
+      color: var(--bs-dropdown-link-active-color);
+      background-color: var(--bs-dropdown-link-active-bg);
+      box-shadow: none;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .bookmarksTools .dropdown-menu {
+    --bs-dropdown-bg: #{$grey-300};
+    --bs-dropdown-link-color: #{$body-color-dark};
+    --bs-dropdown-link-hover-color: #{$body-color-dark};
+    --bs-dropdown-link-hover-bg: #{$grey-600};
+    --bs-dropdown-link-active-color: #{$body-color-dark};
+    --bs-dropdown-link-active-bg: #{$grey-600};
+  }
+}
