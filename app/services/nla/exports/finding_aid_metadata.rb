@@ -46,10 +46,17 @@ module Nla
       end
 
       def context
-        return identifiers.join("; ") if level.casecmp?("collection")
+        context_parts.join("; ")
+      end
 
-        hierarchy = values("parent_unittitles_ssm", "collection_ssim", "collection_ssm", "collection_title_tesim")
-        (hierarchy.reject { |value| value == title } + identifiers + values("containers_ssim")).uniq.join("; ")
+      def collection_titles
+        values("parent_unittitles_ssm", "collection_ssim", "collection_ssm", "collection_title_tesim").reject { |value| value == title }
+      end
+
+      def context_parts
+        return identifiers if level.casecmp?("collection")
+
+        (collection_titles + identifiers + values("containers_ssim")).uniq
       end
 
       def preferred_citation

@@ -2,8 +2,8 @@
   <% component.with_title { "#{t('cite_all.title')} – #{t(CitationHelper::CITATION_FORMATS.fetch(@citation_style))}" } %>
 
   <% if @documents.present? %>
-    <div class="mb-3" data-controller="clipboard" data-clipboard-success-content-value="<%= t("citation.copied") %>">
-      <textarea class="form-control mb-3" rows="12" readonly aria-label="<%= t('cite_all.title') %>" data-clipboard-target="source"><%= cite_all_text(@documents, style: @citation_style) %></textarea>
+    <div class="mb-3" data-controller="clipboard" data-clipboard-rich-value="true" data-clipboard-success-content-value="<%= t("citation.copied") %>">
+      <div class="citation-bibliography mb-3" data-clipboard-target="source"><%= cite_all_html(@documents, style: @citation_style) %></div>
       <a href="#" data-action="clipboard#copy" data-clipboard-target="button" class="btn btn-primary">
         <i class="fa-regular fa-copy" aria-hidden="true"></i> <%= t("citation.copy_all") %>
       </a>
