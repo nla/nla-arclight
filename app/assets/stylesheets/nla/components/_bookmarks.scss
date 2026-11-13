@@ -45,6 +45,13 @@
   --bs-btn-active-color: #{$black};
   --bs-btn-active-bg: #{$light-teal};
   --bs-btn-active-border-color: #{$light-teal};
+
+  &:not(:hover):not(:focus-visible):not(.show) {
+    background: $black;
+    color: $white;
+    border-color: $black;
+    box-shadow: none;
+  }
 }
 
 .bookmarksTools .dropdown-menu {
@@ -76,6 +83,12 @@
 }
 
 @media screen and (prefers-color-scheme: dark) {
+  .bookmarksTools .btn-primary:not(:hover):not(:focus-visible):not(.show) {
+    background: $white;
+    color: $black;
+    border-color: $white;
+  }
+
   .bookmarksTools .dropdown-menu {
     --bs-dropdown-bg: #{$grey-300};
     --bs-dropdown-link-color: #{$body-color-dark};
