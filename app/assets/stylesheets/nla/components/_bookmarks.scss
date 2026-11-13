@@ -55,6 +55,7 @@
 }
 
 .bookmarksTools .dropdown-menu {
+  --bs-dropdown-border-width: 0;
   --bs-dropdown-bg: #{$white};
   --bs-dropdown-link-color: #{$black};
   --bs-dropdown-link-hover-color: #{$black};
