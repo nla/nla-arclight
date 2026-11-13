@@ -41,6 +41,12 @@
     display: none;
   }
 }
+.bookmarksTools .btn-primary {
+  --bs-btn-active-color: #{$black};
+  --bs-btn-active-bg: #{$light-teal};
+  --bs-btn-active-border-color: #{$light-teal};
+}
+
 .bookmarksTools .dropdown-menu {
   --bs-dropdown-bg: #{$white};
   --bs-dropdown-link-color: #{$black};
