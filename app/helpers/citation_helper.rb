@@ -12,4 +12,11 @@ module CitationHelper
       Nla::Citations::FindingAidCitationService.new(document, solr_document_url(document)).render(style)
     end.join("\n\n")
   end
+
+  def cite_all_html(documents, style:)
+    safe_join(documents.map do |document|
+      citation = Nla::Citations::FindingAidCitationService.new(document, solr_document_url(document))
+      tag.p(citation.render_html(style))
+    end)
+  end
 end

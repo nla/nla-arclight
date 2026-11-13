@@ -44,17 +44,32 @@ RSpec.describe "Finding-aid bookmark tools", driver: :selenium_chrome_headless, 
       expect(page).to have_link("Australian/Harvard", visible: :visible)
       click_link "APA"
 
-      expect(page).to have_css('textarea[readonly][data-clipboard-target="source"]')
-      citation = find('textarea[data-clipboard-target="source"]').value
+      expect(page).to have_css(".citation-bibliography em", text: "19th century currency items")
+      citation = find('[data-clipboard-target="source"]').text
       expect(citation).to include("19th century currency items", "MS 1139", "/finding-aids/catalog/280011976")
       page.execute_script(<<~JS)
+        window.ClipboardItem = class { constructor(data) {this.data = data;} };
         Object.defineProperty(navigator, 'clipboard', {configurable: true, value: {
-          writeText: text => {window.copiedCitation = text; return Promise.resolve();}
+          write: async items => {
+            window.copiedHTML = await items[0].data['text/html'].text();
+            window.copiedCitation = await items[0].data['text/plain'].text();
+          },
+          writeText: text => {window.plainTextFallback = text; return Promise.resolve();}
         }});
       JS
       click_link "Copy all"
       expect(page).to have_link("Copied")
       expect(page.evaluate_script("window.copiedCitation")).to eq(citation)
+      expect(page.evaluate_script("window.copiedHTML")).to include("<em>19th century currency items</em>")
+      expect(page.evaluate_script("window.copiedCitation")).not_to include("<em>")
+
+      page.execute_script("navigator.clipboard.write = () => Promise.reject(new Error('Not supported'))")
+      click_link "Copied"
+      expect(page.evaluate_script("window.plainTextFallback")).to eq(citation)
+
+      page.execute_script("navigator.clipboard.write = undefined; window.plainTextFallback = null")
+      click_link "Copied"
+      expect(page.evaluate_script("window.plainTextFallback")).to eq(citation)
     end
   end
 end
