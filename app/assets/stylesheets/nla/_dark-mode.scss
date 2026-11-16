@@ -651,9 +651,9 @@
     }
   }
     
-  dialog::backdrop {
-    background-color: $grey-100;
-    opacity: 0.95;
+  dialog.modal[open]::backdrop {
+    background-color: $grey-600;
+    opacity: 0.9;
   }
   
   
