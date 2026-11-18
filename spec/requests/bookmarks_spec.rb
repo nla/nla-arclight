@@ -112,15 +112,14 @@ RSpec.describe "Bookmarks", type: :request do
       expect(response.headers["Content-Type"]).to include("application/x-research-info-systems")
       expect(response.headers["Content-Disposition"]).to include('filename="bookmarks.ris"')
       expect(response.body.scan(/^TY  - MANSCPT$/).length).to eq(2)
-      expect(response.body).to include("AN  - http://www.example.com/finding-aids/catalog/280011976")
-      expect(response.body).to include("AN  - http://www.example.com/finding-aids/catalog/367300335367601811")
+      expect(response.body).to include("N1  - Record URL: http://www.example.com/finding-aids/catalog/280011976")
+      expect(response.body).to include("N1  - Record URL: http://www.example.com/finding-aids/catalog/367300335367601811")
       expect(response.body).to include("UR  - https://nla.gov.au/nla.obj-280011976\n")
-      expect(response.body).to include("N1  - Record URL: http://www.example.com/finding-aids/catalog/280011976\n")
-      expect(response.body).to include("UR  - http://www.example.com/finding-aids/catalog/367300335367601811\n")
+      expect(response.body).not_to include("AN  - ", "UR  - http://www.example.com/finding-aids/catalog/")
       expect(response.body).to include("N1  - Parent Conditions Governing Access: Available for research.")
     end
 
-    it "keeps all resource URLs in RIS and only additional URLs in online-resource notes" do
+    it "keeps all resource URLs in RIS without duplicating them in notes" do
       stub_bookmark_documents(overrides: {"digital_objects_ssm" => [
         {href: "https://example.org/first"}.to_json,
         {href: "https://example.org/second"}.to_json,
@@ -133,9 +132,7 @@ RSpec.describe "Bookmarks", type: :request do
         expect(record.lines.grep(/^UR  - /).map(&:chomp)).to eq([
           "UR  - https://example.org/first", "UR  - https://example.org/second", "UR  - https://example.org/third"
         ])
-        expect(record.lines.grep(/^N1  - Online resource:/).map(&:chomp)).to eq([
-          "N1  - Online resource: https://example.org/second", "N1  - Online resource: https://example.org/third"
-        ])
+        expect(record.lines.grep(/^N1  - Online resource:/)).to be_empty
       end
     end
 

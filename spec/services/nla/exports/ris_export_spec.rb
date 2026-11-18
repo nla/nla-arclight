@@ -26,19 +26,18 @@ RSpec.describe Nla::Exports::RisExport do
     expect(ris).to start_with("TY  - MANSCPT\n")
     expect(ris.lines.grep(/^AU  - /)).to eq(["AU  - Smith, Mary\n", "AU  - Smith, John\n"])
     expect(ris).to include("TI  - Letters\n", "DA  - circa 1900-1910\n", "DB  - National Library of Australia\n", "CN  - MS 1; File 2\n")
-    expect(ris).to include("AB  - Letters & notes.\n", "AN  - https://example.org/finding-aids/catalog/file-1\n")
-    expect(ris).to include("N1  - Record URL: https://example.org/finding-aids/catalog/file-1\n")
+    expect(ris).to include("AB  - Letters & notes.\n")
+    expect(ris.lines.grep(/^N1  - Record URL:/)).to eq(["N1  - Record URL: https://example.org/finding-aids/catalog/file-1\n"])
+    expect(ris.lines.grep(/^AN  - /)).to be_empty
     expect(ris).not_to include("nla.cat-vn")
     expect(ris).to end_with("ER  - \n\n")
   end
 
-  it "keeps all distinct resource URLs in UR and only additional URLs in fallback notes" do
+  it "keeps all distinct resource URLs in UR without duplicating them in notes" do
     expect(ris.lines.grep(/^UR  - /)).to eq([
       "UR  - https://example.org/first\n", "UR  - https://example.org/second\n", "UR  - https://example.org/third\n"
     ])
-    expect(ris.lines.grep(/^N1  - Online resource:/)).to eq([
-      "N1  - Online resource: https://example.org/second\n", "N1  - Online resource: https://example.org/third\n"
-    ])
+    expect(ris.lines.grep(/^N1  - Online resource:/)).to be_empty
   end
 
   it "preserves archival context, supplied citation and rights without inferring copyright" do
@@ -61,8 +60,8 @@ RSpec.describe Nla::Exports::RisExport do
   context "with missing metadata and no digital resources" do
     let(:document) { SolrDocument.new(id: "1") }
 
-    it "retains the record URL without inventing other fields" do
-      expect(ris).to eq("TY  - MANSCPT\nAN  - https://example.org/finding-aids/catalog/1\nUR  - https://example.org/finding-aids/catalog/1\nER  - \n\n")
+    it "retains the record URL only in notes without inventing other fields" do
+      expect(ris).to eq("TY  - MANSCPT\nN1  - Record URL: https://example.org/finding-aids/catalog/1\nER  - \n\n")
     end
   end
 
@@ -81,7 +80,7 @@ RSpec.describe Nla::Exports::RisExport do
     it "separates records without leaking resource URLs or notes between them" do
       records = ris.split("\n\n")
       expect(records.length).to eq(2)
-      expect(records.last).to eq("TY  - MANSCPT\nAN  - https://example.org/finding-aids/catalog/2\nUR  - https://example.org/finding-aids/catalog/2\nER  - ")
+      expect(records.last).to eq("TY  - MANSCPT\nN1  - Record URL: https://example.org/finding-aids/catalog/2\nER  - ")
     end
   end
 

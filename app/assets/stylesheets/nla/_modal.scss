@@ -44,9 +44,9 @@ body:has(dialog[open]) {
   overflow: hidden;
 }
 
-dialog::backdrop {
-  background-color: rgb(247,248,248);
-  opacity: 0.95;
+dialog.modal[open]::backdrop {
+  background-color: $black;
+  opacity: 0.8;
 }
 
 @media print {
