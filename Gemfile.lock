@@ -735,7 +735,7 @@ DEPENDENCIES
   zk (~> 1.10)
 
 RUBY VERSION
-   ruby 3.3.2p78
+   ruby 3.3.14p208
 
 BUNDLED WITH
    2.7.2

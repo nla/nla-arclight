@@ -16,8 +16,12 @@ cd "$ORIGDIR" || return
 RUBY_VERSION=$(cat .ruby-version)
 echo "Checking rbenv Ruby version $RUBY_VERSION is installed."
 if [[ ! -d "/apps/etc/.rbenv/versions/$RUBY_VERSION" ]]; then
+  if ! rbenv install --list-all | grep -Fxq "$RUBY_VERSION"; then
+    echo "Updating ruby-build to make Ruby $RUBY_VERSION available."
+    git -C /apps/etc/.rbenv/plugins/ruby-build pull --ff-only || exit 1
+  fi
   echo "Ruby $RUBY_VERSION is not installed. Installing with rbenv..."
-  rbenv install "$RUBY_VERSION"
+  rbenv install "$RUBY_VERSION" || exit 1
   echo "Finished installing Ruby $RUBY_VERSION; continuing deployment..."
 else
   echo "Ruby $RUBY_VERSION found; continuing deployment..."
