@@ -73,7 +73,9 @@ RSpec.describe "Finding-aid bookmark tools", driver: :selenium_chrome_headless, 
 
   [1200, 375].each do |width|
     it "opens citation and export menus without overlap at #{width}px" do
-      page.current_window.resize_to(width, 800)
+      window = page.current_window
+      original_size = window.size
+      window.resize_to(width, 800)
       visit bookmarks_path
 
       expect(page).to have_button("Cite all")
@@ -123,6 +125,8 @@ RSpec.describe "Finding-aid bookmark tools", driver: :selenium_chrome_headless, 
       page.execute_script("navigator.clipboard.write = undefined; window.plainTextFallback = null")
       click_link "Copied"
       expect(page.evaluate_script("window.plainTextFallback")).to eq(citation)
+    ensure
+      window.resize_to(*original_size) if original_size
     end
   end
 end
