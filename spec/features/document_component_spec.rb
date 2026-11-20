@@ -2,9 +2,9 @@ require "rails_helper"
 
 RSpec.describe "Document components" do
   context "when at the collection level" do
-    before do
-      solr_response = IO.read("spec/files/solr/280011976.json")
+    let(:solr_response) { IO.read("spec/files/solr/280011976.json") }
 
+    before do
       WebMock.stub_request(:get, /solr:8983/)
         .with(
           headers: {
@@ -30,6 +30,21 @@ RSpec.describe "Document components" do
       visit solr_document_path(id: "280011976")
 
       expect(page).to have_css("div.title-container h1", text: I18n.t("collection_prefix") + "19th century currency items, c1868-1895")
+    end
+
+    context "without a FOLIO instance ID" do
+      let(:solr_response) do
+        response = JSON.parse(super())
+        response.dig("response", "docs").first.delete("folio_instance_id_ssi")
+        response.to_json
+      end
+
+      it "renders the record without requesting holdings" do
+        visit solr_document_path(id: "280011976")
+
+        expect(page).to have_css("div.title-container h1", text: "19th century currency items, c1868-1895")
+        expect(WebMock).not_to have_requested(:get, %r{/catalogue-services/folio/instance/})
+      end
     end
   end
 end
