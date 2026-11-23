@@ -3,6 +3,8 @@
 class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 
+  blacklight_config.index.collection_actions.delete(:group_toggle)
+
   def action_documents
     bookmark_ids = token_or_current_or_guest_user.bookmarks.pluck(:document_id).map(&:to_s)
     return [] if bookmark_ids.empty?

@@ -63,6 +63,15 @@ RSpec.describe "Bookmarks", type: :request do
   end
 
   describe "GET /finding-aids/bookmarks" do
+    it "lists bookmarks without the catalogue grouping controls" do
+      get bookmarks_path
+
+      expect(response).to have_http_status(:success)
+      expect(response.parsed_body.at_css("#documents [data-document-id='280011976']")).to be_present
+      expect(response.parsed_body.at_css(".clear-bookmarks")).to be_present
+      expect(response.parsed_body.at_css(".result-type-group")).to be_nil
+    end
+
     it "offers all citation choices and both download formats" do
       get bookmarks_path
 
@@ -75,6 +84,13 @@ RSpec.describe "Bookmarks", type: :request do
         expect(response.parsed_body.at_css("a[href='#{export_bookmarks_path(format: format)}']")).to be_present
       end
     end
+  end
+
+  it "keeps the grouping controls on catalogue search results" do
+    get search_catalog_path, params: {q: "currency"}
+
+    expect(response).to have_http_status(:success)
+    expect(response.parsed_body.css(".result-type-group a").map(&:text)).to contain_exactly("All results", "Grouped by collection")
   end
 
   describe "GET /finding-aids/bookmarks/export" do
