@@ -306,10 +306,10 @@ blacklight-frontend@^8.12.2:
   dependencies:
     bootstrap ">=4.3.1 <6.0.0"
 
-blacklight-range-limit@^9.2.0:
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/blacklight-range-limit/-/blacklight-range-limit-9.2.0.tgz#9314f36c185d7e8b79564dea480420e31e3d3bd0"
-  integrity sha512-DLhS9JUnmpSZy+8nX5u5jfFBobPeoYwBDjcSQnuzD9/0DkO8FrIj8YDmOn9emeitvgbHfoqEYElPWamuzdirrg==
+blacklight-range-limit@^9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/blacklight-range-limit/-/blacklight-range-limit-9.3.0.tgz#b919ad356d304d9cde992b46eccf0274cbd33e6f"
+  integrity sha512-vX60ysO1xOsXXe/zCTBt1BSO7x0BlvW6JebCR0CCqnmRu0Cn4ZNFqpMM2wU2K6CUzRWekHc524rfqJpAYfy1Xw==
   dependencies:
     chart.js "^ 4.4.1"
 
@@ -358,14 +358,7 @@ caniuse-lite@^1.0.30001810, caniuse-lite@^1.0.30001819:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001826.tgz#6c2cc43e4858e54d6f7200fa87b4de93cb39aa77"
   integrity sha512-wTB+9tIbLro/BCXwLuNV1meHE4L9dS6dArMDwgYfNBPMYScqClHyGunhkCSDtHhe/69Xl0sHlKgBVZ+fNsYtWA==
 
-"chart.js@^ 4.4.1":
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.5.1.tgz#19dd1a9a386a3f6397691672231cb5fc9c052c35"
-  integrity sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==
-  dependencies:
-    "@kurkle/color" "^0.3.0"
-
-chart.js@^4.5.0:
+"chart.js@^ 4.4.1", chart.js@^4.5.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.6.1.tgz#40a924bc0b92544ed66fa3f4873981152fc62c52"
   integrity sha512-hJyniucsFmq//EvXYvJ6c6mahPoI3kaxdjVH8awTaJ/fDNWeSqqqArixMJWkWNN6fcYvPU3HneSANFNYtRi61g==
